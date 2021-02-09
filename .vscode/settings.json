@@ -1,0 +1,15 @@
+{
+  // Format a file on save.
+  "editor.formatOnSave": true,
+  // Defines a default formatter which takes precedence over all other formatter settings.
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // Code action kinds to be run on save.
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  // Controls auto save of dirty editors.
+  //  - onFocusChange: A dirty editor is automatically saved when the editor loses focus.
+  "files.autoSave": "onFocusChange",
+  // Always show the ESlint status bar item.
+  "eslint.alwaysShowStatus": true
+}

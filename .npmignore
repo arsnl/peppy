@@ -1,0 +1,16 @@
+.github
+.nyc_output
+.vscode
+media
+src
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierignore
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+package-lock.json
+rollup.config.js
+tsconfig.json
+yarn.lock
+**/*.test.*
