@@ -1,0 +1,4 @@
+{
+  "extends": "./packages/eslint-config-happy/index.js",
+  "rules": {}
+}

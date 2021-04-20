@@ -5,8 +5,8 @@
 <p align="center">
     <a href="https://www.npmjs.org/package/eslint-config-happy"><img src="https://img.shields.io/npm/v/eslint-config-happy.svg" alt="npm version" /></a>
     <a href="https://prettier.io/"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" /></a>
-    <a href="https://github.com/arsnl/eslint-config-happy"><img src="https://img.shields.io/badge/eslint_config-happy-b0ff31.svg" alt="eslint config: happy" /></a>
-    <a href="https://github.com/arsnl/eslint-config-happy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/eslint-config-happy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
+    <a href="https://github.com/arsnl/happy"><img src="https://img.shields.io/badge/config-happy-b0ff31.svg?logo=eslint" alt="eslint config: happy" /></a>
+    <a href="https://github.com/arsnl/happy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/happy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
 
 </p>
 
@@ -89,7 +89,7 @@ Example of usage for a project that use Cypress, Jest, Ramda, React and Typescri
 
 Despite the fact that you can change Prettier and Happy configurations, you must avoid to do it at all cost! By far the biggest reason for adopting Prettier and Happy is to stop all the ongoing debates over styles. If you start overriding the rules, you are going against that philosophy.
 
-That's being said, for some compatibility reasons, you can have the need to change the rules. If it's the case, do it, but try the keep the changes to the strict minimum. Also, feel free to [open an issue](https://github.com/arsnl/eslint-config-happy/issues) so we can see if we missed something on our side.
+That's being said, for some compatibility reasons, you can have the need to change the rules. If it's the case, do it, but try the keep the changes to the strict minimum. Also, feel free to [open an issue](https://github.com/arsnl/happy/issues) so we can see if we missed something on our side.
 
 ## Typescript Support
 
@@ -242,14 +242,14 @@ That's not a question! 😄
 
 Seriously, you can be in total disagreement with some rule, and that's totally fine! Like Prettier, Happy is not meant to be liked by everyone and that's not the goal. The goal is to saves you time and energy and save you from never ending debates. The goal is also to provide you an easy and clean way to start coding with ESLint, Prettier and TypesScript in no time.
 
-If you still strongly disagree with some rules, need new configuration support (eg: VueJS) or found a bug, you are more than welcome to [open a new issue](https://github.com/arsnl/eslint-config-happy/issues) and [contribute](/CONTRIBUTING.md) to this project.
+If you still strongly disagree with some rules, need new configuration support (eg: VueJS) or found a bug, you are more than welcome to [open a new issue](https://github.com/arsnl/happy/issues) and [contribute](/CONTRIBUTING.md) to this project.
 
 ## Badge
 
-Show the world you're using Happy → [![eslint config: happy](https://img.shields.io/badge/eslint_config-happy-b0ff31.svg)](https://github.com/arsnl/eslint-config-happy)
+Show the world you're using Happy → [![eslint config: happy](https://img.shields.io/badge/config-happy-b0ff31.svg?logo=eslint)](https://github.com/arsnl/happy)
 
 ```md
-[![eslint config: happy](https://img.shields.io/badge/eslint_config-happy-b0ff31.svg)](https://github.com/arsnl/eslint-config-happy)
+[![eslint config: happy](https://img.shields.io/badge/config-happy-b0ff31.svg?logo=eslint)](https://github.com/arsnl/happy)
 ```
 
 ## Versioning Policy

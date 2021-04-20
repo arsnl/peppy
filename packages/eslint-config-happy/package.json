@@ -1,0 +1,61 @@
+{
+  "name": "eslint-config-happy",
+  "version": "0.1.0",
+  "description": "Happy - ESLint config for happier developers",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "config",
+    "happy",
+    "prettier",
+    "typescript",
+    "jscs",
+    "jshint",
+    "tslint"
+  ],
+  "homepage": "https://github.com/arsnl/happy",
+  "bugs": {
+    "url": "https://github.com/arsnl/happy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arsnl/happy"
+  },
+  "license": "MIT",
+  "author": "Neaf (https://neaf.co)",
+  "contributors": [
+    {
+      "name": "Marc-André Arseneault",
+      "email": "marc-andre@arsnl.co",
+      "url": "https://arsnl.co"
+    }
+  ],
+  "main": "index.js",
+  "bin": {
+    "eslint-config-happy": "bin/cli.js"
+  },
+  "scripts": {
+    "build": "npm run clean && rollup -c",
+    "clean": "rimraf ./bin/",
+    "dev": "npm run clean && rollup -c -w"
+  },
+  "dependencies": {
+    "confusing-browser-globals": "^1.0.10",
+    "object.assign": "^4.1.2"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.17.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-regexp": "^0.1.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unicorn": "^24.0.0",
+    "prettier": ">=2.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

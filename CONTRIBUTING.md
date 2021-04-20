@@ -1,6 +1,6 @@
 # Contributing
 
-When contributing to this project, please first discuss the change you wish to make via [GitHub Issues](https://github.com/arsnl/eslint-config-happy/issues) and make sure the issue you're about to open don't already exist. If it exist, you can join the existing conversation about it.
+When contributing to this project, please first discuss the change you wish to make via [GitHub Issues](https://github.com/arsnl/happy/issues) and make sure the issue you're about to open don't already exist. If it exist, you can join the existing conversation about it.
 
 Please note we have a [code of conduct](CODE_OF_CONDUCT.md). Please follow it in all your interactions within the project.
 
@@ -28,7 +28,7 @@ Therefore, to respect the [versioning policy](#versioning-policy), every new rul
 
 ## Bug Reports
 
-We use GitHub issues to track bugs. Report a bug by [opening a new issue](https://github.com/arsnl/eslint-config-happy/issues). It's that easy! ✨
+We use GitHub issues to track bugs. Report a bug by [opening a new issue](https://github.com/arsnl/happy/issues). It's that easy! ✨
 
 ## License
 
