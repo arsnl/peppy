@@ -8,6 +8,7 @@ module.exports = {
       "./rules/variables",
       "./rules/es6",
       "./rules/imports",
+      "./rules/simple-import-sort",
       "./rules/strict",
       "./rules/promise",
       "./rules/fp",
