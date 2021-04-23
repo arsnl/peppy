@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-happy-cypress",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Happy - Cypress ESLint config for happier developers",
   "keywords": [
     "cypress",
@@ -32,11 +32,12 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "eslint-config-happy": "^1.0.0-alpha.0"
+    "eslint-config-happy": "^1.0.0-alpha.1"
   },
   "peerDependencies": {
     "eslint": ">=7.17.0",
     "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-promise": "^4.2.1",
@@ -44,8 +45,7 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unicorn": "^24.0.0",
-    "prettier": ">=2.0.0",
-    "eslint-plugin-cypress": "^2.11.2"
+    "prettier": ">=2.0.0"
   },
   "engines": {
     "node": ">=12.0.0"
