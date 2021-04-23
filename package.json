@@ -1,6 +1,7 @@
 {
   "name": "happy",
   "version": "0.1.0",
+  "private": true,
   "description": "Happy - ESLint config for happier developers",
   "homepage": "https://github.com/arsnl/happy",
   "bugs": {

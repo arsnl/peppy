@@ -1,6 +1,0 @@
-{
-  "rules": {
-    // Disabled because the extraneous-dependencies are part of the main project (in order to be shared between packages) and only needed for dev/build
-    "import/no-extraneous-dependencies": "off"
-  }
-}
