@@ -1,5 +1,8 @@
 {
-  "extends": "./packages/eslint-config-happy/index.js",
+  "extends": [
+    "./packages/eslint-config-happy/index.js",
+    "./packages/eslint-config-happy-ava/index.js"
+  ],
   "rules": {
     "import/no-extraneous-dependencies": "off"
   }

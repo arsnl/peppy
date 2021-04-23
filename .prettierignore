@@ -1,2 +1,3 @@
 bin
 lerna.json
+package-lock.json

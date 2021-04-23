@@ -1,8 +1,6 @@
-const test = require("ava");
-const path = require("path");
-const { ESLint } = require("eslint");
+const eslintTestConfigurations = require("../../../utils/eslint-test-configurations");
 
-const configurationFiles = [
+eslintTestConfigurations(__dirname, [
   // Rules
   "../rules/best-practices.js",
   "../rules/errors.js",
@@ -20,20 +18,4 @@ const configurationFiles = [
   "../rules/variables.js",
   // Configurations
   "../index.js",
-];
-
-configurationFiles.forEach((configurationFile) => {
-  const configPath = path.join(__dirname, configurationFile);
-
-  const eslint = new ESLint({
-    useEslintrc: false,
-    ignore: false,
-    overrideConfigFile: configPath,
-  });
-
-  test(`configuration file "${configurationFile}" is valid`, async (t) => {
-    const results = await eslint.lintText("");
-
-    t.deepEqual(results[0].messages, []);
-  });
-});
+]);

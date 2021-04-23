@@ -3,12 +3,11 @@
   "version": "1.0.0-alpha.0",
   "description": "Happy - ESLint config for happier developers",
   "keywords": [
+    "happy",
     "eslint",
     "eslintconfig",
     "config",
-    "happy",
     "prettier",
-    "typescript",
     "jscs",
     "jshint",
     "tslint"
@@ -40,8 +39,7 @@
     "dev": "npm run clean && rollup -c -w"
   },
   "dependencies": {
-    "confusing-browser-globals": "^1.0.10",
-    "object.assign": "^4.1.2"
+    "confusing-browser-globals": "^1.0.10"
   },
   "peerDependencies": {
     "eslint": ">=7.17.0",
