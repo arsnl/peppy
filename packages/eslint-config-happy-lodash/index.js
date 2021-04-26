@@ -1,4 +1,3 @@
 module.exports = {
-  extends: [...["./rules/lodash"].map(require.resolve), "prettier"],
-  rules: {},
+  extends: ["./rules/lodash", "eslint-config-prettier"].map(require.resolve),
 };

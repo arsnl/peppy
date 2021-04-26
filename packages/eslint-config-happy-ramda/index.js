@@ -1,4 +1,3 @@
 module.exports = {
-  extends: [...["./rules/ramda"].map(require.resolve), "prettier"],
-  rules: {},
+  extends: ["./rules/ramda", "eslint-config-prettier"].map(require.resolve),
 };

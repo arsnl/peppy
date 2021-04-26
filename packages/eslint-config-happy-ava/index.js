@@ -1,4 +1,3 @@
 module.exports = {
-  extends: [...["./rules/ava"].map(require.resolve), "prettier"],
-  rules: {},
+  extends: ["./rules/ava", "eslint-config-prettier"].map(require.resolve),
 };

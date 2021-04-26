@@ -1,4 +1,3 @@
 module.exports = {
-  extends: [...["./rules/cypress"].map(require.resolve), "prettier"],
-  rules: {},
+  extends: ["./rules/cypress", "eslint-config-prettier"].map(require.resolve),
 };

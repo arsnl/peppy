@@ -5,7 +5,7 @@
 <p align="center">
     <a href="https://www.npmjs.org/package/eslint-config-happy-ava"><img src="https://img.shields.io/npm/v/eslint-config-happy-ava.svg" alt="npm version" /></a>
     <a href="https://prettier.io/"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" /></a>
-    <a href="https://github.com/arsnl/happy"><img src="https://img.shields.io/badge/config-happy-b0ff31.svg?logo=eslint" alt="eslint config: happy" /></a>
+    <a href="https://github.com/arsnl/happy"><img src="https://img.shields.io/badge/config-happy-B0FF31.svg?logo=eslint" alt="eslint config: happy" /></a>
     <a href="https://github.com/arsnl/happy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/happy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
 </p>
 

@@ -1,4 +1,3 @@
 module.exports = {
-  extends: [...["./rules/node"].map(require.resolve), "prettier"],
-  rules: {},
+  extends: ["./rules/node", "eslint-config-prettier"].map(require.resolve),
 };

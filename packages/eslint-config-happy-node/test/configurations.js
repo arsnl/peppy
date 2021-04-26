@@ -1,4 +1,4 @@
-const eslintTestConfigurations = require("../../../utils/eslint-test-configurations");
+const eslintTestConfigurations = require("../../../dev/eslint-test-configurations");
 
 eslintTestConfigurations(__dirname, [
   // Rules

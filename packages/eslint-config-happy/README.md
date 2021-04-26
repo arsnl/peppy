@@ -5,7 +5,7 @@
 <p align="center">
     <a href="https://www.npmjs.org/package/eslint-config-happy"><img src="https://img.shields.io/npm/v/eslint-config-happy.svg" alt="npm version" /></a>
     <a href="https://prettier.io/"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" /></a>
-    <a href="https://github.com/arsnl/happy"><img src="https://img.shields.io/badge/config-happy-b0ff31.svg?logo=eslint" alt="eslint config: happy" /></a>
+    <a href="https://github.com/arsnl/happy"><img src="https://img.shields.io/badge/config-happy-B0FF31.svg?logo=eslint" alt="eslint config: happy" /></a>
     <a href="https://github.com/arsnl/happy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/happy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
 </p>
 
@@ -63,11 +63,11 @@ The following ESLint configurations are part of Happy:
 - [`happy-mocha`](https://www.npmjs.com/package/eslint-config-happy-mocha) – Additional configuration for projects that use [Mocha](https://mochajs.org/).
 - [`happy-node`](https://www.npmjs.com/package/eslint-config-happy-node) – Additional configuration for projects that use [Node](https://nodejs.org/).
 - [`happy-react`](https://www.npmjs.com/package/eslint-config-happy-react) – Additional configuration for projects that use [React](https://reactjs.org/).
-- [`happy-typescript`](https://www.npmjs.com/package/eslint-config-happy-typescript) – Additional configuration for projects that use [TypeScript](http://typescriptlang.org/). _Must be put at last._
+- [`happy-typescript`](https://www.npmjs.com/package/eslint-config-happy-typescript) – Additional configurations for projects that use [TypeScript](http://typescriptlang.org/). _Must be put at last._
 
 ## Usage
 
-Example of usage for a project that use Cypress, Jest, Ramda, React and Typescript
+Example of usage for a project that use Cypress, Jest, Ramda, React and TypeScript
 
 ```json
 {
@@ -77,7 +77,8 @@ Example of usage for a project that use Cypress, Jest, Ramda, React and Typescri
     "happy-jest",
     "happy-ramda",
     "happy-react",
-    "happy-typescript"
+    "happy-typescript",
+    "happy-typescript/react"
   ]
 }
 ```
@@ -86,11 +87,32 @@ Example of usage for a project that use Cypress, Jest, Ramda, React and Typescri
 
 Despite the fact that you can change Prettier and Happy configurations, you must avoid to do it at all cost. By far the biggest reason for adopting Prettier and Happy is to stop all the ongoing debates over styles. If you start overriding the rules, you are going against that philosophy.
 
-That's being said, for some compatibility reasons, you can have the need to change the rules. If it's the case, do it, but try the keep the changes to the strict minimum. Also, feel free to [open an issue](https://github.com/arsnl/happy-issues) so we can see if we missed something on our side.
+That's being said, for some compatibility reasons, you can have the need to change some rules. If it's the case, you can do it like that, but try the keep the changes to the strict minimum.
 
-## Typescript Support
+```json
+{
+  "extends": ["happy"],
+  "rules": {
+    "no-console": "error"
+  }
+}
+```
 
-If your project support Typescript, all you have to do is to add the `happy-typescript` configuration at the end of your ESLint "extends" array.
+If you are strongly in disagreement with a rule (or a missing one), feel free to [open an issue](https://github.com/arsnl/happy-issues) so we can see if we missed something on our side.
+
+## TypeScript Support
+
+If your project support TypeScript, you have to add the [`eslint-config-happy-typescript`](https://www.npmjs.com/package/eslint-config-happy-typescript) package to your project.
+
+`eslint-config-happy-typescript` currently offer those configurations.
+
+- `happy-typescript` TypeScript support.
+- `happy-typescript/react` React support.
+
+### Extends rules
+
+- All TypeScript configurations must be placed at the end of the extends array
+- `happy-typescript` is required and must be the first TypeScript configuration
 
 ```json
 {
@@ -100,23 +122,17 @@ If your project support Typescript, all you have to do is to add the `happy-type
     "happy-jest",
     "happy-ramda",
     "happy-react",
-    "happy-typescript"
+    "happy-typescript",
+    "happy-typescript/react"
   ]
 }
 ```
 
-If your `tsconfig.json` is not in the same directory as `package.json`, you will have to set the path yourself:
+If your `tsconfig.json` is not in the same directory as `package.json`, or have a different name, you will have to set the path yourself:
 
 ```json
 {
-  "extends": [
-    "happy",
-    "happy-cypress",
-    "happy-jest",
-    "happy-ramda",
-    "happy-react",
-    "happy-typescript"
-  ],
+  "extends": ["happy", "happy-typescript"],
   "parserOptions": {
     "project": "some-path/tsconfig.json"
   }
@@ -133,7 +149,7 @@ It's a good practice to let Prettier handle formatting and ESLint handle the non
 
 Happy apply this practice.
 
-Contrary to other sharable ESLInt configuration, Happy do not contain any rule that overwrite the Prettier rules and don't do any formating that is already supported by Prettier.
+Contrary to other sharable ESLint configuration, Happy do not contain any rule that overwrite the Prettier rules and don't do any formating that is already supported by Prettier.
 
 That mean that you can run Prettier with IDE extensions, on your terminal, on CI runners, on pre-commit hook, anywhere, without having to worry about possible confict with ESLint. Like it's supposed to be.
 
@@ -239,12 +255,34 @@ You can be in total disagreement with some rule, and that's totally fine! Like P
 
 If you still strongly disagree with some rules, need new configuration support (eg: VueJS) or found a bug, you are more than welcome to [open a new issue](https://github.com/arsnl/happy/issues) and [contribute](/CONTRIBUTING.md) to this project.
 
+#### I get this error when running ESLint: "The file must be included in at least one of the projects provided"
+
+This means you are attempting to lint a file that `tsconfig.json` doesn't include.
+
+A common fix is to create a `tsconfig.eslint.json` file, which extends your `tsconfig.json` file and includes all files you are linting.
+
+```json
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*.ts", "src/**/*.js", "test/**/*.ts"]
+}
+```
+
+Update your ESLint config file:
+
+```diff
+parserOptions: {
+-  project: './tsconfig.json',
++  project: './tsconfig.eslint.json',
+}
+```
+
 ## Badge
 
-Show the world you're using Happy → [![eslint config: happy](https://img.shields.io/badge/config-happy-b0ff31.svg?logo=eslint)](https://github.com/arsnl/happy)
+Show the world you're using Happy → [![eslint config: happy](https://img.shields.io/badge/config-happy-B0FF31.svg?logo=eslint)](https://github.com/arsnl/happy)
 
 ```md
-[![eslint config: happy](https://img.shields.io/badge/config-happy-b0ff31.svg?logo=eslint)](https://github.com/arsnl/happy)
+[![eslint config: happy](https://img.shields.io/badge/config-happy-B0FF31.svg?logo=eslint)](https://github.com/arsnl/happy)
 ```
 
 ## Versioning Policy
