@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-happy-react",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "Happy - React ESLint config for happier developers",
   "keywords": [
     "react",
@@ -32,7 +32,7 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "eslint-config-happy": "^1.0.0-alpha.2",
+    "eslint-config-happy": "^1.0.0-alpha.3",
     "object.assign": "^4.1.2"
   },
   "peerDependencies": {
