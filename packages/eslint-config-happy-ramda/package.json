@@ -35,7 +35,7 @@
     "eslint-config-happy": "^1.0.0-alpha.2"
   },
   "peerDependencies": {
-    "eslint": ">=7.17.0",
+    "eslint": "^7.17.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-fp": "^2.3.0",
     "eslint-plugin-import": "^2.22.1",
@@ -45,7 +45,7 @@
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unicorn": "^24.0.0",
-    "prettier": ">=2.0.0"
+    "prettier": "^2"
   },
   "engines": {
     "node": ">=12.0.0"
