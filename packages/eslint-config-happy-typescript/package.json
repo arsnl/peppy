@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-happy-typescript",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "Happy - TypeScript ESLint config for happier developers",
   "keywords": [
     "typescript",
@@ -32,7 +32,7 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "eslint-config-happy": "^1.0.0-alpha.3"
+    "eslint-config-happy": "^1.0.0-alpha.4"
   },
   "devDependencies": {
     "eslint-plugin-import": "^2.22.1",

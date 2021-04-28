@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-happy-ava",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "Happy - AVA ESLint config for happier developers",
   "keywords": [
     "ava",
@@ -32,7 +32,7 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "eslint-config-happy": "^1.0.0-alpha.3"
+    "eslint-config-happy": "^1.0.0-alpha.4"
   },
   "peerDependencies": {
     "eslint": "^7.17.0",
