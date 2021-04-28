@@ -436,6 +436,7 @@ module.exports = {
       "error",
       {
         forbidDefaultForRequired: true,
+        ignoreFunctionalComponents: true,
       },
     ],
 
@@ -555,7 +556,7 @@ module.exports = {
     // Disallow JSX props spreading
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
     "react/jsx-props-no-spreading": [
-      "error",
+      "off",
       {
         html: "enforce",
         custom: "enforce",

@@ -24,6 +24,10 @@ module.exports = {
       node: {
         extensions: [".mjs", ".js", ".json", ".ts", ".d.ts"],
       },
+      typescript: {
+        alwaysTryTypes: true,
+        project: ["tsconfig.json", "packages/*/tsconfig.json"],
+      },
     },
     // Append 'ts' extensions to Airbnb 'import/extensions' setting
     "import/extensions": [".js", ".mjs", ".jsx", ".ts", ".tsx", ".d.ts"],
@@ -49,16 +53,33 @@ module.exports = {
       {
         selector: "variable",
         format: ["camelCase", "PascalCase", "UPPER_CASE"],
+        leadingUnderscore: "allow",
       },
       // Allow camelCase functions (23.2), and PascalCase functions (23.8)
       {
         selector: "function",
         format: ["camelCase", "PascalCase"],
+        leadingUnderscore: "allow",
       },
       // Airbnb recommends PascalCase for classes (23.3), and although Airbnb does not make TypeScript recommendations, we are assuming this rule would similarly apply to anything "type like", including interfaces, type aliases, and enums
       {
         selector: "typeLike",
         format: ["PascalCase"],
+        leadingUnderscore: "allow",
+      },
+      {
+        selector: [
+          "classProperty",
+          "objectLiteralProperty",
+          "typeProperty",
+          "classMethod",
+          "objectLiteralMethod",
+          "typeMethod",
+          "accessor",
+          "enumMember",
+        ],
+        format: null,
+        modifiers: ["requiresQuotes"],
       },
     ],
 
@@ -283,7 +304,6 @@ module.exports = {
         "no-unsafe-negation": "off",
         "valid-typeof": "off",
         "import/named": "off",
-        "import/no-unresolved": "off",
       },
     },
   ],

@@ -1,6 +1,5 @@
 {
   "name": "happy",
-  "version": "0.1.0",
   "private": true,
   "description": "Happy - Development tools for happier developers",
   "homepage": "https://github.com/arsnl/happy",
@@ -48,6 +47,7 @@
     "commander": "^7.0.0",
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^8.2.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-ava": "^11.0.0",
     "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-fp": "^2.3.0",

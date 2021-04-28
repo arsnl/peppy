@@ -5,7 +5,7 @@ module.exports = {
     // Append 'ts' extensions to Airbnb 'import/resolver' setting
     "import/resolver": {
       node: {
-        extensions: [".js", ".jsx", ".json", ".ts", ".tsx", ".d.ts"],
+        extensions: [".mjs", ".js", ".jsx", ".json", ".ts", ".tsx", ".d.ts"],
       },
     },
   },
@@ -14,4 +14,13 @@ module.exports = {
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
     "react/jsx-filename-extension": ["error", { extensions: [".jsx", ".tsx"] }],
   },
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      rules: {
+        // Prefer the TypeScript definitions
+        "react/prop-types": "off",
+      },
+    },
+  ],
 };
