@@ -128,13 +128,20 @@ If your project support TypeScript, you have to add the [`eslint-config-happy-ty
 }
 ```
 
-If your `tsconfig.json` is not in the same directory as `package.json`, or have a different name, you will have to set the path yourself:
+If your `tsconfig.json` is not in the same directory as `package.json`, you will have to set the path yourself:
 
 ```json
 {
   "extends": ["happy", "happy-typescript"],
   "parserOptions": {
     "project": "some-path/tsconfig.json"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": ["some-path/tsconfig.json"]
+      }
+    }
   }
 }
 ```
