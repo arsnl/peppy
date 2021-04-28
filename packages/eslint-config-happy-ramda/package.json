@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-happy-ramda",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Happy - Ramda ESLint config for happier developers",
   "keywords": [
     "ramda",
@@ -32,7 +32,7 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "eslint-config-happy": "^1.0.0-alpha.4"
+    "eslint-config-happy": "^1.0.0-alpha.5"
   },
   "peerDependencies": {
     "eslint": "^7.17.0",
