@@ -35,8 +35,8 @@
   },
   "scripts": {
     "build": "npm run clean && rollup -c",
-    "clean": "rimraf ./bin/",
-    "dev": "npm run clean && rollup -c -w"
+    "clean": "npm rm eslint-config-happy -g --no-save && rimraf ./bin/",
+    "dev": "npm run build && npm link && rollup -c -w"
   },
   "dependencies": {
     "confusing-browser-globals": "^1.0.10"

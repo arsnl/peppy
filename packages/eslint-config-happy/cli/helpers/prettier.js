@@ -2,24 +2,18 @@ import map from "ramda/es/map";
 import pipe from "ramda/es/pipe";
 import uniq from "ramda/es/uniq";
 import { logger } from "./logger";
-import { importFrom, isPackageExists } from "./packages";
-
-export const isPrettierInstalled = (exit) => {
-  const exists = isPackageExists("prettier");
-
-  if (!exists && exit) {
-    logger.error("Prettier is not installed.");
-
-    process.exit(1);
-  }
-
-  return exists;
-};
+import { isPackageExists, requireFrom } from "./packages";
 
 export const getPrettierSupportInfo = () => {
-  isPrettierInstalled(true);
+  const isPrettierInstalled = isPackageExists("prettier");
 
-  return importFrom("prettier").getSupportInfo();
+  if (!isPrettierInstalled) {
+    logger.error("Prettier is not installed.");
+
+    return process.exit(1);
+  }
+
+  return requireFrom("prettier").getSupportInfo();
 };
 
 export const getPrettierSupportedExtArray = pipe(

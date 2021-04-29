@@ -1,13 +1,20 @@
-import chalk from "chalk";
+import { bold, cyan, red } from "chalk";
 import { Command } from "commander";
-import { version } from "../package.json";
+import { name, version } from "../package.json";
+import { makeInstallCommand } from "./commands/install";
 import { makePrettierCommand } from "./commands/prettier";
 import { logger } from "./helpers/logger";
 
 const run = async () => {
   const program = new Command();
 
-  program.version(version).addCommand(await makePrettierCommand());
+  program
+    .version(version)
+    .addCommand(await makeInstallCommand())
+    .addCommand(await makePrettierCommand());
+
+  // Print program name and version (like what Yarn does)
+  logger.log(bold(`${name} v${version}`));
 
   await program.parseAsync(process.argv);
 };
@@ -15,9 +22,9 @@ const run = async () => {
 run().catch(async (error) => {
   logger.log();
   if (error.command) {
-    logger.error(`  ${chalk.cyan(error.command)} has failed.`);
+    logger.error(`  ${cyan(error.command)} has failed.`);
   } else {
-    logger.error(chalk.red("Unexpected error. Please report it as a bug:"));
+    logger.error(red("Unexpected error. Please report it as a bug:"));
     logger.error(error);
   }
 

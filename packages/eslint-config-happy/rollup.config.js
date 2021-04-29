@@ -3,6 +3,7 @@ import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import path from "path";
 import shebang from "rollup-plugin-add-shebang";
+import executable from "rollup-plugin-executable";
 import { terser } from "rollup-plugin-terser";
 import _package from "./package.json";
 
@@ -23,6 +24,7 @@ export default async () => [
       json(),
       terser(),
       shebang({ include: [_package.bin["eslint-config-happy"]] }),
+      executable(),
     ],
   },
 ];

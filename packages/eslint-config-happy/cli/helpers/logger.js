@@ -1,8 +1,8 @@
-import chalk from "chalk";
+import { blue, red, yellow } from "chalk";
 import toString from "ramda/es/toString";
 
 const createLogFunc = (loggerName, color) => {
-  const prefix = color ? `[${chalk[color](loggerName)}] ` : "";
+  const prefix = color ? `[${color(loggerName)}] ` : "";
 
   return (message = "", opts = {}) => {
     const options = { newline: true, ...opts };
@@ -14,8 +14,8 @@ const createLogFunc = (loggerName, color) => {
 };
 
 export const logger = {
-  warn: createLogFunc("warn", "yellow"),
-  error: createLogFunc("error", "red"),
-  debug: createLogFunc("debug", "blue"),
+  warn: createLogFunc("warn", yellow),
+  error: createLogFunc("error", red),
+  debug: createLogFunc("debug", blue),
   log: createLogFunc("log"),
 };
