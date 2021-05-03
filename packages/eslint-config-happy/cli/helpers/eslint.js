@@ -53,7 +53,9 @@ export const eslintCleanConfigurationFiles = async (dir = process.cwd()) => {
         rimrafSync(path.join(dir, file));
       }
     } else {
-      process.exit(1);
+      logger.warn(
+        "You've choose to keep the existing ESLint configurations. Make sure to adapt them after the installation to correctly use Happy ESlint Configurations."
+      );
     }
   }
 };
@@ -81,7 +83,9 @@ export const eslintCleanPackageJSON = async (dir = process.cwd()) => {
     if (confirm) {
       writePackageSync(dir, pkgRest, { normalize: false });
     } else {
-      process.exit(1);
+      logger.warn(
+        "You've choose to keep the existing ESLint configurations on your package.json. Make sure to adapt them after the installation to correctly use Happy ESlint Configurations."
+      );
     }
   }
 };

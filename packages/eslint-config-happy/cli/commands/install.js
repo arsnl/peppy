@@ -1,7 +1,5 @@
 import { green, red } from "chalk";
 import { Command } from "commander";
-import { sync as findUpSync } from "find-up";
-import path from "path";
 import prompts from "prompts";
 import { clean, satisfies } from "semver";
 import { engines, name } from "../../package.json";
@@ -9,9 +7,15 @@ import {
   eslintCleanConfigurationFiles,
   eslintCleanPackageJSON,
 } from "../helpers/eslint";
-import { isWriteable } from "../helpers/fs";
+import { fileExist, isWriteable } from "../helpers/fs";
+import { installPeerDeps } from "../helpers/install-peerdeps";
 import { logger } from "../helpers/logger";
-import { isPackageInDependencies, npmInit } from "../helpers/packages";
+import {
+  isPackageInDependencies,
+  isYarnInstalled,
+  projectInit,
+  projectInstall,
+} from "../helpers/packages";
 
 export const makeInstallCommand = async () => {
   const program = new Command("install");
@@ -20,9 +24,27 @@ export const makeInstallCommand = async () => {
     const nodeEngine = engines?.node || "";
     const nodeVersion = clean(process.version);
     const cwd = process.cwd();
-    const packagePath = findUpSync("package.json", { cwd });
-    const root = packagePath ? path.dirname(packagePath) : cwd;
-    const packagesToInstall = ["eslint-config-happy"];
+    const packages = {
+      "eslint-config-happy-ava": { title: "happy-ava" },
+      "eslint-config-happy-cypress": { title: "happy-cypress" },
+      "eslint-config-happy-jest": { title: "happy-jest" },
+      "eslint-config-happy-lodash": { title: "happy-lodash" },
+      "eslint-config-happy-mocha": { title: "happy-mocha" },
+      "eslint-config-happy-node": { title: "happy-node" },
+      "eslint-config-happy-ramda": { title: "happy-ramda" },
+      "eslint-config-happy-react": { title: "happy-react" },
+      "eslint-config-happy-typescript": { title: "happy-typescript" },
+    };
+    let packageManager = "npm";
+
+    const detectPackage = (packageName, eslintConfig) => {
+      if (isPackageInDependencies(packageName, { cwd })) {
+        packages[eslintConfig].selected = true;
+        packages[eslintConfig].title = `${
+          packages[eslintConfig].title
+        } ${"(detected)"}`;
+      }
+    };
 
     // Validation de la version de Node.js installée
     if (!satisfies(nodeVersion, nodeEngine)) {
@@ -40,9 +62,9 @@ export const makeInstallCommand = async () => {
     }
 
     // Validation des droits d'accès d'écriture dans le répertoire du projet
-    if (!(await isWriteable(root))) {
+    if (!(await isWriteable(cwd))) {
       logger.error(
-        `The projet path "${root}" is not writable, please check folder permissions and try again.`
+        `The projet path "${cwd}" is not writable, please check folder permissions and try again.`
       );
       logger.error(
         "It is likely you do not have write permissions for this folder."
@@ -50,8 +72,23 @@ export const makeInstallCommand = async () => {
       process.exit(1);
     }
 
+    // Validation du gestionnaire de paquets
+    if (isYarnInstalled()) {
+      const { useYarn } = await prompts({
+        type: "confirm",
+        name: "useYarn",
+        message:
+          "Yarn is installed on your system. Do you want to use Yarn for this project?",
+        initial: true,
+      });
+
+      if (useYarn) {
+        packageManager = "yarn";
+      }
+    }
+
     // Initialisation du projet en cas d'absence de projet
-    if (!packagePath) {
+    if (!fileExist("package.json", cwd)) {
       const { initPackage } = await prompts({
         type: "confirm",
         name: "initPackage",
@@ -61,49 +98,64 @@ export const makeInstallCommand = async () => {
       });
 
       if (initPackage) {
-        await npmInit();
+        await projectInit(packageManager);
       } else {
+        logger.error(
+          "The installation cannot continue. The installation must be inside a node project with a package.json."
+        );
         process.exit(1);
       }
     }
 
     // Nettoyage des fichiers de configuration ESLint
-    await eslintCleanConfigurationFiles(root);
+    await eslintCleanConfigurationFiles(cwd);
 
     // Nettoyage de la propriété de configuration ESLint
-    await eslintCleanPackageJSON(root);
+    await eslintCleanPackageJSON(cwd);
 
     // Pré-installation des dépendences de projet
+    await projectInstall(packageManager);
 
-    // Collecte des informations concernant les configurations à installer
-    if (isPackageInDependencies("ava", { cwd: root })) {
-      packagesToInstall.push("eslint-config-happy-ava");
-    }
-    if (isPackageInDependencies("cypress", { cwd: root })) {
-      packagesToInstall.push("eslint-config-happy-cypress");
-    }
-    if (isPackageInDependencies("jest", { cwd: root })) {
-      packagesToInstall.push("eslint-config-happy-jest");
-    }
-    if (isPackageInDependencies("lodash", { cwd: root })) {
-      packagesToInstall.push("eslint-config-happy-lodash");
-    }
-    if (isPackageInDependencies("mocha", { cwd: root })) {
-      packagesToInstall.push("eslint-config-happy-mocha");
-    }
-    if (isPackageInDependencies("ramda", { cwd: root })) {
-      packagesToInstall.push("eslint-config-happy-ramda");
-    }
-    if (isPackageInDependencies("react", { cwd: root })) {
-      packagesToInstall.push("eslint-config-happy-react");
-    }
-    if (isPackageInDependencies("typescript", { cwd: root })) {
-      packagesToInstall.push("eslint-config-happy-typescript");
+    // Collecte des informations concernant les configurations par defaut à installer
+    detectPackage("ava", "eslint-config-happy-ava");
+    detectPackage("cypress", "eslint-config-happy-cypress");
+    detectPackage("jest", "eslint-config-happy-jest");
+    detectPackage("lodash", "eslint-config-happy-lodash");
+    detectPackage("mocha", "eslint-config-happy-mocha");
+    detectPackage("ramda", "eslint-config-happy-ramda");
+    detectPackage("react", "eslint-config-happy-react");
+    detectPackage("typescript", "eslint-config-happy-typescript");
+
+    // Validation des configurations à installer
+    const { packagesToInstall } = await prompts({
+      type: "multiselect",
+      name: "packagesToInstall",
+      message: "Select the Happy ESLint Configurations to install",
+      instructions: false,
+      choices: Object.entries(packages).map(([value, config]) => ({
+        ...config,
+        value,
+      })),
+    });
+
+    if (!packagesToInstall) {
+      process.exit(1);
     }
 
-    // Demander si on installe la configuration de node?
-
-    // Installer les configurations happy selon les packets installés
+    // Installation des configurations happy selon les packets installés
+    await ["eslint-config-happy", ...packagesToInstall].reduce(
+      async (acc, packageName) => {
+        await acc; // need the previous result to be resolved before call the new async function
+        await installPeerDeps({
+          packageName,
+          version: "next", // to change
+          packageManager,
+          dev: true,
+          extraArgs: packageManager === "yarn" ? "-W" : "",
+        });
+      },
+      undefined
+    );
 
     // Écriture du fichier .eslintrc.js
 

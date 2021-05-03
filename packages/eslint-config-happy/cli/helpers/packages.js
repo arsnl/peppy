@@ -85,16 +85,40 @@ export const isPackageInDependencies = (
   return !!(dependencies?.[packageId] || devDependencies?.[packageId]);
 };
 
-export const npmInit = () =>
+export const projectInit = (packageManager = "npm") =>
   new Promise((resolve, reject) => {
-    const child = spawn("npm", ["init"], {
+    const child = spawn(packageManager, ["init"], {
       stdio: "inherit",
       env: { ...process.env, ADBLOCK: "1", DISABLE_OPENCOLLECTIVE: "1" },
     });
 
     child.on("close", (code) => {
       if (code !== 0) {
-        reject(new Error(`Cannot execute 'npm init'`));
+        reject(new Error(`Cannot execute '${packageManager} init'`));
+        return;
+      }
+      resolve();
+    });
+  });
+
+export const projectInstall = (packageManager = "npm") =>
+  new Promise((resolve, reject) => {
+    const subCommand = packageManager === "yarn" ? "" : "install";
+
+    const child = spawn(packageManager, [subCommand], {
+      stdio: "inherit",
+      env: { ...process.env, ADBLOCK: "1", DISABLE_OPENCOLLECTIVE: "1" },
+    });
+
+    child.on("close", (code) => {
+      if (code !== 0) {
+        reject(
+          new Error(
+            `Cannot execute '${packageManager}${
+              subCommand ? ` ${subCommand}` : ""
+            }'`
+          )
+        );
         return;
       }
       resolve();

@@ -1,4 +1,5 @@
 import fs from "fs";
+import path from "path";
 
 export const isWriteable = async (dir = process.cwd()) => {
   try {
@@ -8,3 +9,6 @@ export const isWriteable = async (dir = process.cwd()) => {
     return false;
   }
 };
+
+export const fileExist = (file, dir = process.cwd) =>
+  fs.existsSync(path.join(dir, file));
