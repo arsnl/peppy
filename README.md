@@ -1,6 +1,6 @@
 <div align="center" style="padding: 16px 0;"><img src="media/readme-banner.png" width="600" role="presentation" /></div>
 
-<h3 align="center">Development tools for happier developers</h3>
+<h3 align="center">ESLint configurations for happier developers</h3>
 
 <p align="center">
 <a href="https://lerna.js.org/"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="lerna" /></a>

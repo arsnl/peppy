@@ -1,10 +1,11 @@
 /* eslint-disable security/detect-non-literal-require, import/no-dynamic-require, global-require */
 import { execSync } from "child_process";
-import spawn from "cross-spawn";
 import globalDirs from "global-dirs";
 import path from "path";
 import { sync as readPackageSync } from "read-pkg";
 import resolveFrom from "resolve-from";
+import { logger } from "./logger";
+import { spawn } from "./spawn";
 
 export const isYarnInstalled = () => {
   try {
@@ -85,42 +86,24 @@ export const isPackageInDependencies = (
   return !!(dependencies?.[packageId] || devDependencies?.[packageId]);
 };
 
-export const projectInit = (packageManager = "npm") =>
-  new Promise((resolve, reject) => {
-    const child = spawn(packageManager, ["init"], {
-      stdio: "inherit",
-      env: { ...process.env, ADBLOCK: "1", DISABLE_OPENCOLLECTIVE: "1" },
-    });
+export const projectInit = async (packageManager = "npm") => {
+  const args = ["init"];
 
-    child.on("close", (code) => {
-      if (code !== 0) {
-        reject(new Error(`Cannot execute '${packageManager} init'`));
-        return;
-      }
-      resolve();
-    });
-  });
+  try {
+    await spawn(packageManager, args);
+  } catch (error) {
+    logger.error(`Cannot execute '${packageManager} ${args.join(" ")}'`);
+    throw error;
+  }
+};
 
-export const projectInstall = (packageManager = "npm") =>
-  new Promise((resolve, reject) => {
-    const subCommand = packageManager === "yarn" ? "" : "install";
+export const projectInstall = async (packageManager = "npm") => {
+  const args = packageManager === "yarn" ? [] : ["install"];
 
-    const child = spawn(packageManager, [subCommand], {
-      stdio: "inherit",
-      env: { ...process.env, ADBLOCK: "1", DISABLE_OPENCOLLECTIVE: "1" },
-    });
-
-    child.on("close", (code) => {
-      if (code !== 0) {
-        reject(
-          new Error(
-            `Cannot execute '${packageManager}${
-              subCommand ? ` ${subCommand}` : ""
-            }'`
-          )
-        );
-        return;
-      }
-      resolve();
-    });
-  });
+  try {
+    await spawn(packageManager, args);
+  } catch (error) {
+    logger.error(`Cannot execute '${packageManager} ${args.join(" ")}'`);
+    throw error;
+  }
+};

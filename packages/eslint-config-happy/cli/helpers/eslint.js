@@ -57,7 +57,11 @@ export const eslintCleanConfigurationFiles = async (dir = process.cwd()) => {
         "You've choose to keep the existing ESLint configurations. Make sure to adapt them after the installation to correctly use Happy ESlint Configurations."
       );
     }
+
+    return !!confirm;
   }
+
+  return true;
 };
 
 export const eslintCleanPackageJSON = async (dir = process.cwd()) => {
@@ -87,5 +91,9 @@ export const eslintCleanPackageJSON = async (dir = process.cwd()) => {
         "You've choose to keep the existing ESLint configurations on your package.json. Make sure to adapt them after the installation to correctly use Happy ESlint Configurations."
       );
     }
+
+    return !!confirm;
   }
+
+  return true;
 };

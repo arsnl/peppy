@@ -1,8 +1,12 @@
 import { green, red } from "chalk";
 import { Command } from "commander";
+import fs from "fs";
+import path from "path";
 import prompts from "prompts";
 import { clean, satisfies } from "semver";
 import { engines, name } from "../../package.json";
+import { addPackageScripts } from "../helpers/add-package-scripts";
+import { copyFiles } from "../helpers/copy-files";
 import {
   eslintCleanConfigurationFiles,
   eslintCleanPackageJSON,
@@ -16,6 +20,7 @@ import {
   projectInit,
   projectInstall,
 } from "../helpers/packages";
+import { spawn } from "../helpers/spawn";
 
 export const makeInstallCommand = async () => {
   const program = new Command("install");
@@ -36,6 +41,7 @@ export const makeInstallCommand = async () => {
       "eslint-config-happy-typescript": { title: "happy-typescript" },
     };
     let packageManager = "npm";
+    let writeESLintFile = true;
 
     const detectPackage = (packageName, eslintConfig) => {
       if (isPackageInDependencies(packageName, { cwd })) {
@@ -108,7 +114,7 @@ export const makeInstallCommand = async () => {
     }
 
     // Nettoyage des fichiers de configuration ESLint
-    await eslintCleanConfigurationFiles(cwd);
+    writeESLintFile = await eslintCleanConfigurationFiles(cwd);
 
     // Nettoyage de la propriété de configuration ESLint
     await eslintCleanPackageJSON(cwd);
@@ -157,11 +163,36 @@ export const makeInstallCommand = async () => {
       undefined
     );
 
-    // Écriture du fichier .eslintrc.js
+    // Écriture du fichier .eslintrc
+    if (writeESLintFile) {
+      fs.writeFileSync(
+        path.join(cwd, ".eslintrc.js"),
+        `module.exports = ${JSON.stringify({
+          extends: [
+            "eslint-config-happy",
+            ...packagesToInstall,
+          ].map((configName) => configName.replace("eslint-config-", "")),
+        })}`
+      );
 
-    // Proposer l'ajout des commandes lint/format/fix
+      await spawn("prettier", ["--write", path.join(cwd, ".eslintrc.js")]);
+    }
+
+    // Proposer l'ajout des commandes
+    addPackageScripts();
 
     // Proposer l'ajout de fichiers de configurations de projet (.vscode/settings.json, .vscode/extensions.json, .editorconfig, .eslintignore, .prettierignore)
+    await copyFiles({
+      files: [
+        ".vscode/extensions.json",
+        ".vscode/settings.json",
+        ".editorconfig",
+        ".eslintignore",
+        ".prettierignore",
+      ],
+      source: path.join(__dirname, "../templates"),
+      dest: cwd,
+    });
   });
 
   return program;
