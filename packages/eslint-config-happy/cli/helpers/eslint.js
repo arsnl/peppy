@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable fp/no-loops */
-import { blue } from "chalk";
 import fs from "fs";
+import { cyan } from "kleur";
 import path from "path";
 import prompts from "prompts";
 import { sync as readPackageSync } from "read-pkg";
@@ -31,7 +31,7 @@ export const eslintCleanConfigurationFiles = async (dir = process.cwd()) => {
       try {
         const stats = fs.lstatSync(path.join(dir, file));
         if (stats.isDirectory()) {
-          logger.log(`  ${blue(file)}/`);
+          logger.log(`  ${cyan(file)}/`);
         } else {
           logger.log(`  ${file}`);
         }

@@ -1,6 +1,6 @@
-import { green, red } from "chalk";
 import { Command } from "commander";
 import fs from "fs";
+import { green, red } from "kleur";
 import path from "path";
 import prompts from "prompts";
 import { clean, satisfies } from "semver";

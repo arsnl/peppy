@@ -1,5 +1,5 @@
-import { bold, cyan, red } from "chalk";
 import { Command } from "commander";
+import { bold, cyan, red } from "kleur";
 import { name, version } from "../package.json";
 import { makeInstallCommand } from "./commands/install";
 import { makePrettierCommand } from "./commands/prettier";

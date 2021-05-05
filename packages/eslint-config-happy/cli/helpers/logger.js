@@ -1,4 +1,4 @@
-import { blue, red, yellow } from "kleur";
+import { cyan, red, yellow } from "kleur";
 import toString from "ramda/es/toString";
 
 /**
@@ -24,6 +24,6 @@ const createLogFunc = ({ level, kleurColor }) => {
 export const logger = {
   warn: createLogFunc({ level: "warn", kleurColor: yellow }),
   error: createLogFunc({ level: "error", kleurColor: red }),
-  debug: createLogFunc({ level: "debug", kleurColor: blue }),
+  debug: createLogFunc({ level: "debug", kleurColor: cyan }),
   log: createLogFunc({ level: "log" }),
 };
