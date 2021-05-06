@@ -4,7 +4,7 @@ import { Command } from "commander";
 import { bold, cyan, red } from "kleur";
 import { name, version } from "../package.json";
 import { makeInstallCommand } from "./commands/install";
-import { makePrettierCommand } from "./commands/prettier";
+import { makePrettierExtensionsCommand } from "./commands/prettier-extensions";
 import { logger } from "./helpers/logger";
 
 const run = async () => {
@@ -13,7 +13,7 @@ const run = async () => {
   program
     .version(version)
     .addCommand(await makeInstallCommand())
-    .addCommand(await makePrettierCommand());
+    .addCommand(await makePrettierExtensionsCommand());
 
   // Print program name and version (like what Yarn does)
   logger.log(bold(`${name} v${version}`));

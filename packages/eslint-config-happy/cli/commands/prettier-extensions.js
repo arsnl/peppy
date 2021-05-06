@@ -3,13 +3,15 @@ import { getPrettierSupportedExtensions } from "../helpers/get-prettier-supporte
 import { logger } from "../helpers/logger";
 
 export const makePrettierExtensionsCommand = async () => {
-  const program = new Command("extensions");
+  const program = new Command("prettier-extensions");
 
   program
     .description("get Prettier supported extensions")
-    .option("-g, --glob", "return as a glob pattern")
-    .action(({ glob = false }) => {
-      logger.log(getPrettierSupportedExtensions({ glob }));
+    .option("-g, --glob", "return as a glob pattern", false)
+    .action(async ({ glob }) => {
+      const response = await getPrettierSupportedExtensions({ glob });
+
+      logger.log(response);
     });
 
   return program;

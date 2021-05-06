@@ -12,7 +12,7 @@ import { requireFrom } from "./require-from";
  * @param {string} options.cwd - the current working directory
  * @returns {Array<string>|string} - a list of extensions or a glob string matching the supported extensions
  */
-export const getPrettierSupportedExtensions = ({
+export const getPrettierSupportedExtensions = async ({
   glob = false,
   cwd = process.cwd(),
 }) => {
@@ -23,12 +23,19 @@ export const getPrettierSupportedExtensions = ({
 
   if (!isPrettierInstalled) {
     logger.error("Prettier is not installed.");
-
+    logger.error(
+      "Try to run this command into a project folder where Prettier is installed or install Prettier globally on your system."
+    );
     return process.exit(0);
   }
 
+  const supportInfo = requireFrom({
+    packageName: "prettier",
+    cwd,
+  }).getSupportInfo();
+
   const extensions = pipe(
-    requireFrom({ packageName: "prettier", cwd }).getSupportInfo(),
+    supportInfo,
     ({ languages = [] }) =>
       languages.reduce((acc, { exts = [] }) => [...acc, ...exts], []),
     uniq
