@@ -34,12 +34,28 @@
     "eslint-config-happy": "bin/cli.js"
   },
   "scripts": {
-    "build": "npm run clean && rollup -c",
+    "build": "npm run clean && node scripts/build",
     "clean": "npm rm eslint-config-happy -g --no-save && rimraf ./bin/",
-    "dev": "npm run build && npm link && rollup -c -w"
+    "dev": "npm run build && npm link && node scripts/dev"
   },
   "dependencies": {
     "confusing-browser-globals": "^1.0.10"
+  },
+  "devDependencies": {
+    "global-dirs": "^2.1.0",
+    "kleur": "^3.0.3",
+    "ora": "^5.4.0",
+    "write-pkg": "^4.0.0",
+    "semver": "^5.7.1",
+    "rimraf": "^3.0.2",
+    "read-pkg": "^5.2.0",
+    "@vercel/ncc": "^0.28.5",
+    "resolve-from": "^5.0.0",
+    "ramda": "^0.27.1",
+    "prompts": "^2.4.1",
+    "commander": "^7.0.0",
+    "cross-spawn": "^7.0.3",
+    "chokidar": "^3.5.1"
   },
   "peerDependencies": {
     "eslint": "^7.17.0",

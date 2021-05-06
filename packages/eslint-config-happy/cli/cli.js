@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Command } from "commander";
 import { bold, cyan, red } from "kleur";
 import { name, version } from "../package.json";

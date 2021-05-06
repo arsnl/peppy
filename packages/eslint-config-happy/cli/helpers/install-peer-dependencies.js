@@ -1,6 +1,5 @@
 import { getPackageManifest } from "./get-package-manifest";
 import { getPackageVersionFromManifest } from "./get-package-version-from-manifest";
-import { logger } from "./logger";
 import { spawn } from "./spawn";
 
 /**
@@ -150,12 +149,6 @@ export const installPeerDependencies = async ({
   // causes the install process to fail with a "malformed
   // response from the registry" error
   args = args.filter((a) => a !== "");
-
-  //  Show user the command that's running
-  const commandString = `${packageManager} ${args.join(" ")}\n`;
-
-  logger.log(`Installing peerdeps for ${packageName}@${version}.`);
-  logger.log(commandString);
 
   await spawn({ command: packageManager, args, options: { cwd } });
 };

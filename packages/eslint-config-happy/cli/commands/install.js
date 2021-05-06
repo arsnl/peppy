@@ -1,5 +1,6 @@
 import { Command } from "commander";
 import { cyan, green, red } from "kleur";
+import ora from "ora";
 import path from "path";
 import prompts from "prompts";
 import { sync as rimrafSync } from "rimraf";
@@ -103,6 +104,8 @@ export const makeInstallCommand = async () => {
     };
     let packageManager = "npm";
 
+    const spinner = ora("Loading unicorns").start();
+    spinner.succeed();
     /**
      * Validate the Node.js version
      */
