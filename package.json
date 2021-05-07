@@ -1,14 +1,14 @@
 {
-  "name": "happy",
+  "name": "peppy",
   "private": true,
-  "description": "Happy - ESLint configurations for happier developers",
-  "homepage": "https://github.com/arsnl/happy",
+  "description": "Peppy - ESLint configurations for happier developers",
+  "homepage": "https://github.com/arsnl/peppy",
   "bugs": {
-    "url": "https://github.com/arsnl/happy/issues"
+    "url": "https://github.com/arsnl/peppy/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/arsnl/happy.git"
+    "url": "git://github.com/arsnl/peppy.git"
   },
   "license": "MIT",
   "author": {

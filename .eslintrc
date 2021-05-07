@@ -1,7 +1,7 @@
 {
   "extends": [
-    "./packages/eslint-config-happy/index.js",
-    "./packages/eslint-config-happy-ava/index.js"
+    "./packages/eslint-config-peppy/index.js",
+    "./packages/eslint-config-peppy-ava/index.js"
   ],
   "rules": {
     "import/no-extraneous-dependencies": "off"
