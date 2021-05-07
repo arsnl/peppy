@@ -5,7 +5,7 @@ import path from "path";
 import prompts from "prompts";
 import { sync as rimrafSync } from "rimraf";
 import { clean, satisfies } from "semver";
-import { engines, name } from "../../package.json";
+import packageInfo from "../../package.json";
 import { copyFiles } from "../helpers/copy-files";
 import { getExistingPaths } from "../helpers/get-existing-paths";
 import { installDependencies } from "../helpers/install-dependencies";
@@ -98,7 +98,8 @@ export const makeInstallCommand = async () => {
       false
     )
     .action(async ({ version, saveProd }) => {
-      const nodeEngine = engines?.node || "";
+      const nodeEngine =
+        (packageInfo.engines && packageInfo.engines.node) || "";
       const nodeVersion = clean(process.version);
       const cwd = process.cwd();
       let eslintConfigurations = {
@@ -123,7 +124,7 @@ export const makeInstallCommand = async () => {
             nodeVersion
           )}) does not satisfy the minimal Node.js version (${green(
             nodeEngine
-          )}) required by ${name}.`
+          )}) required by ${packageInfo.name}.`
         );
         logger.error(
           `You must update Node.js on your system in order to use this package.`
@@ -406,7 +407,7 @@ export const makeInstallCommand = async () => {
       if (addSuggestedFiles) {
         await copyFiles({
           files: SUGGESTED_FILES,
-          source: path.join(__dirname, "../templates"),
+          source: path.join(__dirname, "../../templates"),
           dest: cwd,
         });
       }

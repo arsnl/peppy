@@ -17,13 +17,17 @@ export const spawn = ({ command, args = [], options = {} }) =>
     let stdout = "";
     let stderr = "";
 
-    child?.stdout?.on("data", (chunk) => {
-      stdout += chunk;
-    });
+    if (child.stdout) {
+      child.stdout.on("data", (chunk) => {
+        stdout += chunk;
+      });
+    }
 
-    child?.stderr?.on("data", (chunk) => {
-      stderr += chunk;
-    });
+    if (child.stderr) {
+      child.stderr.on("data", (chunk) => {
+        stderr += chunk;
+      });
+    }
 
     child.on("error", reject);
 

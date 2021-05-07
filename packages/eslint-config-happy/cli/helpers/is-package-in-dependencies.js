@@ -15,5 +15,5 @@ export const isPackageInDependencies = async ({
     cwd,
   });
 
-  return !!(dependencies?.[packageName] || devDependencies?.[packageName]);
+  return !!(dependencies[packageName] || devDependencies[packageName]);
 };

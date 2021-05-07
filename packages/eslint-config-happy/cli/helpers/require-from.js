@@ -17,6 +17,5 @@ export const requireFrom = ({ packageName, cwd = process.cwd() }) => {
     );
   }
 
-  // TODO: Fix issue with vercel/ncc about "dynamic require".
   return require(packagePath);
 };
