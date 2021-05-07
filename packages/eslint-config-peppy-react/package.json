@@ -34,6 +34,9 @@
   "dependencies": {
     "object.assign": "^4.1.2"
   },
+  "devDependencies": {
+    "eslint-config-peppy": "^1.0.0-alpha.5"
+  },
   "peerDependencies": {
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.23.1",
