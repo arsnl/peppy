@@ -24,7 +24,7 @@
     }
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap --no-ci",
+    "bootstrap": "lerna bootstrap",
     "build": "npm run clean && lerna run build --stream",
     "fix": "npm run lint -- --fix && npm run format",
     "format": "prettier --write --loglevel warn .",
