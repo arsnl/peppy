@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-happy",
+  "name": "happy-config",
   "version": "1.0.0-alpha.5",
   "description": "Happy - ESLint config for happier developers",
   "keywords": [
@@ -29,21 +29,25 @@
       "url": "https://arsnl.co"
     }
   ],
-  "main": "index.js",
-  "dependencies": {
-    "confusing-browser-globals": "^1.0.10"
+  "bin": "bin/happy-config",
+  "scripts": {
+    "unlink": "npm rm happy-config -g --no-save",
+    "link": "npm run unlink && npm link"
   },
-  "peerDependencies": {
-    "eslint": "^7.17.0",
-    "eslint-config-prettier": "^8.2.0",
-    "eslint-plugin-fp": "^2.3.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-regexp": "^0.1.1",
-    "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-unicorn": "^24.0.0",
-    "prettier": "^2"
+  "dependencies": {
+    "global-dirs": "^2.1.0",
+    "kleur": "^3.0.3",
+    "ora": "^5.4.0",
+    "write-pkg": "^4.0.0",
+    "semver": "^5.7.1",
+    "rimraf": "^3.0.2",
+    "read-pkg": "^5.2.0",
+    "resolve-from": "^5.0.0",
+    "ramda": "^0.27.1",
+    "prompts": "^2.4.1",
+    "commander": "^7.0.0",
+    "cross-spawn": "^7.0.3",
+    "esm": "^3.2.25"
   },
   "engines": {
     "node": ">=12.0.0"
