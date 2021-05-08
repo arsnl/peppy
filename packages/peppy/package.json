@@ -1,16 +1,13 @@
 {
   "name": "peppy",
   "version": "1.0.0-alpha.5",
-  "description": "Peppy - ESLint config for happier developers",
+  "description": "Peppy - Brilliant tools for happier developers",
   "keywords": [
     "peppy",
+    "cli",
     "eslint",
-    "eslintconfig",
     "config",
-    "prettier",
-    "jscs",
-    "jshint",
-    "tslint"
+    "prettier"
   ],
   "homepage": "https://github.com/arsnl/peppy",
   "bugs": {

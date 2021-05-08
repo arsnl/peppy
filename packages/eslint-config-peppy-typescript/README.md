@@ -1,6 +1,6 @@
-<div align="center" style="padding: 16px 0;"><img src="../../media/readme-banner.png" width="600" role="presentation" /></div>
+<div align="center"><img src="../../media/readme-banner.png" width="600" role="presentation" /></div>
 
-<h3 align="center">eslint-config-peppy-typescript</h3>
+<h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
 
 <p align="center">
     <a href="https://www.npmjs.org/package/eslint-config-peppy-typescript"><img src="https://img.shields.io/npm/v/eslint-config-peppy-typescript.svg" alt="npm version" /></a>
@@ -9,7 +9,9 @@
     <a href="https://github.com/arsnl/peppy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/peppy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
 </p>
 
-This ESLint configuration is part of the [Peppy ESLint Configurations](https://www.npmjs.com/package/eslint-config-peppy).
+<h2 align="center">eslint-config-peppy-typescript</h2>
+
+This ESLint configuration is part of the [Peppy ESLint configurations](https://www.npmjs.com/package/peppy).
 
 ## Install
 

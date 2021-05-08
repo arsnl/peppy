@@ -1,6 +1,6 @@
-<div align="center" style="padding: 16px 0;"><img src="../../media/readme-banner.png" width="600" role="presentation" /></div>
+<div align="center"><img src="../../media/readme-banner.png" width="600" role="presentation" /></div>
 
-<h3 align="center">ESLint configurations for happier developers</h3>
+<h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
 
 <p align="center">
     <a href="https://www.npmjs.org/package/eslint-config-peppy"><img src="https://img.shields.io/npm/v/eslint-config-peppy.svg" alt="npm version" /></a>
@@ -9,7 +9,7 @@
     <a href="https://github.com/arsnl/peppy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/peppy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
 </p>
 
-A collection of shareable opinionated ESLint configurations that enforces strict, functional, readable and modern code with developers happiness in mind.
+A brilliant collection of shareable opinionated ESLint configurations that enforces strict, functional, readable and modern code with developers happiness in mind.
 
 ## Highlights
 
@@ -22,21 +22,31 @@ A collection of shareable opinionated ESLint configurations that enforces strict
 
 ## Quick Start
 
+The easiest way to install Peppy is to type this in your terminal and answer the questions.
+
+```
+npx peppy eslint install
+```
+
+## Manual Installation
+
+If for some reason, you want to install Peppy manually, follow those steps.
+
 **1.** Start by adding Peppy and it's peer dependencies to your project.
 
 ```
-npx install-peerdeps --dev eslint-config-peppy
+npx peppy install-peerdeps --dev eslint-config-peppy
 ```
 
-**2.** If you don't already have one, create a `.eslintrc` file in the root of your project. Then, add [configurations](#peppy-eslint-configurations) to the "extends" array in your `.eslintrc.*` file.
+**2.** If you don't already have one, create an ESLint configuration file (eg: `.eslintrc.js`) in the root of your project. Then, add [configurations](#peppy-eslint-configurations) to the "extends" array in your ESLint configuration file.
 
-```json
-{
-  "extends": ["peppy"]
-}
+```js
+module.exports = {
+  extends: ["peppy"],
+};
 ```
 
-> Depending of your project, you can add more [configurations](#peppy-eslint-configurations) to the "extends" array. Due to the opinionated nature of Peppy, your "extends" array should only contain [Peppy ESLint Configurations](#peppy-eslint-configurations).
+> Depending of your project, you can add more [configurations](#peppy-eslint-configurations) to the "extends" array. Due to the opinionated nature of Peppy, your "extends" array should only contain [Peppy ESLint configurations](#peppy-eslint-configurations).
 
 **3.** Add those scripts to your package.json to lint and/or fix and format your project.
 
@@ -50,7 +60,7 @@ npx install-peerdeps --dev eslint-config-peppy
 
 Now you can manually lint your code by running `npm run lint`, format it with `npm run format` and fix all auto-fixable issues with `npm run fix`. You probably want your [editor](#set-your-editor) to do this though.
 
-## Peppy ESLint Configurations
+## Peppy ESLint configurations
 
 The following ESLint configurations are part of Peppy:
 
@@ -224,7 +234,7 @@ Finally you'll usually need to restart VS code. They say you don't need to, but 
 {**/*,*}.{js,_js,bones,cjs,es,es6,frag,gs,jake,jsb,jscad,jsfl,jsm,jss,mjs,njs,pac,sjs,ssjs,xsjs,xsjslib,wxs,js.flow,jsx,ts,tsx,json,avsc,geojson,gltf,har,ice,JSON-tmLanguage,mcmeta,tfstate,tfstate.backup,topojson,webapp,webmanifest,yy,yyp,jsonc,sublime-build,sublime-commands,sublime-completions,sublime-keymap,sublime-macro,sublime-menu,sublime-mousemap,sublime-project,sublime-settings,sublime-theme,sublime-workspace,sublime_metrics,sublime_session,json5,css,wxss,pcss,postcss,less,scss,graphql,gql,graphqls,md,markdown,mdown,mdwn,mkd,mkdn,mkdown,ronn,workbook,mdx,component.html,html,htm,html.hl,inc,st,xht,xhtml,mjml,vue,yml,mir,reek,rviz,sublime-syntax,syntax,yaml,yaml-tmlanguage,yaml.sed,yml.mysql}
 ```
 
-> **Note:** Depending on the Prettier version your project is using, this list can be different. To be sure to get the correct list, you can run `npx eslint-config-peppy prettier extensions --glob` in the root of your project to get the glob pattern used by your version of Prettier.
+> **Note:** Depending on the Prettier version your project is using, this list can be different. To be sure to get the correct list, you can run `npx peppy prettier extensions --glob` in the root of your project to get the glob pattern used by your version of Prettier.
 
 6. Then, make sure `On save` is checked. Don't forget to click on `Apply` to save the changes.
 
