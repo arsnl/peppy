@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy-typescript",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.0",
   "description": "Peppy - TypeScript ESLint config for happier developers",
   "keywords": [
     "typescript",
@@ -32,7 +32,7 @@
   ],
   "main": "index.js",
   "devDependencies": {
-    "eslint-config-peppy": "^1.0.0-alpha.5"
+    "eslint-config-peppy": "^1.0.0-alpha.0"
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.22.0",

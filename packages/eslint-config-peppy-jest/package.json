@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy-jest",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.0",
   "description": "Peppy - Jest ESLint config for happier developers",
   "keywords": [
     "jest",
