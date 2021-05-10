@@ -304,9 +304,9 @@ Show the world you're using Peppy → [![eslint config: peppy](https://img.shiel
 
 ## Versioning Policy
 
-This project apply the [Semantic Versioning](https://semver.org/) convention. That means that all breaking changes will bump the major version.
+This project apply the [Semantic Versioning](https://semver.org/) convention. All breaking changes will bump the major version. Every new rule addition will be recognized as a breaking changes. Therefore, every new rule addition will increase the major version.
 
-Every new rule addition are recognized as a breaking changes. Therefore, every new rule addition will increase the major version.
+Also, all packages use the same version. That mean, if one package change, all the packages version will be changed for the new one. By doing that we make sure there's no cross version issues.
 
 ## Contributing
 
