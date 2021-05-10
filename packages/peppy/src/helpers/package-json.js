@@ -7,7 +7,7 @@ import { spawn } from "./spawn";
 /**
  * Create a package.json file
  * @param {Object} options - options
- * @param {string} options.packageManager - the package manager to use (yarn or npm)
+ * @param {string} options.packageManager - the package manager to use (npm, yarn or pnpm)
  * @param {string} options.cwd - the current working directory
  * @returns {Promise<Void>} - a Promise which resolves to nothing
  */

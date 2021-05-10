@@ -6,11 +6,6 @@ import { spawn } from "./spawn";
  */
 export const isYarnInstalled = async () => {
   try {
-    const userAgent = process.env.npm_config_user_agent;
-    if (userAgent) {
-      return !!(userAgent && userAgent.startsWith("yarn"));
-    }
-
     await spawn({
       command: "yarnpkg",
       args: ["--version"],

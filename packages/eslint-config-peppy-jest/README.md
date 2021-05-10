@@ -16,7 +16,7 @@ This ESLint configuration is part of the [Peppy ESLint configurations](https://w
 ## Install
 
 ```
-npx install-peerdeps --dev eslint-config-peppy-jest
+npx peppy add eslint-config-peppy-jest
 ```
 
 ## Versioning Policy
