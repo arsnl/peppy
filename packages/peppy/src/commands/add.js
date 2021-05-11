@@ -97,9 +97,8 @@ export const makeAddCommand = async () => {
           extraArgs,
         }
       ) => {
-        const { packageName, packageVersion } = parsePackageString(
-          packageString
-        );
+        const { packageName, packageVersion } =
+          parsePackageString(packageString);
 
         await installPeerDependencies({
           packageName,

@@ -1,4 +1,4 @@
-const eslintTestConfigurations = require("../../../dev/eslint-test-configurations");
+const eslintTestConfigurations = require("../../../scripts/eslint-test-configurations");
 
 eslintTestConfigurations(
   __dirname,
@@ -10,5 +10,5 @@ eslintTestConfigurations(
     "../index.js",
     "../react.js",
   ],
-  { filePath: "dev/_x.ts" }
+  { filePath: "scripts/_x.ts" }
 );

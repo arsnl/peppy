@@ -32,7 +32,8 @@
     "prepare": "npm run bootstrap && npm run test && lerna run link",
     "test": "npm run lint && npm run test:format && npm run test:unit",
     "test:format": "prettier --check --loglevel warn .",
-    "test:unit": "ava"
+    "test:unit": "ava",
+    "publish": "node scripts/publish"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.22.0",
@@ -60,6 +61,7 @@
     "eslint-plugin-unicorn": "^24.0.0",
     "jest": "^26.6.3",
     "lerna": "^4.0.0",
+    "listr": "^0.14.3",
     "prettier": "^2",
     "ramda": "^0.27.1",
     "react": "^16.8.0 || ^17",
