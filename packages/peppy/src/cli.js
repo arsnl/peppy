@@ -33,7 +33,7 @@ const notifyUpdate = async () => {
 };
 
 const run = async () => {
-  const program = new Command(packageInfo.name)
+  const program = new Command()
     .version(packageInfo.version)
     .addCommand(await makeInstallCommand())
     .addCommand(await makeAddCommand())
@@ -42,20 +42,18 @@ const run = async () => {
   program.parseAsync(process.argv);
 };
 
-run()
-  .then(notifyUpdate)
-  .catch(async (error) => {
-    logger.log();
-    if (error.command) {
-      logger.error(`  ${cyan(error.command)} has failed.`);
-    } else {
-      logger.error(red("Unexpected error. Please report it as a bug:"));
-      logger.error(error);
-    }
+run().catch(async (error) => {
+  logger.log();
+  if (error.command) {
+    logger.error(`  ${cyan(error.command)} has failed.`);
+  } else {
+    logger.error(red("Unexpected error. Please report it as a bug:"));
+    logger.error(error);
+  }
 
-    logger.log();
+  logger.log();
 
-    await notifyUpdate();
+  await notifyUpdate();
 
-    process.exit(1);
-  });
+  process.exit(1);
+});

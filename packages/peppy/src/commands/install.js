@@ -3,6 +3,7 @@ import { cyan, green, red } from "kleur";
 import ora from "ora";
 import path from "path";
 import prompts from "prompts";
+import pipe from "ramda/es/pipe";
 import { sync as rimrafSync } from "rimraf";
 import { clean, satisfies } from "semver";
 import packageInfo from "../../package.json";
@@ -392,13 +393,32 @@ export const makeInstallCommand = async () => {
           const generateESLintFileSpinner = ora(
             `Generating the project ESLint configuration file`
           ).start();
+
+          const eslintExtends = pipe(
+            (packages) =>
+              packages.reduce(
+                (acc, configName) => [
+                  ...acc,
+                  configName.replace("eslint-config-", ""),
+                ],
+                []
+              ),
+            (packages) => {
+              if (
+                packages.includes("peppy-typescript") &&
+                packages.includes("peppy-react")
+              ) {
+                return [...packages, "peppy-typescript/react"];
+              }
+              return packages;
+            }
+          )(packagesToInstall);
+
           await writeFile({
             file: ".eslintrc.js",
             cwd,
             data: `module.exports = ${JSON.stringify({
-              extends: packagesToInstall.map((configName) =>
-                configName.replace("eslint-config-", "")
-              ),
+              extends: eslintExtends,
             })}`,
           });
           generateESLintFileSpinner.succeed(
