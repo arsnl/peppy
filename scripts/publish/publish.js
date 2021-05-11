@@ -89,7 +89,7 @@ const run = async () => {
       }
     }, undefined);
 
-    const args = ["publish", "--ignore-scripts"];
+    const args = ["publish", "--ignore-scripts", "--force-publish"];
     const brancheName = await getBranchName();
 
     if (brancheName === "next") {
