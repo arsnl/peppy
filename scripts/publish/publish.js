@@ -1,6 +1,8 @@
 import execa from "execa";
 import { Command } from "../../packages/peppy/node_modules/commander";
+import { cyan } from "../../packages/peppy/node_modules/kleur";
 import ora from "../../packages/peppy/node_modules/ora";
+import { logger } from "../../packages/peppy/src/helpers/logger";
 
 const getBranchName = async () => {
   const { stdout } = await execa("git", ["symbolic-ref", "--short", "HEAD"]);
@@ -24,14 +26,10 @@ const run = async () => {
           }
         },
       },
-      /*
       {
         title: "Check git status",
         task: async () => {
-          const result = await execa(
-            "git",
-            ["status", "--porcelain"],
-          });
+          const result = await execa("git", ["status", "--porcelain"]);
 
           if (result !== "") {
             throw new Error(
@@ -40,7 +38,6 @@ const run = async () => {
           }
         },
       },
-                  */
       {
         title: "Check remote history",
         task: async () => {
@@ -86,9 +83,9 @@ const run = async () => {
       try {
         await task();
         spinner.succeed();
-      } catch {
+      } catch (error) {
         spinner.fail();
-        process.exit(0);
+        throw error;
       }
     }, undefined);
 
@@ -109,4 +106,16 @@ const run = async () => {
   return program;
 };
 
-run();
+run().catch(async (error) => {
+  logger.log();
+  if (error.command) {
+    logger.error(`  ${cyan(error.command)} has failed.`);
+    process.exit(0);
+  } else if (error.message) {
+    logger.error(error.message);
+    process.exit(0);
+  } else {
+    logger.log(error);
+    process.exit(1);
+  }
+});
