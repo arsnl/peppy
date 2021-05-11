@@ -1,7 +1,7 @@
+import execa from "execa";
 import fs from "fs";
 import path from "path";
 import { isPathExists } from "./is-path-exists";
-import { spawn } from "./spawn";
 
 /**
  * Write a file
@@ -31,5 +31,5 @@ export const writeFile = async ({ file, data = "", cwd = process.cwd() }) => {
   await fs.promises.writeFile(filePath, data);
 
   // format the file
-  await spawn({ command: "prettier", args: ["--write", filePath] });
+  await execa("prettier", ["--write", filePath]);
 };

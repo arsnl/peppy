@@ -1,9 +1,9 @@
+import execa from "execa";
 import { getPackageManifest } from "./get-package-manifest";
 import { getPackagePath } from "./get-package-path";
 import { getPackageVersionFromManifest } from "./get-package-version-from-manifest";
 import { logger } from "./logger";
 import { readPackageJSON } from "./package-json";
-import { spawn } from "./spawn";
 
 /**
  * Gets the contents of the package.json for a package at a specific version
@@ -198,10 +198,9 @@ export const installPeerDependencies = async ({
       logger.log(commandString);
     }
 
-    await spawn({
-      command: packageManager,
-      args,
-      options: { cwd, stdio: silent ? "pipe" : "inherit" },
+    await execa(packageManager, args, {
+      cwd,
+      stdio: silent ? "pipe" : "inherit",
     });
   }
 };

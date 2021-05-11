@@ -1,5 +1,5 @@
+import execa from "execa";
 import { logger } from "./logger";
-import { spawn } from "./spawn";
 
 /**
  * Install project dependencies
@@ -15,7 +15,7 @@ export const installDependencies = async ({
   const args = packageManager === "yarn" ? [] : ["install"];
 
   try {
-    await spawn({ command: packageManager, args, options: { cwd } });
+    await execa(packageManager, args, { cwd });
   } catch (error) {
     logger.error(`Cannot execute '${packageManager} ${args.join(" ")}'`);
     throw error;

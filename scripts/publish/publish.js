@@ -1,5 +1,5 @@
-import execa from "execa";
 import { Command } from "../../packages/peppy/node_modules/commander";
+import execa from "../../packages/peppy/node_modules/execa";
 import { cyan } from "../../packages/peppy/node_modules/kleur";
 import ora from "../../packages/peppy/node_modules/ora";
 import { logger } from "../../packages/peppy/src/helpers/logger";

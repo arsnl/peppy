@@ -1,8 +1,8 @@
+import execa from "execa";
 import mergeDeepLeft from "ramda/es/mergeDeepLeft";
 import readPackage from "read-pkg";
 import writePackage from "write-pkg";
 import { logger } from "./logger";
-import { spawn } from "./spawn";
 
 /**
  * Create a package.json file
@@ -18,11 +18,7 @@ export const createPackageJSON = async ({
   const args = ["init"];
 
   try {
-    await spawn({
-      command: packageManager,
-      args,
-      options: { cwd, stdio: "inherit" },
-    });
+    await execa(packageManager, args, { cwd, stdio: "inherit" });
   } catch (error) {
     logger.error(`Cannot execute '${packageManager} ${args.join(" ")}'`);
     throw error;

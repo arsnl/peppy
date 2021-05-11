@@ -1,4 +1,4 @@
-import { spawn } from "./spawn";
+import execa from "execa";
 
 /**
  * Check if Yarn is installed
@@ -6,12 +6,7 @@ import { spawn } from "./spawn";
  */
 export const isYarnInstalled = async () => {
   try {
-    await spawn({
-      command: "yarnpkg",
-      args: ["--version"],
-      options: { stdio: "ignore" },
-    });
-
+    await execa("yarnpkg", ["--version"], { stdio: "ignore" });
     return true;
   } catch {
     return false;

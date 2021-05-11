@@ -1,4 +1,4 @@
-import { spawn } from "./spawn";
+import execa from "execa";
 
 /**
  * Gets registry manifest about the package
@@ -16,12 +16,8 @@ export const getPackageManifest = async ({
   const pkgString = packageVersion
     ? `${packageName}@${packageVersion}`
     : packageName;
-  const args = ["info", pkgString, "--json"];
-  const response = await spawn({
-    command: packageManager,
-    args,
-  });
-  const metadata = JSON.parse(response);
+  const { stdout } = await execa(packageManager, ["info", pkgString, "--json"]);
+  const metadata = JSON.parse(stdout);
 
   return metadata.data || metadata;
 };

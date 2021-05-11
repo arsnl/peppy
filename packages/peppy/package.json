@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "commander": "^7.0.0",
-    "cross-spawn": "^7.0.3",
+    "execa": "^5.0.0",
     "esm": "^3.2.25",
     "global-dirs": "^2.1.0",
     "kleur": "^3.0.3",
