@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy-node",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-next.0",
   "description": "Peppy - Node ESLint config for happier developers",
   "keywords": [
     "node",
