@@ -29,9 +29,9 @@ const run = async () => {
       {
         title: "Check git status",
         task: async () => {
-          const result = await execa("git", ["status", "--porcelain"]);
+          const { stdout } = await execa("git", ["status", "--porcelain"]);
 
-          if (result !== "") {
+          if (stdout !== "") {
             throw new Error(
               "Unclean working tree. Commit or stash changes first."
             );
