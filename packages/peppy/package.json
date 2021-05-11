@@ -28,13 +28,13 @@
   ],
   "bin": "bin/peppy",
   "scripts": {
-    "unlink": "npm rm peppy -g --no-save",
-    "link": "npm run unlink && npm link"
+    "link": "npm run unlink && npm link",
+    "unlink": "npm rm peppy -g --no-save"
   },
   "dependencies": {
     "commander": "^7.0.0",
-    "execa": "^5.0.0",
     "esm": "^3.2.25",
+    "execa": "^5.0.0",
     "global-dirs": "^2.1.0",
     "kleur": "^3.0.3",
     "ora": "^5.4.0",
@@ -44,6 +44,7 @@
     "resolve-from": "^5.0.0",
     "rimraf": "^3.0.2",
     "semver": "^5.7.1",
+    "update-check": "^1.5.4",
     "write-pkg": "^4.0.0"
   },
   "engines": {
