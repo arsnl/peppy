@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-peppy-cypress",
   "version": "1.0.0-next.1",
-  "description": "Peppy - Cypress ESLint config for happier developers",
+  "description": "Peppy Cypress - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "cypress",
     "peppy",

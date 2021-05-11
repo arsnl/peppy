@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-peppy-typescript",
   "version": "1.0.0-next.1",
-  "description": "Peppy - TypeScript ESLint config for happier developers",
+  "description": "Peppy TypeScript - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "typescript",
     "peppy",
