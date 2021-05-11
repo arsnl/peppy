@@ -1,14 +1,11 @@
-import Listr from "listr";
+import execa from "execa";
 import { Command } from "../../packages/peppy/node_modules/commander";
-import { cyan, red } from "../../packages/peppy/node_modules/kleur";
-import { logger } from "../../packages/peppy/src/helpers/logger";
-import { spawn } from "../../packages/peppy/src/helpers/spawn";
+import ora from "../../packages/peppy/node_modules/ora";
 
-const getBranchName = async () =>
-  spawn({
-    command: "git",
-    args: ["symbolic-ref", "--short", "HEAD"],
-  });
+const getBranchName = async () => {
+  const { stdout } = await execa("git", ["symbolic-ref", "--short", "HEAD"]);
+  return stdout;
+};
 
 const run = async () => {
   const program = new Command();
@@ -16,135 +13,100 @@ const run = async () => {
   program.description("publish the packages").action(async () => {
     const tasks = [
       {
-        title: "Git",
-        task: () =>
-          new Listr(
-            [
-              {
-                title: "Check current branch",
-                task: async () => {
-                  const result = await getBranchName();
+        title: "Check current branch",
+        task: async () => {
+          const branchName = await getBranchName();
 
-                  if (result !== "main" && result === "next") {
-                    throw new Error(
-                      'You can only publish from the "main" or the "next" branches.'
-                    );
-                  }
-                },
-              },
-              {
-                title: "Checking git status",
-                task: async () => {
-                  const result = await spawn({
-                    command: "git",
-                    args: ["status", "--porcelain"],
-                  });
+          if (branchName !== "main" && branchName !== "next") {
+            throw new Error(
+              `The current branch is ${branchName}. You can only publish from the "main" or the "next" branches. You`
+            );
+          }
+        },
+      },
+      /*
+      {
+        title: "Check git status",
+        task: async () => {
+          const result = await execa(
+            "git",
+            ["status", "--porcelain"],
+          });
 
-                  if (result !== "") {
-                    throw new Error(
-                      "Unclean working tree. Commit or stash changes first."
-                    );
-                  }
-                },
-              },
-              {
-                title: "Checking remote history",
-                task: async () => {
-                  const result = await spawn({
-                    command: "git",
-                    args: ["rev-list", "--count", "--left-only", "@{u}...HEAD"],
-                  });
+          if (result !== "") {
+            throw new Error(
+              "Unclean working tree. Commit or stash changes first."
+            );
+          }
+        },
+      },
+                  */
+      {
+        title: "Check remote history",
+        task: async () => {
+          const { stdout } = await execa("git", [
+            "rev-list",
+            "--count",
+            "--left-only",
+            "@{u}...HEAD",
+          ]);
 
-                  if (!result || String(result).trim() !== "0") {
-                    throw new Error(
-                      "Remote history differ. Please pull changes."
-                    );
-                  }
-                },
-              },
-            ],
-            { concurrent: true }
-          ),
+          if (!stdout || stdout !== "0") {
+            throw new Error("Remote history differ. Please pull changes.");
+          }
+        },
       },
       {
         title: "Install project dependencies",
-        task: () =>
-          spawn({
-            command: "npm",
-            args: ["install", "--ignore-scripts"],
-          }),
+        task: () => execa("npm", ["install", "--ignore-scripts"]),
       },
       {
-        title: "Cleaning packages dependencies",
-        task: () =>
-          spawn({
-            command: "lerna",
-            args: ["clean", "--yes"],
-          }),
+        title: "Clean packages dependencies",
+        task: () => execa("lerna", ["clean", "--yes"]),
       },
       {
-        title: "Bootstraping packages",
-        task: () =>
-          spawn({
-            command: "lerna",
-            args: ["bootstrap"],
-          }),
+        title: "Bootstrap packages",
+        task: () => execa("lerna", ["bootstrap"]),
       },
       {
-        title: "Creating CLI symlink",
-        task: () =>
-          spawn({
-            command: "lerna",
-            args: ["run", "link"],
-          }),
+        title: "Create CLI symlink",
+        task: () => execa("lerna", ["run", "link"]),
       },
       {
-        title: "Running tests",
-        task: () =>
-          spawn({
-            command: "npm",
-            args: ["run", "lint"],
-          }),
-      },
-      {
-        title: "Publish with Lerna",
-        task: async () => {
-          const args = ["publish", "--ignore-scripts"];
-          const brancheName = await getBranchName();
-
-          if (brancheName === "next") {
-            args.unshift("--canary");
-            args.unshift("--preid", "next");
-            args.unshift("--pre-dist-tag", "next");
-          }
-
-          await spawn({
-            command: "lerna",
-            args,
-            options: { stdio: "inherit" },
-          });
-        },
+        title: "Run tests",
+        task: () => execa("npm", ["run", "test"]),
       },
     ];
 
-    new Listr(tasks).run().catch((error) => {
-      logger.error(error);
-    });
+    await tasks.reduce(async (acc, { title, task }) => {
+      await acc;
+
+      const spinner = ora(title).start();
+
+      try {
+        await task();
+        spinner.succeed();
+      } catch {
+        spinner.fail();
+        process.exit(0);
+      }
+    }, undefined);
+
+    const args = ["publish", "--ignore-scripts"];
+    const brancheName = await getBranchName();
+
+    if (brancheName === "next") {
+      args.push("--canary");
+      args.push("--preid", "next");
+      args.push("--pre-dist-tag", "next");
+    }
+
+    await execa("lerna", args, { stdio: "inherit" });
   });
 
   await program.parseAsync(process.argv);
+
+  return program;
 };
 
-run().catch(async (error) => {
-  logger.log();
-  if (error.command) {
-    logger.error(`  ${cyan(error.command)} has failed.`);
-  } else {
-    logger.error(red("Unexpected error:"));
-    logger.error(error);
-  }
-
-  logger.log();
-
-  process.exit(1);
-});
+run();
