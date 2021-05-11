@@ -55,7 +55,7 @@ const run = async () => {
                     args: ["rev-list", "--count", "--left-only", "@{u}...HEAD"],
                   });
 
-                  if (result !== "0") {
+                  if (!result || String(result).trim() !== "0") {
                     throw new Error(
                       "Remote history differ. Please pull changes."
                     );
