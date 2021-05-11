@@ -93,7 +93,6 @@ const run = async () => {
     const brancheName = await getBranchName();
 
     if (brancheName === "next") {
-      args.push("--canary");
       args.push("--preid", "next");
       args.push("--pre-dist-tag", "next");
     }
