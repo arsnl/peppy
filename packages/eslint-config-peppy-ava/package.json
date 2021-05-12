@@ -1,0 +1,40 @@
+{
+  "name": "eslint-config-peppy-ava",
+  "version": "1.0.0-next.1",
+  "description": "Peppy AVA - Brilliant ESLint configurations for happier developers",
+  "keywords": [
+    "ava",
+    "peppy",
+    "eslint",
+    "eslintconfig",
+    "config",
+    "prettier",
+    "jscs",
+    "jshint",
+    "tslint"
+  ],
+  "homepage": "https://github.com/arsnl/peppy",
+  "bugs": {
+    "url": "https://github.com/arsnl/peppy/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arsnl/peppy"
+  },
+  "license": "MIT",
+  "author": "Neaf (https://neaf.co)",
+  "contributors": [
+    {
+      "name": "Marc-André Arseneault",
+      "email": "marc-andre@arsnl.co",
+      "url": "https://arsnl.co"
+    }
+  ],
+  "main": "index.js",
+  "peerDependencies": {
+    "eslint-plugin-ava": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

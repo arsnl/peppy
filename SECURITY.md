@@ -1,3 +1,7 @@
+<div align="center"><img src="media/readme-banner.png" width="600" role="presentation" /></div>
+
+<h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
+
 # Security Policy
 
 ## Supported Versions
@@ -6,7 +10,7 @@ The following versions of this project are supported for security updates.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| 0.1.x   | :white_check_mark: |
+| 1.x     | :white_check_mark: |
 
 ## Reporting a Vulnerability
 

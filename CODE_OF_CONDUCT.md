@@ -1,3 +1,7 @@
+<div align="center"><img src="media/readme-banner.png" width="600" role="presentation" /></div>
+
+<h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
+
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge

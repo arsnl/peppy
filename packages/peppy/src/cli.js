@@ -1,0 +1,59 @@
+import { Command } from "commander";
+import { bold, cyan, red, yellow } from "kleur";
+import checkForUpdate from "update-check";
+import packageInfo from "../package.json";
+import { makeAddCommand } from "./commands/add";
+import { makeInstallCommand } from "./commands/install";
+import { makePrettierExtensionsCommand } from "./commands/prettier-extensions";
+import { logger } from "./helpers/logger";
+
+const update = checkForUpdate(packageInfo).catch(() => null);
+
+const notifyUpdate = async () => {
+  try {
+    const result = await update;
+    if (result && result.latest) {
+      logger.log();
+      logger.log(
+        yellow(
+          bold(`${packageInfo.name} v${packageInfo.version} is available!`)
+        )
+      );
+      logger.log(
+        `You can update ${packageInfo.name} by running: ${cyan(
+          `npm i -g ${packageInfo.name}`
+        )}`
+      );
+      logger.log();
+    }
+    process.exit();
+  } catch {
+    // ignore error
+  }
+};
+
+const run = async () => {
+  const program = new Command()
+    .version(packageInfo.version)
+    .addCommand(await makeInstallCommand())
+    .addCommand(await makeAddCommand())
+    .addCommand(await makePrettierExtensionsCommand());
+
+  program.parseAsync(process.argv);
+};
+
+run().catch(async (error) => {
+  logger.log();
+  if (error.command) {
+    logger.error(`  ${cyan(error.command)} has failed.`);
+  } else {
+    logger.error(red("Unexpected error. Please report it as a bug:"));
+    logger.error(error);
+  }
+
+  logger.log();
+
+  await notifyUpdate();
+
+  process.exit(1);
+});
