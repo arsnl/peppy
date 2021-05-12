@@ -5,7 +5,7 @@
 <p align="center">
     <a href="https://www.npmjs.org/package/eslint-config-peppy-typescript"><img src="https://img.shields.io/npm/v/eslint-config-peppy-typescript.svg" alt="npm version" /></a>
     <a href="https://prettier.io/"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" /></a>
-    <a href="https://github.com/arsnl/peppy"><img src="https://img.shields.io/badge/config-peppy-B0FF31.svg?logo=eslint" alt="eslint config: peppy" /></a>
+    <a href="https://www.npmjs.com/package/peppy"><img src="https://badges.neaf.co/peppy.svg" alt="eslint config: peppy" /></a>
     <a href="https://github.com/arsnl/peppy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/peppy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
 </p>
 
