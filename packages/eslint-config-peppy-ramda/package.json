@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy-ramda",
-  "version": "1.0.0-next.1",
+  "version": "1.0.0",
   "description": "Peppy Ramda - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "ramda",
