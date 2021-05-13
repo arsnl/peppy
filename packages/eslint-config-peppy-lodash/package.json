@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy-lodash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Peppy Lodash - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "lodash",

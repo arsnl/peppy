@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Peppy React - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "react",
@@ -36,7 +36,7 @@
     "object.assign": "^4.1.2"
   },
   "devDependencies": {
-    "eslint-config-peppy": "^1.0.1"
+    "eslint-config-peppy": "^1.0.2"
   },
   "peerDependencies": {
     "eslint-plugin-jsx-a11y": "^6.4.1",
