@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy-ava",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Peppy AVA - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "ava",
