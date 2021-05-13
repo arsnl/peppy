@@ -13,13 +13,14 @@
     "jshint",
     "tslint"
   ],
-  "homepage": "https://github.com/arsnl/peppy/packages/eslint-config-peppy-mocha",
+  "homepage": "https://github.com/arsnl/peppy",
   "bugs": {
     "url": "https://github.com/arsnl/peppy/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/arsnl/peppy"
+    "url": "https://github.com/arsnl/peppy",
+    "directory": "packages/eslint-config-peppy-mocha"
   },
   "license": "MIT",
   "author": "Neaf (https://neaf.co)",
