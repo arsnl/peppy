@@ -13,7 +13,7 @@
     "jshint",
     "tslint"
   ],
-  "homepage": "https://github.com/arsnl/peppy",
+  "homepage": "https://github.com/arsnl/peppy/packages/eslint-config-peppy-jest",
   "bugs": {
     "url": "https://github.com/arsnl/peppy/issues"
   },
