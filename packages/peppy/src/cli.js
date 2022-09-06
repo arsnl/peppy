@@ -2,9 +2,7 @@ import { Command } from "commander";
 import { bold, cyan, red, yellow } from "kleur";
 import checkForUpdate from "update-check";
 import packageInfo from "../package.json";
-import { makeAddCommand } from "./commands/add";
 import { makeInstallCommand } from "./commands/install";
-import { makePrettierExtensionsCommand } from "./commands/prettier-extensions";
 import { logger } from "./helpers/logger";
 
 const update = checkForUpdate(packageInfo).catch(() => null);
@@ -35,9 +33,7 @@ const notifyUpdate = async () => {
 const run = async () => {
   const program = new Command()
     .version(packageInfo.version)
-    .addCommand(await makeInstallCommand())
-    .addCommand(await makeAddCommand())
-    .addCommand(await makePrettierExtensionsCommand());
+    .addCommand(await makeInstallCommand());
 
   program.parseAsync(process.argv);
 };

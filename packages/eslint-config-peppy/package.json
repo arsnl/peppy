@@ -35,18 +35,15 @@
     "confusing-browser-globals": "^1.0.10"
   },
   "peerDependencies": {
-    "eslint": "^7.17.0",
-    "eslint-config-prettier": "^8.2.0",
-    "eslint-plugin-fp": "^2.3.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-regexp": "^0.1.1",
-    "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "eslint-plugin-unicorn": "^24.0.0",
-    "prettier": "^2"
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": "^10.12.0 || >=12.0.0"
   }
 }

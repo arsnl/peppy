@@ -5,7 +5,6 @@
 <p align="center">
     <a href="https://www.npmjs.org/package/eslint-config-peppy"><img src="https://img.shields.io/npm/v/eslint-config-peppy.svg" alt="npm version" /></a>
     <a href="https://prettier.io/"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" /></a>
-    <a href="https://www.npmjs.com/package/peppy"><img src="https://badges.neaf.co/peppy.svg" alt="eslint config: peppy" /></a>
     <a href="https://github.com/arsnl/peppy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/peppy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
 </p>
 
@@ -292,26 +291,6 @@ parserOptions: {
 -  project: './tsconfig.json',
 +  project: './tsconfig.eslint.json',
 }
-```
-
-## Badge
-
-Show the world you're using Peppy!
-
-### Classic badge
-
-[![eslint config: peppy](https://badges.neaf.co/peppy.svg)](https://www.npmjs.com/package/peppy)
-
-```md
-[![eslint config: peppy](https://badges.neaf.co/peppy.svg)](https://www.npmjs.com/package/peppy)
-```
-
-### Flat badge
-
-[![eslint config: peppy](https://badges.neaf.co/peppy.svg?style=flat)](https://www.npmjs.com/package/peppy)
-
-```md
-[![eslint config: peppy](https://badges.neaf.co/peppy.svg?style=flat)](https://www.npmjs.com/package/peppy)
 ```
 
 ## Versioning Policy

@@ -29,8 +29,7 @@
   ],
   "bin": "bin/peppy",
   "scripts": {
-    "link": "npm run unlink && npm link",
-    "unlink": "npm rm peppy -g --no-save"
+    "lint": "eslint ."
   },
   "dependencies": {
     "commander": "^7.0.0",
@@ -49,6 +48,6 @@
     "write-pkg": "^4.0.0"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   }
 }
