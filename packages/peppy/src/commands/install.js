@@ -315,6 +315,7 @@ export const makeInstallCommand = async () => {
               ) {
                 return [...packages, "peppy-typescript/react"];
               }
+
               return packages;
             }
           )(packagesToInstall);

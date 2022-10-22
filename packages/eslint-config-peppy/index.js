@@ -1,5 +1,3 @@
 module.exports = {
-  extends: ["./rules/base", "./rules/peppy", "./rules/prettier"].map(
-    require.resolve
-  ),
+  extends: ["./rules/base.js", "./rules/prettier.js"].map(require.resolve),
 };

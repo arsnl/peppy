@@ -25,7 +25,7 @@ const notifyUpdate = async () => {
       logger.log();
     }
     process.exit();
-  } catch {
+  } catch (error) {
     // ignore error
   }
 };

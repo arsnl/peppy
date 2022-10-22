@@ -18,8 +18,8 @@
   },
   "contributors": [
     {
-      "name": "Marc-André Arseneault",
-      "email": "marc-andre@arsnl.co",
+      "name": "Mark Arseneault",
+      "email": "mark@arsnl.co",
       "url": "https://arsnl.co"
     }
   ],
@@ -34,14 +34,10 @@
   },
   "devDependencies": {
     "ava": "^4.3.3",
-    "chalk": "^5.0.1",
-    "chokidar": "^3.5.3",
     "eslint": "^8.23.0",
     "eslint-config-peppy": "*",
     "jest": "^29.0.1",
-    "lodash": "^4.17.21",
     "prettier": "^2.7.1",
-    "shelljs": "^0.8.5",
     "turbo": "latest"
   },
   "engines": {

@@ -22,7 +22,6 @@ The following packages are part of Peppy:
 
 - [`peppy`](https://www.npmjs.com/package/peppy) – Peppy CLI
 - [`eslint-config-peppy`](https://www.npmjs.com/package/eslint-config-peppy) – ESLint configuration that follow the Peppy code style.
-- [`eslint-config-peppy-typescript`](https://www.npmjs.com/package/eslint-config-peppy-typescript) – ESLint configuration for projects that use [TypeScript](http://typescriptlang.org/).
 
 ## Versioning Policy
 

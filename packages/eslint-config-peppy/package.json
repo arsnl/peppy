@@ -1,16 +1,15 @@
 {
   "name": "eslint-config-peppy",
-  "version": "1.0.2",
+  "version": "2.0.0-beta.0",
   "description": "Peppy - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "peppy",
     "eslint",
-    "eslintconfig",
     "config",
+    "airbnb",
     "prettier",
-    "jscs",
-    "jshint",
-    "tslint"
+    "typescript",
+    "nextjs"
   ],
   "homepage": "https://github.com/arsnl/peppy",
   "bugs": {
@@ -25,25 +24,33 @@
   "author": "Neaf (https://neaf.co)",
   "contributors": [
     {
-      "name": "Marc-André Arseneault",
-      "email": "marc-andre@arsnl.co",
+      "name": "Mark Arseneault",
+      "email": "mark@arsnl.co",
       "url": "https://arsnl.co"
     }
   ],
   "main": "index.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
   "dependencies": {
-    "confusing-browser-globals": "^1.0.10"
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.40.1",
+    "@typescript-eslint/parser": "^5.40.1",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0"
   },
   "peerDependencies": {
-    "eslint": "^7.32.0 || ^8.2.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0"
+    "eslint": "^7.32.0 || >=8.2.0",
+    "typescript": ">=3.3.1"
   },
-  "devDependencies": {
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0"
-  },
-  "engines": {
-    "node": "^10.12.0 || >=12.0.0"
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
   }
 }

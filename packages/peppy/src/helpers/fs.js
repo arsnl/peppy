@@ -15,6 +15,7 @@ export const isPathExists = async ({ path = process.cwd(), cwd = "" }) => {
       nodePath.join(cwd, path),
       (fs.constants || fs).F_OK
     );
+
     return true;
   } catch {
     return false;
@@ -30,6 +31,7 @@ export const isPathExists = async ({ path = process.cwd(), cwd = "" }) => {
 export const isPathWriteable = async ({ path = process.cwd() }) => {
   try {
     await fs.promises.access(path, (fs.constants || fs).W_OK);
+
     return true;
   } catch {
     return false;

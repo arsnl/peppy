@@ -55,6 +55,7 @@ export const writePackageJSON = async ({ data = {}, cwd = process.cwd() }) =>
 export const isNpmInstalled = async () => {
   try {
     await execa("npm", ["--version"], { stdio: "ignore" });
+
     return true;
   } catch {
     return false;
@@ -68,6 +69,7 @@ export const isNpmInstalled = async () => {
 export const isYarnInstalled = async () => {
   try {
     await execa("yarn", ["--version"], { stdio: "ignore" });
+
     return true;
   } catch {
     return false;
@@ -81,6 +83,7 @@ export const isYarnInstalled = async () => {
 export const isPnpmInstalled = async () => {
   try {
     await execa("pnpm", ["--version"], { stdio: "ignore" });
+
     return true;
   } catch {
     return false;
@@ -291,6 +294,7 @@ const getPackageJSON = async ({
     const packagePath = getPackagePath({ packageName, cwd });
     if (packagePath) {
       const packageJSON = await readPackageJSON({ cwd: packagePath });
+
       return packageJSON;
     }
   }
@@ -332,8 +336,10 @@ const getPackageString = ({ packageName, packageVersion }) => {
     if (versionToInstall === null) {
       return packageName;
     }
+
     return `${packageName}@${versionToInstall}`;
   }
+
   return `${packageName}@${packageVersion}`;
 };
 
@@ -425,6 +431,7 @@ export const installPeerDependencies = async ({
         // Remove -0
         return pkgName.slice(0, Math.max(0, pkgName.length - 2));
       }
+
       return `${pkgName}`;
     })
   );

@@ -7,6 +7,7 @@ export const isInGitRepository = async ({ cwd = process.cwd() }) => {
       cwd,
       stdio: "ignore",
     });
+
     return true;
   } catch (_) {}
 
@@ -19,6 +20,7 @@ export const isInMercurialRepository = async ({ cwd = process.cwd() }) => {
       cwd,
       stdio: "ignore",
     });
+
     return true;
   } catch (_) {}
 
@@ -29,6 +31,7 @@ export const hasGitChanges = async ({ cwd = process.cwd() }) => {
   try {
     if (await isInGitRepository({ cwd })) {
       const { stdout } = await execa("git", ["status", "--porcelain"], { cwd });
+
       return !!stdout;
     }
   } catch (_) {}
@@ -40,6 +43,7 @@ export const hasMercurialChanges = async ({ cwd = process.cwd() }) => {
   try {
     if (await isInMercurialRepository({ cwd })) {
       const { stdout } = await execa("hg", ["status"], { cwd });
+
       return !!stdout;
     }
   } catch (_) {}

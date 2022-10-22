@@ -1,0 +1,8 @@
+- Configurations NextJS
+- Test de validation de chargement des configurations
+- Test de validation que les règles dans Prettier ne sont pas présentes dans les fichiers de règles/configurations
+- Test unitaires sur les règles
+- Rule: Contre l'usage de arrow function
+- Rule: Pas de offside rule if() {}
+- Rule: Arrow function toujours des accolades pour les arguments () => ...
+- Rule: Renforcement de l'optional chaining
