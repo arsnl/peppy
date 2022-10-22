@@ -1,4 +1,4 @@
-module.exports = {
+const reactConfig = {
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -312,7 +312,7 @@ module.exports = {
     "react/jsx-filename-extension": [
       "error",
       {
-        extensions: [".jsx"],
+        extensions: [".jsx", ".tsx"],
       },
     ],
     "react/jsx-fragments": ["error", "syntax"],
@@ -521,15 +521,22 @@ module.exports = {
     "react/void-dom-elements-no-children": "error",
   },
   settings: {
-    "import/resolver": {
-      node: {
-        extensions: [".js", ".jsx", ".json"],
-      },
-    },
     react: {
       pragma: "React",
       version: "detect",
     },
     propWrapperFunctions: ["forbidExtraProps", "exact", "Object.freeze"],
   },
+};
+
+module.exports = {
+  ...reactConfig,
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      rules: {
+        "react/prop-types": "off",
+      },
+    },
+  ],
 };

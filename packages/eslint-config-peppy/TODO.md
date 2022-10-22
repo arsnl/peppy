@@ -1,4 +1,3 @@
-- Configurations NextJS
 - Test de validation de chargement des configurations
 - Test de validation que les règles dans Prettier ne sont pas présentes dans les fichiers de règles/configurations
 - Test unitaires sur les règles
@@ -6,3 +5,10 @@
 - Rule: Pas de offside rule if() {}
 - Rule: Arrow function toujours des accolades pour les arguments () => ...
 - Rule: Renforcement de l'optional chaining
+- Rule: Validation de la règle no-shadow
+- Ajout de support NextJS
+- Ajout de support CRA
+- Ajout de support Svelte
+- Ajout de support Vue
+- Ajout de support Jest
+- Ajout de support Angular

@@ -1,6 +1,8 @@
 const { rules: reactRules } = require("./react");
 
 module.exports = {
+  plugins: ["@next/next"],
+  extends: ["plugin:@next/next/core-web-vitals"],
   rules: {
     "jsx-a11y/anchor-is-valid": [
       "error",

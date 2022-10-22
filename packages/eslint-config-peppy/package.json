@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy",
-  "version": "2.0.0-beta.0",
+  "version": "2.0.0-beta.2",
   "description": "Peppy - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "peppy",
@@ -34,15 +34,16 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@next/eslint-plugin-next": "^12.3.1",
     "@rushstack/eslint-patch": "^1.2.0",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "eslint-import-resolver-typescript": "^3.5.2",
-    "eslint-plugin-simple-import-sort": "^8.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.10",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0"
   },
   "peerDependencies": {
     "eslint": "^7.32.0 || >=8.2.0",

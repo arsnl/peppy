@@ -3,12 +3,6 @@ const sortedPaths = [];
 const cwd = process.cwd().replace(/\\/g, "/");
 const originalPaths = require.resolve.paths("eslint-plugin-import");
 
-// eslint throws a conflict error when plugins resolve to different
-// locations, since we want to lock our dependencies by default
-// but also need to allow using user dependencies this updates
-// our resolve paths to first check the cwd and iterate to
-// eslint-config-next's dependencies if needed
-
 for (let i = originalPaths.length - 1; i >= 0; i -= 1) {
   const currentPath = originalPaths[i];
 
@@ -39,7 +33,6 @@ const resolveFilename = mod._resolveFilename;
 mod._resolveFilename = (request, parent, isMain, options) => {
   const hookResolved = hookPropertyMap.get(request);
   if (hookResolved) {
-    console.log(hookResolved);
     // eslint-disable-next-line no-param-reassign
     request = hookResolved;
   }
@@ -51,8 +44,9 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 const importAliases = "(@\\/|~[^/]*\\/)"; // support path aliases starting with @/ or ~.*/
 const importStyleExts = "(css|scss|sass|less)";
 
-module.exports = {
+const baseConfig = {
   env: {
+    browser: true,
     es6: true,
     node: true,
   },
@@ -691,16 +685,185 @@ module.exports = {
     yoda: "error",
   },
   settings: {
+    "import/parsers": {
+      [require.resolve("@typescript-eslint/parser")]: [
+        ".ts",
+        ".mts",
+        ".cts",
+        ".tsx",
+        ".d.ts",
+      ],
+    },
     "import/resolver": {
-      node: {
-        extensions: [".mjs", ".js", ".json"],
+      [require.resolve("eslint-import-resolver-node")]: {
+        extensions: [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".mjs",
+          ".mts",
+          ".d.ts",
+          ".json",
+        ],
+      },
+      [require.resolve("eslint-import-resolver-typescript")]: {
+        alwaysTryTypes: true,
       },
     },
-    "import/extensions": [".js", ".mjs", ".jsx"],
+    "import/extensions": [
+      ".js",
+      ".mjs",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".mts",
+      ".d.ts",
+    ],
+    "import/external-module-folders": ["node_modules", "node_modules/@types"],
     "import/core-modules": [],
     "import/ignore": [
       "node_modules",
       "\\.(coffee|scss|css|less|hbs|svg|json)$",
     ],
   },
+};
+
+module.exports = {
+  ...baseConfig,
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        sourceType: "module",
+        ecmaFeatures: {
+          jsx: true,
+        },
+        warnOnUnsupportedTypeScriptVersion: true,
+      },
+      plugins: ["@typescript-eslint"],
+      rules: {
+        "constructor-super": "off",
+        "getter-return": "off",
+        "import/named": "off",
+        "import/no-named-as-default-member": "off",
+        "import/no-unresolved": "off",
+        "no-const-assign": "off",
+        "no-dupe-args": "off",
+        "no-dupe-keys": "off",
+        "no-func-assign": "off",
+        "no-import-assign": "off",
+        "no-new-symbol": "off",
+        "no-obj-calls": "off",
+        "no-setter-return": "off",
+        "no-this-before-super": "off",
+        "no-undef": "off",
+        "no-unreachable": "off",
+        "no-unsafe-negation": "off",
+        "valid-typeof": "off",
+        camelcase: "off",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            selector: "variable",
+            format: ["camelCase", "PascalCase", "UPPER_CASE"],
+            leadingUnderscore: "allow",
+            trailingUnderscore: "allow",
+          },
+          {
+            selector: "function",
+            format: ["camelCase", "PascalCase"],
+            leadingUnderscore: "allow",
+            trailingUnderscore: "allow",
+          },
+          {
+            selector: "typeLike",
+            format: ["PascalCase", "UPPER_CASE"],
+            leadingUnderscore: "allow",
+            trailingUnderscore: "allow",
+          },
+        ],
+        "@typescript-eslint/consistent-type-exports": "error",
+        "@typescript-eslint/consistent-type-imports": [
+          "error",
+          { prefer: "type-imports" },
+        ],
+        "default-param-last": "off",
+        "@typescript-eslint/default-param-last":
+          baseConfig.rules["default-param-last"],
+        "dot-notation": "off",
+        "@typescript-eslint/dot-notation": baseConfig.rules["dot-notation"],
+        "lines-between-class-members": "off",
+        "@typescript-eslint/lines-between-class-members":
+          baseConfig.rules["lines-between-class-members"],
+        "no-array-constructor": "off",
+        "@typescript-eslint/no-array-constructor":
+          baseConfig.rules["no-array-constructor"],
+        "no-dupe-class-members": "off",
+        "@typescript-eslint/no-dupe-class-members":
+          baseConfig.rules["no-dupe-class-members"],
+        "no-empty-function": "off",
+        "@typescript-eslint/no-empty-function":
+          baseConfig.rules["no-empty-function"],
+        "no-implied-eval": "off",
+        "no-new-func": "off",
+        "@typescript-eslint/no-implied-eval":
+          baseConfig.rules["no-implied-eval"],
+        "no-loss-of-precision": "off",
+        "@typescript-eslint/no-loss-of-precision":
+          baseConfig.rules["no-loss-of-precision"],
+        "no-loop-func": "off",
+        "@typescript-eslint/no-loop-func": baseConfig.rules["no-loop-func"],
+        "no-redeclare": "off",
+        "@typescript-eslint/no-redeclare": [
+          baseConfig.rules["no-redeclare"],
+          { ignoreDeclarationMerge: true },
+        ],
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": baseConfig.rules["no-shadow"],
+        "no-throw-literal": "off",
+        "@typescript-eslint/no-throw-literal":
+          baseConfig.rules["no-throw-literal"],
+        "no-unused-expressions": "off",
+        "@typescript-eslint/no-unused-expressions":
+          baseConfig.rules["no-unused-expressions"],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": baseConfig.rules["no-unused-vars"],
+        "no-useless-constructor": "off",
+        "@typescript-eslint/no-useless-constructor":
+          baseConfig.rules["no-useless-constructor"],
+        "no-return-await": "off",
+        "@typescript-eslint/return-await": [
+          baseConfig.rules["no-return-await"],
+          "in-try-catch",
+        ],
+        "import/extensions": [
+          baseConfig.rules["import/extensions"][0],
+          baseConfig.rules["import/extensions"][1],
+          {
+            ...baseConfig.rules["import/extensions"][2],
+            ts: "never",
+            tsx: "never",
+          },
+        ],
+        "import/no-extraneous-dependencies": [
+          baseConfig.rules["import/no-extraneous-dependencies"][0],
+          {
+            ...baseConfig.rules["import/no-extraneous-dependencies"][1],
+            devDependencies: baseConfig.rules[
+              "import/no-extraneous-dependencies"
+            ][1].devDependencies.reduce((result, devDep) => {
+              const toAppend = [devDep];
+              const devDepWithTs = devDep.replace(/\bjs(x?)\b/g, "ts$1");
+              if (devDepWithTs !== devDep) {
+                toAppend.push(devDepWithTs);
+              }
+              return [...result, ...toAppend];
+            }, []),
+          },
+        ],
+      },
+    },
+  ],
 };
