@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy",
-  "version": "2.0.0-beta.2",
+  "version": "2.0.0-beta.3",
   "description": "Peppy - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "peppy",
@@ -9,7 +9,8 @@
     "airbnb",
     "prettier",
     "typescript",
-    "nextjs"
+    "nextjs",
+    "jest"
   ],
   "homepage": "https://github.com/arsnl/peppy",
   "bugs": {
@@ -40,6 +41,7 @@
     "@typescript-eslint/parser": "^5.40.1",
     "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^27.1.3",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",

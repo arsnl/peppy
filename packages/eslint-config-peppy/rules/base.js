@@ -41,6 +41,7 @@ mod._resolveFilename = (request, parent, isMain, options) => {
 
 require("@rushstack/eslint-patch/modern-module-resolution");
 
+// TODO: check for usage of globals
 const importAliases = "(@\\/|~[^/]*\\/)"; // support path aliases starting with @/ or ~.*/
 const importStyleExts = "(css|scss|sass|less)";
 
@@ -53,6 +54,7 @@ const baseConfig = {
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: "module",
+    // TODO: validate the ecmaFeatures base config
     ecmaFeatures: {
       generators: false,
       objectLiteralDuplicateProperties: false,
@@ -697,12 +699,14 @@ const baseConfig = {
     "import/resolver": {
       [require.resolve("eslint-import-resolver-node")]: {
         extensions: [
+          ".mjs",
+          ".cjs",
           ".js",
           ".jsx",
+          ".mts",
+          ".cts",
           ".ts",
           ".tsx",
-          ".mjs",
-          ".mts",
           ".d.ts",
           ".json",
         ],
@@ -712,12 +716,14 @@ const baseConfig = {
       },
     },
     "import/extensions": [
-      ".js",
       ".mjs",
+      ".cjs",
+      ".js",
       ".jsx",
+      ".mts",
+      ".cts",
       ".ts",
       ".tsx",
-      ".mts",
       ".d.ts",
     ],
     "import/external-module-folders": ["node_modules", "node_modules/@types"],
@@ -736,10 +742,6 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        sourceType: "module",
-        ecmaFeatures: {
-          jsx: true,
-        },
         warnOnUnsupportedTypeScriptVersion: true,
       },
       plugins: ["@typescript-eslint"],

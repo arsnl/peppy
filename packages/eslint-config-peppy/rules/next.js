@@ -12,6 +12,13 @@ module.exports = {
         aspects: ["invalidHref", "preferButton"],
       },
     ],
+    "jsx-a11y/alt-text": [
+      reactRules["jsx-a11y/alt-text"][0],
+      {
+        ...reactRules["jsx-a11y/alt-text"][1],
+        img: [...reactRules["jsx-a11y/alt-text"][1].img, "Image"],
+      },
+    ],
     "react/no-unknown-property": [
       "error",
       {
