@@ -24,20 +24,18 @@
     }
   ],
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "tests/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "jest"
   },
   "devDependencies": {
-    "ava": "^4.3.3",
-    "eslint": "^8.23.0",
-    "eslint-config-peppy": "*",
-    "jest": "^29.0.1",
-    "prettier": "^2.7.1",
+    "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {

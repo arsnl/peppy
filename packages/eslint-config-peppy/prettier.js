@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["./rules/prettier.js"].map(require.resolve),
+  extends: ["./configs/prettier.js"].map(require.resolve),
 };

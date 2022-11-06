@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-peppy",
-  "version": "2.0.0-beta.3",
+  "version": "2.0.0-beta.5",
   "description": "Peppy - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "peppy",
@@ -31,14 +31,12 @@
     }
   ],
   "main": "index.js",
-  "scripts": {
-    "lint": "eslint ."
-  },
   "dependencies": {
     "@next/eslint-plugin-next": "^12.3.1",
     "@rushstack/eslint-patch": "^1.2.0",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jest": "^27.1.3",

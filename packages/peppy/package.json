@@ -28,9 +28,6 @@
     }
   ],
   "bin": "bin/peppy",
-  "scripts": {
-    "lint": "eslint ."
-  },
   "dependencies": {
     "commander": "^7.0.0",
     "esm": "^3.2.25",

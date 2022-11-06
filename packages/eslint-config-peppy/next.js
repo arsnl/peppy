@@ -1,8 +1,7 @@
 module.exports = {
   extends: [
-    "./rules/base.js",
-    "./rules/react.js",
-    "./rules/next.js",
-    "./rules/prettier.js",
+    "./configs/react.js",
+    "./configs/next.js",
+    "./configs/prettier.js",
   ].map(require.resolve),
 };
