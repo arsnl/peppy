@@ -6,7 +6,7 @@
   "devDependencies": {
     "@tests/utils": "*",
     "eslint": "latest",
-    "eslint-config-peppy": "2.0.0-beta.5",
+    "eslint-config-peppy": "*",
     "jest": "27.0.0"
   }
 }
