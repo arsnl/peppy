@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@tests/utils": "*",
+    "eslint": "latest",
+    "eslint-config-peppy": "*",
+    "jest": "latest"
+  }
+}

@@ -59,6 +59,7 @@ const baseConfig = {
       generators: false,
       objectLiteralDuplicateProperties: false,
     },
+    project: "./tsconfig.json",
   },
   plugins: ["import", "simple-import-sort"],
   reportUnusedDisableDirectives: true,
@@ -111,13 +112,7 @@ const baseConfig = {
         allowPattern: "",
       },
     ],
-    eqeqeq: [
-      "error",
-      "always",
-      {
-        null: "ignore",
-      },
-    ],
+    eqeqeq: ["error", "always"],
     "for-direction": ["error"],
     "func-names": ["warn"],
     "getter-return": [
@@ -358,12 +353,12 @@ const baseConfig = {
     "no-restricted-globals": [
       "error",
       {
-        message: "Use Number.isFinite instead",
         name: "isFinite",
+        message: "Use Number.isFinite instead.",
       },
       {
-        message: "Use Number.isNaN instead",
         name: "isNaN",
+        message: "Use Number.isNaN instead.",
       },
       "addEventListener",
       "blur",
@@ -427,37 +422,37 @@ const baseConfig = {
     "no-restricted-properties": [
       "error",
       {
-        message: "arguments.callee is deprecated",
+        message: "arguments.callee is deprecated.",
         object: "arguments",
         property: "callee",
       },
       {
-        message: "Please use Number.isFinite instead",
+        message: "Please use Number.isFinite instead.",
         object: "global",
         property: "isFinite",
       },
       {
-        message: "Please use Number.isFinite instead",
+        message: "Please use Number.isFinite instead.",
         object: "self",
         property: "isFinite",
       },
       {
-        message: "Please use Number.isFinite instead",
+        message: "Please use Number.isFinite instead.",
         object: "window",
         property: "isFinite",
       },
       {
-        message: "Please use Number.isNaN instead",
+        message: "Please use Number.isNaN instead.",
         object: "global",
         property: "isNaN",
       },
       {
-        message: "Please use Number.isNaN instead",
+        message: "Please use Number.isNaN instead.",
         object: "self",
         property: "isNaN",
       },
       {
-        message: "Please use Number.isNaN instead",
+        message: "Please use Number.isNaN instead.",
         object: "window",
         property: "isNaN",
       },
@@ -478,24 +473,24 @@ const baseConfig = {
     "no-restricted-syntax": [
       "error",
       {
+        selector: "ForInStatement",
         message:
           "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.",
-        selector: "ForInStatement",
       },
       {
+        selector: "ForOfStatement",
         message:
           "iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.",
-        selector: "ForOfStatement",
       },
       {
+        selector: "LabeledStatement",
         message:
           "Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.",
-        selector: "LabeledStatement",
       },
       {
+        selector: "WithStatement",
         message:
           "`with` is disallowed in strict mode because it makes code impossible to predict and optimize.",
-        selector: "WithStatement",
       },
     ],
     "no-return-assign": ["error", "always"],

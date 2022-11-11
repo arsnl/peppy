@@ -1,4 +1,3 @@
-- Test unitaires sur les règles
 - Rule: Contre l'usage de arrow function
 - Rule: Pas de offside rule if() {}
 - Rule: Arrow function toujours des accolades pour les arguments () => ...
