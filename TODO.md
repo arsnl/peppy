@@ -1,8 +1,10 @@
-- Rule: Contre l'usage de arrow function
-- Rule: Renforcement de l'optional chaining
-- Rule: Validation de la règle no-shadow
-- Rule: Validation de la règle react/react-in-jsx-scope
-- Ajout de support CRA
-- Ajout de support Svelte
-- Ajout de support Vue
-- Ajout de support Angular
+- Check eslint-plugin-prefer-arrow plugin
+- Check https://typescript-eslint.io/rules/prefer-optional-chain/
+- Validate no-shadow rule
+- Validate react/react-in-jsx-scope rule
+- Add CRA support
+- Add Svelte support
+- Add Vue support
+- Add Angular support
+- Update peppy bin
+- Update documentation
