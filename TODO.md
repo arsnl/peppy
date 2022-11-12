@@ -1,6 +1,4 @@
 - Rule: Contre l'usage de arrow function
-- Rule: Pas de offside rule if() {}
-- Rule: Arrow function toujours des accolades pour les arguments () => ...
 - Rule: Renforcement de l'optional chaining
 - Rule: Validation de la règle no-shadow
 - Rule: Validation de la règle react/react-in-jsx-scope

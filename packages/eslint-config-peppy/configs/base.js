@@ -95,6 +95,7 @@ const baseConfig = {
         exceptMethods: [],
       },
     ],
+    curly: ["error", "all"],
     "consistent-return": ["error"],
     "constructor-super": ["error"],
     "default-case": [
