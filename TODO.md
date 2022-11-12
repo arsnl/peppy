@@ -1,6 +1,5 @@
 - Check eslint-plugin-prefer-arrow plugin
 - Check https://typescript-eslint.io/rules/prefer-optional-chain/
-- Validate no-shadow rule
 - Validate react/react-in-jsx-scope rule
 - Add CRA support
 - Add Svelte support
