@@ -545,7 +545,7 @@ const baseConfig = {
     ],
     "no-unused-labels": ["error"],
     "no-unused-vars": [
-      "error",
+      "warn",
       {
         args: "after-used",
         argsIgnorePattern: "^_",

@@ -32,9 +32,12 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write .",
-    "test": "jest"
+    "test": "jest",
+    "generate-doc": "node scripts/generate-doc"
   },
   "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-peppy": "*",
     "prettier": "latest",
     "turbo": "latest"
   },

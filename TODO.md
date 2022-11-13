@@ -1,9 +1,1 @@
-- Check eslint-plugin-prefer-arrow plugin
-- Check https://typescript-eslint.io/rules/prefer-optional-chain/
-- Validate react/react-in-jsx-scope rule
-- Add CRA support
-- Add Svelte support
-- Add Vue support
-- Add Angular support
 - Update peppy bin
-- Update documentation

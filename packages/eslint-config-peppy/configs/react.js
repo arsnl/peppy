@@ -421,15 +421,15 @@ const reactConfig = {
     "react/no-unknown-property": ["error", { ignore: ["css"] }],
     "react/no-unsafe": ["off"],
     "react/no-unstable-nested-components": ["error"],
-    "react/no-unused-class-component-methods": ["error"],
+    "react/no-unused-class-component-methods": ["warn"],
     "react/no-unused-prop-types": [
-      "error",
+      "warn",
       {
         customValidators: [],
         skipShapeProps: true,
       },
     ],
-    "react/no-unused-state": ["error"],
+    "react/no-unused-state": ["warn"],
     "react/no-will-update-set-state": ["error"],
     "react/prefer-es6-class": ["error", "always"],
     "react/prefer-exact-props": ["error"],
