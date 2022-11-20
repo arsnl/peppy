@@ -23,24 +23,24 @@ export const makeInstallCommand = async () => {
   program
     .description("Interactive install")
     .addOption(
-      new Option("-m, --packageManager <pm>", "package manager").choices([
+      new Option("--pm <pm>", "package manager").choices([
         "npm",
         "yarn",
         "pnpm",
       ])
     )
     .addOption(
-      new Option(
-        "-P, --prod",
-        "packages will appear in your dependencies"
-      ).default(false)
+      new Option("--prod", "install the packages in dependencies").default(
+        false
+      )
     )
     .addOption(
-      new Option("-r, --root <path>", "the install directory").default(
+      new Option("--cwd <cwd>", "working directory to use").default(
         process.cwd()
       )
     )
-    .action(async ({ packageManager: pm, prod, root: cwd }) => {
+    .addOption(new Option("-y, --yes", "use default options").default(false))
+    .action(async ({ pm, prod, cwd, yes }) => {
       let packageManager = pm;
 
       await promptCheckNodeVersion({ cwd });
@@ -56,42 +56,44 @@ export const makeInstallCommand = async () => {
       await promptCheckPackageJSON({ cwd, packageManager });
 
       const extras = await prompts(
-        [
-          {
-            type: "confirm",
-            name: "addESLintConfiguration",
-            message: "Do you want to add the ESLint configuration file?",
-            initial: true,
-          },
-          {
-            type: "confirm",
-            name: "addRecommendedScripts",
-            message: "Do you want to add the recommended scripts?",
-            initial: true,
-          },
-          {
-            type: "confirm",
-            name: "addVsCodeConfiguration",
-            message: "Do you want to add the VS Code configurations?",
-            initial: true,
-          },
-        ],
+        !yes
+          ? [
+              {
+                type: "confirm",
+                name: "addRecommendedScripts",
+                message: "Do you want to add the recommended scripts?",
+                initial: true,
+              },
+              {
+                type: "confirm",
+                name: "addESLintConfiguration",
+                message: "Do you want to add the ESLint configuration file?",
+                initial: true,
+              },
+              {
+                type: "confirm",
+                name: "addVsCodeConfiguration",
+                message: "Do you want to add the VS Code configurations?",
+                initial: true,
+              },
+            ]
+          : [],
         { onCancel: handlePromptCancel }
       );
 
       await installDependencies({ packageManager, cwd, prod });
 
-      if (extras.addESLintConfiguration) {
-        await addESLintConfiguration({ cwd });
-      }
-      if (extras.addRecommendedScripts) {
+      if (yes || extras.addRecommendedScripts) {
         await addRecommendedScripts({ cwd });
       }
-      if (extras.addVsCodeConfiguration) {
+      if (yes || extras.addESLintConfiguration) {
+        await addESLintConfiguration({ cwd });
+      }
+      if (yes || extras.addVsCodeConfiguration) {
         await addVsCodeConfiguration({ cwd });
       }
 
-      logger.log("🎉 [Peppy] installation completed successfully!");
+      logger.log("🎉 Peppy installation completed successfully!");
     });
 
   return program;

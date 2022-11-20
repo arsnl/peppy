@@ -20,7 +20,7 @@ import { logger } from "./logger";
  * @returns {Void} - nothing
  */
 export const handlePromptCancel = () => {
-  logger.log("[Peppy] CLI were aborted by the user.");
+  logger.log("Peppy CLI were aborted by the user.");
   process.exit(0);
 };
 
