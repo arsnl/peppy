@@ -5,10 +5,11 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   // Code action kinds to be run on save.
   "editor.codeActionsOnSave": {
+    // Controls whether auto fix action should be run on file save.
     "source.fixAll": true
   },
-  // Controls auto save of dirty editors.
-  //  - onFocusChange: A dirty editor is automatically saved when the editor loses focus.
+  // Controls auto save of editors that have unsaved changes.
+  //  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.
   "files.autoSave": "onFocusChange",
   // Always show the ESlint status bar item.
   "eslint.alwaysShowStatus": true

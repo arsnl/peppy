@@ -33,7 +33,7 @@
     "lint": "turbo run lint",
     "format": "prettier --write .",
     "test": "jest",
-    "generate-doc": "node scripts/generate-doc"
+    "docgen": "node scripts/docgen"
   },
   "devDependencies": {
     "eslint": "latest",

@@ -129,14 +129,41 @@ const getRuleLink = (ruleName) => {
 const generateRuleDocumentation = async ({
   eslintConfig,
   injectTag,
-  file = "file.js",
+  typescript = false,
 }) => {
   const engine = new ESLint({
     baseConfig: eslintConfig,
     useEslintrc: false,
   });
 
-  const { rules } = await engine.calculateConfigForFile(file);
+  const cleanSeverity = (config) =>
+    config[0] === 0 || config[0] === "off"
+      ? "off"
+      : config[0] === 1 || config[0] === "warn"
+      ? "warn"
+      : "error";
+
+  let rules;
+
+  const { rules: jsRules } = await engine.calculateConfigForFile("file.js");
+
+  if (typescript) {
+    const { rules: tsRules } = await engine.calculateConfigForFile("file.ts");
+
+    rules = Object.keys(tsRules).reduce((acc, ruleName) => {
+      if (
+        !jsRules[ruleName] ||
+        cleanSeverity(tsRules[ruleName]) !== cleanSeverity(jsRules[ruleName]) ||
+        JSON.stringify(tsRules[ruleName][1]) !==
+          JSON.stringify(jsRules[ruleName][1])
+      ) {
+        return { ...acc, [ruleName]: tsRules[ruleName] };
+      }
+      return acc;
+    }, {});
+  } else {
+    rules = jsRules;
+  }
 
   const {
     rulesMarkdown,
@@ -146,12 +173,7 @@ const generateRuleDocumentation = async ({
     rulesOffCount,
   } = Object.keys(rules).reduce(
     (acc, ruleName) => {
-      const severity =
-        rules[ruleName][0] === 0 || rules[ruleName][0] === "off"
-          ? "off"
-          : rules[ruleName][0] === 1 || rules[ruleName][0] === "warn"
-          ? "warn"
-          : "error";
+      const severity = cleanSeverity(rules[ruleName]);
 
       const severityIcon =
         severity === "off"
@@ -222,6 +244,56 @@ const generateRuleDocumentation = async ({
   });
 };
 
+const writeLicenseFiles = async (filePaths) => {
+  const license = fs
+    .readFileSync(path.join(__dirname, "templates/LICENSE"), {
+      encoding: "utf8",
+    })
+    .replace("%YEAR%", new Date().getFullYear());
+
+  await Promise.all(
+    filePaths.map((filePath) =>
+      fs.writeFileSync(path.join(__dirname, "../", filePath), license, {
+        encoding: "utf8",
+      })
+    )
+  );
+};
+
+const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
+  const readme = fs.readFileSync(readmeFilePath, {
+    encoding: "utf8",
+    /* Reading the file and storing it in a variable. */
+  });
+
+  const snippet = fs.readFileSync(path.join(__dirname, "../", snippetFile), {
+    encoding: "utf8",
+  });
+
+  const regexp = new RegExp(
+    `<!-- START ${injectTag} -->(.|\n)*<!-- END ${injectTag} -->`,
+    "gm"
+  );
+
+  const readMeWithEdits = prettier.format(
+    readme.replace(
+      regexp,
+      [
+        `<!-- START ${injectTag} -->`,
+        `\`\`\`${language}`,
+        snippet,
+        "```",
+        `<!-- END ${injectTag} -->`,
+      ].join("\n")
+    ),
+    { parser: "markdown" }
+  );
+
+  fs.writeFileSync(readmeFilePath, readMeWithEdits, {
+    encoding: "utf8",
+  });
+};
+
 (async () => {
   await generateRuleDocumentation({
     eslintConfig: {
@@ -234,7 +306,7 @@ const generateRuleDocumentation = async ({
     eslintConfig: {
       extends: ["peppy/configs/base"],
     },
-    file: "file.ts",
+    typescript: true,
     injectTag: "base-typescript-rules",
   });
 
@@ -249,7 +321,7 @@ const generateRuleDocumentation = async ({
     eslintConfig: {
       extends: ["peppy/configs/react"],
     },
-    file: "file.ts",
+    typescript: true,
     injectTag: "react-typescript-rules",
   });
 
@@ -273,4 +345,22 @@ const generateRuleDocumentation = async ({
     },
     injectTag: "prettier-rules",
   });
+
+  await injectSnippet({
+    snippetFile: "packages/peppy/src/templates/.vscode/extensions.json",
+    injectTag: "snippet-vscode-extensions",
+    language: "json",
+  });
+
+  await injectSnippet({
+    snippetFile: "packages/peppy/src/templates/.vscode/settings.json",
+    injectTag: "snippet-vscode-settings",
+    language: "json",
+  });
+
+  await writeLicenseFiles([
+    "LICENSE",
+    "packages/eslint-config-peppy/LICENSE",
+    "packages/peppy/LICENSE",
+  ]);
 })();

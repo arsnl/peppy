@@ -245,7 +245,7 @@ const baseConfig = {
     "no-case-declarations": ["error"],
     "no-class-assign": ["error"],
     "no-compare-neg-zero": ["error"],
-    "no-cond-assign": ["error", "always"],
+    "no-cond-assign": ["error", "except-parens"],
     "no-console": ["warn"],
     "no-const-assign": ["error"],
     "no-constant-condition": ["warn"],

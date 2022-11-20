@@ -1,6 +1,6 @@
 {
   "name": "peppy",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Peppy CLI - Brilliant ESLint configurations for happier developers",
   "keywords": [
     "peppy",
@@ -30,21 +30,18 @@
   "bin": "bin/peppy",
   "dependencies": {
     "commander": "^7.0.0",
+    "comment-json": "^4.2.3",
     "esm": "^3.2.25",
     "execa": "^5.0.0",
-    "global-dirs": "^2.1.0",
     "kleur": "^3.0.3",
     "ora": "^5.4.0",
     "prompts": "^2.4.1",
-    "ramda": "^0.27.1",
-    "read-pkg": "^5.2.0",
-    "resolve-from": "^5.0.0",
     "rimraf": "^3.0.2",
     "semver": "^5.7.1",
-    "update-check": "^1.5.4",
-    "write-pkg": "^4.0.0"
+    "update-check": "^1.5.4"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=14.0.0",
+    "npm": ">=5.2.0"
   }
 }
