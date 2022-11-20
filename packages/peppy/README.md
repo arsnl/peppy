@@ -3,7 +3,7 @@
 
 <h2 align="center">Peppy CLI</h2>
 
-A brilliant collection of ESLint configurations that enforces strict, readable and modern code with developers happiness in mind.
+A brilliant collection of ESLint configurations that enforces strict, readable, and modern code with developers happiness in mind.
 
 ➡️ [Check the complete documentation](https://github.com/arsnl/peppy).
 

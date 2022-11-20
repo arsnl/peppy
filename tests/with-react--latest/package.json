@@ -1,4 +1,5 @@
 {
+  "name": "@tests/with-react--latest",
   "scripts": {
     "lint": "eslint ."
   },

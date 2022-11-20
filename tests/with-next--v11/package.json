@@ -1,4 +1,5 @@
 {
+  "name": "@tests/with-next--v11",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

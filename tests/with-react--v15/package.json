@@ -1,4 +1,5 @@
 {
+  "name": "@tests/with-react--v15",
   "scripts": {
     "lint": "eslint ."
   },

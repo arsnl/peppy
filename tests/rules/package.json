@@ -1,4 +1,5 @@
 {
+  "name": "@tests/rules",
   "dependencies": {
     "@tests/utils": "*",
     "eslint": "latest",

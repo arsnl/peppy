@@ -36,6 +36,7 @@
     "docgen": "node scripts/docgen"
   },
   "devDependencies": {
+    "@changesets/cli": "latest",
     "eslint": "latest",
     "eslint-config-peppy": "*",
     "prettier": "latest",

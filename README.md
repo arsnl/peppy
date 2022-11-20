@@ -7,7 +7,7 @@
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
 </p>
 
-A brilliant collection of ESLint configurations that enforces strict, readable and modern code with developers happiness in mind.
+A brilliant collection of ESLint configurations that enforces strict, readable, and modern code with developers happiness in mind.
 
 ## Highlights
 
@@ -5407,15 +5407,15 @@ The following ESLint configurations are part of Peppy:
 
 ## Prettier support
 
-Prettier is very efficiant for formatting a lot of different files formats while ESLint is efficiant to validate the code-quality and catching bugs on JavaScript and TypeScript files only.
+Prettier is very efficient for formatting a lot of different files formats while ESLint is efficient to validate the code-quality and catching bugs on JavaScript and TypeScript files only.
 
-It's a good practice to let Prettier handle formatting and ESLint handle the non-formatting issues.
+It's a good practice to let Prettier handle formatting and ESLint handle the code style.
 
 Peppy apply this practice.
 
-Contrary to other ESLint configuration, Peppy do not contain any rule that overwrite the Prettier rules and don't do any formating that is already supported by Prettier.
+Contrary to other ESLint configuration, Peppy do not contain any rule that overwrite the Prettier rules and don't do any formatting that is already supported by Prettier.
 
-That mean that you can run Prettier with IDE extensions, on your terminal, on CI runners, on pre-commit hook, anywhere, without having to worry about possible confict with ESLint. Like it's supposed to be.
+That mean that you can run Prettier with IDE extensions, on your terminal, on CI runners, on pre-commit hook, anywhere, without having to worry about possible conflict with ESLint. Like it's supposed to be.
 
 However, the tradeoff of this approach is that you have to run Prettier and ESLint to get your JavaScript and TypeScript files fully formatted and linted. But, that's not a big tradeoff since you still have to run Prettier to format all the other files supported by it.
 

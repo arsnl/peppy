@@ -1,4 +1,5 @@
 {
+  "name": "@tests/with-jest--v27",
   "scripts": {
     "lint": "eslint ."
   },
