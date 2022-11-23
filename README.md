@@ -27,15 +27,17 @@ npx peppy install
 
 If you want to install Peppy manually, follow these steps.
 
-#### 1. Install dependencies:
+#### 1. Install dependencies
 
 ```
 npm install --save-dev eslint-config-peppy prettier eslint
 ```
 
-#### 2. Set ESLint
+#### 2. Setup ESLint
 
-If you don't already have one, create an ESLint configuration file (eg: `.eslintrc.js`) in the root of your project. Then, add configurations to the "extends" array in your ESLint configuration file.
+If you don't already have one, create an ESLint configuration file (eg: `.eslintrc.js`) in the root of your project. 
+
+Then, add configurations to the "extends" array in your ESLint configuration file.
 
 ```js
 module.exports = {
@@ -122,7 +124,7 @@ The following ESLint configurations are part of Peppy:
 
 Unlike other ESLint configurations, you do not have to install and maintain peerDependencies with Peppy.
 
-Here is an example of Peppy (without peerDependencies) vs Airbnb (with peerDependencies) setup
+Here is an example of Peppy vs Airbnb package.json footprint.
 
 ```jsonc
 // Peppy
