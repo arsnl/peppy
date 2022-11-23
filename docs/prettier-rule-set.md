@@ -5,7 +5,7 @@
 
 Here are the ESLint rules applied to support [Prettier](https://prettier.io/). These rules are used at the end of every configurations to be sure none of the rules enter in conflict with Prettier.
 
-These rules are extended from the [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) already included in Peppy.
+These rules are extended from the [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) configuration already included in Peppy.
 
 <!-- START rules -->
 <div align="center">
