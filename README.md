@@ -110,7 +110,7 @@ Now you can manually lint your code by running `npm run lint`, check the format 
 
 ## Peppy ESLint configurations
 
-The following ESLint configurations are part of Peppy:
+The following ESLint configurations are part of Peppy.
 
 | Configuration  | Description                                                                                                                                                                                                                                                                               | Extends rule sets                                                             |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
