@@ -126,11 +126,13 @@ const getRuleLink = (ruleName) => {
   return link ? `[\`${ruleName}\`](${link})` : `\`${ruleName}\``;
 };
 
-const generateRuleDocumentation = async ({
+const generateRuleSetDocumentation = async ({
   eslintConfig,
   injectTag,
+  file,
   typescript = false,
 }) => {
+  const filePath = path.join(__dirname, "..", file);
   const engine = new ESLint({
     baseConfig: eslintConfig,
     useEslintrc: false,
@@ -192,8 +194,6 @@ const generateRuleDocumentation = async ({
           JSON.stringify(rules[ruleName]),
           "```",
           "",
-          `<div align="right"><a href="#details-${injectTag}">⬆️</a></div>`,
-          "",
         ].join("\n"),
         rulesCount: acc.rulesCount + 1,
         rulesErrorCount: acc.rulesErrorCount + (severity === "error" ? 1 : 0),
@@ -210,7 +210,7 @@ const generateRuleDocumentation = async ({
     }
   );
 
-  const readme = fs.readFileSync(readmeFilePath, {
+  const readme = fs.readFileSync(filePath, {
     encoding: "utf8",
   });
 
@@ -224,22 +224,24 @@ const generateRuleDocumentation = async ({
       regexp,
       [
         `<!-- START ${injectTag} -->`,
+        '<div align="center">',
+        "",
+        "### Rules stats",
+        "",
         `| Total | Error ${SEVERITY_ICONS.ERROR} | Warning ${SEVERITY_ICONS.WARN} | Disabled ${SEVERITY_ICONS.OFF} |`,
         "| --- | --- | --- | --- |",
         `| ${rulesCount} | ${rulesErrorCount} | ${rulesWarnCount} | ${rulesOffCount} |`,
         "",
-        `<details id="details-${injectTag}">`,
-        "<summary>Check the rules details</summary>",
+        "</div>",
         "",
         rulesMarkdown,
-        "</details>",
         `<!-- END ${injectTag} -->`,
       ].join("\n")
     ),
     { parser: "markdown" }
   );
 
-  fs.writeFileSync(readmeFilePath, readMeWithEdits, {
+  fs.writeFileSync(filePath, readMeWithEdits, {
     encoding: "utf8",
   });
 };
@@ -295,67 +297,74 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
 };
 
 (async () => {
-  await generateRuleDocumentation({
+  await generateRuleSetDocumentation({
+    file: "docs/base-rule-set.md",
     eslintConfig: {
       extends: ["peppy/configs/base"],
     },
-    injectTag: "base-rules",
+    injectTag: "rules",
   });
 
-  await generateRuleDocumentation({
+  await generateRuleSetDocumentation({
+    file: "docs/base-rule-set.md",
     eslintConfig: {
       extends: ["peppy/configs/base"],
     },
     typescript: true,
-    injectTag: "base-typescript-rules",
+    injectTag: "rules-ts",
   });
 
-  await generateRuleDocumentation({
+  await generateRuleSetDocumentation({
+    file: "docs/react-rule-set.md",
     eslintConfig: {
       extends: ["peppy/configs/react"],
     },
-    injectTag: "react-rules",
+    injectTag: "rules",
   });
 
-  await generateRuleDocumentation({
+  await generateRuleSetDocumentation({
+    file: "docs/react-rule-set.md",
     eslintConfig: {
       extends: ["peppy/configs/react"],
     },
     typescript: true,
-    injectTag: "react-typescript-rules",
+    injectTag: "rules-ts",
   });
 
-  await generateRuleDocumentation({
+  await generateRuleSetDocumentation({
+    file: "docs/next-rule-set.md",
     eslintConfig: {
       extends: ["peppy/configs/next"],
     },
-    injectTag: "next-rules",
+    injectTag: "rules",
   });
 
-  await generateRuleDocumentation({
+  await generateRuleSetDocumentation({
+    file: "docs/jest-rule-set.md",
     eslintConfig: {
       extends: ["peppy/configs/jest"],
     },
-    injectTag: "jest-rules",
+    injectTag: "rules",
   });
 
-  await generateRuleDocumentation({
+  await generateRuleSetDocumentation({
+    file: "docs/prettier-rule-set.md",
     eslintConfig: {
       extends: ["peppy/configs/prettier"],
     },
-    injectTag: "prettier-rules",
+    injectTag: "rules",
   });
 
   await injectSnippet({
     snippetFile: "packages/peppy/src/templates/.vscode/extensions.json",
     injectTag: "snippet-vscode-extensions",
-    language: "json",
+    language: "jsonc",
   });
 
   await injectSnippet({
     snippetFile: "packages/peppy/src/templates/.vscode/settings.json",
     injectTag: "snippet-vscode-settings",
-    language: "json",
+    language: "jsonc",
   });
 
   await writeLicenseFiles([
