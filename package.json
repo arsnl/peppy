@@ -24,15 +24,14 @@
     }
   ],
   "workspaces": [
-    "packages/*",
-    "tests/*"
+    "packages/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint",
-    "format": "prettier --write .",
-    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --check --loglevel warn .",
+    "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
     "docgen": "node scripts/docgen"
   },
   "devDependencies": {

@@ -35,7 +35,7 @@ npm install --save-dev eslint-config-peppy prettier eslint
 
 #### 2. Setup ESLint
 
-If you don't already have one, create an ESLint configuration file (eg: `.eslintrc.js`) in the root of your project. 
+If you don't already have one, create an ESLint configuration file (eg: `.eslintrc.js`) in the root of your project.
 
 Then, add configurations to the "extends" array in your ESLint configuration file.
 
