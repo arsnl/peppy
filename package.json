@@ -32,16 +32,18 @@
     "lint": "eslint .",
     "format": "prettier --check --loglevel warn .",
     "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
-    "docgen": "node scripts/docgen"
-  },
-  "devDependencies": {
-    "@changesets/cli": "latest",
-    "eslint": "latest",
-    "eslint-config-peppy": "*",
-    "prettier": "latest",
-    "turbo": "latest"
+    "docgen": "node scripts/docgen",
+    "pre-test": "node scripts/pre-test"
   },
   "engines": {
     "node": ">=14"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.25.2",
+    "eslint": "^8.28.0",
+    "eslint-config-peppy": "*",
+    "glob": "^8.0.3",
+    "prettier": "^2.8.0",
+    "turbo": "^1.6.3"
   }
 }

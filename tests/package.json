@@ -1,0 +1,11 @@
+{
+  "workspaces": [
+    "./*"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "jest": "latest"
+  }
+}

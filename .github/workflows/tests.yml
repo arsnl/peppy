@@ -33,3 +33,11 @@ jobs:
         run: npm run format
       - name: Validate Style
         run: npm run lint
+      - name: Prepare the testing directory
+        run: npm run pre-test
+      - name: Install tests dependencies
+        working-directory: ./tests
+        run: npm install
+      - name: Run the tests
+        working-directory: ./tests
+        run: npm run test
