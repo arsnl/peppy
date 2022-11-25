@@ -1,0 +1,13 @@
+{
+  "name": "@tests/with-jest--v27",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@tests/utils": "*",
+    "eslint": "latest",
+    "eslint-config-peppy": "*",
+    "jest": "27.0.0"
+  }
+}

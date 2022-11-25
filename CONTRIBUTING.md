@@ -1,5 +1,4 @@
 <div align="center"><img src="media/readme-banner.png" width="600" role="presentation" /></div>
-
 <h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
 
 # Contributing
@@ -14,11 +13,7 @@ To install and work on this project locally, all you have to do is to install th
 
 ```bash
 npm install
-# OR
-yarn
 ```
-
-After the dependencies installations, the `prepare` script will automatically bootstrap the packages, run the tests and create the symlink on your system so you'll be able to test the CLI locally.
 
 During the development, you don't have anything to run since this project is not transpiled before being send to NPM.
 
@@ -31,8 +26,7 @@ We use [Github Flow](https://guides.github.com/introduction/flow/index.html).
 1. Fork the repo and create your branch from the `main` branch.
 2. If you've added code that should be tested, add tests.
 3. If you've added/changed code that change the documentation, update the documentation.
-4. Ensure the test suite passes by running `npm test` and `npm run fix` to fix the fixable issues.
-5. Issue that pull request! 🚀
+4. Issue that pull request! 🚀
 
 ## Versioning Policy
 
@@ -48,7 +42,7 @@ Therefore, to respect the [versioning policy](#versioning-policy), every new rul
 
 ## Bug Reports
 
-We use GitHub issues to track bugs. Report a bug by [opening a new issue](https://github.com/arsnl/peppy/issues). It's that easy! ✨
+We use GitHub issues to track bugs. Report a bug by [opening a new issue](https://github.com/arsnl/peppy/issues).
 
 ## License
 

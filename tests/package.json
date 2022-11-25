@@ -1,0 +1,13 @@
+{
+  "workspaces": [
+    "./*"
+  ],
+  "scripts": {
+    "test": "jest",
+    "prepare": "node prepare",
+    "posttest": "node prepare --post"
+  },
+  "dependencies": {
+    "jest": "latest"
+  }
+}

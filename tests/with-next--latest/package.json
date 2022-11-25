@@ -1,0 +1,19 @@
+{
+  "name": "@tests/with-next--latest",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "latest",
+    "prop-types": "latest",
+    "react": "latest"
+  },
+  "devDependencies": {
+    "@tests/utils": "*",
+    "eslint": "latest",
+    "eslint-config-peppy": "*"
+  }
+}

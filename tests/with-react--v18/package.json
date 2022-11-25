@@ -1,0 +1,14 @@
+{
+  "name": "@tests/with-react--v18",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "18.0.0"
+  },
+  "devDependencies": {
+    "@tests/utils": "*",
+    "eslint": "latest",
+    "eslint-config-peppy": "*"
+  }
+}

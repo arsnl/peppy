@@ -1,33 +1,13 @@
 <div align="center"><img src="../../media/readme-banner.png" width="600" role="presentation" /></div>
-
 <h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
-
-<p align="center">
-    <a href="https://www.npmjs.org/package/eslint-config-peppy"><img src="https://img.shields.io/npm/v/eslint-config-peppy.svg" alt="npm version" /></a>
-    <a href="https://prettier.io/"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg" alt="code style: prettier" /></a>
-    <a href="https://www.npmjs.com/package/peppy"><img src="https://badges.neaf.co/peppy.svg" alt="eslint config: peppy" /></a>
-    <a href="https://github.com/arsnl/peppy/actions?query=workflow%3Atest+branch%main"><img src="https://github.com/arsnl/peppy/workflows/test/badge.svg?branch=main" alt="npm test workflow status" /></a>
-</p>
 
 <h2 align="center">eslint-config-peppy</h2>
 
-This ESLint configuration is part of the [Peppy ESLint configurations](https://www.npmjs.com/package/peppy).
+A brilliant collection of ESLint configurations that enforces strict, readable, and modern code with developers happiness in mind.
 
-## Install
+Cloned from the popular Airbnb configuration, Peppy takes a more modern approach by increasing the supported ecmaVersion to 2020 in order to support the very useful nullish and optional chaining operators, supporting TypeScript out of the box, letting Prettier taking care of formatting by removing all the conflicting rules and removing the need to install and support the peer dependencies in your package.json.
 
-```
-npx peppy add eslint-config-peppy
-```
-
-## Versioning Policy
-
-This project apply the [Semantic Versioning](https://semver.org/) convention. All breaking changes will bump the major version. Every new rule addition will be recognized as a breaking changes. Therefore, every new rule addition will increase the major version.
-
-Also, all packages use the same version. That mean, if one package change, all the packages version will be changed for the new one. By doing that we make sure there's no cross version issues.
-
-## Contributing
-
-Please read our [contribution guide](/CONTRIBUTING.md) for details on our [code of conduct](/CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
+➡️ [Check the complete documentation](https://github.com/arsnl/peppy).
 
 ## License
 
