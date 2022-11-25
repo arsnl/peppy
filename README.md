@@ -9,6 +9,8 @@
 
 A brilliant collection of ESLint configurations that enforces strict, readable, and modern code with developers happiness in mind.
 
+Cloned from the popular Airbnb configuration, Peppy takes a more modern approach by increasing the supported ecmaVersion to 2020 in order to support the very useful nullish and optional chaining operators, supporting TypeScript out of the box, letting Prettier taking care of formatting by removing all the conflicting rules and removing the need to install and support the peer dependencies in your package.json.
+
 ## Highlights
 
 - Play well with [Prettier](#prettier-support) and [TypeScript](#typescript-support).
@@ -122,9 +124,9 @@ The following ESLint configurations are part of Peppy.
 
 ## Batteries included configuration
 
-Unlike other ESLint configurations, you do not have to install and maintain peerDependencies with Peppy.
+Unlike other ESLint configurations, you do not have to install and maintain peer dependencies with Peppy.
 
-Here is an example of Peppy vs Airbnb package.json footprint.
+Here is an example of Peppy vs Airbnb footprints.
 
 ```jsonc
 // Peppy

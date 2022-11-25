@@ -18,1030 +18,1201 @@ These rules are extended from the [eslint-config-prettier](https://github.com/pr
 
 </div>
 
-#### 🔵 [`lines-around-comment`](https://eslint.org/docs/rules/lines-around-comment)
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/lines-around-comment">lines-around-comment</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`max-len`](https://eslint.org/docs/rules/max-len)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/max-len">max-len</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`no-confusing-arrow`](https://eslint.org/docs/rules/no-confusing-arrow)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-confusing-arrow">no-confusing-arrow</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`no-mixed-operators`](https://eslint.org/docs/rules/no-mixed-operators)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-mixed-operators">no-mixed-operators</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`no-tabs`](https://eslint.org/docs/rules/no-tabs)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-tabs">no-tabs</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`no-unexpected-multiline`](https://eslint.org/docs/rules/no-unexpected-multiline)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-unexpected-multiline">no-unexpected-multiline</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`quotes`](https://eslint.org/docs/rules/quotes)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/quotes">quotes</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`@typescript-eslint/quotes`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md">@typescript-eslint/quotes</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`babel/quotes`](https://github.com/babel/eslint-plugin-babel)
+</details>
+<details><summary>🔵 <a href="https://github.com/babel/eslint-plugin-babel">babel/quotes</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`vue/html-self-closing`](https://eslint.vuejs.org/rules/html-self-closing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/html-self-closing">vue/html-self-closing</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`vue/max-len`](https://eslint.vuejs.org/rules/max-len)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/max-len">vue/max-len</a></summary><br/>
 
 ```js
 [0];
 ```
 
-#### 🔵 [`array-bracket-newline`](https://eslint.org/docs/rules/array-bracket-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/array-bracket-newline">array-bracket-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`array-bracket-spacing`](https://eslint.org/docs/rules/array-bracket-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/array-bracket-spacing">array-bracket-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`array-element-newline`](https://eslint.org/docs/rules/array-element-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/array-element-newline">array-element-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`arrow-parens`](https://eslint.org/docs/rules/arrow-parens)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/arrow-parens">arrow-parens</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`arrow-spacing`](https://eslint.org/docs/rules/arrow-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/arrow-spacing">arrow-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`block-spacing`](https://eslint.org/docs/rules/block-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/block-spacing">block-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`brace-style`](https://eslint.org/docs/rules/brace-style)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/brace-style">brace-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`comma-dangle`](https://eslint.org/docs/rules/comma-dangle)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/comma-dangle">comma-dangle</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`comma-spacing`](https://eslint.org/docs/rules/comma-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/comma-spacing">comma-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`comma-style`](https://eslint.org/docs/rules/comma-style)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/comma-style">comma-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`computed-property-spacing`](https://eslint.org/docs/rules/computed-property-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/computed-property-spacing">computed-property-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`dot-location`](https://eslint.org/docs/rules/dot-location)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/dot-location">dot-location</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`eol-last`](https://eslint.org/docs/rules/eol-last)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/eol-last">eol-last</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`func-call-spacing`](https://eslint.org/docs/rules/func-call-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/func-call-spacing">func-call-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`function-call-argument-newline`](https://eslint.org/docs/rules/function-call-argument-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/function-call-argument-newline">function-call-argument-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`function-paren-newline`](https://eslint.org/docs/rules/function-paren-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/function-paren-newline">function-paren-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`generator-star`](https://eslint.org/docs/rules/generator-star)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/generator-star">generator-star</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`generator-star-spacing`](https://eslint.org/docs/rules/generator-star-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/generator-star-spacing">generator-star-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`implicit-arrow-linebreak`](https://eslint.org/docs/rules/implicit-arrow-linebreak)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/implicit-arrow-linebreak">implicit-arrow-linebreak</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`indent`](https://eslint.org/docs/rules/indent)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/indent">indent</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`jsx-quotes`](https://eslint.org/docs/rules/jsx-quotes)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/jsx-quotes">jsx-quotes</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`key-spacing`](https://eslint.org/docs/rules/key-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/key-spacing">key-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`keyword-spacing`](https://eslint.org/docs/rules/keyword-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/keyword-spacing">keyword-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`linebreak-style`](https://eslint.org/docs/rules/linebreak-style)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/linebreak-style">linebreak-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`multiline-ternary`](https://eslint.org/docs/rules/multiline-ternary)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/multiline-ternary">multiline-ternary</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`newline-per-chained-call`](https://eslint.org/docs/rules/newline-per-chained-call)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/newline-per-chained-call">newline-per-chained-call</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`new-parens`](https://eslint.org/docs/rules/new-parens)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/new-parens">new-parens</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-arrow-condition`](https://eslint.org/docs/rules/no-arrow-condition)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-arrow-condition">no-arrow-condition</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-comma-dangle`](https://eslint.org/docs/rules/no-comma-dangle)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-comma-dangle">no-comma-dangle</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-extra-parens`](https://eslint.org/docs/rules/no-extra-parens)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-extra-parens">no-extra-parens</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-extra-semi`](https://eslint.org/docs/rules/no-extra-semi)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-extra-semi">no-extra-semi</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-floating-decimal`](https://eslint.org/docs/rules/no-floating-decimal)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-floating-decimal">no-floating-decimal</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-mixed-spaces-and-tabs`](https://eslint.org/docs/rules/no-mixed-spaces-and-tabs)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs">no-mixed-spaces-and-tabs</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-multi-spaces`](https://eslint.org/docs/rules/no-multi-spaces)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-multi-spaces">no-multi-spaces</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-multiple-empty-lines`](https://eslint.org/docs/rules/no-multiple-empty-lines)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-multiple-empty-lines">no-multiple-empty-lines</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-reserved-keys`](https://eslint.org/docs/rules/no-reserved-keys)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-reserved-keys">no-reserved-keys</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-space-before-semi`](https://eslint.org/docs/rules/no-space-before-semi)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-space-before-semi">no-space-before-semi</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-trailing-spaces`](https://eslint.org/docs/rules/no-trailing-spaces)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-trailing-spaces">no-trailing-spaces</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-whitespace-before-property`](https://eslint.org/docs/rules/no-whitespace-before-property)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-whitespace-before-property">no-whitespace-before-property</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-wrap-func`](https://eslint.org/docs/rules/no-wrap-func)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-wrap-func">no-wrap-func</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`nonblock-statement-body-position`](https://eslint.org/docs/rules/nonblock-statement-body-position)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/nonblock-statement-body-position">nonblock-statement-body-position</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`object-curly-newline`](https://eslint.org/docs/rules/object-curly-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/object-curly-newline">object-curly-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`object-curly-spacing`](https://eslint.org/docs/rules/object-curly-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/object-curly-spacing">object-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`object-property-newline`](https://eslint.org/docs/rules/object-property-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/object-property-newline">object-property-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`one-var-declaration-per-line`](https://eslint.org/docs/rules/one-var-declaration-per-line)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/one-var-declaration-per-line">one-var-declaration-per-line</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`operator-linebreak`](https://eslint.org/docs/rules/operator-linebreak)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/operator-linebreak">operator-linebreak</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`padded-blocks`](https://eslint.org/docs/rules/padded-blocks)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/padded-blocks">padded-blocks</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`quote-props`](https://eslint.org/docs/rules/quote-props)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/quote-props">quote-props</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`rest-spread-spacing`](https://eslint.org/docs/rules/rest-spread-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/rest-spread-spacing">rest-spread-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`semi`](https://eslint.org/docs/rules/semi)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/semi">semi</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`semi-spacing`](https://eslint.org/docs/rules/semi-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/semi-spacing">semi-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`semi-style`](https://eslint.org/docs/rules/semi-style)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/semi-style">semi-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-after-function-name`](https://eslint.org/docs/rules/space-after-function-name)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-after-function-name">space-after-function-name</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-after-keywords`](https://eslint.org/docs/rules/space-after-keywords)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-after-keywords">space-after-keywords</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-before-blocks`](https://eslint.org/docs/rules/space-before-blocks)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-before-blocks">space-before-blocks</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-before-function-paren`](https://eslint.org/docs/rules/space-before-function-paren)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-before-function-paren">space-before-function-paren</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-before-function-parentheses`](https://eslint.org/docs/rules/space-before-function-parentheses)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-before-function-parentheses">space-before-function-parentheses</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-before-keywords`](https://eslint.org/docs/rules/space-before-keywords)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-before-keywords">space-before-keywords</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-in-brackets`](https://eslint.org/docs/rules/space-in-brackets)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-in-brackets">space-in-brackets</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-in-parens`](https://eslint.org/docs/rules/space-in-parens)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-in-parens">space-in-parens</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-infix-ops`](https://eslint.org/docs/rules/space-infix-ops)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-infix-ops">space-infix-ops</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-return-throw-case`](https://eslint.org/docs/rules/space-return-throw-case)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-return-throw-case">space-return-throw-case</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-unary-ops`](https://eslint.org/docs/rules/space-unary-ops)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-unary-ops">space-unary-ops</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`space-unary-word-ops`](https://eslint.org/docs/rules/space-unary-word-ops)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/space-unary-word-ops">space-unary-word-ops</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`switch-colon-spacing`](https://eslint.org/docs/rules/switch-colon-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/switch-colon-spacing">switch-colon-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`template-curly-spacing`](https://eslint.org/docs/rules/template-curly-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/template-curly-spacing">template-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`template-tag-spacing`](https://eslint.org/docs/rules/template-tag-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/template-tag-spacing">template-tag-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`unicode-bom`](https://eslint.org/docs/rules/unicode-bom)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/unicode-bom">unicode-bom</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`wrap-iife`](https://eslint.org/docs/rules/wrap-iife)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/wrap-iife">wrap-iife</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`wrap-regex`](https://eslint.org/docs/rules/wrap-regex)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/wrap-regex">wrap-regex</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`yield-star-spacing`](https://eslint.org/docs/rules/yield-star-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/yield-star-spacing">yield-star-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@babel/object-curly-spacing`](https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin)
+</details>
+<details><summary>🔵 <a href="https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin">@babel/object-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@babel/semi`](https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin)
+</details>
+<details><summary>🔵 <a href="https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin">@babel/semi</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/brace-style`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md">@typescript-eslint/brace-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/comma-dangle`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-dangle.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-dangle.md">@typescript-eslint/comma-dangle</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/comma-spacing`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md">@typescript-eslint/comma-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/func-call-spacing`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md">@typescript-eslint/func-call-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/indent`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md">@typescript-eslint/indent</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/keyword-spacing`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md">@typescript-eslint/keyword-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/member-delimiter-style`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md">@typescript-eslint/member-delimiter-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/no-extra-parens`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-parens.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-parens.md">@typescript-eslint/no-extra-parens</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/no-extra-semi`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-semi.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-semi.md">@typescript-eslint/no-extra-semi</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/object-curly-spacing`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/object-curly-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/object-curly-spacing.md">@typescript-eslint/object-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/semi`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/semi.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/semi.md">@typescript-eslint/semi</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/space-before-blocks`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-blocks.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-blocks.md">@typescript-eslint/space-before-blocks</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/space-before-function-paren`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-function-paren.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-function-paren.md">@typescript-eslint/space-before-function-paren</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/space-infix-ops`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-infix-ops.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-infix-ops.md">@typescript-eslint/space-infix-ops</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`@typescript-eslint/type-annotation-spacing`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/type-annotation-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/type-annotation-spacing.md">@typescript-eslint/type-annotation-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`babel/object-curly-spacing`](https://github.com/babel/eslint-plugin-babel)
+</details>
+<details><summary>🔵 <a href="https://github.com/babel/eslint-plugin-babel">babel/object-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`babel/semi`](https://github.com/babel/eslint-plugin-babel)
+</details>
+<details><summary>🔵 <a href="https://github.com/babel/eslint-plugin-babel">babel/semi</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/boolean-style`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-boolean-style)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-boolean-style">flowtype/boolean-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/delimiter-dangle`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-delimiter-dangle)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-delimiter-dangle">flowtype/delimiter-dangle</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/generic-spacing`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-generic-spacing)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-generic-spacing">flowtype/generic-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/object-type-curly-spacing`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-object-type-curly-spacing)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-object-type-curly-spacing">flowtype/object-type-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/object-type-delimiter`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-object-type-delimiter)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-object-type-delimiter">flowtype/object-type-delimiter</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/quotes`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-quotes)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-quotes">flowtype/quotes</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/semi`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-semi)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-semi">flowtype/semi</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/space-after-type-colon`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-space-after-type-colon)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-space-after-type-colon">flowtype/space-after-type-colon</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/space-before-generic-bracket`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-space-before-generic-bracket)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-space-before-generic-bracket">flowtype/space-before-generic-bracket</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/space-before-type-colon`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-space-before-type-colon)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-space-before-type-colon">flowtype/space-before-type-colon</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`flowtype/union-intersection-spacing`](https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-union-intersection-spacing)
+</details>
+<details><summary>🔵 <a href="https://github.com/gajus/eslint-plugin-flowtype/#eslint-plugin-flowtype-rules-union-intersection-spacing">flowtype/union-intersection-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-child-element-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-child-element-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-child-element-spacing.md">react/jsx-child-element-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md">react/jsx-closing-bracket-location</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-closing-tag-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md">react/jsx-closing-tag-location</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-curly-newline`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-newline.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-newline.md">react/jsx-curly-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-curly-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md">react/jsx-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-equals-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md">react/jsx-equals-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-first-prop-new-line`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md">react/jsx-first-prop-new-line</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-indent`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md">react/jsx-indent</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-indent-props`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md">react/jsx-indent-props</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-max-props-per-line`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md">react/jsx-max-props-per-line</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-newline`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-newline.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-newline.md">react/jsx-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-one-expression-per-line`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md">react/jsx-one-expression-per-line</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-props-no-multi-spaces`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-multi-spaces.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-multi-spaces.md">react/jsx-props-no-multi-spaces</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-tag-spacing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md">react/jsx-tag-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md">react/jsx-wrap-multilines</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`standard/array-bracket-even-spacing`](https://github.com/standard/eslint-plugin-standard)
+</details>
+<details><summary>🔵 <a href="https://github.com/standard/eslint-plugin-standard">standard/array-bracket-even-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`standard/computed-property-even-spacing`](https://github.com/standard/eslint-plugin-standard)
+</details>
+<details><summary>🔵 <a href="https://github.com/standard/eslint-plugin-standard">standard/computed-property-even-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`standard/object-curly-even-spacing`](https://github.com/standard/eslint-plugin-standard)
+</details>
+<details><summary>🔵 <a href="https://github.com/standard/eslint-plugin-standard">standard/object-curly-even-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`unicorn/empty-brace-spaces`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md">unicorn/empty-brace-spaces</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`unicorn/no-nested-ternary`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md">unicorn/no-nested-ternary</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`unicorn/number-literal-case`](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/number-literal-case.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/number-literal-case.md">unicorn/number-literal-case</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/array-bracket-newline`](https://eslint.vuejs.org/rules/array-bracket-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/array-bracket-newline">vue/array-bracket-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/array-bracket-spacing`](https://eslint.vuejs.org/rules/array-bracket-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/array-bracket-spacing">vue/array-bracket-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/arrow-spacing`](https://eslint.vuejs.org/rules/arrow-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/arrow-spacing">vue/arrow-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/block-spacing`](https://eslint.vuejs.org/rules/block-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/block-spacing">vue/block-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/block-tag-newline`](https://eslint.vuejs.org/rules/block-tag-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/block-tag-newline">vue/block-tag-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/brace-style`](https://eslint.vuejs.org/rules/brace-style)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/brace-style">vue/brace-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/comma-dangle`](https://eslint.vuejs.org/rules/comma-dangle)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/comma-dangle">vue/comma-dangle</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/comma-spacing`](https://eslint.vuejs.org/rules/comma-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/comma-spacing">vue/comma-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/comma-style`](https://eslint.vuejs.org/rules/comma-style)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/comma-style">vue/comma-style</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/dot-location`](https://eslint.vuejs.org/rules/dot-location)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/dot-location">vue/dot-location</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/func-call-spacing`](https://eslint.vuejs.org/rules/func-call-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/func-call-spacing">vue/func-call-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/html-closing-bracket-newline`](https://eslint.vuejs.org/rules/html-closing-bracket-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/html-closing-bracket-newline">vue/html-closing-bracket-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/html-closing-bracket-spacing`](https://eslint.vuejs.org/rules/html-closing-bracket-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/html-closing-bracket-spacing">vue/html-closing-bracket-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/html-end-tags`](https://eslint.vuejs.org/rules/html-end-tags)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/html-end-tags">vue/html-end-tags</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/html-indent`](https://eslint.vuejs.org/rules/html-indent)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/html-indent">vue/html-indent</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/html-quotes`](https://eslint.vuejs.org/rules/html-quotes)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/html-quotes">vue/html-quotes</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/key-spacing`](https://eslint.vuejs.org/rules/key-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/key-spacing">vue/key-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/keyword-spacing`](https://eslint.vuejs.org/rules/keyword-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/keyword-spacing">vue/keyword-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/max-attributes-per-line`](https://eslint.vuejs.org/rules/max-attributes-per-line)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/max-attributes-per-line">vue/max-attributes-per-line</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/multiline-html-element-content-newline`](https://eslint.vuejs.org/rules/multiline-html-element-content-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/multiline-html-element-content-newline">vue/multiline-html-element-content-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/mustache-interpolation-spacing`](https://eslint.vuejs.org/rules/mustache-interpolation-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/mustache-interpolation-spacing">vue/mustache-interpolation-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/no-extra-parens`](https://eslint.vuejs.org/rules/no-extra-parens)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/no-extra-parens">vue/no-extra-parens</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/no-multi-spaces`](https://eslint.vuejs.org/rules/no-multi-spaces)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/no-multi-spaces">vue/no-multi-spaces</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/no-spaces-around-equal-signs-in-attribute`](https://eslint.vuejs.org/rules/no-spaces-around-equal-signs-in-attribute)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/no-spaces-around-equal-signs-in-attribute">vue/no-spaces-around-equal-signs-in-attribute</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/object-curly-newline`](https://eslint.vuejs.org/rules/object-curly-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/object-curly-newline">vue/object-curly-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/object-curly-spacing`](https://eslint.vuejs.org/rules/object-curly-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/object-curly-spacing">vue/object-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/object-property-newline`](https://eslint.vuejs.org/rules/object-property-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/object-property-newline">vue/object-property-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/operator-linebreak`](https://eslint.vuejs.org/rules/operator-linebreak)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/operator-linebreak">vue/operator-linebreak</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/quote-props`](https://eslint.vuejs.org/rules/quote-props)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/quote-props">vue/quote-props</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/script-indent`](https://eslint.vuejs.org/rules/script-indent)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/script-indent">vue/script-indent</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/singleline-html-element-content-newline`](https://eslint.vuejs.org/rules/singleline-html-element-content-newline)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/singleline-html-element-content-newline">vue/singleline-html-element-content-newline</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/space-in-parens`](https://eslint.vuejs.org/rules/space-in-parens)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/space-in-parens">vue/space-in-parens</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/space-infix-ops`](https://eslint.vuejs.org/rules/space-infix-ops)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/space-infix-ops">vue/space-infix-ops</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/space-unary-ops`](https://eslint.vuejs.org/rules/space-unary-ops)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/space-unary-ops">vue/space-unary-ops</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`vue/template-curly-spacing`](https://eslint.vuejs.org/rules/template-curly-spacing)
+</details>
+<details><summary>🔵 <a href="https://eslint.vuejs.org/rules/template-curly-spacing">vue/template-curly-spacing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`indent-legacy`](https://eslint.org/docs/rules/indent-legacy)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/indent-legacy">indent-legacy</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-spaced-func`](https://eslint.org/docs/rules/no-spaced-func)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-spaced-func">no-spaced-func</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-space-before-closing`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md">react/jsx-space-before-closing</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
+</details>
 <!-- END rules -->

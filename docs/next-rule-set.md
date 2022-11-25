@@ -18,127 +18,147 @@ These rules use the [@next/eslint-plugin-next](https://nextjs.org/docs/basic-fea
 
 </div>
 
-#### 🔴 [`@next/next/no-html-link-for-pages`](https://nextjs.org/docs/messages/no-html-link-for-pages)
+<details><summary>🔴 <a href="https://nextjs.org/docs/messages/no-html-link-for-pages">@next/next/no-html-link-for-pages</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`@next/next/no-sync-scripts`](https://nextjs.org/docs/messages/no-sync-scripts)
+</details>
+<details><summary>🔴 <a href="https://nextjs.org/docs/messages/no-sync-scripts">@next/next/no-sync-scripts</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🟠 [`@next/next/google-font-display`](https://nextjs.org/docs/messages/google-font-display)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/google-font-display">@next/next/google-font-display</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/google-font-preconnect`](https://nextjs.org/docs/messages/google-font-preconnect)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/google-font-preconnect">@next/next/google-font-preconnect</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/next-script-for-ga`](https://nextjs.org/docs/messages/next-script-for-ga)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/next-script-for-ga">@next/next/next-script-for-ga</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-before-interactive-script-outside-document`](https://nextjs.org/docs/messages/no-before-interactive-script-outside-document)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-before-interactive-script-outside-document">@next/next/no-before-interactive-script-outside-document</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-css-tags`](https://nextjs.org/docs/messages/no-css-tags)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-css-tags">@next/next/no-css-tags</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-head-element`](https://nextjs.org/docs/messages/no-head-element)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-head-element">@next/next/no-head-element</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-img-element`](https://nextjs.org/docs/messages/no-img-element)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-img-element">@next/next/no-img-element</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-page-custom-font`](https://nextjs.org/docs/messages/no-page-custom-font)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-page-custom-font">@next/next/no-page-custom-font</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-styled-jsx-in-document`](https://nextjs.org/docs/messages/no-styled-jsx-in-document)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-styled-jsx-in-document">@next/next/no-styled-jsx-in-document</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-title-in-document-head`](https://nextjs.org/docs/messages/no-title-in-document-head)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-title-in-document-head">@next/next/no-title-in-document-head</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-typos`](https://nextjs.org/docs/messages/no-typos)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-typos">@next/next/no-typos</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`@next/next/no-unwanted-polyfillio`](https://nextjs.org/docs/messages/no-unwanted-polyfillio)
+</details>
+<details><summary>🟠 <a href="https://nextjs.org/docs/messages/no-unwanted-polyfillio">@next/next/no-unwanted-polyfillio</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`@next/next/inline-script-id`](https://nextjs.org/docs/messages/inline-script-id)
+</details>
+<details><summary>🔴 <a href="https://nextjs.org/docs/messages/inline-script-id">@next/next/inline-script-id</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`@next/next/no-assign-module-variable`](https://nextjs.org/docs/messages/no-assign-module-variable)
+</details>
+<details><summary>🔴 <a href="https://nextjs.org/docs/messages/no-assign-module-variable">@next/next/no-assign-module-variable</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`@next/next/no-document-import-in-page`](https://nextjs.org/docs/messages/no-document-import-in-page)
+</details>
+<details><summary>🔴 <a href="https://nextjs.org/docs/messages/no-document-import-in-page">@next/next/no-document-import-in-page</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`@next/next/no-duplicate-head`](https://nextjs.org/docs/messages/no-duplicate-head)
+</details>
+<details><summary>🔴 <a href="https://nextjs.org/docs/messages/no-duplicate-head">@next/next/no-duplicate-head</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`@next/next/no-head-import-in-document`](https://nextjs.org/docs/messages/no-head-import-in-document)
+</details>
+<details><summary>🔴 <a href="https://nextjs.org/docs/messages/no-head-import-in-document">@next/next/no-head-import-in-document</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`@next/next/no-script-component-in-head`](https://nextjs.org/docs/messages/no-script-component-in-head)
+</details>
+<details><summary>🔴 <a href="https://nextjs.org/docs/messages/no-script-component-in-head">@next/next/no-script-component-in-head</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/anchor-is-valid`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">jsx-a11y/anchor-is-valid</a></summary><br/>
 
 ```js
 [
@@ -151,7 +171,8 @@ These rules use the [@next/eslint-plugin-next](https://nextjs.org/docs/basic-fea
 ];
 ```
 
-#### 🔴 [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md">jsx-a11y/alt-text</a></summary><br/>
 
 ```js
 [
@@ -166,16 +187,19 @@ These rules use the [@next/eslint-plugin-next](https://nextjs.org/docs/basic-fea
 ];
 ```
 
-#### 🔴 [`react/no-unknown-property`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md">react/no-unknown-property</a></summary><br/>
 
 ```js
 ["error", { ignore: ["css", "jsx", "global"] }];
 ```
 
-#### 🔵 [`react/react-in-jsx-scope`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md">react/react-in-jsx-scope</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
+</details>
 <!-- END rules -->

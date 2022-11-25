@@ -20,7 +20,7 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 
 </div>
 
-#### 🔴 [`class-methods-use-this`](https://eslint.org/docs/rules/class-methods-use-this)
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/class-methods-use-this">class-methods-use-this</a></summary><br/>
 
 ```js
 [
@@ -49,13 +49,15 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔵 [`jsx-a11y/accessible-emoji`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/accessible-emoji.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/accessible-emoji.md">jsx-a11y/accessible-emoji</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`jsx-a11y/alt-text`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md">jsx-a11y/alt-text</a></summary><br/>
 
 ```js
 [
@@ -70,13 +72,15 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`jsx-a11y/anchor-has-content`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-has-content.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-has-content.md">jsx-a11y/anchor-has-content</a></summary><br/>
 
 ```js
 ["error", { components: [] }];
 ```
 
-#### 🔴 [`jsx-a11y/anchor-is-valid`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">jsx-a11y/anchor-is-valid</a></summary><br/>
 
 ```js
 [
@@ -89,49 +93,57 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`jsx-a11y/aria-activedescendant-has-tabindex`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-activedescendant-has-tabindex.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-activedescendant-has-tabindex.md">jsx-a11y/aria-activedescendant-has-tabindex</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/aria-props`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-props.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-props.md">jsx-a11y/aria-props</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/aria-proptypes`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-proptypes.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-proptypes.md">jsx-a11y/aria-proptypes</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/aria-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md">jsx-a11y/aria-role</a></summary><br/>
 
 ```js
 ["error", { ignoreNonDOM: false }];
 ```
 
-#### 🔴 [`jsx-a11y/aria-unsupported-elements`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-unsupported-elements.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-unsupported-elements.md">jsx-a11y/aria-unsupported-elements</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`jsx-a11y/autocomplete-valid`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/autocomplete-valid.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/autocomplete-valid.md">jsx-a11y/autocomplete-valid</a></summary><br/>
 
 ```js
 ["off", { inputComponents: [] }];
 ```
 
-#### 🔴 [`jsx-a11y/click-events-have-key-events`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/click-events-have-key-events.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/click-events-have-key-events.md">jsx-a11y/click-events-have-key-events</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/control-has-associated-label`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md">jsx-a11y/control-has-associated-label</a></summary><br/>
 
 ```js
 [
@@ -165,37 +177,43 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`jsx-a11y/heading-has-content`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/heading-has-content.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/heading-has-content.md">jsx-a11y/heading-has-content</a></summary><br/>
 
 ```js
 ["error", { components: [""] }];
 ```
 
-#### 🔴 [`jsx-a11y/html-has-lang`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/html-has-lang.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/html-has-lang.md">jsx-a11y/html-has-lang</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/iframe-has-title`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/iframe-has-title.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/iframe-has-title.md">jsx-a11y/iframe-has-title</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/img-redundant-alt`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md">jsx-a11y/img-redundant-alt</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/interactive-supports-focus`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/interactive-supports-focus.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/interactive-supports-focus.md">jsx-a11y/interactive-supports-focus</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/label-has-associated-control`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md">jsx-a11y/label-has-associated-control</a></summary><br/>
 
 ```js
 [
@@ -210,7 +228,8 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔵 [`jsx-a11y/label-has-for`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md">jsx-a11y/label-has-for</a></summary><br/>
 
 ```js
 [
@@ -223,49 +242,57 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`jsx-a11y/lang`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/lang.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/lang.md">jsx-a11y/lang</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/media-has-caption`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/media-has-caption.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/media-has-caption.md">jsx-a11y/media-has-caption</a></summary><br/>
 
 ```js
 ["error", { audio: [], track: [], video: [] }];
 ```
 
-#### 🔴 [`jsx-a11y/mouse-events-have-key-events`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/mouse-events-have-key-events.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/mouse-events-have-key-events.md">jsx-a11y/mouse-events-have-key-events</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/no-access-key`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md">jsx-a11y/no-access-key</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/no-autofocus`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-autofocus.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-autofocus.md">jsx-a11y/no-autofocus</a></summary><br/>
 
 ```js
 ["error", { ignoreNonDOM: true }];
 ```
 
-#### 🔴 [`jsx-a11y/no-distracting-elements`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-distracting-elements.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-distracting-elements.md">jsx-a11y/no-distracting-elements</a></summary><br/>
 
 ```js
 ["error", { elements: ["marquee", "blink"] }];
 ```
 
-#### 🔴 [`jsx-a11y/no-interactive-element-to-noninteractive-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-interactive-element-to-noninteractive-role.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-interactive-element-to-noninteractive-role.md">jsx-a11y/no-interactive-element-to-noninteractive-role</a></summary><br/>
 
 ```js
 ["error", { tr: ["none", "presentation"] }];
 ```
 
-#### 🔴 [`jsx-a11y/no-noninteractive-element-interactions`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md">jsx-a11y/no-noninteractive-element-interactions</a></summary><br/>
 
 ```js
 [
@@ -283,7 +310,8 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`jsx-a11y/no-noninteractive-element-to-interactive-role`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-to-interactive-role.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-to-interactive-role.md">jsx-a11y/no-noninteractive-element-to-interactive-role</a></summary><br/>
 
 ```js
 [
@@ -314,25 +342,29 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`jsx-a11y/no-noninteractive-tabindex`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-tabindex.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-tabindex.md">jsx-a11y/no-noninteractive-tabindex</a></summary><br/>
 
 ```js
 ["error", { roles: ["tabpanel"], tags: [] }];
 ```
 
-#### 🔵 [`jsx-a11y/no-onchange`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-onchange.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-onchange.md">jsx-a11y/no-onchange</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`jsx-a11y/no-redundant-roles`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-redundant-roles.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-redundant-roles.md">jsx-a11y/no-redundant-roles</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/no-static-element-interactions`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md">jsx-a11y/no-static-element-interactions</a></summary><br/>
 
 ```js
 [
@@ -350,43 +382,50 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`jsx-a11y/role-has-required-aria-props`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-has-required-aria-props.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-has-required-aria-props.md">jsx-a11y/role-has-required-aria-props</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/role-supports-aria-props`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-supports-aria-props.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-supports-aria-props.md">jsx-a11y/role-supports-aria-props</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/scope`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/scope.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/scope.md">jsx-a11y/scope</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jsx-a11y/tabindex-no-positive`](https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/tabindex-no-positive.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/tabindex-no-positive.md">jsx-a11y/tabindex-no-positive</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react-hooks/exhaustive-deps`](https://reactjs.org/docs/hooks-rules.html)
+</details>
+<details><summary>🔴 <a href="https://reactjs.org/docs/hooks-rules.html">react-hooks/exhaustive-deps</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react-hooks/rules-of-hooks`](https://reactjs.org/docs/hooks-rules.html)
+</details>
+<details><summary>🔴 <a href="https://reactjs.org/docs/hooks-rules.html">react-hooks/rules-of-hooks</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`react/boolean-prop-naming`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md">react/boolean-prop-naming</a></summary><br/>
 
 ```js
 [
@@ -399,55 +438,64 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`react/button-has-type`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/button-has-type.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/button-has-type.md">react/button-has-type</a></summary><br/>
 
 ```js
 ["error", { button: true, reset: false, submit: true }];
 ```
 
-#### 🔴 [`react/default-props-match-prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/default-props-match-prop-types.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/default-props-match-prop-types.md">react/default-props-match-prop-types</a></summary><br/>
 
 ```js
 ["error", { allowRequiredDefaults: false }];
 ```
 
-#### 🔴 [`react/destructuring-assignment`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md">react/destructuring-assignment</a></summary><br/>
 
 ```js
 ["error", "always"];
 ```
 
-#### 🔵 [`react/display-name`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/display-name.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/display-name.md">react/display-name</a></summary><br/>
 
 ```js
 ["off", { ignoreTranspilerName: false }];
 ```
 
-#### 🔵 [`react/forbid-component-props`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md">react/forbid-component-props</a></summary><br/>
 
 ```js
 ["off", { forbid: [] }];
 ```
 
-#### 🔵 [`react/forbid-dom-props`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-dom-props.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-dom-props.md">react/forbid-dom-props</a></summary><br/>
 
 ```js
 ["off", { forbid: [] }];
 ```
 
-#### 🔵 [`react/forbid-elements`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-elements.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-elements.md">react/forbid-elements</a></summary><br/>
 
 ```js
 ["off", { forbid: [] }];
 ```
 
-#### 🟠 [`react/forbid-foreign-prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md">react/forbid-foreign-prop-types</a></summary><br/>
 
 ```js
 ["warn", { allowInPropTypes: true }];
 ```
 
-#### 🔴 [`react/forbid-prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md">react/forbid-prop-types</a></summary><br/>
 
 ```js
 [
@@ -460,7 +508,8 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`react/function-component-definition`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md">react/function-component-definition</a></summary><br/>
 
 ```js
 [
@@ -469,49 +518,57 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md">react/jsx-boolean-value</a></summary><br/>
 
 ```js
 ["error", "never", { always: [] }];
 ```
 
-#### 🔴 [`react/jsx-curly-brace-presence`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md">react/jsx-curly-brace-presence</a></summary><br/>
 
 ```js
 ["error", { children: "never", props: "never" }];
 ```
 
-#### 🔴 [`react/jsx-filename-extension`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md">react/jsx-filename-extension</a></summary><br/>
 
 ```js
 ["error", { extensions: [".jsx", ".tsx"] }];
 ```
 
-#### 🔴 [`react/jsx-fragments`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md">react/jsx-fragments</a></summary><br/>
 
 ```js
 ["error", "syntax"];
 ```
 
-#### 🔵 [`react/jsx-handler-names`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md">react/jsx-handler-names</a></summary><br/>
 
 ```js
 ["off", { eventHandlerPrefix: "handle", eventHandlerPropPrefix: "on" }];
 ```
 
-#### 🔵 [`react/jsx-key`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md">react/jsx-key</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-max-depth`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-depth.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-depth.md">react/jsx-max-depth</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md">react/jsx-no-bind</a></summary><br/>
 
 ```js
 [
@@ -526,73 +583,85 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`react/jsx-no-comment-textnodes`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md">react/jsx-no-comment-textnodes</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/jsx-no-constructed-context-values`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md">react/jsx-no-constructed-context-values</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/jsx-no-duplicate-props`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-duplicate-props.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-duplicate-props.md">react/jsx-no-duplicate-props</a></summary><br/>
 
 ```js
 ["error", { ignoreCase: true }];
 ```
 
-#### 🔵 [`react/jsx-no-literals`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-literals.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-literals.md">react/jsx-no-literals</a></summary><br/>
 
 ```js
 ["off", { noStrings: true }];
 ```
 
-#### 🔴 [`react/jsx-no-script-url`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-script-url.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-script-url.md">react/jsx-no-script-url</a></summary><br/>
 
 ```js
 ["error", [{ name: "Link", props: ["to"] }]];
 ```
 
-#### 🔴 [`react/jsx-no-target-blank`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md">react/jsx-no-target-blank</a></summary><br/>
 
 ```js
 ["error", { enforceDynamicLinks: "always", forms: false, links: true }];
 ```
 
-#### 🔴 [`react/jsx-no-undef`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-undef.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-undef.md">react/jsx-no-undef</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/jsx-no-useless-fragment`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md">react/jsx-no-useless-fragment</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md">react/jsx-pascal-case</a></summary><br/>
 
 ```js
 ["error", { allowAllCaps: true, ignore: [] }];
 ```
 
-#### 🔵 [`react/jsx-sort-default-props`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-default-props.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-default-props.md">react/jsx-sort-default-props</a></summary><br/>
 
 ```js
 ["off", { ignoreCase: true }];
 ```
 
-#### 🔵 [`react/jsx-sort-prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-prop-types.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-prop-types.md">react/jsx-sort-prop-types</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`react/jsx-sort-props`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md">react/jsx-sort-props</a></summary><br/>
 
 ```js
 [
@@ -608,253 +677,295 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`react/jsx-uses-react`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-react.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-react.md">react/jsx-uses-react</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/jsx-uses-vars`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-vars.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-vars.md">react/jsx-uses-vars</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-access-state-in-setstate`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-access-state-in-setstate.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-access-state-in-setstate.md">react/no-access-state-in-setstate</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`react/no-adjacent-inline-elements`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-adjacent-inline-elements.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-adjacent-inline-elements.md">react/no-adjacent-inline-elements</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`react/no-array-index-key`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md">react/no-array-index-key</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-arrow-function-lifecycle`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-arrow-function-lifecycle.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-arrow-function-lifecycle.md">react/no-arrow-function-lifecycle</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-children-prop`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md">react/no-children-prop</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🟠 [`react/no-danger`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md">react/no-danger</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`react/no-danger-with-children`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md">react/no-danger-with-children</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-deprecated`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-deprecated.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-deprecated.md">react/no-deprecated</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`react/no-did-mount-set-state`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-mount-set-state.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-mount-set-state.md">react/no-did-mount-set-state</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`react/no-did-update-set-state`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md">react/no-did-update-set-state</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`react/no-direct-mutation-state`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md">react/no-direct-mutation-state</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`react/no-find-dom-node`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md">react/no-find-dom-node</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-invalid-html-attribute`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-invalid-html-attribute.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-invalid-html-attribute.md">react/no-invalid-html-attribute</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md">react/no-is-mounted</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md">react/no-multi-comp</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`react/no-namespace`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-namespace.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-namespace.md">react/no-namespace</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-redundant-should-component-update`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-redundant-should-component-update.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-redundant-should-component-update.md">react/no-redundant-should-component-update</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-render-return-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-render-return-value.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-render-return-value.md">react/no-render-return-value</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`react/no-set-state`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md">react/no-set-state</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`react/no-string-refs`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md">react/no-string-refs</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-this-in-sfc`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md">react/no-this-in-sfc</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-typos`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-typos.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-typos.md">react/no-typos</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-unescaped-entities`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unescaped-entities.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unescaped-entities.md">react/no-unescaped-entities</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/no-unknown-property`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md">react/no-unknown-property</a></summary><br/>
 
 ```js
 ["error", { ignore: ["css"] }];
 ```
 
-#### 🔵 [`react/no-unsafe`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unsafe.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unsafe.md">react/no-unsafe</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`react/no-unstable-nested-components`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unstable-nested-components.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unstable-nested-components.md">react/no-unstable-nested-components</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🟠 [`react/no-unused-class-component-methods`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-class-component-methods.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-class-component-methods.md">react/no-unused-class-component-methods</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`react/no-unused-prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md">react/no-unused-prop-types</a></summary><br/>
 
 ```js
 ["warn", { customValidators: [], skipShapeProps: true }];
 ```
 
-#### 🟠 [`react/no-unused-state`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-state.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-state.md">react/no-unused-state</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`react/no-will-update-set-state`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md">react/no-will-update-set-state</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md">react/prefer-es6-class</a></summary><br/>
 
 ```js
 ["error", "always"];
 ```
 
-#### 🔴 [`react/prefer-exact-props`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-exact-props.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-exact-props.md">react/prefer-exact-props</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`react/prefer-read-only-props`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-read-only-props.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-read-only-props.md">react/prefer-read-only-props</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`react/prefer-stateless-function`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md">react/prefer-stateless-function</a></summary><br/>
 
 ```js
 ["error", { ignorePureComponents: true }];
 ```
 
-#### 🔴 [`react/prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md">react/prop-types</a></summary><br/>
 
 ```js
 ["error", { customValidators: [], ignore: [], skipUndeclared: false }];
 ```
 
-#### 🔴 [`react/react-in-jsx-scope`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md">react/react-in-jsx-scope</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`react/require-optimization`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-optimization.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-optimization.md">react/require-optimization</a></summary><br/>
 
 ```js
 ["off", { allowDecorators: [] }];
 ```
 
-#### 🔴 [`react/require-render-return`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md">react/require-render-return</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md">react/self-closing-comp</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md">react/sort-comp</a></summary><br/>
 
 ```js
 [
@@ -908,7 +1019,8 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔵 [`react/sort-prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md">react/sort-prop-types</a></summary><br/>
 
 ```js
 [
@@ -922,30 +1034,35 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`react/state-in-constructor`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md">react/state-in-constructor</a></summary><br/>
 
 ```js
 ["error", "always"];
 ```
 
-#### 🔴 [`react/static-property-placement`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/static-property-placement.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/static-property-placement.md">react/static-property-placement</a></summary><br/>
 
 ```js
 ["error", "property assignment"];
 ```
 
-#### 🔴 [`react/style-prop-object`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md">react/style-prop-object</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`react/void-dom-elements-no-children`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md">react/void-dom-elements-no-children</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
+</details>
 <!-- END rules -->
 
 ## TypeScript
@@ -965,10 +1082,11 @@ These rules are only applied on `.ts` and `.tsx` files
 
 </div>
 
-#### 🔵 [`react/prop-types`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md)
+<details><summary>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md">react/prop-types</a></summary><br/>
 
 ```js
 ["off", { customValidators: [], ignore: [], skipUndeclared: false }];
 ```
 
+</details>
 <!-- END rules-ts -->

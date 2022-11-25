@@ -26,8 +26,7 @@ We use [Github Flow](https://guides.github.com/introduction/flow/index.html).
 1. Fork the repo and create your branch from the `main` branch.
 2. If you've added code that should be tested, add tests.
 3. If you've added/changed code that change the documentation, update the documentation.
-4. Ensure the test suite passes by running `npm test` and `npm run fix` to fix the fixable issues.
-5. Issue that pull request! 🚀
+4. Issue that pull request! 🚀
 
 ## Versioning Policy
 

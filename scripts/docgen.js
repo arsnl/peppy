@@ -122,7 +122,7 @@ const getRuleLink = (ruleName) => {
     ? `https://reactjs.org/docs/hooks-rules.html`
     : "";
 
-  return link ? `[\`${ruleName}\`](${link})` : `\`${ruleName}\``;
+  return link ? `<a href="${link}">${ruleName}</a>` : `${ruleName}`;
 };
 
 const generateRuleSetDocumentation = async ({
@@ -187,12 +187,15 @@ const generateRuleSetDocumentation = async ({
         ...acc,
         rulesMarkdown: [
           acc.rulesMarkdown,
-          `#### ${severityIcon} ${getRuleLink(ruleName)}`,
+          `<details><summary>${severityIcon} ${getRuleLink(
+            ruleName
+          )}</summary><br/>`,
           "",
           "```js",
           JSON.stringify(rules[ruleName]),
           "```",
           "",
+          "</details>",
         ].join("\n"),
         rulesCount: acc.rulesCount + 1,
         rulesErrorCount: acc.rulesErrorCount + (severity === "error" ? 1 : 0),

@@ -18,136 +18,158 @@ These rules use the [eslint-plugin-jest](https://github.com/jest-community/eslin
 
 </div>
 
-#### 🟠 [`jest/no-alias-methods`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-alias-methods.md)
+<details><summary>🟠 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-alias-methods.md">jest/no-alias-methods</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`jest/prefer-to-be`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-be.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-be.md">jest/prefer-to-be</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/prefer-to-contain`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-contain.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-contain.md">jest/prefer-to-contain</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/prefer-to-have-length`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-have-length.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/prefer-to-have-length.md">jest/prefer-to-have-length</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🟠 [`jest/expect-expect`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/expect-expect.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/expect-expect.md">jest/expect-expect</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🟠 [`jest/no-commented-out-tests`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-commented-out-tests.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-commented-out-tests.md">jest/no-commented-out-tests</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`jest/no-conditional-expect`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-conditional-expect.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-conditional-expect.md">jest/no-conditional-expect</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-deprecated-functions`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-deprecated-functions.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-deprecated-functions.md">jest/no-deprecated-functions</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🟠 [`jest/no-disabled-tests`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md">jest/no-disabled-tests</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`jest/no-done-callback`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-done-callback.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-done-callback.md">jest/no-done-callback</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-export`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-export.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-export.md">jest/no-export</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-focused-tests`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-focused-tests.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-focused-tests.md">jest/no-focused-tests</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-identical-title`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-identical-title.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-identical-title.md">jest/no-identical-title</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-interpolation-in-snapshots`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-interpolation-in-snapshots.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-interpolation-in-snapshots.md">jest/no-interpolation-in-snapshots</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-jasmine-globals`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jasmine-globals.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jasmine-globals.md">jest/no-jasmine-globals</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-mocks-import`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-mocks-import.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-mocks-import.md">jest/no-mocks-import</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-standalone-expect`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-standalone-expect.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-standalone-expect.md">jest/no-standalone-expect</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/no-test-prefixes`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-prefixes.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-prefixes.md">jest/no-test-prefixes</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/valid-describe-callback`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-describe-callback.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-describe-callback.md">jest/valid-describe-callback</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/valid-expect-in-promise`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect-in-promise.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect-in-promise.md">jest/valid-expect-in-promise</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/valid-expect`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect.md">jest/valid-expect</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`jest/valid-title`](https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-title.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-title.md">jest/valid-title</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
+</details>
 <!-- END rules -->

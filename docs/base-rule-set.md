@@ -20,25 +20,28 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 
 </div>
 
-#### 🔴 [`array-callback-return`](https://eslint.org/docs/rules/array-callback-return)
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/array-callback-return">array-callback-return</a></summary><br/>
 
 ```js
 ["error", { allowImplicit: true, checkForEach: false }];
 ```
 
-#### 🔴 [`arrow-body-style`](https://eslint.org/docs/rules/arrow-body-style)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/arrow-body-style">arrow-body-style</a></summary><br/>
 
 ```js
 ["error", "as-needed", { requireReturnForObjectLiteral: false }];
 ```
 
-#### 🔴 [`block-scoped-var`](https://eslint.org/docs/rules/block-scoped-var)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/block-scoped-var">block-scoped-var</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`camelcase`](https://eslint.org/docs/rules/camelcase)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/camelcase">camelcase</a></summary><br/>
 
 ```js
 [
@@ -52,49 +55,57 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`class-methods-use-this`](https://eslint.org/docs/rules/class-methods-use-this)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/class-methods-use-this">class-methods-use-this</a></summary><br/>
 
 ```js
 ["error", { enforceForClassFields: true, exceptMethods: [] }];
 ```
 
-#### 🔴 [`curly`](https://eslint.org/docs/rules/curly)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/curly">curly</a></summary><br/>
 
 ```js
 ["error", "all"];
 ```
 
-#### 🔴 [`consistent-return`](https://eslint.org/docs/rules/consistent-return)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/consistent-return">consistent-return</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`constructor-super`](https://eslint.org/docs/rules/constructor-super)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/constructor-super">constructor-super</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`default-case`](https://eslint.org/docs/rules/default-case)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/default-case">default-case</a></summary><br/>
 
 ```js
 ["error", { commentPattern: "^no default$" }];
 ```
 
-#### 🔴 [`default-case-last`](https://eslint.org/docs/rules/default-case-last)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/default-case-last">default-case-last</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`default-param-last`](https://eslint.org/docs/rules/default-param-last)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/default-param-last">default-param-last</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`dot-notation`](https://eslint.org/docs/rules/dot-notation)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/dot-notation">dot-notation</a></summary><br/>
 
 ```js
 [
@@ -109,109 +120,127 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`eqeqeq`](https://eslint.org/docs/rules/eqeqeq)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/eqeqeq">eqeqeq</a></summary><br/>
 
 ```js
 ["error", "always"];
 ```
 
-#### 🔴 [`for-direction`](https://eslint.org/docs/rules/for-direction)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/for-direction">for-direction</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🟠 [`func-names`](https://eslint.org/docs/rules/func-names)
+</details>
+<details><summary>🟠 <a href="https://eslint.org/docs/rules/func-names">func-names</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`getter-return`](https://eslint.org/docs/rules/getter-return)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/getter-return">getter-return</a></summary><br/>
 
 ```js
 ["error", { allowImplicit: true }];
 ```
 
-#### 🔴 [`global-require`](https://eslint.org/docs/rules/global-require)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/global-require">global-require</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`grouped-accessor-pairs`](https://eslint.org/docs/rules/grouped-accessor-pairs)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/grouped-accessor-pairs">grouped-accessor-pairs</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`guard-for-in`](https://eslint.org/docs/rules/guard-for-in)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/guard-for-in">guard-for-in</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/export`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export.md">import/export</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/extensions`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md">import/extensions</a></summary><br/>
 
 ```js
 ["error", "ignorePackages", { js: "never", jsx: "never", mjs: "never" }];
 ```
 
-#### 🔴 [`import/first`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md">import/first</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/named`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md">import/named</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/newline-after-import`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md">import/newline-after-import</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-absolute-path`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md">import/no-absolute-path</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-amd`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd.md">import/no-amd</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-cycle`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md">import/no-cycle</a></summary><br/>
 
 ```js
 ["error", { ignoreExternal: false, maxDepth: "∞" }];
 ```
 
-#### 🔴 [`import/no-duplicates`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md">import/no-duplicates</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-dynamic-require`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-dynamic-require.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-dynamic-require.md">import/no-dynamic-require</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-extraneous-dependencies`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md">import/no-extraneous-dependencies</a></summary><br/>
 
 ```js
 [
@@ -246,85 +275,99 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`import/no-import-module-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-import-module-exports.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-import-module-exports.md">import/no-import-module-exports</a></summary><br/>
 
 ```js
 ["error", { exceptions: [] }];
 ```
 
-#### 🔴 [`import/no-mutable-exports`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md">import/no-mutable-exports</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-named-as-default`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md">import/no-named-as-default</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-named-as-default-member`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md">import/no-named-as-default-member</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-named-default`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md">import/no-named-default</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-relative-packages`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-relative-packages.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-relative-packages.md">import/no-relative-packages</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-self-import`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-self-import.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-self-import.md">import/no-self-import</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`import/no-unresolved`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md">import/no-unresolved</a></summary><br/>
 
 ```js
 ["error", { caseSensitive: true, caseSensitiveStrict: false, commonjs: true }];
 ```
 
-#### 🔴 [`import/no-useless-path-segments`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-useless-path-segments.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-useless-path-segments.md">import/no-useless-path-segments</a></summary><br/>
 
 ```js
 ["error", { commonjs: true }];
 ```
 
-#### 🔴 [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md">import/no-webpack-loader-syntax</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`lines-around-directive`](https://eslint.org/docs/rules/lines-around-directive)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/lines-around-directive">lines-around-directive</a></summary><br/>
 
 ```js
 ["error", { after: "always", before: "always" }];
 ```
 
-#### 🔴 [`lines-between-class-members`](https://eslint.org/docs/rules/lines-between-class-members)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/lines-between-class-members">lines-between-class-members</a></summary><br/>
 
 ```js
 ["error", "always", { exceptAfterSingleLine: false }];
 ```
 
-#### 🔴 [`max-classes-per-file`](https://eslint.org/docs/rules/max-classes-per-file)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/max-classes-per-file">max-classes-per-file</a></summary><br/>
 
 ```js
 ["error", 1];
 ```
 
-#### 🔴 [`new-cap`](https://eslint.org/docs/rules/new-cap)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/new-cap">new-cap</a></summary><br/>
 
 ```js
 [
@@ -339,385 +382,449 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🟠 [`no-alert`](https://eslint.org/docs/rules/no-alert)
+</details>
+<details><summary>🟠 <a href="https://eslint.org/docs/rules/no-alert">no-alert</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`no-array-constructor`](https://eslint.org/docs/rules/no-array-constructor)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-array-constructor">no-array-constructor</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-async-promise-executor`](https://eslint.org/docs/rules/no-async-promise-executor)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-async-promise-executor">no-async-promise-executor</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-await-in-loop`](https://eslint.org/docs/rules/no-await-in-loop)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-await-in-loop">no-await-in-loop</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-bitwise`](https://eslint.org/docs/rules/no-bitwise)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-bitwise">no-bitwise</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-buffer-constructor`](https://eslint.org/docs/rules/no-buffer-constructor)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-buffer-constructor">no-buffer-constructor</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-caller`](https://eslint.org/docs/rules/no-caller)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-caller">no-caller</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-case-declarations`](https://eslint.org/docs/rules/no-case-declarations)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-case-declarations">no-case-declarations</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-class-assign`](https://eslint.org/docs/rules/no-class-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-class-assign">no-class-assign</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-compare-neg-zero`](https://eslint.org/docs/rules/no-compare-neg-zero)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-compare-neg-zero">no-compare-neg-zero</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-cond-assign`](https://eslint.org/docs/rules/no-cond-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-cond-assign">no-cond-assign</a></summary><br/>
 
 ```js
 ["error", "except-parens"];
 ```
 
-#### 🟠 [`no-console`](https://eslint.org/docs/rules/no-console)
+</details>
+<details><summary>🟠 <a href="https://eslint.org/docs/rules/no-console">no-console</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-const-assign">no-const-assign</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🟠 [`no-constant-condition`](https://eslint.org/docs/rules/no-constant-condition)
+</details>
+<details><summary>🟠 <a href="https://eslint.org/docs/rules/no-constant-condition">no-constant-condition</a></summary><br/>
 
 ```js
 ["warn"];
 ```
 
-#### 🔴 [`no-constructor-return`](https://eslint.org/docs/rules/no-constructor-return)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-constructor-return">no-constructor-return</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-continue`](https://eslint.org/docs/rules/no-continue)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-continue">no-continue</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-control-regex`](https://eslint.org/docs/rules/no-control-regex)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-control-regex">no-control-regex</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-debugger`](https://eslint.org/docs/rules/no-debugger)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-debugger">no-debugger</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-delete-var`](https://eslint.org/docs/rules/no-delete-var)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-delete-var">no-delete-var</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-dupe-args`](https://eslint.org/docs/rules/no-dupe-args)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-dupe-args">no-dupe-args</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-dupe-class-members`](https://eslint.org/docs/rules/no-dupe-class-members)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-dupe-class-members">no-dupe-class-members</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-dupe-else-if`](https://eslint.org/docs/rules/no-dupe-else-if)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-dupe-else-if">no-dupe-else-if</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-dupe-keys`](https://eslint.org/docs/rules/no-dupe-keys)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-dupe-keys">no-dupe-keys</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-duplicate-case`](https://eslint.org/docs/rules/no-duplicate-case)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-duplicate-case">no-duplicate-case</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-else-return`](https://eslint.org/docs/rules/no-else-return)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-else-return">no-else-return</a></summary><br/>
 
 ```js
 ["error", { allowElseIf: false }];
 ```
 
-#### 🔴 [`no-empty`](https://eslint.org/docs/rules/no-empty)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-empty">no-empty</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-empty-character-class`](https://eslint.org/docs/rules/no-empty-character-class)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-empty-character-class">no-empty-character-class</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-empty-function`](https://eslint.org/docs/rules/no-empty-function)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-empty-function">no-empty-function</a></summary><br/>
 
 ```js
 ["error", { allow: ["arrowFunctions", "functions", "methods"] }];
 ```
 
-#### 🔴 [`no-empty-pattern`](https://eslint.org/docs/rules/no-empty-pattern)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-empty-pattern">no-empty-pattern</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-eval`](https://eslint.org/docs/rules/no-eval)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-eval">no-eval</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-ex-assign`](https://eslint.org/docs/rules/no-ex-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-ex-assign">no-ex-assign</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-extend-native`](https://eslint.org/docs/rules/no-extend-native)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-extend-native">no-extend-native</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-extra-bind`](https://eslint.org/docs/rules/no-extra-bind)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-extra-bind">no-extra-bind</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-extra-boolean-cast`](https://eslint.org/docs/rules/no-extra-boolean-cast)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-extra-boolean-cast">no-extra-boolean-cast</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-extra-label`](https://eslint.org/docs/rules/no-extra-label)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-extra-label">no-extra-label</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-fallthrough`](https://eslint.org/docs/rules/no-fallthrough)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-fallthrough">no-fallthrough</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-func-assign`](https://eslint.org/docs/rules/no-func-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-func-assign">no-func-assign</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-global-assign`](https://eslint.org/docs/rules/no-global-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-global-assign">no-global-assign</a></summary><br/>
 
 ```js
 ["error", { exceptions: [] }];
 ```
 
-#### 🔴 [`no-implied-eval`](https://eslint.org/docs/rules/no-implied-eval)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-implied-eval">no-implied-eval</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-import-assign`](https://eslint.org/docs/rules/no-import-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-import-assign">no-import-assign</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-inner-declarations`](https://eslint.org/docs/rules/no-inner-declarations)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-inner-declarations">no-inner-declarations</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-invalid-regexp`](https://eslint.org/docs/rules/no-invalid-regexp)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-invalid-regexp">no-invalid-regexp</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-irregular-whitespace`](https://eslint.org/docs/rules/no-irregular-whitespace)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-irregular-whitespace">no-irregular-whitespace</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-iterator`](https://eslint.org/docs/rules/no-iterator)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-iterator">no-iterator</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-label-var`](https://eslint.org/docs/rules/no-label-var)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-label-var">no-label-var</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-labels`](https://eslint.org/docs/rules/no-labels)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-labels">no-labels</a></summary><br/>
 
 ```js
 ["error", { allowLoop: false, allowSwitch: false }];
 ```
 
-#### 🔴 [`no-lone-blocks`](https://eslint.org/docs/rules/no-lone-blocks)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-lone-blocks">no-lone-blocks</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-lonely-if`](https://eslint.org/docs/rules/no-lonely-if)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-lonely-if">no-lonely-if</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-loop-func`](https://eslint.org/docs/rules/no-loop-func)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-loop-func">no-loop-func</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-loss-of-precision`](https://eslint.org/docs/rules/no-loss-of-precision)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-loss-of-precision">no-loss-of-precision</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-misleading-character-class`](https://eslint.org/docs/rules/no-misleading-character-class)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-misleading-character-class">no-misleading-character-class</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-multi-assign`](https://eslint.org/docs/rules/no-multi-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-multi-assign">no-multi-assign</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-multi-str`](https://eslint.org/docs/rules/no-multi-str)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-multi-str">no-multi-str</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-new`](https://eslint.org/docs/rules/no-new)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-new">no-new</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-new-func`](https://eslint.org/docs/rules/no-new-func)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-new-func">no-new-func</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-new-object`](https://eslint.org/docs/rules/no-new-object)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-new-object">no-new-object</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-new-require`](https://eslint.org/docs/rules/no-new-require)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-new-require">no-new-require</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-new-symbol`](https://eslint.org/docs/rules/no-new-symbol)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-new-symbol">no-new-symbol</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-new-wrappers`](https://eslint.org/docs/rules/no-new-wrappers)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-new-wrappers">no-new-wrappers</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-nonoctal-decimal-escape`](https://eslint.org/docs/rules/no-nonoctal-decimal-escape)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-nonoctal-decimal-escape">no-nonoctal-decimal-escape</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-obj-calls`](https://eslint.org/docs/rules/no-obj-calls)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-obj-calls">no-obj-calls</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-octal`](https://eslint.org/docs/rules/no-octal)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-octal">no-octal</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-octal-escape`](https://eslint.org/docs/rules/no-octal-escape)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-octal-escape">no-octal-escape</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-param-reassign`](https://eslint.org/docs/rules/no-param-reassign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-param-reassign">no-param-reassign</a></summary><br/>
 
 ```js
 [
@@ -741,55 +848,64 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`no-path-concat`](https://eslint.org/docs/rules/no-path-concat)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-path-concat">no-path-concat</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-plusplus`](https://eslint.org/docs/rules/no-plusplus)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-plusplus">no-plusplus</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-promise-executor-return`](https://eslint.org/docs/rules/no-promise-executor-return)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-promise-executor-return">no-promise-executor-return</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-proto`](https://eslint.org/docs/rules/no-proto)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-proto">no-proto</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-prototype-builtins`](https://eslint.org/docs/rules/no-prototype-builtins)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-prototype-builtins">no-prototype-builtins</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-redeclare`](https://eslint.org/docs/rules/no-redeclare)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-redeclare">no-redeclare</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-regex-spaces`](https://eslint.org/docs/rules/no-regex-spaces)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-regex-spaces">no-regex-spaces</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-restricted-exports`](https://eslint.org/docs/rules/no-restricted-exports)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-restricted-exports">no-restricted-exports</a></summary><br/>
 
 ```js
 ["error", { restrictedNamedExports: ["default", "then"] }];
 ```
 
-#### 🔴 [`no-restricted-globals`](https://eslint.org/docs/rules/no-restricted-globals)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-restricted-globals">no-restricted-globals</a></summary><br/>
 
 ```js
 [
@@ -857,7 +973,8 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`no-restricted-properties`](https://eslint.org/docs/rules/no-restricted-properties)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-restricted-properties">no-restricted-properties</a></summary><br/>
 
 ```js
 [
@@ -913,7 +1030,8 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`no-restricted-syntax`](https://eslint.org/docs/rules/no-restricted-syntax)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-restricted-syntax">no-restricted-syntax</a></summary><br/>
 
 ```js
 [
@@ -941,133 +1059,155 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`no-return-assign`](https://eslint.org/docs/rules/no-return-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-return-assign">no-return-assign</a></summary><br/>
 
 ```js
 ["error", "always"];
 ```
 
-#### 🔴 [`no-return-await`](https://eslint.org/docs/rules/no-return-await)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-return-await">no-return-await</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-script-url`](https://eslint.org/docs/rules/no-script-url)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-script-url">no-script-url</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-self-assign`](https://eslint.org/docs/rules/no-self-assign)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-self-assign">no-self-assign</a></summary><br/>
 
 ```js
 ["error", { props: true }];
 ```
 
-#### 🔴 [`no-self-compare`](https://eslint.org/docs/rules/no-self-compare)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-self-compare">no-self-compare</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-sequences`](https://eslint.org/docs/rules/no-sequences)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-sequences">no-sequences</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-setter-return`](https://eslint.org/docs/rules/no-setter-return)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-setter-return">no-setter-return</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-shadow`](https://eslint.org/docs/rules/no-shadow)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-shadow">no-shadow</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-shadow-restricted-names`](https://eslint.org/docs/rules/no-shadow-restricted-names)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-shadow-restricted-names">no-shadow-restricted-names</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-sparse-arrays`](https://eslint.org/docs/rules/no-sparse-arrays)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-sparse-arrays">no-sparse-arrays</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-template-curly-in-string`](https://eslint.org/docs/rules/no-template-curly-in-string)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-template-curly-in-string">no-template-curly-in-string</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-this-before-super`](https://eslint.org/docs/rules/no-this-before-super)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-this-before-super">no-this-before-super</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-throw-literal`](https://eslint.org/docs/rules/no-throw-literal)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-throw-literal">no-throw-literal</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-undef`](https://eslint.org/docs/rules/no-undef)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-undef">no-undef</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-undef-init`](https://eslint.org/docs/rules/no-undef-init)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-undef-init">no-undef-init</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-unneeded-ternary`](https://eslint.org/docs/rules/no-unneeded-ternary)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-unneeded-ternary">no-unneeded-ternary</a></summary><br/>
 
 ```js
 ["error", { defaultAssignment: false }];
 ```
 
-#### 🔴 [`no-unreachable`](https://eslint.org/docs/rules/no-unreachable)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-unreachable">no-unreachable</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-unreachable-loop`](https://eslint.org/docs/rules/no-unreachable-loop)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-unreachable-loop">no-unreachable-loop</a></summary><br/>
 
 ```js
 ["error", { ignore: [] }];
 ```
 
-#### 🔴 [`no-unsafe-finally`](https://eslint.org/docs/rules/no-unsafe-finally)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-unsafe-finally">no-unsafe-finally</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-unsafe-negation`](https://eslint.org/docs/rules/no-unsafe-negation)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-unsafe-negation">no-unsafe-negation</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-unsafe-optional-chaining`](https://eslint.org/docs/rules/no-unsafe-optional-chaining)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-unsafe-optional-chaining">no-unsafe-optional-chaining</a></summary><br/>
 
 ```js
 ["error", { disallowArithmeticOperators: true }];
 ```
 
-#### 🔴 [`no-unused-expressions`](https://eslint.org/docs/rules/no-unused-expressions)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-unused-expressions">no-unused-expressions</a></summary><br/>
 
 ```js
 [
@@ -1081,13 +1221,15 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`no-unused-labels`](https://eslint.org/docs/rules/no-unused-labels)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-unused-labels">no-unused-labels</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🟠 [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
+</details>
+<details><summary>🟠 <a href="https://eslint.org/docs/rules/no-unused-vars">no-unused-vars</a></summary><br/>
 
 ```js
 [
@@ -1101,43 +1243,50 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`no-useless-backreference`](https://eslint.org/docs/rules/no-useless-backreference)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-useless-backreference">no-useless-backreference</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-useless-catch`](https://eslint.org/docs/rules/no-useless-catch)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-useless-catch">no-useless-catch</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-useless-computed-key`](https://eslint.org/docs/rules/no-useless-computed-key)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-useless-computed-key">no-useless-computed-key</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-useless-concat`](https://eslint.org/docs/rules/no-useless-concat)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-useless-concat">no-useless-concat</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-useless-constructor`](https://eslint.org/docs/rules/no-useless-constructor)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-useless-constructor">no-useless-constructor</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-useless-escape`](https://eslint.org/docs/rules/no-useless-escape)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-useless-escape">no-useless-escape</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-useless-rename`](https://eslint.org/docs/rules/no-useless-rename)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-useless-rename">no-useless-rename</a></summary><br/>
 
 ```js
 [
@@ -1146,61 +1295,71 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`no-useless-return`](https://eslint.org/docs/rules/no-useless-return)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-useless-return">no-useless-return</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-var`](https://eslint.org/docs/rules/no-var)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-var">no-var</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-void`](https://eslint.org/docs/rules/no-void)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-void">no-void</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`no-with`](https://eslint.org/docs/rules/no-with)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/no-with">no-with</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`object-shorthand`](https://eslint.org/docs/rules/object-shorthand)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/object-shorthand">object-shorthand</a></summary><br/>
 
 ```js
 ["error", "always", { avoidQuotes: true, ignoreConstructors: false }];
 ```
 
-#### 🔴 [`one-var`](https://eslint.org/docs/rules/one-var)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/one-var">one-var</a></summary><br/>
 
 ```js
 ["error", "never"];
 ```
 
-#### 🔴 [`operator-assignment`](https://eslint.org/docs/rules/operator-assignment)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/operator-assignment">operator-assignment</a></summary><br/>
 
 ```js
 ["error", "always"];
 ```
 
-#### 🔴 [`prefer-arrow-callback`](https://eslint.org/docs/rules/prefer-arrow-callback)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-arrow-callback">prefer-arrow-callback</a></summary><br/>
 
 ```js
 ["error", { allowNamedFunctions: false, allowUnboundThis: true }];
 ```
 
-#### 🔴 [`prefer-const`](https://eslint.org/docs/rules/prefer-const)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-const">prefer-const</a></summary><br/>
 
 ```js
 ["error", { destructuring: "any", ignoreReadBeforeAssign: true }];
 ```
 
-#### 🔴 [`prefer-destructuring`](https://eslint.org/docs/rules/prefer-destructuring)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-destructuring">prefer-destructuring</a></summary><br/>
 
 ```js
 [
@@ -1213,73 +1372,85 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`prefer-exponentiation-operator`](https://eslint.org/docs/rules/prefer-exponentiation-operator)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-exponentiation-operator">prefer-exponentiation-operator</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`prefer-numeric-literals`](https://eslint.org/docs/rules/prefer-numeric-literals)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-numeric-literals">prefer-numeric-literals</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`prefer-object-spread`](https://eslint.org/docs/rules/prefer-object-spread)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-object-spread">prefer-object-spread</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`prefer-promise-reject-errors`](https://eslint.org/docs/rules/prefer-promise-reject-errors)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-promise-reject-errors">prefer-promise-reject-errors</a></summary><br/>
 
 ```js
 ["error", { allowEmptyReject: true }];
 ```
 
-#### 🔴 [`prefer-regex-literals`](https://eslint.org/docs/rules/prefer-regex-literals)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-regex-literals">prefer-regex-literals</a></summary><br/>
 
 ```js
 ["error", { disallowRedundantWrapping: true }];
 ```
 
-#### 🔴 [`prefer-rest-params`](https://eslint.org/docs/rules/prefer-rest-params)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-rest-params">prefer-rest-params</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`prefer-spread`](https://eslint.org/docs/rules/prefer-spread)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-spread">prefer-spread</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`prefer-template`](https://eslint.org/docs/rules/prefer-template)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/prefer-template">prefer-template</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`radix`](https://eslint.org/docs/rules/radix)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/radix">radix</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`require-yield`](https://eslint.org/docs/rules/require-yield)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/require-yield">require-yield</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`simple-import-sort/exports`](https://github.com/lydell/eslint-plugin-simple-import-sort)
+</details>
+<details><summary>🔴 <a href="https://github.com/lydell/eslint-plugin-simple-import-sort">simple-import-sort/exports</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`simple-import-sort/imports`](https://github.com/lydell/eslint-plugin-simple-import-sort)
+</details>
+<details><summary>🔴 <a href="https://github.com/lydell/eslint-plugin-simple-import-sort">simple-import-sort/imports</a></summary><br/>
 
 ```js
 [
@@ -1304,7 +1475,8 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`spaced-comment`](https://eslint.org/docs/rules/spaced-comment)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/spaced-comment">spaced-comment</a></summary><br/>
 
 ```js
 [
@@ -1321,42 +1493,49 @@ Since Peppy supports TypeScript by default, some rules can be overwritten when a
 ];
 ```
 
-#### 🔴 [`strict`](https://eslint.org/docs/rules/strict)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/strict">strict</a></summary><br/>
 
 ```js
 ["error", "never"];
 ```
 
-#### 🔴 [`symbol-description`](https://eslint.org/docs/rules/symbol-description)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/symbol-description">symbol-description</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`use-isnan`](https://eslint.org/docs/rules/use-isnan)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/use-isnan">use-isnan</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`valid-typeof`](https://eslint.org/docs/rules/valid-typeof)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/valid-typeof">valid-typeof</a></summary><br/>
 
 ```js
 ["error", { requireStringLiterals: true }];
 ```
 
-#### 🔴 [`vars-on-top`](https://eslint.org/docs/rules/vars-on-top)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/vars-on-top">vars-on-top</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`yoda`](https://eslint.org/docs/rules/yoda)
+</details>
+<details><summary>🔴 <a href="https://eslint.org/docs/rules/yoda">yoda</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
+</details>
 <!-- END rules -->
 
 ## TypeScript
@@ -1376,115 +1555,133 @@ These rules are only applied on `.ts` and `.tsx` files
 
 </div>
 
-#### 🔵 [`constructor-super`](https://eslint.org/docs/rules/constructor-super)
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/constructor-super">constructor-super</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`getter-return`](https://eslint.org/docs/rules/getter-return)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/getter-return">getter-return</a></summary><br/>
 
 ```js
 ["off", { allowImplicit: true }];
 ```
 
-#### 🔵 [`import/named`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md">import/named</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`import/no-named-as-default-member`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md">import/no-named-as-default-member</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`import/no-unresolved`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md)
+</details>
+<details><summary>🔵 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md">import/no-unresolved</a></summary><br/>
 
 ```js
 ["off", { caseSensitive: true, caseSensitiveStrict: false, commonjs: true }];
 ```
 
-#### 🔵 [`no-const-assign`](https://eslint.org/docs/rules/no-const-assign)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-const-assign">no-const-assign</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-dupe-args`](https://eslint.org/docs/rules/no-dupe-args)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-dupe-args">no-dupe-args</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-dupe-keys`](https://eslint.org/docs/rules/no-dupe-keys)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-dupe-keys">no-dupe-keys</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-func-assign`](https://eslint.org/docs/rules/no-func-assign)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-func-assign">no-func-assign</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-import-assign`](https://eslint.org/docs/rules/no-import-assign)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-import-assign">no-import-assign</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-new-symbol`](https://eslint.org/docs/rules/no-new-symbol)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-new-symbol">no-new-symbol</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-obj-calls`](https://eslint.org/docs/rules/no-obj-calls)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-obj-calls">no-obj-calls</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-setter-return`](https://eslint.org/docs/rules/no-setter-return)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-setter-return">no-setter-return</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-this-before-super`](https://eslint.org/docs/rules/no-this-before-super)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-this-before-super">no-this-before-super</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-undef`](https://eslint.org/docs/rules/no-undef)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-undef">no-undef</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-unreachable`](https://eslint.org/docs/rules/no-unreachable)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-unreachable">no-unreachable</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-unsafe-negation`](https://eslint.org/docs/rules/no-unsafe-negation)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-unsafe-negation">no-unsafe-negation</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`valid-typeof`](https://eslint.org/docs/rules/valid-typeof)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/valid-typeof">valid-typeof</a></summary><br/>
 
 ```js
 ["off", { requireStringLiterals: true }];
 ```
 
-#### 🔵 [`camelcase`](https://eslint.org/docs/rules/camelcase)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/camelcase">camelcase</a></summary><br/>
 
 ```js
 [
@@ -1498,7 +1695,8 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
-#### 🔴 [`@typescript-eslint/naming-convention`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md">@typescript-eslint/naming-convention</a></summary><br/>
 
 ```js
 [
@@ -1524,31 +1722,36 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
-#### 🔴 [`@typescript-eslint/consistent-type-exports`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-exports.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-exports.md">@typescript-eslint/consistent-type-exports</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔴 [`@typescript-eslint/consistent-type-imports`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md">@typescript-eslint/consistent-type-imports</a></summary><br/>
 
 ```js
 ["error", { prefer: "type-imports" }];
 ```
 
-#### 🔵 [`default-param-last`](https://eslint.org/docs/rules/default-param-last)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/default-param-last">default-param-last</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/default-param-last`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md">@typescript-eslint/default-param-last</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`dot-notation`](https://eslint.org/docs/rules/dot-notation)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/dot-notation">dot-notation</a></summary><br/>
 
 ```js
 [
@@ -1563,7 +1766,8 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
-#### 🔴 [`@typescript-eslint/dot-notation`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md">@typescript-eslint/dot-notation</a></summary><br/>
 
 ```js
 [
@@ -1578,133 +1782,155 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
-#### 🔵 [`lines-between-class-members`](https://eslint.org/docs/rules/lines-between-class-members)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/lines-between-class-members">lines-between-class-members</a></summary><br/>
 
 ```js
 ["off", "always", { exceptAfterSingleLine: false }];
 ```
 
-#### 🔴 [`@typescript-eslint/lines-between-class-members`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md">@typescript-eslint/lines-between-class-members</a></summary><br/>
 
 ```js
 ["error", "always", { exceptAfterSingleLine: false }];
 ```
 
-#### 🔵 [`no-array-constructor`](https://eslint.org/docs/rules/no-array-constructor)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-array-constructor">no-array-constructor</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-array-constructor`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md">@typescript-eslint/no-array-constructor</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`no-dupe-class-members`](https://eslint.org/docs/rules/no-dupe-class-members)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-dupe-class-members">no-dupe-class-members</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-dupe-class-members`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md">@typescript-eslint/no-dupe-class-members</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`no-empty-function`](https://eslint.org/docs/rules/no-empty-function)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-empty-function">no-empty-function</a></summary><br/>
 
 ```js
 ["off", { allow: ["arrowFunctions", "functions", "methods"] }];
 ```
 
-#### 🔴 [`@typescript-eslint/no-empty-function`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-function.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-function.md">@typescript-eslint/no-empty-function</a></summary><br/>
 
 ```js
 ["error", { allow: ["arrowFunctions", "functions", "methods"] }];
 ```
 
-#### 🔵 [`no-implied-eval`](https://eslint.org/docs/rules/no-implied-eval)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-implied-eval">no-implied-eval</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔵 [`no-new-func`](https://eslint.org/docs/rules/no-new-func)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-new-func">no-new-func</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-implied-eval`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implied-eval.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implied-eval.md">@typescript-eslint/no-implied-eval</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`no-loss-of-precision`](https://eslint.org/docs/rules/no-loss-of-precision)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-loss-of-precision">no-loss-of-precision</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-loss-of-precision`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loss-of-precision.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loss-of-precision.md">@typescript-eslint/no-loss-of-precision</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`no-loop-func`](https://eslint.org/docs/rules/no-loop-func)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-loop-func">no-loop-func</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-loop-func`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md">@typescript-eslint/no-loop-func</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`no-redeclare`](https://eslint.org/docs/rules/no-redeclare)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-redeclare">no-redeclare</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-redeclare`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-redeclare.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-redeclare.md">@typescript-eslint/no-redeclare</a></summary><br/>
 
 ```js
 ["error", { ignoreDeclarationMerge: true }];
 ```
 
-#### 🔵 [`no-shadow`](https://eslint.org/docs/rules/no-shadow)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-shadow">no-shadow</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-shadow`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md">@typescript-eslint/no-shadow</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`no-throw-literal`](https://eslint.org/docs/rules/no-throw-literal)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-throw-literal">no-throw-literal</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-throw-literal`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md">@typescript-eslint/no-throw-literal</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`no-unused-expressions`](https://eslint.org/docs/rules/no-unused-expressions)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-unused-expressions">no-unused-expressions</a></summary><br/>
 
 ```js
 [
@@ -1718,7 +1944,8 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
-#### 🔴 [`@typescript-eslint/no-unused-expressions`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-expressions.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-expressions.md">@typescript-eslint/no-unused-expressions</a></summary><br/>
 
 ```js
 [
@@ -1732,7 +1959,8 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
-#### 🔵 [`no-unused-vars`](https://eslint.org/docs/rules/no-unused-vars)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-unused-vars">no-unused-vars</a></summary><br/>
 
 ```js
 [
@@ -1746,7 +1974,8 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
-#### 🟠 [`@typescript-eslint/no-unused-vars`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md)
+</details>
+<details><summary>🟠 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md">@typescript-eslint/no-unused-vars</a></summary><br/>
 
 ```js
 [
@@ -1760,31 +1989,36 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
-#### 🔵 [`no-useless-constructor`](https://eslint.org/docs/rules/no-useless-constructor)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-useless-constructor">no-useless-constructor</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/no-useless-constructor`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-useless-constructor.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-useless-constructor.md">@typescript-eslint/no-useless-constructor</a></summary><br/>
 
 ```js
 ["error"];
 ```
 
-#### 🔵 [`no-return-await`](https://eslint.org/docs/rules/no-return-await)
+</details>
+<details><summary>🔵 <a href="https://eslint.org/docs/rules/no-return-await">no-return-await</a></summary><br/>
 
 ```js
 ["off"];
 ```
 
-#### 🔴 [`@typescript-eslint/return-await`](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/return-await.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/return-await.md">@typescript-eslint/return-await</a></summary><br/>
 
 ```js
 ["error", "in-try-catch"];
 ```
 
-#### 🔴 [`import/no-extraneous-dependencies`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md)
+</details>
+<details><summary>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md">import/no-extraneous-dependencies</a></summary><br/>
 
 ```js
 [
@@ -1836,4 +2070,5 @@ These rules are only applied on `.ts` and `.tsx` files
 ];
 ```
 
+</details>
 <!-- END rules-ts -->
