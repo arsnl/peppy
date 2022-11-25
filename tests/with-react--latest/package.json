@@ -1,7 +1,11 @@
 {
   "name": "@tests/with-react--latest",
-  "scripts": { "lint": "eslint ." },
-  "dependencies": { "react": "latest" },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "latest"
+  },
   "devDependencies": {
     "@tests/utils": "*",
     "eslint": "latest",

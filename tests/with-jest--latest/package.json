@@ -1,6 +1,8 @@
 {
   "name": "@tests/with-jest--latest",
-  "scripts": { "lint": "eslint ." },
+  "scripts": {
+    "lint": "eslint ."
+  },
   "dependencies": {},
   "devDependencies": {
     "@tests/utils": "*",

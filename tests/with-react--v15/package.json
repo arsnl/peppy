@@ -1,7 +1,11 @@
 {
   "name": "@tests/with-react--v15",
-  "scripts": { "lint": "eslint ." },
-  "dependencies": { "react": "15.0.0" },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "15.0.0"
+  },
   "devDependencies": {
     "@tests/utils": "*",
     "eslint": "latest",

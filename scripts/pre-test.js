@@ -79,7 +79,7 @@ packageJsonFiles.forEach((packageFile) => {
 
   fs.writeFileSync(
     path.join(TESTS_FOLDER_PATH, packageFile),
-    prettier.format(JSON.stringify(fileContent), { parser: "json" }),
+    prettier.format(JSON.stringify(fileContent), { parser: "json-stringify" }),
     { encoding: "utf8" }
   );
 });

@@ -1,6 +1,8 @@
 {
   "name": "@tests/with-peppy",
-  "scripts": { "lint": "eslint ." },
+  "scripts": {
+    "lint": "eslint ."
+  },
   "dependencies": {},
   "devDependencies": {
     "@tests/utils": "*",
