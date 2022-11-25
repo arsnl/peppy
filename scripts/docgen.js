@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const { ESLint } = require("eslint");
 const fs = require("fs");
 const path = require("path");
