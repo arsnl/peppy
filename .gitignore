@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,turbo
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,turbo
+# Created by https://www.toptal.com/developers/gitignore/api/node
+# Edit at https://www.toptal.com/developers/gitignore?templates=node
 
 ### Node ###
 # Logs
@@ -141,11 +141,11 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-### Turbo ###
-# Turborepo task cache
-.turbo
+# End of https://www.toptal.com/developers/gitignore/api/node
 
-# End of https://www.toptal.com/developers/gitignore/api/node,turbo
-
-# Project specifics
+### Rules specific to this project ###
+######################################
+# Add the rules specific to your project below.
+# If you need to disable a previous rule, don't remove it. Use the "!" to disable it.
+# e.g. !coverage
 tests/package-lock.json

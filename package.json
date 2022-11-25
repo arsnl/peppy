@@ -27,13 +27,11 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
     "lint": "eslint .",
     "format": "prettier --check --loglevel warn .",
     "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
     "docgen": "node scripts/docgen",
-    "pre-test": "node scripts/pre-test"
+    "prepare": "husky install"
   },
   "engines": {
     "node": ">=14"
@@ -43,7 +41,13 @@
     "eslint": "^8.28.0",
     "eslint-config-peppy": "*",
     "glob": "^8.0.3",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.4",
     "prettier": "^2.8.0",
-    "turbo": "^1.6.3"
+    "rimraf": "^3.0.2"
+  },
+  "lint-staged": {
+    "*": "prettier --check",
+    "*.{js,jsx,ts,tsx}": "eslint"
   }
 }

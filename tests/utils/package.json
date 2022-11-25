@@ -6,6 +6,6 @@
   },
   "dependencies": {
     "cross-spawn": "^7.0.3",
-    "eslint-config-peppy": "file:../eslint-config-peppy-2.0.0-beta.5.tgz"
+    "eslint-config-peppy": "*"
   }
 }

@@ -34,7 +34,7 @@ jobs:
       - name: Validate Style
         run: npm run lint
       - name: Prepare the testing directory
-        run: npm run pre-test
+        run: npm run prepare
       - name: Install tests dependencies
         working-directory: ./tests
         run: npm install

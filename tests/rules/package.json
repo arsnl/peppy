@@ -3,7 +3,7 @@
   "dependencies": {
     "@tests/utils": "*",
     "eslint": "latest",
-    "eslint-config-peppy": "file:../eslint-config-peppy-2.0.0-beta.5.tgz",
+    "eslint-config-peppy": "*",
     "jest": "latest"
   }
 }
