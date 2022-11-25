@@ -35,6 +35,7 @@ jobs:
         run: npm run lint
       - name: Prepare the testing directory
         run: npm run prepare
+        working-directory: ./tests
       - name: Install tests dependencies
         working-directory: ./tests
         run: npm install
