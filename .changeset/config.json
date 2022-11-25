@@ -7,24 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": [
-    "@tests/utils",
-    "@tests/rules",
-    "@tests/with-jest--latest",
-    "@tests/with-jest--v27",
-    "@tests/with-jest--v28",
-    "@tests/with-jest--v29",
-    "@tests/with-next--latest",
-    "@tests/with-next--v10",
-    "@tests/with-next--v11",
-    "@tests/with-next--v12",
-    "@tests/with-next--v13",
-    "@tests/with-peppy",
-    "@tests/with-prettier",
-    "@tests/with-react--latest",
-    "@tests/with-react--v15",
-    "@tests/with-react--v16",
-    "@tests/with-react--v17",
-    "@tests/with-react--v18"
-  ]
+  "ignore": []
 }

@@ -5,6 +5,8 @@
 
 A brilliant collection of ESLint configurations that enforces strict, readable, and modern code with developers happiness in mind.
 
+Cloned from the popular Airbnb configuration, Peppy takes a more modern approach by increasing the supported ecmaVersion to 2020 in order to support the very useful nullish and optional chaining operators, supporting TypeScript out of the box, letting Prettier taking care of formatting by removing all the conflicting rules and removing the need to install and support the peer dependencies in your package.json.
+
 ➡️ [Check the complete documentation](https://github.com/arsnl/peppy).
 
 ## License
