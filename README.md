@@ -114,13 +114,39 @@ Now you can manually lint your code by running `npm run lint`, check the format 
 
 The following ESLint configurations are part of Peppy.
 
-| Configuration  | Description                                                                                                                                                                                                                                                                               | Extends rule sets                                                             |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| peppy          | <p>The Peppy code style.</p><p>Must always be put at first.</p></p>                                                                                                                                                                                                                       | [base][base-rule-set], [prettier][prettier-rule-set]                          |
-| peppy/react    | <p>Additional configuration for projects that use [React](https://reactjs.org/).</p>                                                                                                                                                                                                      | [react][react-rule-set], [prettier][prettier-rule-set]                        |
-| peppy/next     | <p>Additional configuration for projects that use [NextJS](https://nextjs.org/).</p><p>No need to add the peppy/react configuration since this configuration already extend the react rules set.</p>                                                                                      | [react][react-rule-set], [next][next-rule-set], [prettier][prettier-rule-set] |
-| peppy/jest     | <p>Additional configuration for projects that use [Jest](https://jestjs.io/).</p>                                                                                                                                                                                                         | [jest][jest-rule-set], [prettier][prettier-rule-set]                          |
-| peppy/prettier | <p>Turns off all rules that might conflict with [Prettier](https://prettier.io/).</p><p>To add at the end of your ESLint extends if you add another ESLint configuration not provided by Peppy and want to make sure you don't introduce rules conflicting with Prettier by doing so.</p> | [prettier][prettier-rule-set]                                                 |
+- ### `peppy`
+
+  The Peppy code style. Must always be put at first in your ESLint extends.
+
+  [List of rules applied](/docs/peppy.md)
+
+- ### `peppy/react`
+
+  Additional configuration for projects that use [React](https://reactjs.org/)
+
+  [List of rules applied](/docs/peppy-react.md)
+
+- ### `peppy/next`
+
+  Additional configuration for projects that use [NextJS](https://nextjs.org/).
+
+  No need to add the `peppy/react` configuration since this configuration already extend the react rules set.
+
+  [List of rules applied](/docs/peppy-next.md)
+
+- ### `peppy/jest`
+
+  Additional configuration for projects that use [Jest](https://jestjs.io/).
+
+  [List of rules applied](/docs/peppy-jest.md)
+
+- ### `peppy/prettier`
+
+  Turns off all rules that might conflict with [Prettier](https://prettier.io/).
+
+  To add at the end of your ESLint extends if you add another ESLint configuration not provided by Peppy and want to make sure you don't introduce rules conflicting with Prettier.
+
+  [List of rules applied](/docs/peppy-prettier.md)
 
 ## Batteries included configuration
 
@@ -193,9 +219,3 @@ Please read our [contribution guide](/CONTRIBUTING.md) for details on our [code 
 ## License
 
 Distributed under the MIT License. See the [license](/LICENSE) for more information.
-
-[base-rule-set]: /docs/base-rule-set.md
-[jest-rule-set]: /docs/jest-rule-set.md
-[next-rule-set]: /docs/next-rule-set.md
-[prettier-rule-set]: /docs/prettier-rule-set.md
-[react-rule-set]: /docs/react-rule-set.md

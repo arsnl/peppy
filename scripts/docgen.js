@@ -174,8 +174,9 @@ const generateRuleSetDocumentation = async ({
     rulesOffCount,
   } = Object.keys(rules).reduce(
     (acc, ruleName) => {
-      const severity = cleanSeverity(rules[ruleName]);
-
+      const rule = rules[ruleName];
+      const [, ...ruleOptions] = rule;
+      const severity = cleanSeverity(rule);
       const severityIcon =
         severity === "off"
           ? SEVERITY_ICONS.OFF
@@ -183,19 +184,16 @@ const generateRuleSetDocumentation = async ({
           ? SEVERITY_ICONS.WARN
           : SEVERITY_ICONS.ERROR;
 
+      const ruleTitle = `${severityIcon} ${getRuleLink(ruleName)}`;
+
       return {
         ...acc,
         rulesMarkdown: [
           acc.rulesMarkdown,
-          `<details><summary>${severityIcon} ${getRuleLink(
-            ruleName
-          )}</summary><br/>`,
-          "",
-          "```js",
-          JSON.stringify(rules[ruleName]),
-          "```",
-          "",
-          "</details>",
+          `<h4>${ruleTitle}</h4>`,
+          ...(ruleOptions?.length
+            ? ["", "```json", JSON.stringify(ruleOptions), "```", ""]
+            : []),
         ].join("\n"),
         rulesCount: acc.rulesCount + 1,
         rulesErrorCount: acc.rulesErrorCount + (severity === "error" ? 1 : 0),
@@ -227,8 +225,6 @@ const generateRuleSetDocumentation = async ({
       [
         `<!-- START ${injectTag} -->`,
         '<div align="center">',
-        "",
-        "### Rules stats",
         "",
         `| Total | Error ${SEVERITY_ICONS.ERROR} | Warning ${SEVERITY_ICONS.WARN} | Disabled ${SEVERITY_ICONS.OFF} |`,
         "| --- | --- | --- | --- |",
@@ -300,59 +296,59 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
 
 (async () => {
   await generateRuleSetDocumentation({
-    file: "docs/base-rule-set.md",
+    file: "docs/peppy.md",
     eslintConfig: {
-      extends: ["peppy/configs/base"],
+      extends: ["peppy"],
     },
     injectTag: "rules",
   });
 
   await generateRuleSetDocumentation({
-    file: "docs/base-rule-set.md",
+    file: "docs/peppy.md",
     eslintConfig: {
-      extends: ["peppy/configs/base"],
+      extends: ["peppy"],
     },
     typescript: true,
     injectTag: "rules-ts",
   });
 
   await generateRuleSetDocumentation({
-    file: "docs/react-rule-set.md",
+    file: "docs/peppy-react.md",
     eslintConfig: {
-      extends: ["peppy/configs/react"],
+      extends: ["peppy/react"],
     },
     injectTag: "rules",
   });
 
   await generateRuleSetDocumentation({
-    file: "docs/react-rule-set.md",
+    file: "docs/peppy-react.md",
     eslintConfig: {
-      extends: ["peppy/configs/react"],
+      extends: ["peppy/react"],
     },
     typescript: true,
     injectTag: "rules-ts",
   });
 
   await generateRuleSetDocumentation({
-    file: "docs/next-rule-set.md",
+    file: "docs/peppy-next.md",
     eslintConfig: {
-      extends: ["peppy/configs/next"],
+      extends: ["peppy/next"],
     },
     injectTag: "rules",
   });
 
   await generateRuleSetDocumentation({
-    file: "docs/jest-rule-set.md",
+    file: "docs/peppy-jest.md",
     eslintConfig: {
-      extends: ["peppy/configs/jest"],
+      extends: ["peppy/jest"],
     },
     injectTag: "rules",
   });
 
   await generateRuleSetDocumentation({
-    file: "docs/prettier-rule-set.md",
+    file: "docs/peppy-prettier.md",
     eslintConfig: {
-      extends: ["peppy/configs/prettier"],
+      extends: ["peppy/prettier"],
     },
     injectTag: "rules",
   });
