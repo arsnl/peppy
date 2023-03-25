@@ -19,10 +19,10 @@ Cloned from the popular Airbnb configuration, Peppy takes a more modern approach
 
 ## Quick Start
 
-The easiest way to install Peppy is with the interactive install.
+The easiest way to install Peppy is with the initializer.
 
 ```
-npx peppy install
+npx peppy init
 ```
 
 ## Manual Installation
@@ -56,8 +56,9 @@ Add those scripts to your package.json to lint, format and fix your project.
 ```json
 "scripts": {
   "lint": "eslint .",
-  "format": "prettier --check --loglevel warn .",
-  "fix": "prettier --write --loglevel warn . && npm run lint -- --fix"
+  "format": "prettier --check .",
+  "typecheck": "tsc --noEmit", // Only if you use TypeScript
+  "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
 },
 ```
 
@@ -84,9 +85,7 @@ Now you can manually lint your code by running `npm run lint`, check the format 
   },
   // Controls auto save of editors that have unsaved changes.
   //  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.
-  "files.autoSave": "onFocusChange",
-  // Always show the ESlint status bar item.
-  "eslint.alwaysShowStatus": true
+  "files.autoSave": "onFocusChange"
 }
 ```
 
@@ -103,7 +102,9 @@ Now you can manually lint your code by running `npm run lint`, check the format 
     // VS Code ESLint extension
     "dbaeumer.vscode-eslint",
     // Prettier Formatter for Visual Studio Code
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    // EditorConfig for VS Code
+    "editorconfig.editorconfig"
   ]
 }
 ```

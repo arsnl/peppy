@@ -45,6 +45,7 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 const importAliases = "(@\\/|~[^/]*\\/)"; // support path aliases starting with @/ or ~.*/
 const importStyleExts = "(css|scss|sass|less)";
 
+/** @type {import("eslint").Linter.Config} */
 const baseConfig = {
   env: {
     browser: true,
@@ -731,6 +732,7 @@ const baseConfig = {
   },
 };
 
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   ...baseConfig,
   overrides: [

@@ -6,6 +6,7 @@ const { rules } = require("eslint-config-prettier");
  */
 const { curly, ...rulesToKeep } = rules;
 
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   rules: {
     ...rulesToKeep,

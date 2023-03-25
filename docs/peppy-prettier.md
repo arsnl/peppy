@@ -15,7 +15,7 @@ These rules are the same for all files.
 
 | Total | Error 🔴 | Warning 🟠 | Disabled 🔵 |
 | ----- | -------- | ---------- | ----------- |
-| 171   | 0        | 0          | 171         |
+| 175   | 0        | 0          | 175         |
 
 </div>
 
@@ -26,6 +26,7 @@ These rules are the same for all files.
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-tabs">no-tabs</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-unexpected-multiline">no-unexpected-multiline</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/quotes">quotes</a></h4>
+<h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-around-comment.md">@typescript-eslint/lines-around-comment</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md">@typescript-eslint/quotes</a></h4>
 <h4>🔵 <a href="https://github.com/babel/eslint-plugin-babel">babel/quotes</a></h4>
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/html-self-closing">vue/html-self-closing</a></h4>
@@ -46,7 +47,6 @@ These rules are the same for all files.
 <h4>🔵 <a href="https://eslint.org/docs/rules/func-call-spacing">func-call-spacing</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/function-call-argument-newline">function-call-argument-newline</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/function-paren-newline">function-paren-newline</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/generator-star">generator-star</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/generator-star-spacing">generator-star-spacing</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/implicit-arrow-linebreak">implicit-arrow-linebreak</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/indent">indent</a></h4>
@@ -57,19 +57,14 @@ These rules are the same for all files.
 <h4>🔵 <a href="https://eslint.org/docs/rules/multiline-ternary">multiline-ternary</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/newline-per-chained-call">newline-per-chained-call</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/new-parens">new-parens</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/no-arrow-condition">no-arrow-condition</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/no-comma-dangle">no-comma-dangle</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-extra-parens">no-extra-parens</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-extra-semi">no-extra-semi</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-floating-decimal">no-floating-decimal</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-mixed-spaces-and-tabs">no-mixed-spaces-and-tabs</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-multi-spaces">no-multi-spaces</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-multiple-empty-lines">no-multiple-empty-lines</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/no-reserved-keys">no-reserved-keys</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/no-space-before-semi">no-space-before-semi</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-trailing-spaces">no-trailing-spaces</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-whitespace-before-property">no-whitespace-before-property</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/no-wrap-func">no-wrap-func</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/nonblock-statement-body-position">nonblock-statement-body-position</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/object-curly-newline">object-curly-newline</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/object-curly-spacing">object-curly-spacing</a></h4>
@@ -82,18 +77,11 @@ These rules are the same for all files.
 <h4>🔵 <a href="https://eslint.org/docs/rules/semi">semi</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/semi-spacing">semi-spacing</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/semi-style">semi-style</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/space-after-function-name">space-after-function-name</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/space-after-keywords">space-after-keywords</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/space-before-blocks">space-before-blocks</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/space-before-function-paren">space-before-function-paren</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/space-before-function-parentheses">space-before-function-parentheses</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/space-before-keywords">space-before-keywords</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/space-in-brackets">space-in-brackets</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/space-in-parens">space-in-parens</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/space-infix-ops">space-infix-ops</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/space-return-throw-case">space-return-throw-case</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/space-unary-ops">space-unary-ops</a></h4>
-<h4>🔵 <a href="https://eslint.org/docs/rules/space-unary-word-ops">space-unary-word-ops</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/switch-colon-spacing">switch-colon-spacing</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/template-curly-spacing">template-curly-spacing</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/template-tag-spacing">template-tag-spacing</a></h4>
@@ -103,11 +91,13 @@ These rules are the same for all files.
 <h4>🔵 <a href="https://eslint.org/docs/rules/yield-star-spacing">yield-star-spacing</a></h4>
 <h4>🔵 <a href="https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin">@babel/object-curly-spacing</a></h4>
 <h4>🔵 <a href="https://github.com/babel/babel/tree/main/eslint/babel-eslint-plugin">@babel/semi</a></h4>
+<h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/block-spacing.md">@typescript-eslint/block-spacing</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md">@typescript-eslint/brace-style</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-dangle.md">@typescript-eslint/comma-dangle</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md">@typescript-eslint/comma-spacing</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md">@typescript-eslint/func-call-spacing</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md">@typescript-eslint/indent</a></h4>
+<h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/key-spacing.md">@typescript-eslint/key-spacing</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md">@typescript-eslint/keyword-spacing</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md">@typescript-eslint/member-delimiter-style</a></h4>
 <h4>🔵 <a href="https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-parens.md">@typescript-eslint/no-extra-parens</a></h4>
@@ -172,6 +162,7 @@ These rules are the same for all files.
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/keyword-spacing">vue/keyword-spacing</a></h4>
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/max-attributes-per-line">vue/max-attributes-per-line</a></h4>
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/multiline-html-element-content-newline">vue/multiline-html-element-content-newline</a></h4>
+<h4>🔵 <a href="https://eslint.vuejs.org/rules/multiline-ternary">vue/multiline-ternary</a></h4>
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/mustache-interpolation-spacing">vue/mustache-interpolation-spacing</a></h4>
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/no-extra-parens">vue/no-extra-parens</a></h4>
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/no-multi-spaces">vue/no-multi-spaces</a></h4>
@@ -187,7 +178,20 @@ These rules are the same for all files.
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/space-infix-ops">vue/space-infix-ops</a></h4>
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/space-unary-ops">vue/space-unary-ops</a></h4>
 <h4>🔵 <a href="https://eslint.vuejs.org/rules/template-curly-spacing">vue/template-curly-spacing</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/generator-star">generator-star</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/indent-legacy">indent-legacy</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/no-arrow-condition">no-arrow-condition</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/no-comma-dangle">no-comma-dangle</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/no-reserved-keys">no-reserved-keys</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/no-space-before-semi">no-space-before-semi</a></h4>
 <h4>🔵 <a href="https://eslint.org/docs/rules/no-spaced-func">no-spaced-func</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/no-wrap-func">no-wrap-func</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/space-after-function-name">space-after-function-name</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/space-after-keywords">space-after-keywords</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/space-before-function-parentheses">space-before-function-parentheses</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/space-before-keywords">space-before-keywords</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/space-in-brackets">space-in-brackets</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/space-return-throw-case">space-return-throw-case</a></h4>
+<h4>🔵 <a href="https://eslint.org/docs/rules/space-unary-word-ops">space-unary-word-ops</a></h4>
 <h4>🔵 <a href="https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md">react/jsx-space-before-closing</a></h4>
 <!-- END rules -->

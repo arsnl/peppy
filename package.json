@@ -19,8 +19,8 @@
   "contributors": [
     {
       "name": "Mark Arseneault",
-      "email": "mark@arsnl.co",
-      "url": "https://arsnl.co"
+      "email": "mark@arsnl.dev",
+      "url": "https://arsnl.dev"
     }
   ],
   "workspaces": [
@@ -28,10 +28,10 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "format": "prettier --check --loglevel warn .",
+    "format": "prettier --check .",
     "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
-    "docgen": "node scripts/docgen",
-    "prepare": "husky install"
+    "validate": "npm run format && npm run lint && node tests/prepare --post",
+    "docgen": "node scripts/docgen"
   },
   "engines": {
     "node": ">=14"
@@ -41,13 +41,7 @@
     "eslint": "^8.28.0",
     "eslint-config-peppy": "*",
     "glob": "^8.0.3",
-    "husky": "^8.0.0",
-    "lint-staged": "^13.0.4",
     "prettier": "^2.8.0",
     "rimraf": "^3.0.2"
-  },
-  "lint-staged": {
-    "*": "prettier --check",
-    "*.{js,jsx,ts,tsx}": "eslint"
   }
 }
