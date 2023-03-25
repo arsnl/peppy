@@ -1,5 +1,11 @@
 # peppy
 
+## 3.0.0-next.1
+
+### Major Changes
+
+- CLI install the exact same version of the config to improve compatibility
+
 ## 3.0.0-next.0
 
 ### Major Changes

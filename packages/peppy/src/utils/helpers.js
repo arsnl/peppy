@@ -8,6 +8,7 @@ import ora from "ora";
 import nodePath from "path";
 import { sync as rimrafSync } from "rimraf";
 import { clean } from "semver";
+import packageInfo from "../../package.json";
 import { logger } from "./logger";
 
 /**
@@ -519,7 +520,7 @@ export const installDependencies = async ({
     }))
       ? ""
       : "prettier",
-    "eslint-config-peppy",
+    `eslint-config-peppy@${packageInfo.version}`,
   ].filter((dependencie) => !!dependencie);
 
   const args = ["add", ...dependencies, prod ? "-S" : "-D"];

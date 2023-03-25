@@ -206,7 +206,7 @@ export const makeInitCommand = async () => {
         "",
         cyan("Next steps:"),
         cyan(" - Install the recommended VS Code extensions"),
-        cyan(` - Run ${bold("npm fix")} to clean your project`),
+        cyan(` - Run ${bold("npm run fix")} to clean your project`),
         cyan(" - Add automated validation (e.g. Github actions)")
       );
     });
