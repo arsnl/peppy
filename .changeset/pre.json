@@ -1,0 +1,13 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "eslint-config-peppy": "2.0.0",
+    "peppy": "2.0.0"
+  },
+  "changesets": [
+    "giant-items-melt",
+    "grumpy-forks-hear",
+    "silent-pets-occur"
+  ]
+}

@@ -1,5 +1,11 @@
 # eslint-config-peppy
 
+## 3.0.0-next.0
+
+### Major Changes
+
+- Add TailwindCSS support
+
 ## 2.0.0
 
 ### Major Changes
