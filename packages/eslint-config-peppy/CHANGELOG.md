@@ -1,5 +1,11 @@
 # eslint-config-peppy
 
+## 3.0.0-next.4
+
+### Major Changes
+
+- Update import/no-extraneous-dependencies devDependencies list
+
 ## 3.0.0-next.3
 
 ### Patch Changes
