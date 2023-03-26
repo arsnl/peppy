@@ -1,24 +1,36 @@
 # peppy
 
-## 3.0.0-next.4
+## 3.0.0
 
 ### Major Changes
 
-- Update import/no-extraneous-dependencies devDependencies list
+- 352d8db: Add TailwindCSS support
+
+### Minor Changes
+
+- 352d8db: Add .editorconfig file to the installer
+
+### Patch Changes
+
+- 68256f5: Add CLI support to prerelease version
+- 1c03e1d: Update the documentation
+- 352d8db: Add more context to the CLI
+
+## 3.0.0-next.4
 
 ## 3.0.0-next.3
 
 ## 3.0.0-next.2
 
-### Major Changes
+### Patch Changes
 
 - Update the documentation
 
 ## 3.0.0-next.1
 
-### Major Changes
+### Patch Changes
 
-- CLI install the exact same version of the config to improve compatibility
+- CLI install the same version of the config to improve compatibility
 
 ## 3.0.0-next.0
 

@@ -1,5 +1,17 @@
 # eslint-config-peppy
 
+## 3.0.0
+
+### Major Changes
+
+- 352d8db: Add TailwindCSS support
+- 156a6b5: Add TailwindCSS default settings
+- 4b00d1e: Update import/no-extraneous-dependencies devDependencies list
+
+### Patch Changes
+
+- 1c03e1d: Update the documentation
+
 ## 3.0.0-next.4
 
 ### Major Changes
@@ -8,13 +20,13 @@
 
 ## 3.0.0-next.3
 
-### Patch Changes
+### Major Changes
 
-- Add tailwindcss default settings
+- Add TailwindCSS default settings
 
 ## 3.0.0-next.2
 
-### Major Changes
+### Patch Changes
 
 - Update the documentation
 
