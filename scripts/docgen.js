@@ -367,6 +367,12 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
   });
 
   await injectSnippet({
+    snippetFile: "packages/peppy/src/templates/.editorconfig",
+    injectTag: "snippet-editorconfig",
+    language: "toml",
+  });
+
+  await injectSnippet({
     snippetFile: "packages/peppy/src/templates/.vscode/extensions.json",
     injectTag: "snippet-vscode-extensions",
     language: "jsonc",

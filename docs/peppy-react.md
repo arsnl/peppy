@@ -2,13 +2,15 @@
 <h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
 <h2 align="center">
 
-`peppy/react`
+`peppy/react` rules
 
 </h2>
 
 Here is the list of rules applied in the `peppy/react` configuration.
 
-These rules are applied to all files. However, TypeScript specific rules override some of these rules for `.ts` and `.tsx` files. The list of these rules is available in the [TypeScript](#typescript) section of this file.
+These rules are applied to all files. However, TypeScript specific rules override some of these rules for TypeScript files.
+
+The list of these rules is available in the [TypeScript](#typescript) section of this file.
 
 <!-- START rules -->
 <div align="center">

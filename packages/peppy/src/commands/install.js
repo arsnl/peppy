@@ -21,11 +21,11 @@ import {
   promptCheckPackageManager,
 } from "../utils/prompt";
 
-export const makeInitCommand = async () => {
-  const program = new Command("init");
+export const makeInstallCommand = async () => {
+  const program = new Command("install");
 
   program
-    .description("Peppy initializer")
+    .description("Peppy installer")
     .addOption(
       new Option("--pm <pm>", "package manager").choices([
         "npm",
@@ -175,9 +175,10 @@ export const makeInitCommand = async () => {
           "",
           cyan(
             "Alright. I have everything I need. Let's start the installations then! 💃"
-          ),
-          ""
+          )
         );
+
+      logger.log("");
 
       await installDependencies({ packageManager, cwd, prod });
 
@@ -196,7 +197,7 @@ export const makeInitCommand = async () => {
 
       logger.log(
         "",
-        cyan("🎉 Hooray! Initialization is complete. 🎉"),
+        cyan("🎉 Hooray! Installation is complete. 🎉"),
         cyan(
           "You're now ready to dive into your project with full force and enjoy a seamless development experience."
         )

@@ -2,13 +2,15 @@
 <h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
 <h2 align="center">
 
-`peppy`
+`peppy` rules
 
 </h2>
 
 Here is the list of rules applied in the `peppy` configuration.
 
-These rules are applied to all files. However, TypeScript specific rules override some of these rules for `.ts` and `.tsx` files. The list of these rules is available in the [TypeScript](#typescript) section of this file.
+These rules are applied to all files. However, TypeScript specific rules override some of these rules for TypeScript files.
+
+The list of these rules is available in the [TypeScript](#typescript) section of this file.
 
 <!-- START rules -->
 <div align="center">
@@ -102,7 +104,10 @@ These rules are applied to all files. However, TypeScript specific rules overrid
 <h4>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md">import/extensions</a></h4>
 
 ```json
-["ignorePackages", { "js": "never", "jsx": "never", "mjs": "never" }]
+[
+  "ignorePackages",
+  { "js": "never", "jsx": "never", "cjs": "never", "mjs": "never" }
+]
 ```
 
 <h4>🔴 <a href="https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md">import/first</a></h4>
@@ -151,7 +156,8 @@ These rules are applied to all files. However, TypeScript specific rules overrid
       "**/protractor.conf.js",
       "**/protractor.conf.*.js",
       "**/karma.conf.js",
-      "**/.eslintrc.js"
+      "**/.eslintrc.{js,cjs,mjs}",
+      "**/.tailwind.config.js"
     ],
     "optionalDependencies": false
   }
@@ -645,14 +651,14 @@ These rules are applied to all files. However, TypeScript specific rules overrid
       [
         "^\\u0000",
         "^react(/.*)?(?<!(.(css|scss|sass|less)|\\u0000$))$",
-        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
-        "^(@\\/|~[^/]*\\/).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^(?!(@\\/|~\\/))(@?\\w).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^(@\\/|~\\/).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
         "^\\..*(?<!(.(css|scss|sass|less)|\\u0000$))$",
-        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(\\u0000$)$",
-        "^(@\\/|~[^/]*\\/).*(\\u0000$)$",
+        "^(?!(@\\/|~\\/))(@?\\w).*(\\u0000$)$",
+        "^(@\\/|~\\/).*(\\u0000$)$",
         "^\\..*(\\u0000$)$",
-        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(.(css|scss|sass|less))$",
-        "^(@\\/|~[^/]*\\/).*(.(css|scss|sass|less))$",
+        "^(?!(@\\/|~\\/))(@?\\w).*(.(css|scss|sass|less))$",
+        "^(@\\/|~\\/).*(.(css|scss|sass|less))$",
         "^\\..*(.(css|scss|sass|less))$"
       ]
     ]
@@ -967,8 +973,10 @@ These rules are only applied on `.ts` and `.tsx` files
       "**/protractor.conf.*.ts",
       "**/karma.conf.js",
       "**/karma.conf.ts",
-      "**/.eslintrc.js",
-      "**/.eslintrc.ts"
+      "**/.eslintrc.{js,cjs,mjs}",
+      "**/.eslintrc.{ts,cts,mts}",
+      "**/.tailwind.config.js",
+      "**/.tailwind.config.ts"
     ],
     "optionalDependencies": false
   }

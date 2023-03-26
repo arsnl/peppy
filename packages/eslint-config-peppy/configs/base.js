@@ -42,7 +42,7 @@ mod._resolveFilename = (request, parent, isMain, options) => {
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 // TODO: check for usage of globals
-const importAliases = "(@\\/|~[^/]*\\/)"; // support path aliases starting with @/ or ~.*/
+const importAliases = "(@\\/|~\\/)"; // support path aliases starting with @/ or ~/
 const importStyleExts = "(css|scss|sass|less)";
 
 /** @type {import("eslint").Linter.Config} */
@@ -133,6 +133,7 @@ const baseConfig = {
       {
         js: "never",
         jsx: "never",
+        cjs: "never",
         mjs: "never",
       },
     ],
@@ -175,7 +176,8 @@ const baseConfig = {
           "**/protractor.conf.js",
           "**/protractor.conf.*.js",
           "**/karma.conf.js",
-          "**/.eslintrc.js",
+          "**/.eslintrc.{js,cjs,mjs}",
+          "**/.tailwind.config.js",
         ],
         optionalDependencies: false,
       },
@@ -737,7 +739,7 @@ module.exports = {
   ...baseConfig,
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
+      files: ["*.mts", "*.cts", "*.ts", "*.tsx"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         warnOnUnsupportedTypeScriptVersion: true,
@@ -855,7 +857,10 @@ module.exports = {
               "import/no-extraneous-dependencies"
             ][1].devDependencies.reduce((result, devDep) => {
               const toAppend = [devDep];
-              const devDepWithTs = devDep.replace(/\bjs(x?)\b/g, "ts$1");
+              const devDepWithTs = devDep.replace(
+                /\b(c|m)?js(x?)\b/g,
+                "$1ts$2"
+              );
               if (devDepWithTs !== devDep) {
                 toAppend.push(devDepWithTs);
               }

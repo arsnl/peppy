@@ -7,7 +7,7 @@ import { green } from "kleur";
 import ora from "ora";
 import nodePath from "path";
 import { sync as rimrafSync } from "rimraf";
-import { clean } from "semver";
+import { clean, prerelease } from "semver";
 import packageInfo from "../../package.json";
 import { logger } from "./logger";
 
@@ -506,6 +506,8 @@ export const installDependencies = async ({
   prod = false,
 } = {}) => {
   const spinner = ora(`Installing package dependencies`).start();
+  const { version } = packageInfo;
+  const isPrerelease = !!prerelease(version).length;
 
   const dependencies = [
     (await isPackageInDependencies({
@@ -520,7 +522,7 @@ export const installDependencies = async ({
     }))
       ? ""
       : "prettier",
-    `eslint-config-peppy@${packageInfo.version}`,
+    `eslint-config-peppy${isPrerelease ? `@${version}` : ""}`,
   ].filter((dependencie) => !!dependencie);
 
   const args = ["add", ...dependencies, prod ? "-S" : "-D"];

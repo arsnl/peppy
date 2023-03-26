@@ -1,5 +1,11 @@
 # eslint-config-peppy
 
+## 3.0.0-next.2
+
+### Major Changes
+
+- Update the documentation
+
 ## 3.0.0-next.1
 
 ## 3.0.0-next.0

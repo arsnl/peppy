@@ -2,13 +2,13 @@
 <h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
 <h2 align="center">
 
-`peppy/tailwindcss`
+`peppy/tailwindcss` rules
 
 </h2>
 
 Here is the list of rules applied in the `peppy/tailwindcss` configuration.
 
-These rules are the same for all files.
+These rules are the same for all files, including the TypeScript files.
 
 <!-- START rules -->
 <div align="center">

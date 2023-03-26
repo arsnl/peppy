@@ -2,4 +2,4 @@
 "peppy": minor
 ---
 
-Add .editorconfig file to the initializer
+Add .editorconfig file to the installer

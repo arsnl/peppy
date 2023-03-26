@@ -2,7 +2,7 @@ import { Command } from "commander";
 import { bold, cyan, red, yellow } from "kleur";
 import checkForUpdate from "update-check";
 import packageInfo from "../package.json";
-import { makeInitCommand } from "./commands/init";
+import { makeInstallCommand } from "./commands/install";
 import { logger } from "./utils/logger";
 
 const update = checkForUpdate(packageInfo).catch(() => null);
@@ -31,7 +31,7 @@ const notifyUpdate = async () => {
 const run = async () => {
   const program = new Command()
     .version(packageInfo.version)
-    .addCommand(await makeInitCommand());
+    .addCommand(await makeInstallCommand());
 
   program.parseAsync(process.argv);
 };
