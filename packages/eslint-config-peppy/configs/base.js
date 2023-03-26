@@ -42,7 +42,7 @@ mod._resolveFilename = (request, parent, isMain, options) => {
 require("@rushstack/eslint-patch/modern-module-resolution");
 
 // TODO: check for usage of globals
-const importAliases = "(@\\/|~\\/)"; // support path aliases starting with @/ or ~/
+const importAliases = "(@\\/|~[^/]*\\/)"; // support path aliases starting with @/ or ~.*/
 const importStyleExts = "(css|scss|sass|less)";
 
 /** @type {import("eslint").Linter.Config} */
