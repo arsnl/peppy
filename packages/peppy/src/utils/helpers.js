@@ -2,11 +2,13 @@
 import jsonc from "comment-json";
 import execa from "execa";
 import fs from "fs";
+import gradient from "gradient-string";
 import { green } from "kleur";
 import ora from "ora";
 import nodePath from "path";
 import { sync as rimrafSync } from "rimraf";
-import { clean } from "semver";
+import { clean, prerelease } from "semver";
+import packageInfo from "../../package.json";
 import { logger } from "./logger";
 
 /**
@@ -89,6 +91,7 @@ export const writeFile = async ({
   file,
   data = "",
   cwd = process.cwd(),
+  format = true,
 } = {}) => {
   const filePath = nodePath.join(cwd, file);
   const dirname = nodePath.dirname(filePath);
@@ -109,7 +112,9 @@ export const writeFile = async ({
   await fs.promises.writeFile(filePath, data);
 
   // format the file
-  await execa("npx", ["prettier", "--write", filePath]);
+  if (format) {
+    await execa("npx", ["prettier", "--write", filePath]);
+  }
 };
 
 /**
@@ -187,19 +192,22 @@ export const hasMercurialChanges = async ({ cwd = process.cwd() } = {}) => {
 };
 
 /**
- * Remove all the ESLint configurations files and properties and replace it by a single .eslintrc.js file
+ * Remove all the ESLint configurations files and properties and replace it by a single .eslintrc.js/.cjs file
  * with a calculated configuration based on the existing packages in the project
  * @param {Object} options - options
  * @param {string} options.cwd - the current working directory
  * @returns {Promise<Void>} - a Promise which resolves to nothing
  */
-export const addESLintConfiguration = async ({ cwd = process.cwd() } = {}) => {
+export const addESLintConfigurationFile = async ({
+  cwd = process.cwd(),
+} = {}) => {
   const spinner = ora(`Adding ESLint configuration file`).start();
 
   const eslintFiles = await getExistingPaths({
     paths: [
       ".eslintrc.js",
       ".eslintrc.cjs",
+      ".eslintrc.mjs",
       ".eslintrc.yaml",
       ".eslintrc.yml",
       ".eslintrc.json",
@@ -225,6 +233,10 @@ export const addESLintConfiguration = async ({ cwd = process.cwd() } = {}) => {
     packageName: "react",
     cwd,
   });
+  const isTailwindcssInstalled = await isPackageInDependencies({
+    packageName: "tailwindcss",
+    cwd,
+  });
   const isJestInstalled = await isPackageInDependencies({
     packageName: "jest",
     cwd,
@@ -233,12 +245,14 @@ export const addESLintConfiguration = async ({ cwd = process.cwd() } = {}) => {
     packageName: "typescript",
     cwd,
   });
+  const isPkgTypeModule = pkgRest.type && pkgRest.type === "module";
 
   const configuration = {
     extends: [
       "peppy",
       isNextInstalled && "peppy/next",
       isReactInstalled && !isNextInstalled && "peppy/react",
+      isTailwindcssInstalled && "peppy/tailwindcss",
       isJestInstalled && "peppy/jest",
     ].filter((extend) => !!extend),
     ...(isTypeScriptInstalled
@@ -253,12 +267,11 @@ export const addESLintConfiguration = async ({ cwd = process.cwd() } = {}) => {
 
   // Writing the configuration
   await writeFile({
-    file: ".eslintrc.js",
+    file: isPkgTypeModule ? ".eslintrc.cjs" : ".eslintrc.js",
     cwd,
-    data: `module.exports = ${JSON.stringify(configuration)}`.replace(
-      '"__dirname"',
-      "__dirname"
-    ),
+    data: `/** @type {import("eslint").Linter.Config} */\nmodule.exports = ${JSON.stringify(
+      configuration
+    )}`.replace('"__dirname"', "__dirname"),
   });
 
   spinner.succeed(`ESLint configuration file added`);
@@ -441,6 +454,27 @@ export const getPackageManagersChoices = async ({
 };
 
 /**
+ * Check the package manager used to execute the current process
+ * @returns {string} yarn, pnpm or npm
+ */
+export const getUserPkgManager = () => {
+  // This environment variable is set by npm and yarn but pnpm seems less consistent
+  const userAgent = process.env.npm_config_user_agent;
+
+  if (userAgent) {
+    if (userAgent.startsWith("yarn")) {
+      return "yarn";
+    }
+    if (userAgent.startsWith("pnpm")) {
+      return "pnpm";
+    }
+    return "npm";
+  }
+  // If no user agent is set, assume npm
+  return "npm";
+};
+
+/**
  * Check if package is in package.json dependencies
  * @param {Object} options - options
  * @param {string} options.packageName - the name of the package
@@ -471,7 +505,9 @@ export const installDependencies = async ({
   cwd = process.cwd(),
   prod = false,
 } = {}) => {
-  const spinner = ora(`Installing dependencies`).start();
+  const spinner = ora(`Installing package dependencies`).start();
+  const { version } = packageInfo;
+  const isPrerelease = !!prerelease(version).length;
 
   const dependencies = [
     (await isPackageInDependencies({
@@ -486,37 +522,41 @@ export const installDependencies = async ({
     }))
       ? ""
       : "prettier",
-    "eslint-config-peppy",
+    `eslint-config-peppy${isPrerelease ? `@${version}` : ""}`,
   ].filter((dependencie) => !!dependencie);
 
   const args = ["add", ...dependencies, prod ? "-S" : "-D"];
 
   try {
     await execa(packageManager, args, { cwd });
-    spinner.succeed(`Dependencies installed`);
+    spinner.succeed(`Package dependencies installed`);
   } catch (error) {
-    spinner.fail(`A problem occurs while installing the dependencies.`);
+    spinner.fail(`A problem occurs while installing the package dependencies.`);
     logger.error(`Cannot execute '${packageManager} ${args.join(" ")}'`);
     throw error;
   }
 };
 
 /**
- * Add the recommended scripts to the package.json file
+ * Add the scripts to the package.json file
  * @param {Object} options - options
  * @param {string} options.cwd - the current working directory
  * @returns {Promise<Void>} - a Promise which resolves to nothing
  */
-export const addRecommendedScripts = async ({ cwd = process.cwd() } = {}) => {
-  const spinner = ora(`Adding the recommended scripts`).start();
-
+export const addPkgJsonScripts = async ({ cwd = process.cwd() } = {}) => {
+  const spinner = ora(`Adding the package.json scripts`).start();
   const packageJson = await readPkg({ cwd });
   const currentScripts = packageJson.scripts || {};
+  const isTypeScriptInstalled = await isPackageInDependencies({
+    packageName: "typescript",
+    cwd,
+  });
 
   const RECOMMENDED_SCRIPTS = {
     lint: "eslint .",
     format: "prettier --check .",
-    fix: "npm run lint -- --fix && prettier --write --loglevel warn .",
+    ...(isTypeScriptInstalled ? { typecheck: "tsc --noEmit" } : {}),
+    fix: "prettier --write --loglevel warn . && npm run lint -- --fix",
   };
 
   await writePkg({
@@ -527,17 +567,19 @@ export const addRecommendedScripts = async ({ cwd = process.cwd() } = {}) => {
     cwd,
   });
 
-  spinner.succeed(`Recommended scripts added`);
+  spinner.succeed(`Package.json scripts added`);
 };
 
 /**
- * Add the VS Code configurations
+ * Add the VS Code workspace settings
  * @param {Object} options - options
  * @param {string} options.cwd - the current working directory
  * @returns {Promise<Void>} - a Promise which resolves to nothing
  */
-export const addVsCodeConfiguration = async ({ cwd = process.cwd() } = {}) => {
-  const spinner = ora(`Adding VS Code configurations`).start();
+export const addVsCodeWorkspaceSettings = async ({
+  cwd = process.cwd(),
+} = {}) => {
+  const spinner = ora(`Adding VS Code workspace settings`).start();
 
   const extensionsTemplate = await readFile({
     file: "../templates/.vscode/extensions.json",
@@ -569,10 +611,7 @@ export const addVsCodeConfiguration = async ({ cwd = process.cwd() } = {}) => {
   }
 
   settings = jsoncDeepAssign(settings, parsedSettingsTemplate);
-  // settings = jsonc.assign({}, settings, Object.keys(settings).sort());
-
   extensions = jsoncDeepAssign(extensions, parsedExtensionsTemplate);
-  // extensions = jsonc.assign({}, extensions, Object.keys(extensions).sort());
 
   await writeFile({
     file: ".vscode/extensions.json",
@@ -586,7 +625,32 @@ export const addVsCodeConfiguration = async ({ cwd = process.cwd() } = {}) => {
     data: jsonc.stringify(settings, null, 2),
   });
 
-  spinner.succeed(`VS Code configurations added`);
+  spinner.succeed(`VS Code workspace settings added`);
+};
+
+/**
+ * Add the .editorconfig file
+ * @param {Object} options - options
+ * @param {string} options.cwd - the current working directory
+ * @returns {Promise<Void>} - a Promise which resolves to nothing
+ */
+export const addEditorConfigFile = async ({ cwd = process.cwd() } = {}) => {
+  const spinner = ora(`Adding the .editorconfig file`).start();
+
+  const fileTemplate = await readFile({
+    file: "../templates/.editorconfig",
+    json: false,
+    cwd: __dirname,
+  });
+
+  await writeFile({
+    file: ".editorconfig",
+    cwd,
+    data: fileTemplate,
+    format: false, // .editorconfig is not supported by prettier
+  });
+
+  spinner.succeed(`.editorconfig file added`);
 };
 
 /**
@@ -676,4 +740,36 @@ export const jsoncDeepAssign = (target, source) => {
   });
 
   return clone;
+};
+
+/**
+ * Log the peppy banner with some fixes depending on the package manager used
+ * @returns {void}
+ */
+export const logBanner = () => {
+  // https://www.coolgenerator.com/ascii-text-generator - Roman
+  const banner = `
+oo.ooooo.   .ooooo.  oo.ooooo.  oo.ooooo.  oooo    ooo 
+ 888' \`88b d88' \`88b  888' \`88b  888' \`88b  \`88.  .8'  
+ 888   888 888ooo888  888   888  888   888   \`88..8'   
+ 888   888 888    .o  888   888  888   888    \`888'    
+ 888bod8P' \`Y8bod8P'  888bod8P'  888bod8P'     .8'     
+ 888                  888        888       .o..P'      
+o888o                o888o      o888o      \`Y8P'
+
+Brilliant ESLint configurations for happier developers
+`;
+
+  const peppyGradient = gradient(
+    { color: "#FF00CC", pos: 0 },
+    { color: "#FFFF00", pos: 0.7 },
+    { color: "#B0FF31", pos: 1 }
+  );
+
+  // resolves weird behavior where the ascii is offset
+  const pkgManager = getUserPkgManager();
+  if (pkgManager === "yarn" || pkgManager === "pnpm") {
+    console.log("");
+  }
+  console.log(peppyGradient.multiline(banner));
 };

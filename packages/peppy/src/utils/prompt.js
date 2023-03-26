@@ -1,4 +1,4 @@
-import { green, red } from "kleur";
+import { bold, cyan, green, red } from "kleur";
 import prompts from "prompts";
 import { satisfies } from "semver";
 import packageInfo from "../../package.json";
@@ -20,7 +20,7 @@ import { logger } from "./logger";
  * @returns {Void} - nothing
  */
 export const handlePromptCancel = () => {
-  logger.log("Peppy CLI were aborted by the user.");
+  logger.log("Peppy CLI aborted by the user. 😰");
   process.exit(0);
 };
 
@@ -71,8 +71,19 @@ export const promptCheckGitStatus = async ({ cwd = process.cwd() } = {}) => {
       { onCancel: handlePromptCancel }
     );
 
-    if (!goFoward) {
-      logger.error(`Commit the uncommitted changes ${where} to continue.`);
+    if (goFoward) {
+      logger.log(
+        cyan(
+          "Proceeding with this installation may lead to some lost uncommitted changes."
+        ),
+        cyan(`But hey, you only live once, right? Let's do this! 💣`)
+      );
+    } else {
+      logger.log(
+        cyan(
+          `Good idea! 😌 Just commit the uncommitted changes ${where} then retry later.`
+        )
+      );
       process.exit(0);
     }
   }
@@ -153,7 +164,9 @@ export const promptCheckPackageJSON = async ({
     );
 
     if (initPackageJSON) {
+      logger.log(cyan("Great! Let's do this! ✨"), "");
       await createPkg({ packageManager, cwd });
+      logger.log("");
     } else {
       logger.error(
         "The installation cannot continue. The installation must be inside a Node.js project with a package.json."
@@ -194,6 +207,12 @@ export const promptCheckPackageManager = async ({
       choices: packageManagersChoices,
     },
     { onCancel: handlePromptCancel }
+  );
+
+  logger.log(
+    cyan(
+      `Okay! I'll use ${bold(selectedPackageManager)} as the package manager.`
+    )
   );
 
   return selectedPackageManager;

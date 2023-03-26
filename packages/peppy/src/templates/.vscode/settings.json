@@ -10,7 +10,5 @@
   },
   // Controls auto save of editors that have unsaved changes.
   //  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.
-  "files.autoSave": "onFocusChange",
-  // Always show the ESlint status bar item.
-  "eslint.alwaysShowStatus": true
+  "files.autoSave": "onFocusChange"
 }

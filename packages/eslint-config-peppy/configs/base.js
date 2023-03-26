@@ -45,6 +45,7 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 const importAliases = "(@\\/|~[^/]*\\/)"; // support path aliases starting with @/ or ~.*/
 const importStyleExts = "(css|scss|sass|less)";
 
+/** @type {import("eslint").Linter.Config} */
 const baseConfig = {
   env: {
     browser: true,
@@ -132,6 +133,7 @@ const baseConfig = {
       {
         js: "never",
         jsx: "never",
+        cjs: "never",
         mjs: "never",
       },
     ],
@@ -158,23 +160,33 @@ const baseConfig = {
           "spec/**",
           "**/__tests__/**",
           "**/__mocks__/**",
-          "test.{js,jsx}",
-          "test-*.{js,jsx}",
-          "**/*{.,_}{test,spec}.{js,jsx}",
-          "**/jest.config.js",
-          "**/jest.setup.js",
-          "**/vue.config.js",
-          "**/webpack.config.js",
-          "**/webpack.config.*.js",
-          "**/rollup.config.js",
-          "**/rollup.config.*.js",
-          "**/gulpfile.js",
-          "**/gulpfile.*.js",
-          "**/Gruntfile{,.js}",
-          "**/protractor.conf.js",
-          "**/protractor.conf.*.js",
-          "**/karma.conf.js",
-          "**/.eslintrc.js",
+          "test.{js,jsx,cjs,mjs}",
+          "test-*.{js,jsx,cjs,mjs}",
+          "**/*{.,_}{test,spec}.{js,jsx,cjs,mjs}",
+          "**/.eslintrc.{js,cjs,mjs}",
+          "**/astro.config.{js,cjs,mjs}",
+          "**/babel.config.{js,cjs,mjs}",
+          "**/contentlayer.config.{js,cjs,mjs}",
+          "**/gatsby-config.{js,cjs,mjs}",
+          "**/Gruntfile{,.js,.cjs,.mjs}",
+          "**/gulpfile.{js,cjs,mjs}",
+          "**/gulpfile.*.{js,cjs,mjs}",
+          "**/jest.config.{js,cjs,mjs}",
+          "**/jest.setup.{js,cjs,mjs}",
+          "**/karma.conf.{js,cjs,mjs}",
+          "**/next-sitemap.config.{js,cjs,mjs}",
+          "**/next.config.{js,cjs,mjs}",
+          "**/postcss.config.{js,cjs,mjs}",
+          "**/prettierrc.{js,cjs,mjs}",
+          "**/protractor.conf.{js,cjs,mjs}",
+          "**/protractor.conf.*.{js,cjs,mjs}",
+          "**/remix.config.{js,cjs,mjs}",
+          "**/rollup.config.{js,cjs,mjs}",
+          "**/rollup.config.*.{js,cjs,mjs}",
+          "**/tailwind.config.{js,cjs,mjs}",
+          "**/vue.config.{js,cjs,mjs}",
+          "**/webpack.config.{js,cjs,mjs}",
+          "**/webpack.config.*.{js,cjs,mjs}",
         ],
         optionalDependencies: false,
       },
@@ -731,11 +743,12 @@ const baseConfig = {
   },
 };
 
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   ...baseConfig,
   overrides: [
     {
-      files: ["*.ts", "*.tsx"],
+      files: ["*.mts", "*.cts", "*.ts", "*.tsx"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         warnOnUnsupportedTypeScriptVersion: true,
@@ -853,7 +866,10 @@ module.exports = {
               "import/no-extraneous-dependencies"
             ][1].devDependencies.reduce((result, devDep) => {
               const toAppend = [devDep];
-              const devDepWithTs = devDep.replace(/\bjs(x?)\b/g, "ts$1");
+              const devDepWithTs = devDep.replace(
+                /\b(c|m)?js(x?)\b/g,
+                "$1ts$2"
+              );
               if (devDepWithTs !== devDep) {
                 toAppend.push(devDepWithTs);
               }

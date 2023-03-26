@@ -1,8 +1,11 @@
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   plugins: ["jest"],
+  extends: ["plugin:jest/recommended"],
   env: {
     "jest/globals": true,
   },
+  /*
   rules: {
     "jest/no-alias-methods": ["warn"],
     "jest/prefer-to-be": ["error"],
@@ -27,4 +30,5 @@ module.exports = {
     "jest/valid-expect": ["error"],
     "jest/valid-title": ["error"],
   },
+  */
 };

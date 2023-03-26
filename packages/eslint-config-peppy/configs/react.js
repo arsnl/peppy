@@ -1,3 +1,4 @@
+/** @type {import("eslint").Linter.Config} */
 const reactConfig = {
   parserOptions: {
     ecmaFeatures: {
@@ -372,6 +373,7 @@ const reactConfig = {
       "error",
       {
         allowAllCaps: true,
+        allowLeadingUnderscore: true,
         ignore: [],
       },
     ],
@@ -529,6 +531,7 @@ const reactConfig = {
   },
 };
 
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   ...reactConfig,
   overrides: [
