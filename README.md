@@ -7,19 +7,24 @@
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
 </p>
 
-A brilliant collection of ESLint configurations that enforces strict, readable, and modern code with developers happiness in mind.
+Say goodbye to headaches and frustration, and hello to happy development with Peppy! 👋
 
-Cloned from the popular Airbnb configuration, Peppy takes a more modern approach by increasing the supported ecmaVersion to 2020 in order to support the very useful nullish and optional chaining operators, supporting TypeScript out of the box, letting Prettier taking care of formatting by removing all the conflicting rules and removing the need to install and support the peer dependencies in your package.json.
+Peppy is like the cool, modern cousin of the popular Airbnb configuration. 😎
+
+We've taken the best parts of the popular Airbnb setup, given it a modern makeover, added support for TypeScript and Prettier out of the box, waved goodbye to all those pesky peer dependencies an created an auto-installer to made it even more developer-friendly — what more could you ask for?
 
 ## Highlights
 
-- Play well with [Prettier](#prettier-support) and [TypeScript](#typescript-support).
-- [Batteries included configuration](#batteries-included-configuration) with a very small footprint.
-- Saves you time, energy and make you happier!
+- Play well with [TypeScript](#typescript-support) and [Prettier](#prettier-support)
+- Include [configurations](#configurations) for React, Next, Jest and Tailwindcss
+- [Batteries included configuration](#batteries-included-configuration) with a very small footprint
+- Come with a hassle-free auto-installer
 
 ## Quick Start
 
-The easiest way to install Peppy is with the interactive install.
+Are you ready to get Peppy? The easiest and most hassle-free way to get started is with our installer — it's like a magic wand that makes all your configuration dreams come true.
+
+Give it a go and see for yourself!
 
 ```
 npx peppy install
@@ -27,19 +32,23 @@ npx peppy install
 
 ## Manual Installation
 
-If you want to install Peppy manually, follow these steps.
+If you're feeling adventurous and want to install Peppy manually, we're not here to stop you — we love a good challenge! Just follow these steps and you'll be one step closer to configuration greatness.
 
-#### 1. Install dependencies
+Ready, set, go!
+
+### 1️⃣ Install dependencies
+
+Before we can start this party, we need to get our dependencies in order. Don't worry, it's not as boring as it sounds — just run this command and let the magic happen. You'll be one step closer to configuration heaven!
 
 ```
 npm install --save-dev eslint-config-peppy prettier eslint
 ```
 
-#### 2. Setup ESLint
+### 2️⃣ Setup ESLint
 
-If you don't already have one, create an ESLint configuration file (eg: `.eslintrc.js`) in the root of your project.
+If you haven't already joined the cool kids club with an ESLint configuration file, it's time to get on board. Just create a `.eslintrc.js` file in your project's root directory and you'll be well on your way to code perfection.
 
-Then, add configurations to the "extends" array in your ESLint configuration file.
+Don't forget to add some sweet [Peppy configurations](#configurations) to the `extends` array to get things moving!
 
 ```js
 module.exports = {
@@ -47,25 +56,56 @@ module.exports = {
 };
 ```
 
-> Depending of your project, you can add more [configurations](#peppy-eslint-configurations) to the "extends" array.
+### 3️⃣ Add scripts
 
-#### 3. Add scripts
-
-Add those scripts to your package.json to lint, format and fix your project.
+Don't be shy — give your package.json some love by adding these awesome scripts to lint, format, fix and even typecheck your project with ease. Your code will thank you for it!
 
 ```json
 "scripts": {
   "lint": "eslint .",
-  "format": "prettier --check --loglevel warn .",
-  "fix": "prettier --write --loglevel warn . && npm run lint -- --fix"
+  "format": "prettier --check .",
+  "typecheck": "tsc --noEmit", // Only if you use TypeScript
+  "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
 },
 ```
 
-Now you can manually lint your code by running `npm run lint`, check the format it with `npm run format` and fix all auto-fixable issues with `npm run fix`. You probably want your editor to do this though.
+### 4️⃣ Add .editorconfig file
 
-#### 4. Set VS Code
+If you're looking to take your formatting game to the next level, it's time to bring in the big guns — EditorConfig and Prettier. They're like Batman and Robin, but for your code.
 
-- Install the [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) VS Code extensions.
+Use them together to enforce all the formatting rules, even the files that Prettier can't handle on its own.
+
+We've even included a pre-configured `.editorconfig` file that's just waiting for you to copy and paste it into your project. What are you waiting for? Let's get this formatting party started!
+
+<!-- START snippet-editorconfig -->
+
+```toml
+# Configuration to use with Prettier.
+# Source: https://prettier.io/docs/en/configuration.html#editorconfig
+
+root = true
+
+[*]
+charset = utf-8
+insert_final_newline = true
+end_of_line = lf
+indent_style = space
+indent_size = 2
+max_line_length = 80
+
+```
+
+<!-- END snippet-editorconfig -->
+
+### 5️⃣ Set VS Code
+
+The final countdown is here — it's time to install those VS Code extensions so your code validation and formatting runs smoother than a buttery croissant. Don't worry, it's just one last step before you can sit back and watch the magic happen. Let's do this!
+
+- Install the following VS Code extensions
+
+  - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+  - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
 
 - At the root of your project, create a folder named `.vscode` and put a `settings.json` file inside of it then put the settings below inside of this file.
 
@@ -84,9 +124,7 @@ Now you can manually lint your code by running `npm run lint`, check the format 
   },
   // Controls auto save of editors that have unsaved changes.
   //  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.
-  "files.autoSave": "onFocusChange",
-  // Always show the ESlint status bar item.
-  "eslint.alwaysShowStatus": true
+  "files.autoSave": "onFocusChange"
 }
 ```
 
@@ -103,56 +141,37 @@ Now you can manually lint your code by running `npm run lint`, check the format 
     // VS Code ESLint extension
     "dbaeumer.vscode-eslint",
     // Prettier Formatter for Visual Studio Code
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    // EditorConfig for VS Code
+    "editorconfig.editorconfig"
   ]
 }
 ```
 
 <!-- END snippet-vscode-extensions -->
 
-## Peppy ESLint configurations
+Congratulations, you're officially a configuration wizard! 🧙‍♂️ It's time to sit back, relax, and let your code take center stage. We'll be here in case you need any more magic tricks up your sleeve. Happy coding!
 
-The following ESLint configurations are part of Peppy.
+## Configurations
 
-- ### `peppy`
+Behold, the shining stars of the Peppy show! These ESLint configurations are like the Avengers of code - each one with their own unique powers to make your code stronger and more efficient. Which one will you choose? The power is in your hands, my friend.
 
-  The Peppy code style. Must always be put at first in your ESLint extends.
-
-  [List of rules applied](/docs/peppy.md)
-
-- ### `peppy/react`
-
-  Additional configuration for projects that use [React](https://reactjs.org/)
-
-  [List of rules applied](/docs/peppy-react.md)
-
-- ### `peppy/next`
-
-  Additional configuration for projects that use [NextJS](https://nextjs.org/).
-
-  No need to add the `peppy/react` configuration since this configuration already extend the react rules set.
-
-  [List of rules applied](/docs/peppy-next.md)
-
-- ### `peppy/jest`
-
-  Additional configuration for projects that use [Jest](https://jestjs.io/).
-
-  [List of rules applied](/docs/peppy-jest.md)
-
-- ### `peppy/prettier`
-
-  Turns off all rules that might conflict with [Prettier](https://prettier.io/).
-
-  To add at the end of your ESLint extends if you add another ESLint configuration not provided by Peppy and want to make sure you don't introduce rules conflicting with Prettier.
-
-  [List of rules applied](/docs/peppy-prettier.md)
+| Configuration       | Description                                                                                                                                 | Rules                               |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| `peppy`             | The Beyoncé of code styles. It's mandatory and it always comes first, no matter what. 💃🏽                                                    | [Rules](/docs/peppy.md)             |
+| `peppy/react`       | Additional configuration if your project use React.                                                                                         | [Rules](/docs/peppy-react.md)       |
+| `peppy/next`        | Additional configuration for NextJS project. If you use it, skip adding `peppy/react` - it extends the React rules already. Easy peasy!     | [Rules](/docs/peppy-next.md)        |
+| `peppy/jest`        | Additional configuration if your project use Jest.                                                                                          | [Rules](/docs/peppy-jest.md)        |
+| `peppy/tailwindcss` | Additional configuration if your project use Tailwind CSS.                                                                                  | [Rules](/docs/peppy-tailwindcss.md) |
+| `peppy/prettier`    | Add it at the end of your ESLint extends only if you use non-Peppy configurations to turns off all rules that might conflict with Prettier. | [Rules](/docs/peppy-prettier.md)    |
 
 ## Batteries included configuration
 
-Unlike other ESLint configurations, you do not have to install and maintain peer dependencies with Peppy.
+Oh, you betcha! Peppy is not like other ESLint configurations. With Peppy, you don't have to worry about installing and keeping up with peer dependencies.
 
-Here is an example of Peppy vs Airbnb footprints.
+We know it can be frustrating to manage all those pesky dependencies, so we took care of it for you!
+
+And if you're curious about how Peppy stacks up against the other guys, check out this little example we put together comparing Peppy and Airbnb's footprints.
 
 ```jsonc
 // Peppy
@@ -178,23 +197,19 @@ Thus, although the use of Prettier is highly recommended, the only dependency re
 
 ## Prettier support
 
-Prettier is very efficient for formatting a lot of different files formats while ESLint is efficient to validate the code-quality and catching bugs on JavaScript and TypeScript files only.
+Prettier and ESLint are both efficient tools, but each has its own superpower. Prettier is the champ at formatting many different file formats, while ESLint excels at validating code-quality and catching bugs in JavaScript and TypeScript files.
 
-It's a good practice to let Prettier handle formatting and ESLint handle the code style.
+To follow the best practice, Peppy lets Prettier handle formatting and ESLint handle code style. Peppy doesn't overwrite Prettier rules, nor does it format anything that Prettier already supports.
 
-Peppy apply this practice.
+This means you can run Prettier with IDE extensions, on your terminal, on CI runners, on pre-commit hooks, anywhere, without worrying about possible conflicts with ESLint. No more headaches!
 
-Contrary to other ESLint configuration, Peppy do not contain any rule that overwrite the Prettier rules and don't do any formatting that is already supported by Prettier.
-
-That mean that you can run Prettier with IDE extensions, on your terminal, on CI runners, on pre-commit hook, anywhere, without having to worry about possible conflict with ESLint. Like it's supposed to be.
-
-However, the tradeoff of this approach is that you have to run Prettier and ESLint to get your JavaScript and TypeScript files fully formatted and linted. But, that's not a big tradeoff since you still have to run Prettier to format all the other files supported by it.
+The only tradeoff is that you need to run both Prettier and ESLint to get your JavaScript and TypeScript files fully formatted and linted. But it's not a big deal, as you would have to run Prettier anyway to format all the other files it supports.
 
 ## TypeScript support
 
-Peppy support TypeScript out of the box without having to install any other ESLint plugin, configuration nor selecting special TypeScript configuration in the extends property.
+Peppy has got your back when it comes to TypeScript! You don't need to worry about installing any additional ESLint plugins or configs, nor do you need to fiddle with special TypeScript configs in your "extends" property.
 
-However, to help typescript-eslint to find your project TypeScript configuration, you may have to specify your `project` and `tsconfigRootDir` in the `parserOptions` property of your ESLint project configuration file.
+However, just to make sure everything runs smoothly, you might want to specify your `project` and `tsconfigRootDir` in the `parserOptions` property of your ESLint config file. That way, typescript-eslint can easily find your project TypeScript configuration and you can sit back, relax, and let Peppy take care of the rest.
 
 ```js
 module.exports = {

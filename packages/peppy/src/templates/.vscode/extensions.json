@@ -4,6 +4,8 @@
     // VS Code ESLint extension
     "dbaeumer.vscode-eslint",
     // Prettier Formatter for Visual Studio Code
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    // EditorConfig for VS Code
+    "editorconfig.editorconfig"
   ]
 }

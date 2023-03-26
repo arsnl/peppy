@@ -1,7 +1,18 @@
 # eslint-config-peppy
 
+## 3.0.0
+
+### Major Changes
+
+- Add TailwindCSS support
+- Update import/no-extraneous-dependencies devDependencies list
+
+### Patch Changes
+
+- Update the documentation
+
 ## 2.0.0
 
 ### Major Changes
 
-- 034e197: Complete Peppy Refactor to reduce its footprint and ease its usage.
+- Complete Peppy Refactor to reduce its footprint and ease its usage.

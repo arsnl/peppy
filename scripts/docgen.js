@@ -120,6 +120,11 @@ const getRuleLink = (ruleName) => {
     ? `https://github.com/standard/eslint-plugin-standard`
     : ruleName.startsWith("react-hooks/")
     ? `https://reactjs.org/docs/hooks-rules.html`
+    : ruleName.startsWith("tailwindcss/")
+    ? `https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/HEAD/docs/rules/${ruleName.replace(
+        /^tailwindcss\//u,
+        ""
+      )}.md`
     : "";
 
   return link ? `<a href="${link}">${ruleName}</a>` : `${ruleName}`;
@@ -298,7 +303,7 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
   await generateRuleSetDocumentation({
     file: "docs/peppy.md",
     eslintConfig: {
-      extends: ["peppy"],
+      extends: ["peppy/configs/base"],
     },
     injectTag: "rules",
   });
@@ -306,7 +311,7 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
   await generateRuleSetDocumentation({
     file: "docs/peppy.md",
     eslintConfig: {
-      extends: ["peppy"],
+      extends: ["peppy/configs/base"],
     },
     typescript: true,
     injectTag: "rules-ts",
@@ -315,7 +320,7 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
   await generateRuleSetDocumentation({
     file: "docs/peppy-react.md",
     eslintConfig: {
-      extends: ["peppy/react"],
+      extends: ["peppy/configs/react"],
     },
     injectTag: "rules",
   });
@@ -323,7 +328,7 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
   await generateRuleSetDocumentation({
     file: "docs/peppy-react.md",
     eslintConfig: {
-      extends: ["peppy/react"],
+      extends: ["peppy/configs/react"],
     },
     typescript: true,
     injectTag: "rules-ts",
@@ -332,7 +337,7 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
   await generateRuleSetDocumentation({
     file: "docs/peppy-next.md",
     eslintConfig: {
-      extends: ["peppy/next"],
+      extends: ["peppy/configs/react", "peppy/configs/next"],
     },
     injectTag: "rules",
   });
@@ -340,7 +345,15 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
   await generateRuleSetDocumentation({
     file: "docs/peppy-jest.md",
     eslintConfig: {
-      extends: ["peppy/jest"],
+      extends: ["peppy/configs/jest"],
+    },
+    injectTag: "rules",
+  });
+
+  await generateRuleSetDocumentation({
+    file: "docs/peppy-tailwindcss.md",
+    eslintConfig: {
+      extends: ["peppy/configs/tailwindcss"],
     },
     injectTag: "rules",
   });
@@ -348,9 +361,15 @@ const injectSnippet = async ({ snippetFile, injectTag, language = "js" }) => {
   await generateRuleSetDocumentation({
     file: "docs/peppy-prettier.md",
     eslintConfig: {
-      extends: ["peppy/prettier"],
+      extends: ["peppy/configs/prettier"],
     },
     injectTag: "rules",
+  });
+
+  await injectSnippet({
+    snippetFile: "packages/peppy/src/templates/.editorconfig",
+    injectTag: "snippet-editorconfig",
+    language: "toml",
   });
 
   await injectSnippet({

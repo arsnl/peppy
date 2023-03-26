@@ -1,10 +1,14 @@
 import { Command, Option } from "commander";
+import { bold, cyan } from "kleur";
 import prompts from "prompts";
 import {
-  addESLintConfiguration,
-  addRecommendedScripts,
-  addVsCodeConfiguration,
+  addEditorConfigFile,
+  addESLintConfigurationFile,
+  addPkgJsonScripts,
+  addVsCodeWorkspaceSettings,
   installDependencies,
+  isPackageInDependencies,
+  logBanner,
 } from "../utils/helpers";
 import { logger } from "../utils/logger";
 import {
@@ -21,7 +25,7 @@ export const makeInstallCommand = async () => {
   const program = new Command("install");
 
   program
-    .description("Interactive install")
+    .description("Peppy installer")
     .addOption(
       new Option("--pm <pm>", "package manager").choices([
         "npm",
@@ -43,6 +47,7 @@ export const makeInstallCommand = async () => {
     .action(async ({ pm, prod, cwd, yes }) => {
       let packageManager = pm;
 
+      logBanner();
       await promptCheckNodeVersion({ cwd });
       await promptCheckNPMVersion({ cwd });
       await promptCheckCWDPermission({ cwd });
@@ -55,45 +60,156 @@ export const makeInstallCommand = async () => {
 
       await promptCheckPackageJSON({ cwd, packageManager });
 
-      const extras = await prompts(
+      const isTypeScriptInstalled = await isPackageInDependencies({
+        packageName: "typescript",
+        cwd,
+      });
+
+      const { answerAddPkgJsonScripts } = await prompts(
         !yes
-          ? [
-              {
-                type: "confirm",
-                name: "addRecommendedScripts",
-                message: "Do you want to add the recommended scripts?",
-                initial: true,
-              },
-              {
-                type: "confirm",
-                name: "addESLintConfiguration",
-                message: "Do you want to add the ESLint configuration file?",
-                initial: true,
-              },
-              {
-                type: "confirm",
-                name: "addVsCodeConfiguration",
-                message: "Do you want to add the VS Code configurations?",
-                initial: true,
-              },
-            ]
-          : [],
+          ? {
+              type: "confirm",
+              name: "answerAddPkgJsonScripts",
+              message: "Do you want to add the package.json scripts?",
+              initial: true,
+            }
+          : {},
         { onCancel: handlePromptCancel }
       );
 
+      if (!yes) {
+        answerAddPkgJsonScripts
+          ? logger.log(
+              cyan(
+                `Superb! 👏 The scripts ${bold("lint")}, ${bold("format")} ${
+                  isTypeScriptInstalled
+                    ? `${bold("typecheck")} and ${bold("fix")}`
+                    : `and ${bold("fix")}`
+                } gonna be added.`
+              )
+            )
+          : logger.log(
+              cyan("That's too bad! 🙁 Those scripts are super useful."),
+              cyan(
+                "You can always run the init command again and select them later if you change your mind."
+              )
+            );
+      }
+
+      const { answerAddESLintConfigurationFile } = await prompts(
+        !yes
+          ? {
+              type: "confirm",
+              name: "answerAddESLintConfigurationFile",
+              message: "Do you want to add the ESLint configuration file?",
+              initial: true,
+            }
+          : {},
+        { onCancel: handlePromptCancel }
+      );
+
+      if (!yes) {
+        answerAddESLintConfigurationFile
+          ? logger.log(
+              cyan(
+                `Awesome! 😍 I'll generate a configuration file based on your project packages.`
+              )
+            )
+          : logger.log(
+              cyan(
+                "No worries. 😌 You can always run the init command again and add them at a later time."
+              )
+            );
+      }
+
+      const { answerAddVsCodeWorkspaceSettings } = await prompts(
+        !yes
+          ? {
+              type: "confirm",
+              name: "answerAddVsCodeWorkspaceSettings",
+              message: "Do you want to add the VS Code workspace settings?",
+              initial: true,
+            }
+          : {},
+        { onCancel: handlePromptCancel }
+      );
+
+      if (!yes) {
+        answerAddVsCodeWorkspaceSettings
+          ? logger.log(
+              cyan(
+                `Noted! 📝 If you have existing workspace settings, they will be merged together.`
+              )
+            )
+          : logger.log(
+              cyan(
+                "Aww, it's a shame. 😕 Don't worry, you can always run the init command again and add them later."
+              )
+            );
+      }
+
+      const { answerAddEditorConfigFile } = await prompts(
+        !yes
+          ? {
+              type: "confirm",
+              name: "answerAddEditorConfigFile",
+              message: "Do you want to add the .editorconfig file?",
+              initial: true,
+            }
+          : {},
+        { onCancel: handlePromptCancel }
+      );
+
+      if (!yes) {
+        answerAddVsCodeWorkspaceSettings
+          ? logger.log(cyan(`You made a smart decision. 🧠`))
+          : logger.log(
+              cyan(
+                "It's a bummer! 😿 But no need to despair, you can always run the init command again and add it later."
+              )
+            );
+      }
+
+      !yes &&
+        logger.log(
+          "",
+          cyan(
+            "Alright. I have everything I need. Let's start the installations then! 💃"
+          )
+        );
+
+      logger.log("");
+
       await installDependencies({ packageManager, cwd, prod });
 
-      if (yes || extras.addRecommendedScripts) {
-        await addRecommendedScripts({ cwd });
+      if (yes || answerAddPkgJsonScripts) {
+        await addPkgJsonScripts({ cwd });
       }
-      if (yes || extras.addESLintConfiguration) {
-        await addESLintConfiguration({ cwd });
+      if (yes || answerAddESLintConfigurationFile) {
+        await addESLintConfigurationFile({ cwd });
       }
-      if (yes || extras.addVsCodeConfiguration) {
-        await addVsCodeConfiguration({ cwd });
+      if (yes || answerAddVsCodeWorkspaceSettings) {
+        await addVsCodeWorkspaceSettings({ cwd });
+      }
+      if (yes || answerAddEditorConfigFile) {
+        await addEditorConfigFile({ cwd });
       }
 
-      logger.log("🎉 Peppy installation completed successfully!");
+      logger.log(
+        "",
+        cyan("🎉 Hooray! Installation is complete. 🎉"),
+        cyan(
+          "You're now ready to dive into your project with full force and enjoy a seamless development experience."
+        )
+      );
+
+      logger.log(
+        "",
+        cyan("Next steps:"),
+        cyan(" - Install the recommended VS Code extensions"),
+        cyan(` - Run ${bold("npm run fix")} to clean your project`),
+        cyan(" - Add automated validation (e.g. Github actions)")
+      );
     });
 
   return program;
