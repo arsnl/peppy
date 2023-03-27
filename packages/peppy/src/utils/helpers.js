@@ -7,7 +7,7 @@ import { green } from "kleur";
 import ora from "ora";
 import nodePath from "path";
 import { sync as rimrafSync } from "rimraf";
-import { clean, prerelease } from "semver";
+import { clean } from "semver";
 import packageInfo from "../../package.json";
 import { logger } from "./logger";
 
@@ -407,21 +407,21 @@ export const getPackageManagersChoices = async ({
       title: "npm",
       lockfile: "package-lock.json",
     },
-    yarn: {
-      isInstalled: await isYarnInstalled(),
-      title: "yarn",
-      lockfile: "yarn.lock",
-    },
     pnpm: {
       isInstalled: await isPnpmInstalled(),
       title: "pnpm",
       lockfile: "pnpm-lock.yaml",
     },
+    yarn: {
+      isInstalled: await isYarnInstalled(),
+      title: "yarn",
+      lockfile: "yarn.lock",
+    },
   };
 
   let recommended = "";
 
-  return ["npm", "yarn", "pnpm"].reduce(async (accP, current) => {
+  return ["npm", "pnpm", "yarn"].reduce(async (accP, current) => {
     const acc = await accP;
     const packageManager = packageManagers[current];
     const choice = packageManager.isInstalled
@@ -507,7 +507,6 @@ export const installDependencies = async ({
 } = {}) => {
   const spinner = ora(`Installing package dependencies`).start();
   const { version } = packageInfo;
-  const isPrerelease = !!(prerelease(version) && prerelease(version).length);
 
   const dependencies = [
     (await isPackageInDependencies({
@@ -522,7 +521,7 @@ export const installDependencies = async ({
     }))
       ? ""
       : "prettier",
-    `eslint-config-peppy${isPrerelease ? `@${version}` : ""}`,
+    `eslint-config-peppy@^${version}`,
   ].filter((dependencie) => !!dependencie);
 
   const args = ["add", ...dependencies, prod ? "-S" : "-D"];
