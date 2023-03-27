@@ -1,5 +1,11 @@
 # peppy
 
+## 3.0.1
+
+### Patch Changes
+
+- Fix isPrerelease flag on install
+
 ## 3.0.0
 
 ### Major Changes
