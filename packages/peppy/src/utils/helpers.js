@@ -507,7 +507,7 @@ export const installDependencies = async ({
 } = {}) => {
   const spinner = ora(`Installing package dependencies`).start();
   const { version } = packageInfo;
-  const isPrerelease = !!prerelease(version).length;
+  const isPrerelease = !!(prerelease(version) && prerelease(version).length);
 
   const dependencies = [
     (await isPackageInDependencies({
