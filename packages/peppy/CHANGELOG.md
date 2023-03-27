@@ -1,5 +1,11 @@
 # peppy
 
+## 3.0.2
+
+### Patch Changes
+
+- CLI now install the current version with the caret flag
+
 ## 3.0.1
 
 ### Patch Changes
