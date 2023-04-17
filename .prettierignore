@@ -149,3 +149,5 @@ dist
 # If you need to disable a previous rule, don't remove it. Use the "!" to disable it.
 # e.g. !coverage
 .changeset
+package-lock.json
+pnpm-lock.yaml
