@@ -31,7 +31,7 @@
     "docgen": "node scripts/docgen",
     "clean": "npx rimraf --glob **/node_modules",
     "test": "jest",
-    "pretest": "node scripts/test-prepare && pnpm i",
+    "pretest": "node scripts/test-prepare && pnpm install --no-frozen-lockfile",
     "posttest": "node scripts/test-prepare --post"
   },
   "engines": {
