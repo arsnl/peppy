@@ -148,4 +148,5 @@ dist
 # Add the rules specific to your project below.
 # If you need to disable a previous rule, don't remove it. Use the "!" to disable it.
 # e.g. !coverage
-tests/package-lock.json
+package-lock.json
+pnpm-lock.yaml
