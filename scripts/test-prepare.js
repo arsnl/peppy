@@ -4,7 +4,8 @@ const fs = require("fs");
 const glob = require("glob");
 const prettier = require("prettier");
 
-const TESTS_FOLDER_PATH = __dirname;
+const TESTS_FOLDER_PATH = path.join(__dirname, "../tests");
+const PACKAGES_FOLDER_PATH = path.join(__dirname, "../packages");
 
 const updatePackageJsonFiles = (packagesValue) => {
   // Get the list of all package.json files in the test directory
@@ -41,13 +42,13 @@ const updatePackageJsonFiles = (packagesValue) => {
     if (fileContent.dependencies && fileContent.dependencies.peppy) {
       fileContent.dependencies = {
         ...fileContent.dependencies,
-        ...{ peppy: packagesValue["peppy"] },
+        ...{ peppy: packagesValue.peppy },
       };
     }
     if (fileContent.devDependencies && fileContent.devDependencies.peppy) {
       fileContent.devDependencies = {
         ...fileContent.devDependencies,
-        ...{ peppy: packagesValue["peppy"] },
+        ...{ peppy: packagesValue.peppy },
       };
     }
 
@@ -62,24 +63,23 @@ const updatePackageJsonFiles = (packagesValue) => {
 };
 
 if (process.argv.includes("--post")) {
-  execSync("npx rimraf *.tgz", { cwd: TESTS_FOLDER_PATH });
-  execSync("npx rimraf ./**/package-lock.json", { cwd: TESTS_FOLDER_PATH });
-  execSync("npx rimraf ./**/node_modules", { cwd: TESTS_FOLDER_PATH });
-  execSync("npx rimraf ./**/.next", { cwd: TESTS_FOLDER_PATH });
+  execSync("npx rimraf --glob *.tgz", { cwd: TESTS_FOLDER_PATH });
+  execSync("npx rimraf --glob ./**/node_modules", { cwd: TESTS_FOLDER_PATH });
+  execSync("npx rimraf --glob ./**/.next", { cwd: TESTS_FOLDER_PATH });
   updatePackageJsonFiles({
-    "eslint-config-peppy": "*",
-    peppy: "*",
+    "eslint-config-peppy": "workspace:*",
+    peppy: "workspace:*",
   });
 } else {
   // Build eslint-config-peppy pack
   execSync(`npm pack --pack-destination ${TESTS_FOLDER_PATH}`, {
-    cwd: path.join(__dirname, "../packages/eslint-config-peppy"),
+    cwd: path.join(PACKAGES_FOLDER_PATH, "/eslint-config-peppy"),
     stdio: "ignore",
   });
 
   // Build peppy pack
   execSync(`npm pack --pack-destination ${TESTS_FOLDER_PATH}`, {
-    cwd: path.join(__dirname, "../packages/peppy"),
+    cwd: path.join(PACKAGES_FOLDER_PATH, "/peppy"),
     stdio: "ignore",
   });
 

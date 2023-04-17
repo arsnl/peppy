@@ -1,9 +1,9 @@
 {
   "name": "@tests/rules",
   "dependencies": {
-    "@tests/utils": "*",
+    "@tests/utils": "workspace:*",
     "eslint": "latest",
-    "eslint-config-peppy": "*",
+    "eslint-config-peppy": "workspace:*",
     "jest": "latest"
   }
 }

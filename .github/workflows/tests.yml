@@ -24,21 +24,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
-      - run: npm install -g npm@latest
+      - run: npm install -g pnpm@latest
       - name: Clear npm cache
-        run: npm cache clean --force
+        run: pnpm store prune
       - name: Install dependencies
-        run: npm ci --ignore-scripts
+        run: pnpm ci --ignore-scripts
       - name: Validate Format
-        run: npm run format
+        run: pnpm run format
       - name: Validate Style
-        run: npm run lint
-      - name: Prepare the testing directory
-        run: npm run prepare
-        working-directory: ./tests
-      - name: Install tests dependencies
-        working-directory: ./tests
-        run: npm install
+        run: pnpm run lint
       - name: Run the tests
-        working-directory: ./tests
-        run: npm run test
+        run: pnpm run test
