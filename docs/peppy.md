@@ -17,7 +17,7 @@ The list of these rules is available in the [TypeScript](#typescript) section of
 
 | Total | Error 🔴 | Warning 🟠 | Disabled 🔵 |
 | ----- | -------- | ---------- | ----------- |
-| 179   | 174      | 5          | 0           |
+| 178   | 173      | 5          | 0           |
 
 </div>
 
@@ -586,7 +586,6 @@ The list of these rules is available in the [TypeScript](#typescript) section of
 
 <h4>🔴 <a href="https://eslint.org/docs/rules/no-useless-return">no-useless-return</a></h4>
 <h4>🔴 <a href="https://eslint.org/docs/rules/no-var">no-var</a></h4>
-<h4>🔴 <a href="https://eslint.org/docs/rules/no-void">no-void</a></h4>
 <h4>🔴 <a href="https://eslint.org/docs/rules/no-with">no-with</a></h4>
 <h4>🔴 <a href="https://eslint.org/docs/rules/object-shorthand">object-shorthand</a></h4>
 
