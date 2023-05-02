@@ -581,7 +581,6 @@ const baseConfig = {
     ],
     "no-useless-return": ["error"],
     "no-var": ["error"],
-    "no-void": ["error"],
     "no-with": ["error"],
     "object-shorthand": [
       "error",
