@@ -1,5 +1,11 @@
 # peppy
 
+## 3.1.0
+
+### Patch Changes
+
+- a72a6f6: Migrate from esm to tsup for code compilation
+
 ## 3.0.2
 
 ### Patch Changes
