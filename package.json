@@ -24,6 +24,8 @@
     }
   ],
   "scripts": {
+    "dev": "pnpm --filter peppy -r --parallel dev",
+    "build": "pnpm --filter peppy build && pnpm docgen",
     "lint": "eslint .",
     "format": "prettier --check .",
     "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
@@ -42,8 +44,8 @@
     "eslint": "^8.28.0",
     "eslint-config-peppy": "workspace:*",
     "glob": "^8.0.3",
+    "jest": "latest",
     "prettier": "^2.8.0",
-    "rimraf": "^3.0.2",
-    "jest": "latest"
+    "rimraf": "^3.0.2"
   }
 }
