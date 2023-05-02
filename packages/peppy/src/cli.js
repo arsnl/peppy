@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Command } from "commander";
 import { bold, cyan, red, yellow } from "kleur";
 import checkForUpdate from "update-check";

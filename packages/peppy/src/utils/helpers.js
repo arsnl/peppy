@@ -768,7 +768,9 @@ Brilliant ESLint configurations for happier developers
   // resolves weird behavior where the ascii is offset
   const pkgManager = getUserPkgManager();
   if (pkgManager === "yarn" || pkgManager === "pnpm") {
+    // eslint-disable-next-line no-console
     console.log("");
   }
+  // eslint-disable-next-line no-console
   console.log(peppyGradient.multiline(banner));
 };
