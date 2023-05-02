@@ -1,5 +1,11 @@
 # eslint-config-peppy
 
+## 3.1.0
+
+### Minor Changes
+
+- 3c8fcd1: Remove the no-void rule
+
 ## 3.0.2
 
 ## 3.0.1

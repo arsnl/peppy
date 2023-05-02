@@ -23,15 +23,18 @@
       "url": "https://arsnl.dev"
     }
   ],
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
+    "dev": "pnpm --filter peppy -r --parallel dev",
+    "build": "pnpm --filter peppy build && pnpm docgen",
     "lint": "eslint .",
     "format": "prettier --check .",
     "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
     "validate": "npm run format && npm run lint && node tests/prepare --post",
-    "docgen": "node scripts/docgen"
+    "docgen": "node scripts/docgen",
+    "clean": "npx rimraf --glob **/node_modules",
+    "test": "jest",
+    "pretest": "node scripts/test-prepare && pnpm install --no-frozen-lockfile",
+    "posttest": "node scripts/test-prepare --post"
   },
   "engines": {
     "node": ">=14"
@@ -39,8 +42,9 @@
   "dependencies": {
     "@changesets/cli": "^2.25.2",
     "eslint": "^8.28.0",
-    "eslint-config-peppy": "*",
+    "eslint-config-peppy": "workspace:*",
     "glob": "^8.0.3",
+    "jest": "latest",
     "prettier": "^2.8.0",
     "rimraf": "^3.0.2"
   }

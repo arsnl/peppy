@@ -7,8 +7,8 @@
     "react": "latest"
   },
   "devDependencies": {
-    "@tests/utils": "*",
+    "@tests/utils": "workspace:*",
     "eslint": "latest",
-    "eslint-config-peppy": "*"
+    "eslint-config-peppy": "workspace:*"
   }
 }
