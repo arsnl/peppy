@@ -23,14 +23,11 @@
     "directory": "packages/eslint-config-peppy"
   },
   "license": "MIT",
-  "author": "Neaf (https://neaf.co)",
-  "contributors": [
-    {
-      "name": "Mark Arseneault",
-      "email": "mark@arsnl.dev",
-      "url": "https://arsnl.dev"
-    }
-  ],
+  "author": {
+    "name": "Mark Arseneault",
+    "email": "mark@arsnl.dev",
+    "url": "https://arsnl.dev"
+  },
   "main": "index.js",
   "dependencies": {
     "@next/eslint-plugin-next": "^13.2.4",

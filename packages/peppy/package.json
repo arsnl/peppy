@@ -19,14 +19,11 @@
     "directory": "packages/peppy"
   },
   "license": "MIT",
-  "author": "Neaf (https://neaf.co)",
-  "contributors": [
-    {
-      "name": "Mark Arseneault",
-      "email": "mark@arsnl.dev",
-      "url": "https://arsnl.dev"
-    }
-  ],
+  "author": {
+    "name": "Mark Arseneault",
+    "email": "mark@arsnl.dev",
+    "url": "https://arsnl.dev"
+  },
   "bin": {
     "peppy": "dist/cli.js"
   },

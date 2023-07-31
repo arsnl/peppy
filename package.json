@@ -12,17 +12,10 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Neaf",
-    "email": "ahoy@neaf.co",
-    "url": "https://neaf.co"
+    "name": "Mark Arseneault",
+    "email": "mark@arsnl.dev",
+    "url": "https://arsnl.dev"
   },
-  "contributors": [
-    {
-      "name": "Mark Arseneault",
-      "email": "mark@arsnl.dev",
-      "url": "https://arsnl.dev"
-    }
-  ],
   "scripts": {
     "dev": "pnpm --filter peppy -r --parallel dev",
     "build": "pnpm --filter peppy build && pnpm docgen",
