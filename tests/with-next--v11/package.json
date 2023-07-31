@@ -1,5 +1,6 @@
 {
   "name": "@tests/with-next--v11",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

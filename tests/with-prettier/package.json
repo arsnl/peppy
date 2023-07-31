@@ -1,5 +1,6 @@
 {
   "name": "@tests/with-prettier",
+  "private": true,
   "scripts": {
     "lint": "eslint ."
   },

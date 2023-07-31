@@ -1,5 +1,6 @@
 {
   "name": "@tests/rules",
+  "private": true,
   "dependencies": {
     "@tests/utils": "workspace:*",
     "eslint": "latest",
