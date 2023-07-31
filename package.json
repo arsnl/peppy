@@ -40,12 +40,12 @@
     "node": ">=14"
   },
   "dependencies": {
-    "@changesets/cli": "^2.25.2",
-    "eslint": "^8.28.0",
+    "@changesets/cli": "^2.26.2",
+    "eslint": "^8.46.0",
     "eslint-config-peppy": "workspace:*",
-    "glob": "^8.0.3",
+    "glob": "^8.1.0",
     "jest": "latest",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.8",
     "rimraf": "^3.0.2"
   }
 }
