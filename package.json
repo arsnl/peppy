@@ -1,5 +1,5 @@
 {
-  "name": "peppy",
+  "name": "@peppy/root",
   "private": true,
   "description": "Peppy - ESLint configurations for happier developers",
   "homepage": "https://github.com/arsnl/peppy",
@@ -10,36 +10,38 @@
     "type": "git",
     "url": "git://github.com/arsnl/peppy.git"
   },
-  "license": "MIT",
   "author": {
     "name": "Mark Arseneault",
     "email": "mark@arsnl.dev",
     "url": "https://arsnl.dev"
   },
-  "scripts": {
-    "dev": "pnpm --filter peppy -r --parallel dev",
-    "build": "pnpm --filter peppy build && pnpm docgen",
-    "lint": "eslint .",
-    "format": "prettier --check .",
-    "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
-    "validate": "npm run format && npm run lint && node tests/prepare --post",
-    "docgen": "node scripts/docgen",
-    "clean": "npx rimraf --glob **/node_modules",
-    "test": "jest",
-    "pretest": "node scripts/test-prepare && pnpm install --no-frozen-lockfile",
-    "posttest": "node scripts/test-prepare --post"
-  },
+  "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=18.15"
+  },
+  "scripts": {
+    "dev:cli": "turbo --filter=peppy dev",
+    "dev:docs": "turbo --filter=docs dev",
+    "build:cli": "turbo --filter=peppy build",
+    "build:docs": "turbo --filter=docs build",
+    "build": "turbo build",
+    "format": "turbo format && prettier --check .",
+    "lint": "turbo lint",
+    "type": "turbo type",
+    "check": "turbo format lint type",
+    "fix": "turbo fix && prettier --write --log-level warn .",
+    "clean": "turbo clean && rimraf node_modules"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
     "eslint": "^8.46.0",
     "eslint-config-peppy": "workspace:*",
-    "glob": "^8.1.0",
+    "glob": "^10.3.3",
     "jest": "latest",
-    "prettier": "^2.8.8",
-    "rimraf": "^3.0.2"
+    "prettier": "^3.0.0",
+    "rimraf": "^5.0.1",
+    "tsup": "^7.1.0",
+    "turbo": "^1.10.12"
   }
 }

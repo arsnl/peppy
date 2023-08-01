@@ -47,7 +47,7 @@ const validateESLintConfig = async ({ cwd }) => {
           ? [...acc, prettierRuleName]
           : acc;
       },
-      []
+      [],
     );
 
     return conflictingRules;
@@ -143,13 +143,13 @@ const validateESLintRule = async ({
 
     const sortedExpected = expected.sort();
     const sortedResult = result.sort((a, b) =>
-      a.message < b.message ? -1 : a.message > b.message ? 1 : 0
+      a.message < b.message ? -1 : a.message > b.message ? 1 : 0,
     );
     sortedResult.forEach((_, index) =>
       _compareErrorMessageToExpected(
         sortedResult[index].message,
-        sortedExpected[index]
-      )
+        sortedExpected[index],
+      ),
     );
   };
 

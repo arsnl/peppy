@@ -1,32 +1,111 @@
 <div align="center"><img src="media/readme-banner.png" width="600" role="presentation" /></div>
 <h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
 
-# Contributing
+# Contribution Guidelines
 
-When contributing to this project, please first discuss the change you wish to make via [GitHub Issues](https://github.com/arsnl/peppy/issues) and make sure the issue you're about to open don't already exist. If it exist, you can join the existing conversation about it.
+When contributing to `peppy`, whether on GitHub or in other community spaces:
 
-Please note we have a [code of conduct](CODE_OF_CONDUCT.md). Please follow it in all your interactions within the project.
+- Be respectful, civil, and open-minded. Follow our [code of conduct](CODE_OF_CONDUCT.md).
+- Before opening a new pull request, try searching through the [issue tracker](https://github.com/arsnl/peppy/issues) for known issues or fixes.
+- If you want to make code changes based on your personal opinion(s), make sure you open an issue first describing the changes you want to make, and open a pull request only when your suggestions get approved by maintainers.
 
-## Install and Run
+## How to Contribute
 
-To install and work on this project locally, all you have to do is to install the dependencies by running:
+### Prerequisites
+
+In order to not waste your time implementing a change that has already been declined, or is generally not needed, start by [opening an issue](https://github.com/arsnl/peppy/issues/new/choose) describing the problem you would like to solve.
+
+### Setup your environment locally
+
+_Some commands will assume you have the Github CLI installed, if you haven't, consider [installing it](https://github.com/cli/cli#installation), but you can always use the Web UI if you prefer that instead._
+
+In order to contribute to this project, you will need to fork the repository:
 
 ```bash
-npm install
+gh repo fork arsnl/peppy
 ```
 
-During the development, you don't have anything to run since this project is not transpiled before being send to NPM.
+then, clone it to your local machine:
 
-## Pull Requests
+```bash
+gh repo clone <your-github-name>/peppy
+```
 
-Pull requests are the best way to propose changes to the codebase.
+This project uses [pnpm](https://pnpm.io) as its package manager. Install it if you haven't already:
 
-We use [Github Flow](https://guides.github.com/introduction/flow/index.html).
+```bash
+npm install -g pnpm
+```
 
-1. Fork the repo and create your branch from the `main` branch.
-2. If you've added code that should be tested, add tests.
-3. If you've added/changed code that change the documentation, update the documentation.
-4. Issue that pull request! 🚀
+Then, install the project's dependencies:
+
+```bash
+pnpm install
+```
+
+### Implement your changes
+
+This project is a [Turborepo](https://turborepo.org/) monorepo.
+
+- The code for the CLI is in the `packages/peppy` directory
+- The code for the ESLint configurations is in the `packages/eslint-config-peppy` directory
+- The code for the documentation is in the `docs` directory.
+
+Now you're all setup and can start implementing your changes.
+
+Here are some useful scripts for when you are developing:
+
+| Command           | Description                                                   |
+| ----------------- | ------------------------------------------------------------- |
+| `pnpm dev:cli`    | Builds and starts the CLI in watch-mode                       |
+| `pnpm dev:docs`   | Starts the development server for the documentations with HMR |
+| `pnpm build:cli`  | Builds the CLI                                                |
+| `pnpm build:docs` | Builds the documentations                                     |
+| `pnpm build`      | Builds CLI and documentations                                 |
+| `pnpm format`     | Checks your code for formatting errors                        |
+| `pnpm lint`       | Checks your code for linting errors                           |
+| `pnpm type`       | Checks your code for type errors                              |
+| `pnpm check`      | Checks your code for formatting, linting and type errors      |
+| `pnpm fix`        | Fixes any formatting and linting errors                       |
+| `pnpm clean`      | Remove build artifacts and node_modules                       |
+
+When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with `feat:`, `fix:`, `chore:`, `docs:`, etc. You can use `git status` to double check which files have not yet been staged for commit:
+
+```bash
+git add <file> && git commit -m "feat/fix/chore/docs: commit message"
+```
+
+### When you're done
+
+Check that your code follows the project's style guidelines by running:
+
+```bash
+pnpm check
+```
+
+Please also make a manual, functional test of your changes.
+
+If your change should appear in the changelog, i.e. it changes some behavior of either the CLI or the outputted application, it must be captured by `changeset` which is done by running
+
+```bash
+pnpm changeset
+```
+
+and filling out the form with the appropriate information. Then, add the generated changeset to git:
+
+```bash
+git add .changeset/*.md && git commit -m "chore: add changeset"
+```
+
+When all that's done, it's time to file a pull request to upstream:
+
+**NOTE**: All pull requests should target the `next` branch.
+
+```bash
+gh pr create --web
+```
+
+and fill out the title and body appropriately. Again, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines for your title.
 
 ## Versioning Policy
 

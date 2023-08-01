@@ -65,7 +65,7 @@ Don't be shy — give your package.json some love by adding these awesome script
   "lint": "eslint .",
   "format": "prettier --check .",
   "typecheck": "tsc --noEmit", // Only if you use TypeScript
-  "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
+  "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
 },
 ```
 

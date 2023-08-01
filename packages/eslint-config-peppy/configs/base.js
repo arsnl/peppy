@@ -24,7 +24,7 @@ const hookPropertyMap = new Map(
   ].map(([request, replacement]) => [
     request,
     require.resolve(replacement, { paths: sortedPaths }),
-  ])
+  ]),
 );
 
 const mod = require("module");
@@ -867,7 +867,7 @@ module.exports = {
               const toAppend = [devDep];
               const devDepWithTs = devDep.replace(
                 /\b(c|m)?js(x?)\b/g,
-                "$1ts$2"
+                "$1ts$2",
               );
               if (devDepWithTs !== devDep) {
                 toAppend.push(devDepWithTs);
