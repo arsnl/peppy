@@ -1,0 +1,15 @@
+"📌 cli":
+  - any: ["packages/peppy/**/*"]
+
+"📌 eslint-config-peppy":
+  - any: ["packages/eslint-config-peppy/**/*"]
+
+"📚 documentation":
+  - any: ["docs/**/*"]
+  - any: ["**/*.md"]
+
+"📌 ci":
+  - any: [".github/**/*"]
+
+"✅ tests":
+  - any: ["tests/**/*"]
