@@ -1,13 +1,10 @@
 /* eslint-disable jest/no-export */
-const spawn = require("cross-spawn");
-const path = require("path");
+import spawn from "cross-spawn";
+import { ESLint } from "eslint";
+import { rules as prettierRules } from "eslint-config-peppy/configs/prettier";
+import path from "node:path";
 
-const {
-  rules: prettierRules,
-} = require("eslint-config-peppy/configs/prettier");
-const { ESLint } = require("eslint");
-
-const getEslintConfig = async ({ cwd, file = "file.js" }) => {
+export const getEslintConfig = async ({ cwd, file = "file.js" }) => {
   const { stdout } = await spawn("npx", ["eslint", "--print-config", file], {
     cwd,
     shell: true,
@@ -24,7 +21,7 @@ const getEslintConfig = async ({ cwd, file = "file.js" }) => {
   return JSON.parse(config);
 };
 
-const validateESLintConfig = async ({ cwd }) => {
+export const validateESLintConfig = async ({ cwd }) => {
   const _getConflictingPrettierRules = async ({ file = "file.js" }) => {
     const { rules: configRules } = await getEslintConfig({ cwd, file });
 
@@ -94,7 +91,7 @@ const validateESLintConfig = async ({ cwd }) => {
   });
 };
 
-const validateESLintRule = async ({
+export const validateESLintRule = async ({
   ruleName,
   cwd,
   file = "file.js",
@@ -194,5 +191,3 @@ const validateESLintRule = async ({
     });
   });
 };
-
-module.exports = { getEslintConfig, validateESLintConfig, validateESLintRule };

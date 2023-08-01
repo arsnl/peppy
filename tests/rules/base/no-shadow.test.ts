@@ -1,4 +1,4 @@
-const { validateESLintRule } = require("@tests/utils");
+import { validateESLintRule } from "@tests/utils";
 
 const testConfig = {
   cwd: __dirname,
