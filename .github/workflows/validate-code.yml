@@ -1,7 +1,4 @@
-# this workflow will run on every pr to make sure the project is following the guidelines
-# after labeler, run other actions with strict permissions
-
-name: "Validate"
+name: Validate Code
 
 on:
   pull_request:

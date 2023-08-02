@@ -1,17 +1,20 @@
-# this workflow will run on every pr to make sure the project is following the guidelines
-# run labeler with elevated permissions before other actions
-
-name: Label PR and check title
+name: Validate PR
 
 on:
   pull_request_target:
-    branches: ["*"]
+    types:
+      - opened
+      - edited
+      - synchronize
   pull_request:
-    branches: ["*"]
+    types:
+      - opened
+      - edited
+      - synchronize
 
 jobs:
-  lint-pr-title:
-    name: Validate PR Title
+  title:
+    name: Title
     runs-on: ubuntu-latest
     steps:
       - uses: amannn/action-semantic-pull-request@v5
@@ -20,8 +23,8 @@ jobs:
         with:
           wip: true
 
-  labeler:
-    name: Label PR
+  label:
+    name: Label
     permissions:
       contents: read
       pull-requests: write
