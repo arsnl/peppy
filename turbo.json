@@ -1,0 +1,32 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**", ".vercel/output/**", ".next/**"],
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "dependsOn": ["^build"]
+    },
+    "format": {
+      "cache": false
+    },
+    "lint": {
+      "cache": false
+    },
+    "type": {},
+    "check": {
+      "cache": false
+    },
+    "fix": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}

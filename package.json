@@ -10,42 +10,49 @@
     "type": "git",
     "url": "git://github.com/arsnl/peppy.git"
   },
-  "license": "MIT",
   "author": {
-    "name": "Neaf",
-    "email": "ahoy@neaf.co",
-    "url": "https://neaf.co"
+    "name": "Mark Arseneault",
+    "email": "mark@arsnl.dev",
+    "url": "https://arsnl.dev"
   },
-  "contributors": [
-    {
-      "name": "Mark Arseneault",
-      "email": "mark@arsnl.dev",
-      "url": "https://arsnl.dev"
-    }
-  ],
-  "scripts": {
-    "dev": "pnpm --filter peppy -r --parallel dev",
-    "build": "pnpm --filter peppy build && pnpm docgen",
-    "lint": "eslint .",
-    "format": "prettier --check .",
-    "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
-    "validate": "npm run format && npm run lint && node tests/prepare --post",
-    "docgen": "node scripts/docgen",
-    "clean": "npx rimraf --glob **/node_modules",
-    "test": "jest",
-    "pretest": "node scripts/test-prepare && pnpm install --no-frozen-lockfile",
-    "posttest": "node scripts/test-prepare --post"
-  },
+  "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=18.15"
+  },
+  "scripts": {
+    "dev:cli": "turbo --filter=peppy dev",
+    "dev:config": "turbo --filter=eslint-config-peppy dev",
+    "dev:docs": "turbo --filter=docs dev",
+    "build:cli": "turbo --filter=peppy build",
+    "build:config": "turbo --filter=eslint-config-peppy build",
+    "build:docs": "turbo --filter=docs build",
+    "build": "turbo build",
+    "test": "jest",
+    "format": "turbo format && prettier --check . !packages !docs",
+    "lint": "turbo lint",
+    "type": "turbo type",
+    "check": "turbo format lint type",
+    "fix": "turbo fix && prettier --write --log-level warn .",
+    "clean": "turbo clean && rimraf node_modules",
+    "postinstall": "pnpm build:config"
   },
   "dependencies": {
-    "@changesets/cli": "^2.25.2",
-    "eslint": "^8.28.0",
+    "@changesets/changelog-github": "^0.4.8",
+    "@changesets/cli": "^2.26.2",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/eslint": "^8.44.1",
+    "@types/jest": "^29.5.3",
+    "cross-spawn": "^7.0.3",
+    "eslint": "latest",
     "eslint-config-peppy": "workspace:*",
-    "glob": "^8.0.3",
+    "glob": "^10.3.3",
     "jest": "latest",
-    "prettier": "^2.8.0",
-    "rimraf": "^3.0.2"
+    "prettier": "latest",
+    "rimraf": "^5.0.1",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "turbo": "^1.10.12"
   }
 }

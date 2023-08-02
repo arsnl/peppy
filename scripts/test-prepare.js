@@ -18,7 +18,7 @@ const updatePackageJsonFiles = (packagesValue) => {
     const fileContent = JSON.parse(
       fs.readFileSync(path.join(TESTS_FOLDER_PATH, packageFile), {
         encoding: "utf8",
-      })
+      }),
     );
 
     if (
@@ -57,7 +57,7 @@ const updatePackageJsonFiles = (packagesValue) => {
       prettier.format(JSON.stringify(fileContent), {
         parser: "json-stringify",
       }),
-      { encoding: "utf8" }
+      { encoding: "utf8" },
     );
   });
 };
@@ -90,12 +90,12 @@ if (process.argv.includes("--post")) {
 
   // Extract the eslint-config-peppy pack file name
   const eslintConfigPeppyPackname = packs.filter((packName) =>
-    packName.startsWith("eslint-config-peppy-")
+    packName.startsWith("eslint-config-peppy-"),
   )[0];
 
   // Extract the peppy pack file name
   const peppyPackname = packs.filter((packName) =>
-    packName.startsWith("peppy-")
+    packName.startsWith("peppy-"),
   )[0];
 
   updatePackageJsonFiles({
