@@ -71,6 +71,7 @@ export const validateESLintConfig = async ({ cwd }: { cwd: string }) => {
         ignore: false,
         cwd,
       });
+
       const [result] = await eslint.lintText("", {
         filePath: path.join(__dirname, "_x.ts"),
       });
@@ -107,7 +108,11 @@ export const validateESLintConfig = async ({ cwd }: { cwd: string }) => {
 
 export type ValidTestCase = string;
 
-export type InvalidTestCase = { code: string; errors: string[] };
+export type InvalidTestCaseError =
+  | string
+  | { fatal?: boolean; message: string };
+
+export type InvalidTestCase = { code: string; errors: InvalidTestCaseError[] };
 
 export const validateESLintRule = async ({
   ruleName,
@@ -155,11 +160,15 @@ export const validateESLintRule = async ({
 
   const _compareErrorMessageToExpected = (
     result?: Linter.LintMessage,
-    expected?: string,
+    expected?: InvalidTestCaseError,
   ) => {
-    expect(typeof expected).toBe("string");
-    expect(result?.fatal).toBeFalsy();
-    expect(result?.message).toStrictEqual(expected);
+    const expectedMessage =
+      typeof expected === "string" ? expected : expected?.message;
+    const expectedFatal =
+      typeof expected === "string" ? false : !!expected?.fatal;
+
+    expect(!!result?.fatal).toBe(expectedFatal);
+    expect(result?.message).toStrictEqual(expectedMessage);
   };
 
   const _compareErrorMessagesToExpected = (
@@ -168,12 +177,19 @@ export const validateESLintRule = async ({
   ) => {
     expect(result).toHaveLength(expected.length);
 
-    const sortedExpected = expected.sort();
+    const sortedExpected = expected.sort((a, b) => {
+      const messageA = typeof a === "string" ? a : a.message;
+      const messageB = typeof b === "string" ? b : b.message;
+
+      return messageA < messageB ? -1 : messageA > messageB ? 1 : 0;
+    });
+
     const sortedResult = result.sort((a, b) =>
       a.message < b.message ? -1 : a.message > b.message ? 1 : 0,
     );
-    sortedResult.forEach((result, index) =>
-      _compareErrorMessageToExpected(result, sortedExpected[index]),
+
+    sortedResult.forEach((sorted, index) =>
+      _compareErrorMessageToExpected(sorted, sortedExpected[index]),
     );
   };
 

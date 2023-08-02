@@ -8,6 +8,7 @@
     "checkJs": false,
     "allowJs": true,
     "noEmit": true,
+    "outDir": "",
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,

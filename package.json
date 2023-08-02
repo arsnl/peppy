@@ -28,13 +28,13 @@
     "build:docs": "turbo --filter=docs build",
     "build": "turbo build",
     "test": "jest",
-    "test:watch": "jest --watch",
     "format": "turbo format && prettier --check .",
     "lint": "turbo lint",
     "type": "turbo type",
     "check": "turbo format lint type",
     "fix": "turbo fix && prettier --write --log-level warn .",
-    "clean": "turbo clean && rimraf node_modules"
+    "clean": "turbo clean && rimraf node_modules",
+    "postinstall": "pnpm build:config"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",

@@ -58,7 +58,9 @@ validateESLintRule({
             `,
       // Message in the configuration is "`with` is disallowed in strict mode because it makes code impossible to predict and optimize." for users not in strict mode.
       // The tests runs in strict mode so we retreive a different message during the tests
-      errors: ["Parsing error: 'with' in strict mode"],
+      errors: [
+        { message: "Parsing error: 'with' in strict mode", fatal: true },
+      ],
     },
   ],
 });
