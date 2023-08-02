@@ -13,7 +13,7 @@ on:
       - synchronize
 
 jobs:
-  title:
+  pr-title:
     name: Title
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +23,7 @@ jobs:
         with:
           wip: true
 
-  label:
+  pr-label:
     name: Label
     permissions:
       contents: read
