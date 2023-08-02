@@ -1,3 +1,7 @@
 src
+.eslintignore
+.eslintrc.js
+.prettierignore
 CHANGELOG.md
+tsconfig.json
 tsup.config.js
