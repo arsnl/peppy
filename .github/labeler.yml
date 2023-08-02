@@ -1,14 +1,14 @@
-"📌 cli":
+"📦️ peppy":
   - any: ["packages/peppy/**/*"]
 
-"📌 eslint-config-peppy":
+"📦️ eslint-config-peppy":
   - any: ["packages/eslint-config-peppy/**/*"]
 
-"📚 documentation":
+"📝 documentation":
   - any: ["docs/**/*"]
   - any: ["**/*.md"]
 
-"📌 ci":
+"👷 ci":
   - any: [".github/**/*"]
 
 "✅ tests":
