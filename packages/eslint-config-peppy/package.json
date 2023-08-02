@@ -28,12 +28,16 @@
     "url": "https://arsnl.dev"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
     "format": "prettier --check .",
     "lint": "eslint .",
+    "type": "tsc --noEmit",
     "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
-    "clean": "rimraf dist .turbo node_modules"
+    "clean": "rimraf --glob *.d.ts **/*.d.ts *.js **/*.js !.eslintrc.js .turbo node_modules"
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^13.4.12",
@@ -49,6 +53,9 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-tailwindcss": "^3.13.0"
+  },
+  "devDependencies": {
+    "typescript": "5.1.6"
   },
   "peerDependencies": {
     "eslint": "^7.32.0 || >=8.2.0",

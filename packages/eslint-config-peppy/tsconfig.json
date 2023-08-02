@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "declaration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["/*"]
+    }
+  },
+  "include": [
+    "index.ts",
+    "jest.ts",
+    "next.ts",
+    "prettier.ts",
+    "react.ts",
+    "tailwindcss.ts",
+    "configs/base.ts",
+    "configs/jest.ts",
+    "configs/next.ts",
+    "configs/prettier.ts",
+    "configs/react.ts",
+    "configs/tailwindcss.ts"
+  ]
+}

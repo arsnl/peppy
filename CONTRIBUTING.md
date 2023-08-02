@@ -55,19 +55,21 @@ Now you're all setup and can start implementing your changes.
 
 Here are some useful scripts for when you are developing:
 
-| Command           | Description                                                   |
-| ----------------- | ------------------------------------------------------------- |
-| `pnpm dev:cli`    | Builds and starts the CLI in watch-mode                       |
-| `pnpm dev:docs`   | Starts the development server for the documentations with HMR |
-| `pnpm build:cli`  | Builds the CLI                                                |
-| `pnpm build:docs` | Builds the documentations                                     |
-| `pnpm build`      | Builds CLI and documentations                                 |
-| `pnpm format`     | Checks your code for formatting errors                        |
-| `pnpm lint`       | Checks your code for linting errors                           |
-| `pnpm type`       | Checks your code for type errors                              |
-| `pnpm check`      | Checks your code for formatting, linting and type errors      |
-| `pnpm fix`        | Fixes any formatting and linting errors                       |
-| `pnpm clean`      | Remove build artifacts and node_modules                       |
+| Command             | Description                                                   |
+| ------------------- | ------------------------------------------------------------- |
+| `pnpm dev:cli`      | Builds and starts the CLI in watch-mode                       |
+| `pnpm dev:config`   | Builds and starts the ESLint configurations in watch-mode     |
+| `pnpm dev:docs`     | Starts the development server for the documentations with HMR |
+| `pnpm build:cli`    | Builds the CLI                                                |
+| `pnpm build:config` | Builds the ESLint configurations                              |
+| `pnpm build:docs`   | Builds the documentations                                     |
+| `pnpm build`        | Builds CLI, ESLint configurations and documentations          |
+| `pnpm format`       | Checks your code for formatting errors                        |
+| `pnpm lint`         | Checks your code for linting errors                           |
+| `pnpm type`         | Checks your code for type errors                              |
+| `pnpm check`        | Checks your code for formatting, linting and type errors      |
+| `pnpm fix`          | Fixes any formatting and linting errors                       |
+| `pnpm clean`        | Remove build artifacts and node_modules                       |
 
 When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with `feat:`, `fix:`, `chore:`, `docs:`, etc. You can use `git status` to double check which files have not yet been staged for commit:
 

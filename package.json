@@ -21,8 +21,10 @@
   },
   "scripts": {
     "dev:cli": "turbo --filter=peppy dev",
+    "dev:config": "turbo --filter=eslint-config-peppy dev",
     "dev:docs": "turbo --filter=docs dev",
     "build:cli": "turbo --filter=peppy build",
+    "build:config": "turbo --filter=eslint-config-peppy build",
     "build:docs": "turbo --filter=docs build",
     "build": "turbo build",
     "test": "jest",
@@ -50,6 +52,7 @@
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
     "turbo": "^1.10.12"
   }
 }

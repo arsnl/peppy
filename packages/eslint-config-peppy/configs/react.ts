@@ -1,4 +1,5 @@
-/** @type {import("eslint").Linter.Config} */
+import { type Linter } from "eslint";
+
 const reactConfig = {
   parserOptions: {
     ecmaFeatures: {
@@ -529,10 +530,9 @@ const reactConfig = {
     },
     propWrapperFunctions: ["forbidExtraProps", "exact", "Object.freeze"],
   },
-};
+} satisfies Linter.Config;
 
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
+const config = {
   ...reactConfig,
   overrides: [
     {
@@ -542,4 +542,6 @@ module.exports = {
       },
     },
   ],
-};
+} satisfies Linter.Config;
+
+export = config;

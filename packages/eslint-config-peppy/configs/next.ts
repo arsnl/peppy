@@ -1,7 +1,7 @@
-const reactConfig = require("./react");
+import { type Linter } from "eslint";
+import reactConfig from "./react";
 
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
+const config = {
   plugins: ["@next/next"],
   extends: ["plugin:@next/next/recommended"],
   rules: {
@@ -32,4 +32,6 @@ module.exports = {
     ],
     "react/react-in-jsx-scope": ["off"],
   },
-};
+} satisfies Linter.Config;
+
+export = config;

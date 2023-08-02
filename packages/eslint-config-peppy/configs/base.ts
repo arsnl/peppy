@@ -1,10 +1,12 @@
-const keptPaths = [];
-const sortedPaths = [];
+import { type Linter } from "eslint";
+
+const keptPaths: string[] = [];
+const sortedPaths: string[] = [];
 const cwd = process.cwd().replace(/\\/g, "/");
-const originalPaths = require.resolve.paths("eslint-plugin-import");
+const originalPaths = require.resolve.paths("eslint-plugin-import") || [];
 
 for (let i = originalPaths.length - 1; i >= 0; i -= 1) {
-  const currentPath = originalPaths[i];
+  const currentPath = originalPaths[i] || "";
 
   if (currentPath.replace(/\\/g, "/").startsWith(cwd)) {
     sortedPaths.push(currentPath);
@@ -21,7 +23,7 @@ const hookPropertyMap = new Map(
     ["eslint-plugin-import", "eslint-plugin-import"],
     ["eslint-plugin-react", "eslint-plugin-react"],
     ["eslint-plugin-jsx-a11y", "eslint-plugin-jsx-a11y"],
-  ].map(([request, replacement]) => [
+  ].map(([request = "", replacement = ""]) => [
     request,
     require.resolve(replacement, { paths: sortedPaths }),
   ]),
@@ -30,7 +32,12 @@ const hookPropertyMap = new Map(
 const mod = require("module");
 
 const resolveFilename = mod._resolveFilename;
-mod._resolveFilename = (request, parent, isMain, options) => {
+mod._resolveFilename = (
+  request: string,
+  parent: any,
+  isMain: any,
+  options: any,
+) => {
   const hookResolved = hookPropertyMap.get(request);
   if (hookResolved) {
     // eslint-disable-next-line no-param-reassign
@@ -45,7 +52,6 @@ require("@rushstack/eslint-patch/modern-module-resolution");
 const importAliases = "(@\\/|~[^/]*\\/)"; // support path aliases starting with @/ or ~.*/
 const importStyleExts = "(css|scss|sass|less)";
 
-/** @type {import("eslint").Linter.Config} */
 const baseConfig = {
   env: {
     browser: true,
@@ -740,10 +746,9 @@ const baseConfig = {
       "\\.(coffee|scss|css|less|hbs|svg|json)$",
     ],
   },
-};
+} satisfies Linter.Config;
 
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
+const config = {
   ...baseConfig,
   overrides: [
     {
@@ -863,7 +868,7 @@ module.exports = {
             ...baseConfig.rules["import/no-extraneous-dependencies"][1],
             devDependencies: baseConfig.rules[
               "import/no-extraneous-dependencies"
-            ][1].devDependencies.reduce((result, devDep) => {
+            ][1].devDependencies.reduce<string[]>((result, devDep) => {
               const toAppend = [devDep];
               const devDepWithTs = devDep.replace(
                 /\b(c|m)?js(x?)\b/g,
@@ -879,4 +884,6 @@ module.exports = {
       },
     },
   ],
-};
+} satisfies Linter.Config;
+
+export = config;

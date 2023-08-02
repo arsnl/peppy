@@ -1,14 +1,24 @@
 /* eslint-disable jest/no-export */
 import spawn from "cross-spawn";
-import { ESLint } from "eslint";
+import { ESLint, type Linter } from "eslint";
 import { rules as prettierRules } from "eslint-config-peppy/configs/prettier";
 import path from "node:path";
 
-export const getEslintConfig = async ({ cwd, file = "file.js" }) => {
+export const getEslintConfig = async ({
+  cwd,
+  file = "file.js",
+}: {
+  cwd: string;
+  file?: string;
+}) => {
   const { stdout } = await spawn("npx", ["eslint", "--print-config", file], {
     cwd,
     shell: true,
   });
+
+  if (!stdout) {
+    throw new Error("stdout is null");
+  }
 
   stdout.setEncoding("utf8");
   let config = "";
@@ -21,11 +31,15 @@ export const getEslintConfig = async ({ cwd, file = "file.js" }) => {
   return JSON.parse(config);
 };
 
-export const validateESLintConfig = async ({ cwd }) => {
-  const _getConflictingPrettierRules = async ({ file = "file.js" }) => {
+export const validateESLintConfig = async ({ cwd }: { cwd: string }) => {
+  const _getConflictingPrettierRules = async ({
+    file = "file.js",
+  }: {
+    file?: string;
+  }) => {
     const { rules: configRules } = await getEslintConfig({ cwd, file });
 
-    const conflictingRules = Object.keys(prettierRules).reduce(
+    const conflictingRules = Object.keys(prettierRules).reduce<string[]>(
       (acc, prettierRuleName) => {
         const prettierRuleValue = Array.isArray(prettierRules[prettierRuleName])
           ? prettierRules[prettierRuleName][0]
@@ -91,14 +105,24 @@ export const validateESLintConfig = async ({ cwd }) => {
   });
 };
 
+export type ValidTestCase = string;
+
+export type InvalidTestCase = { code: string; errors: string[] };
+
 export const validateESLintRule = async ({
   ruleName,
   cwd,
   file = "file.js",
   valid,
   invalid,
+}: {
+  ruleName: string;
+  cwd: string;
+  file?: string;
+  valid: ValidTestCase[];
+  invalid: InvalidTestCase[];
 }) => {
-  let eslint;
+  let eslint: ESLint;
 
   const _getEslint = async () => {
     if (eslint) {
@@ -120,7 +144,7 @@ export const validateESLintRule = async ({
     return eslint;
   };
 
-  const _getReport = async (text) => {
+  const _getReport = async (text: string) => {
     await _getEslint();
     const report = await eslint.lintText(text, {
       filePath: path.join(__dirname, "_x.ts"),
@@ -129,30 +153,33 @@ export const validateESLintRule = async ({
     return report;
   };
 
-  const _compareErrorMessageToExpected = (result, expected) => {
+  const _compareErrorMessageToExpected = (
+    result?: Linter.LintMessage,
+    expected?: string,
+  ) => {
     expect(typeof expected).toBe("string");
     expect(result?.fatal).toBeFalsy();
-    expect(result).toStrictEqual(expected);
+    expect(result?.message).toStrictEqual(expected);
   };
 
-  const _compareErrorMessagesToExpected = (result, expected) => {
+  const _compareErrorMessagesToExpected = (
+    result: Linter.LintMessage[],
+    expected: InvalidTestCase["errors"],
+  ) => {
     expect(result).toHaveLength(expected.length);
 
     const sortedExpected = expected.sort();
     const sortedResult = result.sort((a, b) =>
       a.message < b.message ? -1 : a.message > b.message ? 1 : 0,
     );
-    sortedResult.forEach((_, index) =>
-      _compareErrorMessageToExpected(
-        sortedResult[index].message,
-        sortedExpected[index],
-      ),
+    sortedResult.forEach((result, index) =>
+      _compareErrorMessageToExpected(result, sortedExpected[index]),
     );
   };
 
-  const _testValidTemplate = async (testCase) => {
+  const _testValidTemplate = async (testCase: ValidTestCase) => {
     const report = await _getReport(testCase);
-    const errorMessages = report.reduce((acc, result) => {
+    const errorMessages = report.reduce<string[]>((acc, result) => {
       const messages = result.messages.map(({ message }) => message);
       return [...acc, ...messages];
     }, []);
@@ -160,7 +187,7 @@ export const validateESLintRule = async ({
     expect(errorMessages).toStrictEqual([]);
   };
 
-  const _testInvalidTemplate = async (testCase) => {
+  const _testInvalidTemplate = async (testCase: InvalidTestCase) => {
     const report = await _getReport(testCase.code);
 
     report.forEach((result) => {

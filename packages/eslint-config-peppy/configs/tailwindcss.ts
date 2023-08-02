@@ -1,5 +1,6 @@
-/** @type {import("eslint").Linter.Config} */
-module.exports = {
+import { type Linter } from "eslint";
+
+const config = {
   plugins: ["tailwindcss"],
   extends: ["plugin:tailwindcss/recommended"],
   settings: {
@@ -17,4 +18,6 @@ module.exports = {
       ],
     },
   },
-};
+} satisfies Linter.Config;
+
+export = config;
