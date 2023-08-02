@@ -28,7 +28,7 @@
     "build:docs": "turbo --filter=docs build",
     "build": "turbo build",
     "test": "jest",
-    "format": "turbo format && prettier --check .",
+    "format": "turbo format && prettier --check . !packages !docs",
     "lint": "turbo lint",
     "type": "turbo type",
     "check": "turbo format lint type",
