@@ -3,11 +3,6 @@ description: ""
 runs:
   using: "composite"
   steps:
-    - name: Checkout Repo
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:

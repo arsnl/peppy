@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Format
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
 
       - name: Run formatter
@@ -19,6 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
 
       - name: Run linter
@@ -28,6 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Types
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
 
       - name: Run type
@@ -37,6 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Tests
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
 
       - name: Run tests
@@ -46,6 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
 
       - name: Run build
