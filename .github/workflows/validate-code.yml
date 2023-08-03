@@ -6,52 +6,23 @@ on:
   merge_group:
 
 jobs:
-  format:
+  main:
     runs-on: ubuntu-latest
-    name: Format
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/ci-setup
 
-      - name: Run formatter
+      - name: Check format
         run: pnpm format
 
-  lint:
-    runs-on: ubuntu-latest
-    name: Lint
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/ci-setup
-
-      - name: Run linter
+      - name: Check lint
         run: pnpm lint
 
-  types:
-    runs-on: ubuntu-latest
-    name: Types
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/ci-setup
-
-      - name: Run type
+      - name: Check types
         run: pnpm type
 
-  tests:
-    runs-on: ubuntu-latest
-    name: Tests
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/ci-setup
-
-      - name: Run tests
+      - name: Check tests
         run: pnpm test
 
-  build:
-    runs-on: ubuntu-latest
-    name: Build
-    steps:
-      - uses: actions/checkout@v3
-      - uses: ./.github/actions/ci-setup
-
-      - name: Run build
+      - name: Check build
         run: pnpm build
