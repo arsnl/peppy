@@ -70,6 +70,9 @@ Here are some useful scripts for when you are developing:
 | `pnpm check`        | Checks your code for formatting, linting and type errors      |
 | `pnpm fix`          | Fixes any formatting and linting errors                       |
 | `pnpm clean`        | Remove build artifacts and node_modules                       |
+| `pnpm changeset`    | Generate your changeset                                       |
+| `pnpm release`      | Publish the packages to npm (CI only)                         |
+| `pnpm cli`          | Execute the local Peppy CLI                                   |
 
 When making commits, make sure to follow the [conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) guidelines, i.e. prepending the message with `feat:`, `fix:`, `chore:`, `docs:`, etc. You can use `git status` to double check which files have not yet been staged for commit:
 
