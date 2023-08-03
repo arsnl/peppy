@@ -31,10 +31,9 @@ const notifyUpdate = async () => {
 };
 
 const run = async () => {
-  const program = new Command()
-    .version(packageInfo.version)
-    .addCommand(await makeInstallCommand());
-
+  const program = new Command();
+  program.version(packageInfo.version, "-v, --version", "print Peppy version");
+  program.addCommand(await makeInstallCommand());
   program.parseAsync(process.argv);
 };
 
