@@ -753,6 +753,8 @@ export const jsoncDeepAssign = <T extends JsonValue>(target: T, source: T) => {
  * @returns {void}
  */
 export const logBanner = () => {
+  const { version } = packageInfo;
+
   // https://www.coolgenerator.com/ascii-text-generator - Roman
   const banner = `
 oo.ooooo.   .ooooo.  oo.ooooo.  oo.ooooo.  oooo    ooo 
@@ -761,7 +763,7 @@ oo.ooooo.   .ooooo.  oo.ooooo.  oo.ooooo.  oooo    ooo
  888   888 888    .o  888   888  888   888    \`888'    
  888bod8P' \`Y8bod8P'  888bod8P'  888bod8P'     .8'     
  888                  888        888       .o..P'      
-o888o                o888o      o888o      \`Y8P'
+o888o                o888o      o888o      \`Y8P' (v${version})
 
 Brilliant ESLint configurations for happier developers
 `;
