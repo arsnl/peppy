@@ -36,6 +36,7 @@
     "clean": "turbo clean && rimraf node_modules",
     "changeset": "changeset",
     "release": "changeset publish",
+    "cli": "node packages/peppy/dist/cli.js",
     "postinstall": "pnpm build:config"
   },
   "dependencies": {
