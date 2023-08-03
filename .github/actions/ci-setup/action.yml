@@ -1,5 +1,5 @@
 name: "CI setup"
-description: ""
+description: "Set up node, pnpm and install dependencies using cache"
 runs:
   using: "composite"
   steps:
