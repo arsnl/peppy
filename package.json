@@ -34,6 +34,8 @@
     "check": "turbo format lint type",
     "fix": "turbo fix && prettier --write --log-level warn .",
     "clean": "turbo clean && rimraf node_modules",
+    "changeset": "changeset",
+    "release": "changeset publish",
     "postinstall": "pnpm build:config"
   },
   "dependencies": {

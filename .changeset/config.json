@@ -8,7 +8,7 @@
   "fixed": [["peppy", "eslint-config-peppy"]],
   "linked": [],
   "access": "public",
-  "baseBranch": "next",
+  "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": []
+  "ignore": ["docs"]
 }
