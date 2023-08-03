@@ -3,7 +3,6 @@
 
 <p align="center">
     <a href="https://www.npmjs.org/package/eslint-config-peppy"><img src="https://img.shields.io/npm/v/eslint-config-peppy.svg" alt="npm version" /></a>
-    <a href="https://github.com/arsnl/peppy/actions/workflows/tests.yml"><img src="https://github.com/arsnl/peppy/actions/workflows/tests.yml/badge.svg" alt="Tests" /></a>
     <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" /></a>
 </p>
 
@@ -65,7 +64,7 @@ Don't be shy — give your package.json some love by adding these awesome script
   "lint": "eslint .",
   "format": "prettier --check .",
   "typecheck": "tsc --noEmit", // Only if you use TypeScript
-  "fix": "prettier --write --loglevel warn . && npm run lint -- --fix",
+  "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
 },
 ```
 

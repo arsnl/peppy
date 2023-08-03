@@ -18,21 +18,23 @@
     "url": "https://github.com/arsnl/peppy",
     "directory": "packages/peppy"
   },
+  "author": {
+    "name": "Mark Arseneault",
+    "email": "mark@arsnl.dev",
+    "url": "https://arsnl.dev"
+  },
   "license": "MIT",
-  "author": "Neaf (https://neaf.co)",
-  "contributors": [
-    {
-      "name": "Mark Arseneault",
-      "email": "mark@arsnl.dev",
-      "url": "https://arsnl.dev"
-    }
-  ],
   "bin": {
-    "peppy": "dist/cli.js"
+    "peppy": "./dist/cli.js"
   },
   "scripts": {
     "dev": "tsup --watch",
-    "build": "tsup"
+    "build": "tsup",
+    "format": "prettier --check .",
+    "lint": "eslint .",
+    "type": "tsc --noEmit",
+    "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
+    "clean": "rimraf dist .turbo node_modules"
   },
   "dependencies": {
     "commander": "10.0.0",
@@ -43,11 +45,14 @@
     "ora": "5.4.1",
     "prompts": "2.4.2",
     "rimraf": "4.4.1",
-    "semver": "7.3.8",
+    "semver": "7.5.2",
     "update-check": "1.5.4"
   },
   "devDependencies": {
-    "tsup": "^6.7.0"
+    "@types/gradient-string": "^1.1.2",
+    "@types/prompts": "^2.4.4",
+    "@types/semver": "^7.5.0",
+    "typescript": "5.1.6"
   },
   "engines": {
     "node": ">=14.0.0",

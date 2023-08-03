@@ -10,7 +10,9 @@
   // Controls auto save of dirty editors.
   //  - onFocusChange: A dirty editor is automatically saved when the editor loses focus.
   "files.autoSave": "onFocusChange",
-  // Always show the ESlint status bar item.
-  "eslint.alwaysShowStatus": true,
-  "docwriter.language": "English"
+  "eslint.workingDirectories": [
+    "docs",
+    "packages/eslint-config-peppy",
+    "packages/peppy"
+  ]
 }
