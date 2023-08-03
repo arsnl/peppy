@@ -1,5 +1,11 @@
 # eslint-config-peppy
 
+## 3.1.1
+
+### Patch Changes
+
+- [#31](https://github.com/arsnl/peppy/pull/31) [`92c898e`](https://github.com/arsnl/peppy/commit/92c898e2b4a43ca18a4041a565841542fd0bb8c8) Thanks [@arsnl](https://github.com/arsnl)! - chore: convert sources from js to ts
+
 ## 3.1.0
 
 ### Minor Changes
