@@ -11,7 +11,7 @@
   //  - onFocusChange: A dirty editor is automatically saved when the editor loses focus.
   "files.autoSave": "onFocusChange",
   "eslint.workingDirectories": [
-    "docs",
+    "apps/www",
     "packages/eslint-config-peppy",
     "packages/peppy"
   ]

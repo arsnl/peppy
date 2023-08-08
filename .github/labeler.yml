@@ -5,7 +5,7 @@
   - any: ["packages/eslint-config-peppy/**/*"]
 
 "📝 documentation":
-  - any: ["docs/**/*"]
+  - any: ["apps/www/**/*"]
   - any: ["**/*.md"]
 
 "👷 ci":

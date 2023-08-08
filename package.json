@@ -16,19 +16,20 @@
     "url": "https://arsnl.dev"
   },
   "license": "MIT",
+  "type": "module",
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "dev:cli": "turbo --filter=peppy dev",
-    "dev:config": "turbo --filter=eslint-config-peppy dev",
-    "dev:docs": "turbo --filter=docs dev",
+    "dev:eslint": "turbo --filter=eslint-config-peppy dev",
+    "dev:www": "turbo --filter=www dev",
     "build:cli": "turbo --filter=peppy build",
-    "build:config": "turbo --filter=eslint-config-peppy build",
-    "build:docs": "turbo --filter=docs build",
+    "build:eslint": "turbo --filter=eslint-config-peppy build",
+    "build:www": "turbo --filter=www build",
     "build": "turbo build",
     "test": "jest",
-    "format": "turbo format && prettier --check . !packages !docs",
+    "format": "turbo format && prettier --check . !packages !apps",
     "lint": "turbo lint",
     "type": "turbo type",
     "check": "turbo format lint type",
@@ -37,13 +38,13 @@
     "changeset": "changeset",
     "release": "changeset publish",
     "cli": "node packages/peppy/dist/cli.js",
-    "postinstall": "pnpm build:config"
+    "postinstall": "pnpm build:eslint"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
     "@types/cross-spawn": "^6.0.2",
-    "@types/eslint": "^8.44.1",
+    "@types/eslint": "^8.44.2",
     "@types/jest": "^29.5.3",
     "cross-spawn": "^7.0.3",
     "eslint": "latest",
@@ -54,7 +55,7 @@
     "rimraf": "^5.0.1",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
-    "tsup": "^7.1.0",
+    "tsup": "^7.2.0",
     "tsx": "^3.12.7",
     "turbo": "^1.10.12"
   }
