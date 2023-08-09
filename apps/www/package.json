@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "type": "contentlayer build && tsc --noEmit",
     "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
-    "clean": "rimraf dist .turbo node_modules"
+    "clean": "rimraf .next .contentlayer .turbo node_modules"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
@@ -35,10 +35,9 @@
     "cmdk": "^0.2.0",
     "contentlayer": "^0.3.4",
     "eslint": "8.46.0",
-    "eslint-config-next": "13.4.12",
-    "lucide-react": "^0.264.0",
+    "lucide-react": "0.263.1",
     "mdast-util-toc": "^7.0.0",
-    "next": "13.4.12",
+    "next": "13.4.13",
     "next-contentlayer": "^0.3.4",
     "next-themes": "^0.2.1",
     "postcss": "8.4.27",
