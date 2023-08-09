@@ -62,11 +62,35 @@ export const metadata: Metadata = {
     creator: "@im_arsnl",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
+    icon: [
+      {
+        url: "/favicon.svg",
+        type: "image/svg+xml",
+        rel: "icon",
+        media: "(prefers-color-scheme:light)",
+      },
+      {
+        url: "/favicon-dark.svg",
+        type: "image/svg+xml",
+        rel: "icon",
+        media: "(prefers-color-scheme:dark)",
+      },
+      {
+        url: "/favicon.ico",
+        type: "image/x-icon",
+        rel: "alternate icon",
+        media: "(prefers-color-scheme:light)",
+      },
+      {
+        url: "/favicon-dark.ico",
+        type: "image/x-icon",
+        rel: "alternate icon",
+        media: "(prefers-color-scheme:dark)",
+      },
+    ],
     apple: "/apple-touch-icon.png",
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
+  manifest: `${siteConfig.url}/manifest.webmanifest`,
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
