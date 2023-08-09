@@ -1,4 +1,4 @@
-<div align="center"><img src="../../media/readme-banner.png" width="600" role="presentation" /></div>
+<div align="center"><br/><br/><img src="../../apps/www/public/assets/logos/logotype.svg" width="300" role="presentation" /></div>
 <h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
 
 <h2 align="center">Peppy</h2>

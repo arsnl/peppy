@@ -225,7 +225,7 @@ export const CopyCodeButton = ({
     <Button
       variant="outline"
       className={cn(
-        "relative flex h-auto cursor-pointer flex-row items-center gap-2 rounded-md border p-2 text-sm transition-colors duration-300 md:p-3 md:text-lg lg:px-5 lg:py-4 lg:text-xl",
+        "relative flex h-auto cursor-pointer flex-row items-center gap-2 rounded-md border p-3 px-4 text-base transition-colors duration-300 md:text-lg lg:p-4 lg:px-5 lg:text-xl",
         className,
       )}
       onClick={() => {

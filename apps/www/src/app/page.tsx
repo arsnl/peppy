@@ -7,6 +7,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header";
+import { SupportedToolsMarquee } from "@/components/supported-tools-marquee";
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -24,7 +25,7 @@ const HomePage = () => (
     <PageHeader className="mx-auto flex items-center pb-8 text-center">
       <div className="relative my-5 aspect-video w-8/12 sm:w-6/12">
         <Image
-          src="/assets/logo-with-glow.svg"
+          src="/assets/logos/logotype.svg"
           alt="Peppy Logo"
           fill
           priority
@@ -56,6 +57,18 @@ const HomePage = () => (
       <div className="flex flex-col items-center pb-8 md:pb-10">
         <CopyCodeButton value="npx peppy@latest init" />
       </div>
+
+      <SupportedToolsMarquee
+        tools={[
+          "jest",
+          "nextjs",
+          "nodejs",
+          "typescript",
+          "prettier",
+          "react",
+          "tailwindcss",
+        ]}
+      />
     </PageHeader>
 
     <section className="col-span-12 grid grid-cols-12 items-start gap-4 overflow-x-hidden lg:items-center">
@@ -79,7 +92,7 @@ const HomePage = () => (
         </p>
       </div>
 
-      <div className="relative col-span-full hidden after:absolute after:right-0 after:top-0 after:h-full after:w-8 after:bg-gradient-to-r after:from-transparent after:to-background lg:col-start-8 lg:block">
+      <div className="after:fade-to-r relative col-span-full hidden lg:col-start-8 lg:block">
         <div className="w-[50vw] space-y-8 rounded-2xl border p-8">
           <div className="flex gap-2">
             <div className="h-4 w-4 rounded-full border" />
