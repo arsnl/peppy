@@ -2,12 +2,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import Balance from "react-wrap-balancer";
 import { cn } from "@/lib/utils";
 
-const headingVariants = cva("flex max-w-5xl flex-col pt-8 md:pt-12", {
+const headingVariants = cva("flex max-w-5xl flex-col", {
   variants: {
     direction: {
-      left: "items-start text-left",
-      center: "items-center text-center",
-      right: "items-end text-right",
+      left: "items-start text-left mr-auto",
+      center: "items-center text-center mx-auto",
+      right: "items-end text-right ml-auto",
     },
     gap: {
       tight: "gap-3 pb-6",

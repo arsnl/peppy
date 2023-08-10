@@ -104,11 +104,11 @@
   }
 
   .fade-to-r {
-    @apply absolute right-0 top-0 h-full w-8 bg-gradient-to-r from-transparent to-background z-20;
+    @apply absolute right-0 top-0 h-full w-8 bg-gradient-to-r from-transparent to-background z-10;
   }
 
   .fade-to-l {
-    @apply absolute left-0 top-0 h-full w-8 bg-gradient-to-l from-transparent to-background z-20;
+    @apply absolute left-0 top-0 h-full w-8 bg-gradient-to-l from-transparent to-background z-10;
   }
 }
 
