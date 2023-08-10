@@ -1,4 +1,5 @@
 import * as React from "react";
+import Balance from "react-wrap-balancer";
 import { cn } from "@/lib/utils";
 
 const Card = React.forwardRef<
@@ -31,8 +32,7 @@ CardHeader.displayName = "CardHeader";
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
-  // eslint-disable-next-line jsx-a11y/heading-has-content
+>(({ children, className, ...props }, ref) => (
   <h3
     ref={ref}
     className={cn(
@@ -40,7 +40,9 @@ const CardTitle = React.forwardRef<
       className,
     )}
     {...props}
-  />
+  >
+    <Balance>{children}</Balance>
+  </h3>
 ));
 CardTitle.displayName = "CardTitle";
 

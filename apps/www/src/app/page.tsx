@@ -1,44 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CopyCodeButton } from "@/components/copy-button";
-import { Icons } from "@/components/icons";
 import {
-  PageHeader,
-  PageHeaderDescription,
-  PageHeaderHeading,
-} from "@/components/page-header";
+  Heading,
+  HeadingDescription,
+  HeadingTitle,
+} from "@/components/heading";
+import { Icons } from "@/components/icons";
 import { SupportedToolsMarquee } from "@/components/supported-tools-marquee";
 import { buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 const HomePage = () => (
   <div className="container relative">
-    <PageHeader className="mx-auto flex items-center pb-8 text-center">
-      <div className="relative my-5 aspect-video w-8/12 sm:w-6/12">
-        <Image
-          src="/assets/logos/logotype.svg"
-          alt="Peppy Logo"
-          fill
-          priority
-        />
-      </div>
-
-      <PageHeaderHeading>
-        Hassle-free ESLint configurations for peppier developers
-      </PageHeaderHeading>
-      <PageHeaderDescription>
-        Collection of ESLint configurations with DX in mind that make your code
-        impeccable, readable, and harmonious.
-      </PageHeaderDescription>
+    <section className="mx-auto flex flex-col items-center pb-8 text-center">
+      <Heading gap="tight">
+        <div className="relative aspect-video w-8/12 sm:w-6/12">
+          <Image
+            src="/assets/logos/logotype.svg"
+            alt="Peppy Logo"
+            fill
+            priority
+          />
+        </div>
+        <HeadingTitle tag="h1">
+          Hassle-free ESLint configurations for peppier developers
+        </HeadingTitle>
+        <HeadingDescription>
+          Collection of ESLint configurations with DX in mind that make your
+          code impeccable, readable, and harmonious.
+        </HeadingDescription>
+      </Heading>
       <div className="flex items-center space-x-4 pb-8 pt-4 md:pb-10">
         <Link href="/docs" className={cn(buttonVariants({ size: "lg" }))}>
           Get Started
@@ -59,6 +53,7 @@ const HomePage = () => (
       </div>
 
       <SupportedToolsMarquee
+        className="max-w-5xl"
         tools={[
           "jest",
           "nextjs",
@@ -69,13 +64,14 @@ const HomePage = () => (
           "tailwindcss",
         ]}
       />
-    </PageHeader>
+    </section>
 
     <section className="col-span-12 grid grid-cols-12 items-start gap-4 overflow-x-hidden lg:items-center">
       <div className="col-span-full lg:col-end-7">
-        <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-          Typesafe From The Start
-        </h2>
+        <Heading direction="left">
+          <HeadingTitle>Typesafe From The Start</HeadingTitle>
+        </Heading>
+
         <p className="mb-4 text-base md:text-xl">
           We made create-t3-app to do one thing: Streamline the setup of
           typesafe Next.js apps WITHOUT compromising modularity.
@@ -177,56 +173,81 @@ const HomePage = () => (
       </div>
     </section>
 
-    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
-    </div>
+    <section>
+      <div
+        className="flex flex-col items-center gap-5 md:gap-6"
+        style={{ opacity: 1, transform: "none" }}
+      >
+        <Heading direction="center">
+          <HeadingTitle>Why Peppy?</HeadingTitle>
+          <HeadingDescription>
+            Turborepo reimagines build system techniques used by Facebook and
+            Google to remove maintenance burden and overhead.
+          </HeadingDescription>
+        </Heading>
+      </div>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          {
+            title: "Incremental by design",
+            description:
+              "Building once is enough work—once Turbopack performs a task, it never does it again.",
+          },
+          {
+            title: "Ecosystem-friendly",
+            description:
+              "Get out-of-the-box support for TypeScript, JSX, CSS, CSS Modules, WebAssembly, and more.",
+          },
+          {
+            title: "Lightning fast HMR",
+            description:
+              "Hot Module Replacement (HMR) stays fast regardless of the size of your app.",
+          },
+          {
+            title: "React Server Components",
+            description:
+              "Get native support for React Server Components when using Turbopack.",
+          },
+          {
+            title: "Simultaneous Multiple Env Targets",
+            description:
+              "Build and optimize for multiple environments together (Browser, Server, Edge, SSR, React Server Components).",
+          },
+          {
+            title: "Next.js support",
+            description:
+              "Turbopack will also power Next.js production builds, both locally and in the cloud.",
+          },
+        ].map(({ title, description }) => (
+          <Card className="p-3">
+            <CardHeader className="pb-[0.5em]">
+              <Image
+                aria-hidden="true"
+                alt=""
+                width={64}
+                height={64}
+                className="hidden dark:block"
+                src="https://turbo.build/_next/static/media/bars-dark.1ff18ac9.svg"
+              />
+              <Image
+                aria-hidden="true"
+                alt=""
+                width={64}
+                height={64}
+                className="block dark:hidden"
+                src="https://turbo.build/_next/static/media/bars-light.df490fb6.svg"
+              />
+              <CardTitle className="pt-3 text-base md:text-lg">
+                {title}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-muted-foreground">
+              <p>{description}</p>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </section>
   </div>
 );
 
