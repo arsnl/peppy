@@ -765,7 +765,7 @@ oo.ooooo.   .ooooo.  oo.ooooo.  oo.ooooo.  oooo    ooo
  888                  888        888       .o..P'      
 o888o                o888o      o888o      \`Y8P' (v${version})
 
-Brilliant ESLint configurations for happier developers
+Hassle-free ESLint configurations for peppier development
 `;
 
   const peppyGradient = gradient(

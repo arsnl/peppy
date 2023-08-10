@@ -1,5 +1,5 @@
 <div align="center"><br/><br/><img src="apps/www/public/assets/logos/logotype.svg" width="300" role="presentation" /></div>
-<h3 align="center">Brilliant ESLint configurations<br/> for happier developers</h3>
+<h3 align="center">Hassle-free ESLint configurations<br/> for peppier development</h3>
 
 # Security Policy
 

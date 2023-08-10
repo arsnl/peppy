@@ -26,7 +26,7 @@ const HomePage = () => (
           />
         </div>
         <HeadingTitle tag="h1">
-          Hassle-free ESLint configurations for peppier developers
+          Hassle-free ESLint configurations for peppier development
         </HeadingTitle>
         <HeadingDescription>
           Collection of ESLint configurations with DX in mind that make your
