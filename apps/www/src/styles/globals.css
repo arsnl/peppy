@@ -35,9 +35,9 @@
 
     --radius: 0.5rem;
 
-    --brand-first: 312 100% 50%;
-    --brand-second: 60 100% 50%;
-    --brand-third: 83 100% 60%;
+    --brand-magenta: 312 100% 50%;
+    --brand-yellow: 60 100% 50%;
+    --brand-green: 83 100% 59%;
   }
 
   .dark {
@@ -96,7 +96,7 @@
   }
 
   .brand-gradient {
-    @apply bg-gradient-to-r from-brand-first from-0% via-brand-second via-70% to-brand-third to-100%;
+    @apply bg-gradient-to-r from-brand-magenta from-0% via-brand-yellow via-70% to-brand-green to-100%;
   }
 
   .text-brand-gradient {
