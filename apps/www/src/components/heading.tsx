@@ -71,12 +71,14 @@ export const HeadingTitle = ({
   );
 };
 
-export const HeadingDescription = ({
+export type HeadingSubtextProps = React.HTMLAttributes<HTMLParagraphElement>;
+
+export const HeadingSubtext = ({
   children,
   className,
   ...props
-}: React.HTMLAttributes<HTMLParagraphElement>) => (
-  <div
+}: HeadingSubtextProps) => (
+  <p
     className={cn(
       "max-w-3xl text-lg text-muted-foreground sm:text-xl",
       className,
@@ -84,5 +86,5 @@ export const HeadingDescription = ({
     {...props}
   >
     <Balance>{children}</Balance>
-  </div>
+  </p>
 );

@@ -1,9 +1,5 @@
 import Image from "next/image";
-import {
-  Heading,
-  HeadingDescription,
-  HeadingTitle,
-} from "@/components/heading";
+import { Heading, HeadingSubtext, HeadingTitle } from "@/components/heading";
 import { Section } from "@/components/section";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
@@ -93,10 +89,10 @@ export const SectionSupported = () => (
   <Section>
     <Heading direction="center">
       <HeadingTitle>Plays well with others</HeadingTitle>
-      <HeadingDescription>
+      <HeadingSubtext>
         Effortlessly supports your favorite tools and frameworks, including
         TypeScript and Prettier, out of the box.
-      </HeadingDescription>
+      </HeadingSubtext>
     </Heading>
     <_Marquee
       className="mx-auto max-w-3xl"

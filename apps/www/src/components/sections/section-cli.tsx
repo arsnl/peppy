@@ -1,4 +1,4 @@
-import { Heading, HeadingTitle } from "@/components/heading";
+import { Heading, HeadingSubtext, HeadingTitle } from "@/components/heading";
 import { Section } from "@/components/section";
 import { cn } from "@/lib/utils";
 
@@ -9,7 +9,7 @@ const _CLI = ({ className, ...props }: _CLIProps) => (
     role="presentation"
     aria-hidden
     className={cn(
-      "inline-block space-y-[2em] rounded-[1em] border p-[2em] text-base",
+      "border-glass bg-glass inline-block space-y-[2em] rounded-[1em] p-[2em] text-base",
       className,
     )}
     {...props}
@@ -101,21 +101,24 @@ export const SectionCLI = () => (
       <div className="col-span-full md:col-end-7">
         <Heading direction="left" gap="tight">
           <HeadingTitle>Quick start, no fuss</HeadingTitle>
+          <HeadingSubtext>
+            Say goodbye to tedious setup and hello to a world of smooth
+            development with the Peppy CLI.
+          </HeadingSubtext>
         </Heading>
 
         <p className="mb-4 text-base md:text-xl">
-          Say goodbye to tedious setup and hello to a world of smooth
-          development with the Peppy CLI. It&apos;s the ultimate tool for modern
-          developers, designed to elevate your workflow with minimal effort.
+          Peppy CLI is the ultimate tool for modern developers, designed to
+          elevate your workflow with minimal effort.
         </p>
-        <p className="mb-4 text-base md:text-xl ">
+        <p className="mb-4 text-base md:text-xl">
           With just a few commands, you&apos;ll unleash the power of
           Peppy&apos;s versatile configurations, including TypeScript and
           Prettier support right out of the box. We&apos;ve carefully crafted
           these configurations to boost your productivity, enhance code quality,
           and reduce the hassle of managing dependencies.
         </p>
-        <p className="mb-4 text-base md:text-xl ">
+        <p className="mb-4 text-base md:text-xl">
           Take the leap into a world of efficient, modern development — try
           Peppy today!
         </p>

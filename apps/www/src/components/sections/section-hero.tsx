@@ -1,11 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CopyCodeButton } from "@/components/copy-button";
-import {
-  Heading,
-  HeadingDescription,
-  HeadingTitle,
-} from "@/components/heading";
+import { Heading, HeadingSubtext, HeadingTitle } from "@/components/heading";
 import { Icons } from "@/components/icons";
 import { Section } from "@/components/section";
 import { buttonVariants } from "@/components/ui/button";
@@ -26,10 +22,10 @@ export const SectionHero = () => (
       <HeadingTitle tag="h1">
         Hassle-free ESLint configurations for peppier development
       </HeadingTitle>
-      <HeadingDescription>
+      <HeadingSubtext>
         Collection of ESLint configurations with DX in mind that make your code
         impeccable, readable, and harmonious.
-      </HeadingDescription>
+      </HeadingSubtext>
     </Heading>
     <div className="flex items-center space-x-4 pb-8 pt-4 md:pb-10">
       <Link href="/docs" className={cn(buttonVariants({ size: "lg" }))}>

@@ -110,6 +110,21 @@
   .fade-to-l {
     @apply absolute left-0 top-0 h-full w-8 bg-gradient-to-l from-transparent to-background z-10;
   }
+
+  .border-glass {
+    @apply border-none relative before:pointer-events-none before:select-none before:absolute before:inset-0 before:rounded-[inherit] before:p-px before:bg-gradient-to-b before:from-foreground/10 before:to-foreground/5;
+    &:before {
+      mask:
+        linear-gradient(theme(colors.background), theme(colors.background))
+          content-box content-box,
+        linear-gradient(theme(colors.background), theme(colors.background));
+      mask-composite: xor;
+    }
+  }
+
+  .bg-glass {
+    @apply bg-gradient-to-b from-foreground/0 to-foreground/1;
+  }
 }
 
 @media (max-width: 640px) {

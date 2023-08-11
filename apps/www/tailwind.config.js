@@ -55,6 +55,9 @@ module.exports = {
           green: "hsl(var(--brand-green))",
         },
       },
+      opacity: {
+        1: ".01",
+      },
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,
