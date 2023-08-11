@@ -77,19 +77,21 @@ export const SectionFeatures = (props: SectionFeaturesProps) => (
 
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {features.map(({ id, title, description, Icon }) => (
-        <Card key={id} className="border-glass bg-glass rounded-2xl p-3">
-          <CardHeader className="pb-[0.5em]">
-            <div className="border-glass h-16 w-16 rounded-full p-2">
-              <div className="border-glass bg-glass flex h-full w-full items-center justify-center rounded-full">
-                <Icon className="w-6" />
-              </div>
+        <div key={id} className="flex flex-col">
+          <div className="border-glass relative z-10 -mb-12 h-24 w-24 shrink-0 self-center rounded-4xl bg-background p-2">
+            <div className="border-glass bg-glass flex h-full w-full items-center justify-center rounded-3xl">
+              <Icon className="h-8 w-8" />
             </div>
-            <CardTitle className="pt-3 text-base md:text-lg">{title}</CardTitle>
-          </CardHeader>
-          <CardContent className="text-muted-foreground">
-            <p>{description}</p>
-          </CardContent>
-        </Card>
+          </div>
+          <Card className="border-glass bg-glass rounded-2xl p-3 pt-10">
+            <CardHeader className="pb-[0.5em]">
+              <CardTitle className="text-base md:text-lg">{title}</CardTitle>
+            </CardHeader>
+            <CardContent className="text-muted-foreground">
+              <p>{description}</p>
+            </CardContent>
+          </Card>
+        </div>
       ))}
     </div>
   </Section>

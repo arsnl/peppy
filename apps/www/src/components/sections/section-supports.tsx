@@ -17,20 +17,27 @@ const _Logo = ({ toolKey, theme }: _LogoProps) => {
   const { logoFilename, name } = supportedToolsConfig[toolKey];
 
   return (
-    <div className="w-12 md:w-16">
-      <AspectRatio ratio={1 / 1}>
-        <Image
-          src={`/assets/supported-tools-logos/${theme}/${logoFilename}`}
-          alt={`${name}'s Logo`}
-          width={64}
-          height={64}
-          priority
-          className={cn({
-            "hidden dark:block": theme === "dark",
-            "dark:hidden block": theme !== "dark",
-          })}
-        />
-      </AspectRatio>
+    <div className="border-glass h-32 w-32 select-none rounded-4xl p-2">
+      <div className="border-glass bg-glass h-full w-full rounded-3xl">
+        <div className="w-full">
+          <AspectRatio
+            ratio={1 / 1}
+            className="flex items-center justify-center"
+          >
+            <Image
+              src={`/assets/supports/${theme}/${logoFilename}`}
+              alt={`${name}'s Logo`}
+              width={64}
+              height={64}
+              priority
+              className={cn({
+                "hidden dark:block": theme === "dark",
+                "dark:hidden block": theme !== "dark",
+              })}
+            />
+          </AspectRatio>
+        </div>
+      </div>
     </div>
   );
 };
@@ -85,7 +92,7 @@ const _Marquee = ({ tools, className, ...props }: _MarqueeProps) => {
   );
 };
 
-export const SectionSupported = () => (
+export const SectionSupports = () => (
   <Section>
     <Heading direction="center">
       <HeadingTitle>Plays well with others</HeadingTitle>
@@ -95,7 +102,6 @@ export const SectionSupported = () => (
       </HeadingSubtext>
     </Heading>
     <_Marquee
-      className="mx-auto max-w-3xl"
       tools={[
         "jest",
         "nextjs",
