@@ -6,8 +6,8 @@ import { SectionSupports } from "@/components/sections/section-supports";
 const HomePage = () => (
   <>
     <SectionHero />
-    <SectionFeatures />
     <SectionSupports />
+    <SectionFeatures />
     <SectionCLI />
   </>
 );

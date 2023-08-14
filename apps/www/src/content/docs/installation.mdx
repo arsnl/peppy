@@ -1,6 +1,197 @@
 ---
-title: Installation
-description: How to install Peppy on your app.
+title: Manual installation
+description: How to install Peppy on your project.
 ---
 
-## Todo
+If you're feeling adventurous and want to install Peppy manually, we're not here to stop you — we love a good challenge!
+
+Just follow these steps and you'll be one step closer to configuration greatness.
+
+Ready, set, go!
+
+<Steps>
+
+### Install dependencies
+
+Before we can start this party, we need to get our dependencies in order. Don't worry, it's not as boring as it sounds — just run this command and let the magic happen.
+
+```bash
+npm install --save-dev eslint-config-peppy prettier eslint
+```
+
+### Setup ESLint
+
+If you haven't already joined the cool kids club with an ESLint configuration file, it's time to get on board. Just create a `.eslintrc.js` file in your project's root directory and you'll be well on your way to code perfection.
+
+Don't forget to add some sweet [Peppy configurations](/docs/configurations) to the extends array to get things moving!
+
+<Tabs defaultValue="ts">
+  <TabsList>
+    <TabsTrigger value="ts">TypeScript</TabsTrigger>
+    <TabsTrigger value="js">JavaScript</TabsTrigger>
+  </TabsList>
+  <TabsContent value="ts">
+  ```js title=".eslintrc.js"
+  module.exports = {
+    extends: ["peppy"],
+    parserOptions: { tsconfigRootDir: __dirname, project: "./tsconfig.json" },
+  };
+  ```
+  </TabsContent>
+  <TabsContent value="js">
+  ```js title=".eslintrc.js"
+  module.exports = {
+    extends: ["peppy"],
+  };
+  ```
+  </TabsContent>
+</Tabs>
+
+### Add scripts
+
+Don't be shy — give your `package.json` some love by adding these awesome scripts to lint, format, fix and even typecheck your project with ease. Your code will thank you for it!
+
+<Tabs defaultValue="ts">
+  <TabsList>
+    <TabsTrigger value="ts">TypeScript</TabsTrigger>
+    <TabsTrigger value="js">JavaScript</TabsTrigger>
+  </TabsList>
+  <TabsContent value="ts">
+  ```jsonc title="package.json"
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "type": "tsc --noEmit",
+    "check": "npm lint && npm format && npm type",
+    "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
+  },
+  ```
+  </TabsContent>
+  <TabsContent value="js">
+  ```json title="package.json"
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "check": "npm lint && npm format",
+    "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
+  },
+  ```
+  </TabsContent>
+</Tabs>
+
+### Add .editorconfig file
+
+If you're looking to take your formatting game to the next level, it's time to bring in the big guns — EditorConfig and Prettier. They're like Batman and Robin, but for your code.
+
+Use them together to enforce all the formatting rules, even the files that Prettier can't handle on its own.
+
+We've even included a pre-configured `.editorconfig` file that's just waiting for you to copy and paste it into your project. What are you waiting for? Let's get this formatting party started!
+
+{/* START snippet-editorconfig */}
+
+```toml title=".editorconfig"
+# Configuration to use with Prettier.
+# Source: https://prettier.io/docs/en/configuration.html#editorconfig
+
+root = true
+
+[*]
+charset = utf-8
+insert_final_newline = true
+end_of_line = lf
+indent_style = space
+indent_size = 2
+max_line_length = 80
+```
+
+{/* END snippet-editorconfig */}
+
+### Set your editor
+
+It's time to set your editor so your code validation and formatting runs smoother than a buttery croissant.
+
+<Tabs defaultValue="vscode">
+  <TabsList>
+    <TabsTrigger value="vscode">VS Code</TabsTrigger>
+    <TabsTrigger value="sublime">Sublime Text</TabsTrigger>
+    <TabsTrigger value="atom">Atom</TabsTrigger>
+    <TabsTrigger value="webstorm">WebStorm</TabsTrigger>
+  </TabsList>
+  <TabsContent value="vscode">
+
+    <Steps>
+
+      <Step>Install extensions</Step>
+
+      Install the following VS Code extensions
+
+      - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+      - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+      - [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+
+      <Step>Add settings.json</Step>
+
+      At the root of your project, create a folder named `.vscode` and put a `settings.json`
+      file inside of it then put the settings below inside of this file.
+
+      {/* START snippet-vscode-settings */}
+
+      ```jsonc title=".vscode/settings.json"
+      {
+        // Format a file on save.
+        "editor.formatOnSave": true,
+        // Defines a default formatter which takes precedence over all other formatter settings.
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // Code action kinds to be run on save.
+        "editor.codeActionsOnSave": {
+          // Controls whether auto fix action should be run on file save.
+          "source.fixAll": true
+        },
+        // Controls auto save of editors that have unsaved changes.
+        //  - onFocusChange: An editor with changes is automatically saved when the editor loses focus.
+        "files.autoSave": "onFocusChange"
+      }
+      ```
+
+      {/* END snippet-vscode-settings */}
+
+      <Step>Add extensions.json</Step>
+
+      To help other developers working on your project to install the correct VS Code extensions,
+      add an `extensions.json` file inside of the `.vscode` folder and put the settings below inside of this file.
+
+      {/* START snippet-vscode-extensions */}
+
+      ```jsonc title=".vscode/extensions.json"
+      {
+        // List of extensions which should be recommended for users of this workspace.
+        "recommendations": [
+          // VS Code ESLint extension
+          "dbaeumer.vscode-eslint",
+          // Prettier Formatter for Visual Studio Code
+          "esbenp.prettier-vscode",
+          // EditorConfig for VS Code
+          "editorconfig.editorconfig"
+        ]
+      }
+      ```
+
+      {/* END snippet-vscode-extensions */}
+
+    </Steps>
+
+  </TabsContent>
+  <TabsContent value="sublime">
+    <Todo />
+  </TabsContent>
+    <TabsContent value="atom">
+    <Todo />
+  </TabsContent>
+    <TabsContent value="webstorm">
+    <Todo />
+  </TabsContent>
+</Tabs>
+
+</Steps>
+
+Congratulations, you're officially a configuration wizard! 🧙‍♂️ It's time to sit back, relax, and let your code take center stage. We'll be here in case you need any more magic tricks up your sleeve. Happy coding!

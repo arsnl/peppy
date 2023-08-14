@@ -3,7 +3,6 @@
 import * as React from "react";
 import {
   CircleIcon,
-  FileIcon,
   LaptopIcon,
   MoonIcon,
   SunIcon,
@@ -20,7 +19,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { docsConfig } from "@/config/docs";
+import { navConfig } from "@/config/nav";
 import { cn } from "@/lib/utils";
 import type { DialogProps } from "@radix-ui/react-alert-dialog";
 
@@ -66,25 +65,9 @@ export const CommandMenu = ({ ...props }: DialogProps) => {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Links">
-            {docsConfig.mainNav
-              .filter((navitem) => !navitem.external)
-              .map((navItem) => (
-                <CommandItem
-                  key={navItem.href}
-                  value={navItem.title}
-                  onSelect={() => {
-                    runCommand(() => router.push(navItem.href as string));
-                  }}
-                >
-                  <FileIcon className="mr-2 h-4 w-4" />
-                  {navItem.title}
-                </CommandItem>
-              ))}
-          </CommandGroup>
-          {docsConfig.sidebarNav.map((group) => (
+          {navConfig.sidebarNav.map((group) => (
             <CommandGroup key={group.title} heading={group.title}>
-              {group.items.map((navItem) => (
+              {group.items?.map((navItem) => (
                 <CommandItem
                   key={navItem.href}
                   value={navItem.title}

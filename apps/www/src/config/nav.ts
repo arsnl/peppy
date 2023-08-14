@@ -1,37 +1,21 @@
-import type { MainNavItem, SidebarNavItem } from "@/types/nav";
+import type { NavItem } from "@/types/nav";
 
-interface DocsConfig {
-  mainNav: MainNavItem[];
-  sidebarNav: SidebarNavItem[];
+interface NavConfig {
+  sidebarNav: NavItem[];
 }
 
-export const docsConfig: DocsConfig = {
-  mainNav: [
-    {
-      title: "Documentation",
-      href: "/docs",
-    },
-    {
-      title: "Configurations",
-      href: "/docs/configurations",
-    },
-    {
-      title: "GitHub",
-      href: "https://github.com/arsnl/peppy",
-      external: true,
-    },
-  ],
+export const navConfig: NavConfig = {
   sidebarNav: [
     {
       title: "Getting Started",
       items: [
         {
-          title: "Introduction",
+          title: "Quickstart",
           href: "/docs",
           items: [],
         },
         {
-          title: "Installation",
+          title: "Manual installation",
           href: "/docs/installation",
           items: [],
         },
@@ -40,24 +24,19 @@ export const docsConfig: DocsConfig = {
           href: "/docs/cli",
           items: [],
         },
-        {
-          title: "Changelog",
-          href: "/docs/changelog",
-          items: [],
-        },
-        {
-          title: "About",
-          href: "/docs/about",
-          items: [],
-        },
       ],
     },
     {
       title: "Configurations",
       items: [
         {
-          title: "Base",
+          title: "Overview",
           href: "/docs/configurations",
+          items: [],
+        },
+        {
+          title: "Base",
+          href: "/docs/configurations/base",
           items: [],
         },
         {
@@ -83,6 +62,26 @@ export const docsConfig: DocsConfig = {
         {
           title: "Prettier",
           href: "/docs/configurations/prettier",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Reference",
+      items: [
+        {
+          title: "Versioning",
+          href: "/docs/versioning",
+          items: [],
+        },
+        {
+          title: "Changelog",
+          href: "/docs/changelog",
+          items: [],
+        },
+        {
+          title: "About",
+          href: "/docs/about",
           items: [],
         },
       ],

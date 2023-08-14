@@ -1,10 +1,10 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { docsConfig } from "@/config/docs";
+import { navConfig } from "@/config/nav";
 import { cn } from "@/lib/utils";
 import type { Doc } from "contentlayer/generated";
-import type { NavItem, NavItemWithChildren } from "@/types/nav";
+import type { NavItem } from "@/types/nav";
 
 interface DocsPagerProps {
   doc: Doc;
@@ -42,7 +42,7 @@ export const DocsPager = ({ doc }: DocsPagerProps) => {
 };
 
 export function getPagerForDoc(doc: Doc) {
-  const flattenedLinks = [null, ...flatten(docsConfig.sidebarNav), null];
+  const flattenedLinks = [null, ...flatten(navConfig.sidebarNav), null];
   const activeIndex = flattenedLinks.findIndex(
     (link) => doc.slug === link?.href,
   );
@@ -57,12 +57,12 @@ export function getPagerForDoc(doc: Doc) {
   };
 }
 
-export function flatten(links: NavItemWithChildren[]): NavItem[] {
+export function flatten(links: NavItem[]): NavItem[] {
   return links
     .reduce<NavItem[]>(
       (flat, link) =>
         flat.concat(link.items?.length ? flatten(link.items) : link),
       [],
     )
-    .filter((link) => !link?.disabled);
+    .filter((link) => !link?.disabled && !link?.external);
 }

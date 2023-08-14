@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import type { SidebarNavItem } from "@/types/nav";
+import type { NavItem } from "@/types/nav";
 
 export interface DocsSidebarNavProps {
-  items: SidebarNavItem[];
+  items: NavItem[];
 }
 
 export const DocsSidebarNav = ({ items }: DocsSidebarNavProps) => {
@@ -30,7 +30,7 @@ export const DocsSidebarNav = ({ items }: DocsSidebarNavProps) => {
 };
 
 interface DocsSidebarNavItemsProps {
-  items: SidebarNavItem[];
+  items: NavItem[];
   pathname: string | null;
 }
 
@@ -57,11 +57,6 @@ export const DocsSidebarNavItems = ({
             rel={item.external ? "noreferrer" : ""}
           >
             {item.title}
-            {item.label && (
-              <span className="ml-2 rounded-md bg-[#adfa1d] px-1.5 py-0.5 text-xs leading-none text-[#000000] no-underline group-hover:no-underline">
-                {item.label}
-              </span>
-            )}
           </Link>
         ) : (
           <span
@@ -73,11 +68,6 @@ export const DocsSidebarNavItems = ({
             )}
           >
             {item.title}
-            {item.label && (
-              <span className="ml-2 rounded-md bg-muted px-1.5 py-0.5 text-xs leading-none text-muted-foreground no-underline group-hover:no-underline">
-                {item.label}
-              </span>
-            )}
           </span>
         ),
       )}
