@@ -40,7 +40,6 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
-    url: siteConfig.url,
     locale: "en_US",
     title: siteConfig.name,
     description: siteConfig.description,
@@ -90,7 +89,7 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
   },
-  manifest: `${siteConfig.url}/manifest.webmanifest`,
+  manifest: `/manifest.webmanifest`,
 };
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
