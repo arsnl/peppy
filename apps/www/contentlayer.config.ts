@@ -1,65 +1,64 @@
 /* eslint-disable no-param-reassign */
+import { type MDXOptions } from "contentlayer/core";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import path from "node:path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import { codeImport } from "remark-code-import";
 import remarkGfm from "remark-gfm";
-import { getHighlighter, loadTheme } from "shiki";
 import { visit } from "unist-util-visit";
+import type { ComputedFields } from "contentlayer/source-files";
 
-function rehypeNpmCommand() {
-  return (tree) => {
-    visit(tree, (node) => {
-      if (node.type !== "element" || node?.tagName !== "pre") {
-        return;
-      }
+type Pluggable = Required<MDXOptions>["rehypePlugins"][0];
 
-      // npm install.
-      if (node.properties?.__rawString__?.startsWith("npm install")) {
-        const npmCommand = node.properties?.__rawString__;
-        node.properties.__npmCommand__ = npmCommand;
-        node.properties.__yarnCommand__ = npmCommand.replace(
-          "npm install",
-          "yarn add",
-        );
-        node.properties.__pnpmCommand__ = npmCommand.replace(
-          "npm install",
-          "pnpm add",
-        );
-      }
+const rehypeNpmCommand: Pluggable = () => (tree) => {
+  visit(tree, (node) => {
+    if (node.type !== "element" || node?.tagName !== "pre") {
+      return;
+    }
 
-      // npx create.
-      if (node.properties?.__rawString__?.startsWith("npx create-")) {
-        const npmCommand = node.properties?.__rawString__;
-        node.properties.__npmCommand__ = npmCommand;
-        node.properties.__yarnCommand__ = npmCommand.replace(
-          "npx create-",
-          "yarn create ",
-        );
-        node.properties.__pnpmCommand__ = npmCommand.replace(
-          "npx create-",
-          "pnpm create ",
-        );
-      }
+    // npm install.
+    if (node.properties?.__rawString__?.startsWith("npm install")) {
+      const npmCommand = node.properties?.__rawString__;
+      node.properties.__npmCommand__ = npmCommand;
+      node.properties.__yarnCommand__ = npmCommand.replace(
+        "npm install",
+        "yarn add",
+      );
+      node.properties.__pnpmCommand__ = npmCommand.replace(
+        "npm install",
+        "pnpm add",
+      );
+    }
 
-      // npx.
-      if (
-        node.properties?.__rawString__?.startsWith("npx") &&
-        !node.properties?.__rawString__?.startsWith("npx create-")
-      ) {
-        const npmCommand = node.properties?.__rawString__;
-        node.properties.__npmCommand__ = npmCommand;
-        node.properties.__yarnCommand__ = npmCommand;
-        node.properties.__pnpmCommand__ = npmCommand.replace("npx", "pnpm dlx");
-      }
-    });
-  };
-}
+    // npx create.
+    if (node.properties?.__rawString__?.startsWith("npx create-")) {
+      const npmCommand = node.properties?.__rawString__;
+      node.properties.__npmCommand__ = npmCommand;
+      node.properties.__yarnCommand__ = npmCommand.replace(
+        "npx create-",
+        "yarn create ",
+      );
+      node.properties.__pnpmCommand__ = npmCommand.replace(
+        "npx create-",
+        "pnpm create ",
+      );
+    }
 
-/** @type {import('contentlayer/source-files').ComputedFields} */
-const computedFields = {
+    // npx.
+    if (
+      node.properties?.__rawString__?.startsWith("npx") &&
+      !node.properties?.__rawString__?.startsWith("npx create-")
+    ) {
+      const npmCommand = node.properties?.__rawString__;
+      node.properties.__npmCommand__ = npmCommand;
+      node.properties.__yarnCommand__ = npmCommand;
+      node.properties.__pnpmCommand__ = npmCommand.replace("npx", "pnpm dlx");
+    }
+  });
+};
+
+const computedFields: ComputedFields = {
   slug: {
     type: "string",
     resolve: (doc) => `/${doc._raw.flattenedPath}`,
@@ -135,26 +134,14 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          getHighlighter: async () => {
-            const theme = await loadTheme(
-              path.join(process.cwd(), "/src/lib/themes/dark.json"),
-            );
-            const result = await getHighlighter({ theme });
-
-            return result;
-          },
-          onVisitLine(node) {
+          theme: "css-variables",
+          keepBackground: false,
+          onVisitLine(node: any) {
             // Prevent lines from collapsing in `display: grid` mode, and allow empty
             // lines to be copy/pasted
             if (node.children.length === 0) {
               node.children = [{ type: "text", value: " " }];
             }
-          },
-          onVisitHighlightedLine(node) {
-            node.properties.className.push("line--highlighted");
-          },
-          onVisitHighlightedWord(node) {
-            node.properties.className = ["word--highlighted"];
           },
         },
       ],

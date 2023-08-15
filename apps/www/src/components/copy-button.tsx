@@ -47,10 +47,7 @@ export const CopyButton = ({
     <Button
       size="icon"
       variant="ghost"
-      className={cn(
-        "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
-        className,
-      )}
+      className={cn("relative z-10 h-6 w-6 text-foreground", className)}
       onClick={() => {
         copyToClipboardWithMeta(
           value,
@@ -107,10 +104,7 @@ export const CopyWithClassNames = ({
         <Button
           size="icon"
           variant="ghost"
-          className={cn(
-            "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
-            className,
-          )}
+          className={cn("relative z-10 h-6 w-6 text-foreground", className)}
         >
           {hasCopied ? (
             <CheckIcon className="h-3 w-3" />
