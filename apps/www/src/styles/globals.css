@@ -35,9 +35,9 @@
 
     --radius: 0.5rem;
 
-    --brand-magenta: 312 100% 50%;
-    --brand-yellow: 60 100% 50%;
-    --brand-green: 83 100% 59%;
+    --brand-red: 335 100% 60%;
+    --brand-magenta: 310 100% 60%;
+    --brand-orange: 40 100% 60%;
   }
 
   .dark {
@@ -95,12 +95,12 @@
     content: counter(step);
   }
 
-  .brand-gradient {
-    @apply bg-gradient-to-r from-brand-magenta from-0% via-brand-yellow via-70% to-brand-green to-100%;
+  .bg-gradient-brand {
+    @apply bg-gradient-to-r from-brand-red from-5% via-brand-magenta via-20% to-brand-orange to-85%;
   }
 
-  .text-brand-gradient {
-    @apply brand-gradient bg-clip-text text-transparent;
+  .text-gradient-brand {
+    @apply bg-gradient-brand bg-clip-text text-transparent;
   }
 
   .fade-to-r {
@@ -112,8 +112,10 @@
   }
 
   .border-glass {
-    @apply border-none relative before:pointer-events-none before:select-none before:absolute before:inset-0 before:rounded-[inherit] before:p-px before:bg-gradient-to-b before:from-foreground/10 before:to-foreground/5;
+    @apply border-none relative;
+
     &:before {
+      @apply content-[''] pointer-events-none select-none absolute inset-0 rounded-[inherit] p-px bg-gradient-to-b from-foreground/10 to-foreground/5;
       mask:
         linear-gradient(theme(colors.background), theme(colors.background))
           content-box content-box,
@@ -123,7 +125,24 @@
   }
 
   .bg-glass {
-    @apply bg-gradient-to-b from-foreground/0 to-foreground/1;
+    @apply bg-gradient-to-b from-foreground/0 to-foreground/1 bg-background/95 backdrop-blur;
+  }
+
+  .border-gradient {
+    @apply relative bg-clip-border bg-background border-transparent border-[1px];
+
+    &:before {
+      @apply -z-10;
+    }
+
+    &:before,
+    &:after {
+      @apply content-[''] bg-gradient-brand rounded-[inherit] inset-0 absolute -m-0.5;
+    }
+
+    &:after {
+      @apply blur-sm -z-20;
+    }
   }
 }
 

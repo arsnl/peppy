@@ -1,4 +1,5 @@
 const { fontFamily } = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /* eslint-disable global-require */
 /** @type {import('tailwindcss').Config} */
@@ -50,9 +51,9 @@ module.exports = {
         },
         brand: {
           DEFAULT: "hsl(var(--brand-magenta))",
+          red: "hsl(var(--brand-red))",
           magenta: "hsl(var(--brand-magenta))",
-          yellow: "hsl(var(--brand-yellow))",
-          green: "hsl(var(--brand-green))",
+          orange: "hsl(var(--brand-orange))",
         },
       },
       opacity: {
@@ -98,5 +99,13 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    plugin(({ addVariant }) => {
+      addVariant(
+        "supports-backdrop-blur",
+        "@supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px)))",
+      );
+    }),
+  ],
 };

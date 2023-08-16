@@ -78,7 +78,7 @@ export const SectionFeatures = (props: SectionFeaturesProps) => (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {features.map(({ id, title, description, Icon }) => (
         <div key={id} className="flex flex-col">
-          <div className="border-glass relative z-10 -mb-12 h-24 w-24 shrink-0 self-center rounded-4xl bg-background p-2">
+          <div className="border-gradient relative z-10 -mb-12 h-24 w-24 shrink-0 self-center rounded-4xl p-2">
             <div className="border-glass bg-glass flex h-full w-full items-center justify-center rounded-3xl">
               <Icon className="h-8 w-8" />
             </div>

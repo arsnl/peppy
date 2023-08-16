@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
+import { TerminalIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -219,7 +220,7 @@ export const CopyCodeButton = ({
     <Button
       variant="outline"
       className={cn(
-        "relative flex h-auto cursor-pointer flex-row items-center gap-2 rounded-md border p-3 px-4 text-base transition-colors duration-300 md:text-lg lg:p-4 lg:px-5 lg:text-xl",
+        "relative flex h-auto cursor-pointer flex-row items-center gap-4 rounded-md border p-3 px-4 text-base transition-colors duration-300 hover:bg-background/90 md:text-lg lg:p-4 lg:px-5 lg:text-xl",
         className,
       )}
       onClick={() => {
@@ -238,6 +239,7 @@ export const CopyCodeButton = ({
       }}
       {...props}
     >
+      <TerminalIcon className="h-[1em] w-[1em]" />
       <code>{value}</code>
       {hasCopied ? (
         <CheckIcon className="h-[1em] w-[1em]" />

@@ -43,7 +43,10 @@ export const SectionHero = () => (
     </div>
 
     <div className="flex flex-col items-center pb-8 md:pb-10">
-      <CopyCodeButton value="npx peppy@latest init" />
+      <CopyCodeButton
+        className="border-gradient"
+        value="npx peppy@latest init"
+      />
     </div>
   </Section>
 );

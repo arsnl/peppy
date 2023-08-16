@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 export const SiteHeader = () => (
-  <header className="supports-backdrop-blur:bg-background/60 sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
+  <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-backdrop-blur:bg-background/60">
     <div className="container flex h-14 items-center">
       <MainNav />
       <MobileNav />
