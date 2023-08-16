@@ -14,5 +14,8 @@
     "apps/www",
     "packages/eslint-config-peppy",
     "packages/peppy"
-  ]
+  ],
+  // Prefers a non-relative import based on the baseUrl or paths configured in your jsconfig.json / tsconfig.json
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative"
 }
