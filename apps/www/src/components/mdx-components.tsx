@@ -1,16 +1,14 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 
-"use client";
-
 import * as React from "react";
 import { TerminalIcon } from "lucide-react";
 import { type MDXComponents } from "mdx/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useMDXComponent } from "next-contentlayer/hooks";
-import { Callout } from "@/components/callout";
+import { getMDXComponent } from "next-contentlayer/hooks";
 import { CodeBlockWrapper } from "@/components/code-block-wrapper";
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button";
+import { Rules } from "@/components/rules";
 import {
   Accordion,
   AccordionContent,
@@ -19,6 +17,7 @@ import {
 } from "@/components/ui/accordion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import type { Event } from "@/lib/events";
@@ -209,7 +208,6 @@ const components = {
   ),
   // eslint-disable-next-line jsx-a11y/alt-text
   Image: (props) => <Image {...props} />,
-  Callout,
   AspectRatio: (props) => <AspectRatio {...props} />,
   CodeBlockWrapper: ({ ...props }) => (
     <CodeBlockWrapper className="rounded-md border" {...props} />
@@ -299,6 +297,8 @@ const components = {
       </AlertDescription>
     </Alert>
   ),
+  Badge: (props) => <Badge {...props} />,
+  Rules: (props) => <Rules {...props} />,
 } satisfies MDXComponents;
 
 interface MdxProps {
@@ -306,7 +306,7 @@ interface MdxProps {
 }
 
 export const Mdx = ({ code }: MdxProps) => {
-  const Component = useMDXComponent(code);
+  const Component = getMDXComponent(code);
 
   return (
     <div className="mdx">

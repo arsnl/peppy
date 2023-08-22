@@ -3,4 +3,24 @@ title: Prettier
 description: Prettier ESLint configuration of Peppy.
 ---
 
-<Todo />
+## Usage
+
+Optional configuration that turns off all rules that are unnecessary or might conflict with [Prettier](https://prettier.io/).
+
+All the configurations provided by Peppy already are safe to use with Prettier without any conflict. Only use this configuration if you use ESLint configurations other than the ones provided by Peppy. If it's the case, place this configuration last in the list of extends.
+
+```js
+module.exports = {
+  extends: ["peppy", "some-config", "peppy/prettier"],
+};
+```
+
+## Dependencies
+
+The following dependencies are included in this configuration.
+
+- [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier)
+
+## Rules
+
+<Rules configuration="prettier" />
