@@ -10,11 +10,11 @@ import {
   type ESLintConfigName,
   type Rule,
   type Rules,
-  type UsedByEntry,
-} from "@/types/rules";
+  type RuleUsedByEntry,
+} from "@/types/eslint";
 
 export type RuleCardOptions = Pick<Rule, "docsUrl" | "description"> &
-  UsedByEntry & {
+  RuleUsedByEntry & {
     ruleName: string;
     configName: ESLintConfigName;
     usedBy: ESLintConfigName[];

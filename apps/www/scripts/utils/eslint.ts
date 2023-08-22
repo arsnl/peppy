@@ -1,16 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { ESLint, type Linter } from "eslint";
 import stringify from "fast-json-stable-stringify";
-import { type ESLintConfigName } from "@/types/rules";
-
-const ESLINT_CONFIG_NAMES = [
-  "base",
-  "jest",
-  "next",
-  "prettier",
-  "react",
-  "tailwindcss",
-] satisfies ESLintConfigName[];
+import { eslintConfigNamesConfig } from "@/config/eslint";
+import { type ESLintConfigName } from "@/types/eslint";
 
 export const getESLintRuleDocsUrl = (ruleName: string) =>
   !ruleName.includes("/")
@@ -196,7 +188,7 @@ export const getESLintConfig = async ({
 };
 
 export const getESLintConfigs = async () => {
-  const configsProps = ESLINT_CONFIG_NAMES.reduce<GetESLintConfigProps[]>(
+  const configsProps = eslintConfigNamesConfig.reduce<GetESLintConfigProps[]>(
     (acc, configName) => [
       ...acc,
       { configName, ts: false },

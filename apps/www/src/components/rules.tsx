@@ -1,9 +1,9 @@
 import * as React from "react";
 import { RuleCard, type RuleCardOptions } from "@/components/rule-card";
 import { Input } from "@/components/ui/input";
-import { rules } from "@/config/rules";
+import { rules } from "@/generated/eslint";
 import { cn } from "@/lib/utils";
-import type { ESLintConfigName } from "@/types/rules";
+import type { ESLintConfigName } from "@/types/eslint";
 
 export type RuleProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
