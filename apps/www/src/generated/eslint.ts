@@ -408,7 +408,7 @@ export const rules: Rules = {
     description:
       "Disallow or enforce spaces inside of blocks after opening block and before closing block",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/block-spacing.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/block-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -426,7 +426,7 @@ export const rules: Rules = {
   "@typescript-eslint/brace-style": {
     description: "Enforce consistent brace style for blocks",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/brace-style.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/brace-style.md",
     usedBy: {
       prettier: {
         versions: [
@@ -444,7 +444,7 @@ export const rules: Rules = {
   "@typescript-eslint/comma-dangle": {
     description: "Require or disallow trailing commas",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-dangle.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/comma-dangle.md",
     usedBy: {
       prettier: {
         versions: [
@@ -462,7 +462,7 @@ export const rules: Rules = {
   "@typescript-eslint/comma-spacing": {
     description: "Enforce consistent spacing before and after commas",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/comma-spacing.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/comma-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -480,7 +480,7 @@ export const rules: Rules = {
   "@typescript-eslint/consistent-type-exports": {
     description: "Enforces consistent usage of type exports",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-exports.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/consistent-type-exports.md",
     usedBy: {
       base: {
         versions: [
@@ -495,7 +495,7 @@ export const rules: Rules = {
   "@typescript-eslint/consistent-type-imports": {
     description: "Enforces consistent usage of type imports",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/consistent-type-imports.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/consistent-type-imports.md",
     usedBy: {
       base: {
         versions: [
@@ -515,7 +515,7 @@ export const rules: Rules = {
   "@typescript-eslint/default-param-last": {
     description: "Enforce default parameters to be last",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/default-param-last.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/default-param-last.md",
     usedBy: {
       base: {
         versions: [
@@ -530,7 +530,7 @@ export const rules: Rules = {
   "@typescript-eslint/dot-notation": {
     description: "Enforce dot notation whenever possible",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/dot-notation.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/dot-notation.md",
     usedBy: {
       base: {
         versions: [
@@ -552,7 +552,7 @@ export const rules: Rules = {
     description:
       "Require or disallow spacing between function identifiers and their invocations",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/func-call-spacing.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/func-call-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -570,7 +570,7 @@ export const rules: Rules = {
   "@typescript-eslint/indent": {
     description: "Enforce consistent indentation",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/indent.md",
     usedBy: {
       prettier: {
         versions: [
@@ -589,7 +589,7 @@ export const rules: Rules = {
     description:
       "Enforce consistent spacing between property names and type annotations in types and interfaces",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/key-spacing.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/key-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -607,7 +607,7 @@ export const rules: Rules = {
   "@typescript-eslint/keyword-spacing": {
     description: "Enforce consistent spacing before and after keywords",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/keyword-spacing.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/keyword-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -625,7 +625,7 @@ export const rules: Rules = {
   "@typescript-eslint/lines-around-comment": {
     description: "Require empty lines around comments",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-around-comment.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/lines-around-comment.md",
     usedBy: {
       prettier: {
         versions: [
@@ -643,7 +643,7 @@ export const rules: Rules = {
   "@typescript-eslint/lines-between-class-members": {
     description: "Require or disallow an empty line between class members",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/lines-between-class-members.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/lines-between-class-members.md",
     usedBy: {
       base: {
         versions: [
@@ -665,7 +665,7 @@ export const rules: Rules = {
     description:
       "Require a specific member delimiter style for interfaces and type literals",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/member-delimiter-style.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/member-delimiter-style.md",
     usedBy: {
       prettier: {
         versions: [
@@ -683,7 +683,7 @@ export const rules: Rules = {
   "@typescript-eslint/naming-convention": {
     description: "Enforces naming conventions for everything across a codebase",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/naming-convention.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/naming-convention.md",
     usedBy: {
       base: {
         versions: [
@@ -704,7 +704,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-array-constructor": {
     description: "Disallow `Array` constructors",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-array-constructor.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-array-constructor.md",
     usedBy: {
       base: {
         versions: [
@@ -719,7 +719,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-dupe-class-members": {
     description: "Disallow duplicate class members",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-dupe-class-members.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-dupe-class-members.md",
     usedBy: {
       base: {
         versions: [
@@ -734,7 +734,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-empty-function": {
     description: "Disallow empty functions",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-empty-function.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-empty-function.md",
     usedBy: {
       base: {
         versions: [
@@ -755,7 +755,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-extra-parens": {
     description: "Disallow unnecessary parentheses",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-parens.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-extra-parens.md",
     usedBy: {
       prettier: {
         versions: [
@@ -773,7 +773,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-extra-semi": {
     description: "Disallow unnecessary semicolons",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-extra-semi.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-extra-semi.md",
     usedBy: {
       prettier: {
         versions: [
@@ -791,7 +791,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-implied-eval": {
     description: "Disallow the use of `eval()`",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-implied-eval.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-implied-eval.md",
     usedBy: {
       base: {
         versions: [
@@ -807,7 +807,7 @@ export const rules: Rules = {
     description:
       "Disallow function declarations that contain unsafe references inside loop statements",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loop-func.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-loop-func.md",
     usedBy: {
       base: {
         versions: [
@@ -822,7 +822,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-loss-of-precision": {
     description: "Disallow Number Literals That Lose Precision",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-loss-of-precision.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-loss-of-precision.md",
     usedBy: {
       base: {
         versions: [
@@ -837,7 +837,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-redeclare": {
     description: "Disallow variable redeclaration",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-redeclare.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-redeclare.md",
     usedBy: {
       base: {
         versions: [
@@ -858,7 +858,7 @@ export const rules: Rules = {
     description:
       "Disallow variable declarations from shadowing variables declared in the outer scope",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-shadow.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-shadow.md",
     usedBy: {
       base: {
         versions: [
@@ -873,7 +873,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-throw-literal": {
     description: "Disallow throwing literals as exceptions",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-throw-literal.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-throw-literal.md",
     usedBy: {
       base: {
         versions: [
@@ -888,7 +888,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-unused-expressions": {
     description: "Disallow unused expressions",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-expressions.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-unused-expressions.md",
     usedBy: {
       base: {
         versions: [
@@ -909,7 +909,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-unused-vars": {
     description: "Disallow unused variables",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-unused-vars.md",
     usedBy: {
       base: {
         versions: [
@@ -930,7 +930,7 @@ export const rules: Rules = {
   "@typescript-eslint/no-useless-constructor": {
     description: "Disallow unnecessary constructors",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-useless-constructor.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/no-useless-constructor.md",
     usedBy: {
       base: {
         versions: [
@@ -945,7 +945,7 @@ export const rules: Rules = {
   "@typescript-eslint/object-curly-spacing": {
     description: "Enforce consistent spacing inside braces",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/object-curly-spacing.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/object-curly-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -964,7 +964,7 @@ export const rules: Rules = {
     description:
       "Enforce the consistent use of either backticks, double, or single quotes",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/quotes.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/quotes.md",
     usedBy: {
       prettier: {
         versions: [
@@ -982,7 +982,7 @@ export const rules: Rules = {
   "@typescript-eslint/return-await": {
     description: "Disallow unnecessary `return await`",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/return-await.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/return-await.md",
     usedBy: {
       base: {
         versions: [
@@ -999,7 +999,7 @@ export const rules: Rules = {
   "@typescript-eslint/semi": {
     description: "Require or disallow semicolons instead of ASI",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/semi.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/semi.md",
     usedBy: {
       prettier: {
         versions: [
@@ -1017,7 +1017,7 @@ export const rules: Rules = {
   "@typescript-eslint/space-before-blocks": {
     description: "Enforce consistent spacing before blocks",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-blocks.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/space-before-blocks.md",
     usedBy: {
       prettier: {
         versions: [
@@ -1035,7 +1035,7 @@ export const rules: Rules = {
   "@typescript-eslint/space-before-function-paren": {
     description: "Enforce consistent spacing before function parenthesis",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-before-function-paren.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/space-before-function-paren.md",
     usedBy: {
       prettier: {
         versions: [
@@ -1053,7 +1053,7 @@ export const rules: Rules = {
   "@typescript-eslint/space-infix-ops": {
     description: "Require spacing around infix operators",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/space-infix-ops.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/space-infix-ops.md",
     usedBy: {
       prettier: {
         versions: [
@@ -1071,7 +1071,7 @@ export const rules: Rules = {
   "@typescript-eslint/type-annotation-spacing": {
     description: "Require consistent spacing around type annotations",
     docsUrl:
-      "https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/type-annotation-spacing.md",
+      "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/type-annotation-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -2073,7 +2073,7 @@ export const rules: Rules = {
   "import/export": {
     description: "Forbid any invalid exports, i.e. re-export of the same name",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/export.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/export.md",
     usedBy: {
       base: {
         versions: [
@@ -2092,7 +2092,7 @@ export const rules: Rules = {
     description:
       "Ensure consistent use of file extension within the import path",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/extensions.md",
     usedBy: {
       base: {
         versions: [
@@ -2118,7 +2118,7 @@ export const rules: Rules = {
   "import/first": {
     description: "Ensure all imports appear before other statements",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/first.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/first.md",
     usedBy: {
       base: {
         versions: [
@@ -2137,7 +2137,7 @@ export const rules: Rules = {
     description:
       "\tEnsure named imports correspond to a named export in the remote file",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/named.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/named.md",
     usedBy: {
       base: {
         versions: [
@@ -2155,7 +2155,7 @@ export const rules: Rules = {
   "import/newline-after-import": {
     description: "Enforce a newline after import statements",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/newline-after-import.md",
     usedBy: {
       base: {
         versions: [
@@ -2173,7 +2173,7 @@ export const rules: Rules = {
   "import/no-absolute-path": {
     description: "Forbid import of modules using absolute paths",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-absolute-path.md",
     usedBy: {
       base: {
         versions: [
@@ -2191,7 +2191,7 @@ export const rules: Rules = {
   "import/no-amd": {
     description: "Forbid AMD `require` and `define` calls",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-amd.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-amd.md",
     usedBy: {
       base: {
         versions: [
@@ -2210,7 +2210,7 @@ export const rules: Rules = {
     description:
       "Forbid a module from importing a module with a dependency path back to itself",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-cycle.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-cycle.md",
     usedBy: {
       base: {
         versions: [
@@ -2236,7 +2236,7 @@ export const rules: Rules = {
   "import/no-duplicates": {
     description: "Forbid repeated import of the same module in multiple places",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-duplicates.md",
     usedBy: {
       base: {
         versions: [
@@ -2254,7 +2254,7 @@ export const rules: Rules = {
   "import/no-dynamic-require": {
     description: "Forbid `require()` calls with expressions",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-dynamic-require.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-dynamic-require.md",
     usedBy: {
       base: {
         versions: [
@@ -2272,7 +2272,7 @@ export const rules: Rules = {
   "import/no-extraneous-dependencies": {
     description: "Forbid the use of extraneous packages",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-extraneous-dependencies.md",
     usedBy: {
       base: {
         versions: [
@@ -2298,7 +2298,7 @@ export const rules: Rules = {
   "import/no-import-module-exports": {
     description: "Forbid import statements with CommonJS module.exports",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-import-module-exports.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-import-module-exports.md",
     usedBy: {
       base: {
         versions: [
@@ -2322,7 +2322,7 @@ export const rules: Rules = {
   "import/no-mutable-exports": {
     description: "Forbid the use of mutable exports with `var` or `let`",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-mutable-exports.md",
     usedBy: {
       base: {
         versions: [
@@ -2340,7 +2340,7 @@ export const rules: Rules = {
   "import/no-named-as-default": {
     description: "Forbid use of exported name as identifier of default export",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-named-as-default.md",
     usedBy: {
       base: {
         versions: [
@@ -2358,7 +2358,7 @@ export const rules: Rules = {
   "import/no-named-as-default-member": {
     description: "Forbid use of exported name as property of default export",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-named-as-default-member.md",
     usedBy: {
       base: {
         versions: [
@@ -2376,7 +2376,7 @@ export const rules: Rules = {
   "import/no-named-default": {
     description: "Forbid named default exports",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-named-default.md",
     usedBy: {
       base: {
         versions: [
@@ -2394,7 +2394,7 @@ export const rules: Rules = {
   "import/no-relative-packages": {
     description: "Forbid importing packages through relative paths",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-relative-packages.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-relative-packages.md",
     usedBy: {
       base: {
         versions: [
@@ -2412,7 +2412,7 @@ export const rules: Rules = {
   "import/no-self-import": {
     description: "Forbid a module from importing itself",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-self-import.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-self-import.md",
     usedBy: {
       base: {
         versions: [
@@ -2430,7 +2430,7 @@ export const rules: Rules = {
   "import/no-unresolved": {
     description: "Ensure imports point to a file/module that can be resolved",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-unresolved.md",
     usedBy: {
       base: {
         versions: [
@@ -2457,7 +2457,7 @@ export const rules: Rules = {
     description:
       "Forbid unnecessary path segments in import and require statements",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-useless-path-segments.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-useless-path-segments.md",
     usedBy: {
       base: {
         versions: [
@@ -2481,7 +2481,7 @@ export const rules: Rules = {
   "import/no-webpack-loader-syntax": {
     description: "Forbid webpack loader syntax in imports",
     docsUrl:
-      "https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md",
+      "https://github.com/import-js/eslint-plugin-import/tree/main/docs/rules/no-webpack-loader-syntax.md",
     usedBy: {
       base: {
         versions: [
@@ -2533,7 +2533,7 @@ export const rules: Rules = {
   "jest/expect-expect": {
     description: "Enforce assertion to be made in a test body",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/expect-expect.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/expect-expect.md",
     usedBy: {
       jest: {
         versions: [
@@ -2551,7 +2551,7 @@ export const rules: Rules = {
   "jest/no-alias-methods": {
     description: "Disallow alias methods",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-alias-methods.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-alias-methods.md",
     usedBy: {
       jest: {
         versions: [
@@ -2569,7 +2569,7 @@ export const rules: Rules = {
   "jest/no-commented-out-tests": {
     description: "Disallow commented out tests",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-commented-out-tests.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-commented-out-tests.md",
     usedBy: {
       jest: {
         versions: [
@@ -2587,7 +2587,7 @@ export const rules: Rules = {
   "jest/no-conditional-expect": {
     description: "Disallow calling `expect` conditionally",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-conditional-expect.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-conditional-expect.md",
     usedBy: {
       jest: {
         versions: [
@@ -2605,7 +2605,7 @@ export const rules: Rules = {
   "jest/no-deprecated-functions": {
     description: "Disallow use of deprecated functions",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-deprecated-functions.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-deprecated-functions.md",
     usedBy: {
       jest: {
         versions: [
@@ -2623,7 +2623,7 @@ export const rules: Rules = {
   "jest/no-disabled-tests": {
     description: "Disallow disabled tests",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-disabled-tests.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-disabled-tests.md",
     usedBy: {
       jest: {
         versions: [
@@ -2641,7 +2641,7 @@ export const rules: Rules = {
   "jest/no-done-callback": {
     description: "Disallow using a callback in asynchronous tests and hooks",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-done-callback.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-done-callback.md",
     usedBy: {
       jest: {
         versions: [
@@ -2659,7 +2659,7 @@ export const rules: Rules = {
   "jest/no-export": {
     description: "Disallow using `exports` in files containing tests",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-export.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-export.md",
     usedBy: {
       jest: {
         versions: [
@@ -2677,7 +2677,7 @@ export const rules: Rules = {
   "jest/no-focused-tests": {
     description: "Disallow focused tests",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-focused-tests.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-focused-tests.md",
     usedBy: {
       jest: {
         versions: [
@@ -2695,7 +2695,7 @@ export const rules: Rules = {
   "jest/no-identical-title": {
     description: "Disallow identical titles",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-identical-title.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-identical-title.md",
     usedBy: {
       jest: {
         versions: [
@@ -2713,7 +2713,7 @@ export const rules: Rules = {
   "jest/no-interpolation-in-snapshots": {
     description: "Disallow string interpolation inside snapshots",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-interpolation-in-snapshots.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-interpolation-in-snapshots.md",
     usedBy: {
       jest: {
         versions: [
@@ -2731,7 +2731,7 @@ export const rules: Rules = {
   "jest/no-jasmine-globals": {
     description: "Disallow Jasmine globals",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-jasmine-globals.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-jasmine-globals.md",
     usedBy: {
       jest: {
         versions: [
@@ -2749,7 +2749,7 @@ export const rules: Rules = {
   "jest/no-mocks-import": {
     description: "Disallow manually importing from `__mocks__`",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-mocks-import.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-mocks-import.md",
     usedBy: {
       jest: {
         versions: [
@@ -2767,7 +2767,7 @@ export const rules: Rules = {
   "jest/no-standalone-expect": {
     description: "Disallow using `expect` outside of `it` or `test` blocks",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-standalone-expect.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-standalone-expect.md",
     usedBy: {
       jest: {
         versions: [
@@ -2785,7 +2785,7 @@ export const rules: Rules = {
   "jest/no-test-prefixes": {
     description: "Require using `.only` and `.skip` over `f` and `x`",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/no-test-prefixes.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-test-prefixes.md",
     usedBy: {
       jest: {
         versions: [
@@ -2803,7 +2803,7 @@ export const rules: Rules = {
   "jest/valid-describe-callback": {
     description: "Enforce valid `describe()` callback",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-describe-callback.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/valid-describe-callback.md",
     usedBy: {
       jest: {
         versions: [
@@ -2821,7 +2821,7 @@ export const rules: Rules = {
   "jest/valid-expect": {
     description: "Enforce valid `expect()` usage",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/valid-expect.md",
     usedBy: {
       jest: {
         versions: [
@@ -2840,7 +2840,7 @@ export const rules: Rules = {
     description:
       "Require promises that have expectations in their chain to be valid",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-expect-in-promise.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/valid-expect-in-promise.md",
     usedBy: {
       jest: {
         versions: [
@@ -2858,7 +2858,7 @@ export const rules: Rules = {
   "jest/valid-title": {
     description: "Enforce valid titles",
     docsUrl:
-      "https://github.com/jest-community/eslint-plugin-jest/blob/master/docs/rules/valid-title.md",
+      "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/valid-title.md",
     usedBy: {
       jest: {
         versions: [
@@ -2877,7 +2877,7 @@ export const rules: Rules = {
     description:
       "Enforce emojis are wrapped in `<span>` and provide screenreader access",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/accessible-emoji.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/accessible-emoji.md",
     usedBy: {
       react: {
         versions: [
@@ -2896,7 +2896,7 @@ export const rules: Rules = {
     description:
       "Enforce all elements that require alternative text have meaningful information to relay back to end user",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/alt-text.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/alt-text.md",
     usedBy: {
       next: {
         versions: [
@@ -2941,7 +2941,7 @@ export const rules: Rules = {
   "jsx-a11y/anchor-has-content": {
     description: "Enforce all anchors to contain accessible content",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-has-content.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/anchor-has-content.md",
     usedBy: {
       react: {
         versions: [
@@ -2965,7 +2965,7 @@ export const rules: Rules = {
   "jsx-a11y/anchor-is-valid": {
     description: "Enforce all anchors are valid, navigable elements",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/anchor-is-valid.md",
     usedBy: {
       next: {
         versions: [
@@ -3010,7 +3010,7 @@ export const rules: Rules = {
   "jsx-a11y/aria-activedescendant-has-tabindex": {
     description: "Enforce elements with aria-activedescendant are tabbable",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-activedescendant-has-tabindex.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-activedescendant-has-tabindex.md",
     usedBy: {
       react: {
         versions: [
@@ -3028,7 +3028,7 @@ export const rules: Rules = {
   "jsx-a11y/aria-props": {
     description: "Enforce all `aria-*` props are valid",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-props.md",
     usedBy: {
       react: {
         versions: [
@@ -3046,7 +3046,7 @@ export const rules: Rules = {
   "jsx-a11y/aria-proptypes": {
     description: "Enforce ARIA state and property values are valid",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-proptypes.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-proptypes.md",
     usedBy: {
       react: {
         versions: [
@@ -3065,7 +3065,7 @@ export const rules: Rules = {
     description:
       "Enforce that elements with ARIA roles must use a valid, non-abstract ARIA role",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-role.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-role.md",
     usedBy: {
       react: {
         versions: [
@@ -3090,7 +3090,7 @@ export const rules: Rules = {
     description:
       "Enforce that elements that do not support ARIA roles, states, and properties do not have those attributes",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/aria-unsupported-elements.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-unsupported-elements.md",
     usedBy: {
       react: {
         versions: [
@@ -3108,7 +3108,7 @@ export const rules: Rules = {
   "jsx-a11y/autocomplete-valid": {
     description: "Enforce that autocomplete attributes are used correctly",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/autocomplete-valid.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/autocomplete-valid.md",
     usedBy: {
       react: {
         versions: [
@@ -3133,7 +3133,7 @@ export const rules: Rules = {
     description:
       "Enforce a clickable non-interactive element has at least one keyboard event listener",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/click-events-have-key-events.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/click-events-have-key-events.md",
     usedBy: {
       react: {
         versions: [
@@ -3152,7 +3152,7 @@ export const rules: Rules = {
     description:
       "Enforce that a control (an interactive element) has a text label",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/control-has-associated-label.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/control-has-associated-label.md",
     usedBy: {
       react: {
         versions: [
@@ -3179,7 +3179,7 @@ export const rules: Rules = {
     description:
       "Enforce heading (`h1`, `h2`, etc) elements contain accessible content",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/heading-has-content.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/heading-has-content.md",
     usedBy: {
       react: {
         versions: [
@@ -3203,7 +3203,7 @@ export const rules: Rules = {
   "jsx-a11y/html-has-lang": {
     description: "Enforce `<html>` element has `lang` prop",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/html-has-lang.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/html-has-lang.md",
     usedBy: {
       react: {
         versions: [
@@ -3221,7 +3221,7 @@ export const rules: Rules = {
   "jsx-a11y/iframe-has-title": {
     description: "Enforce iframe elements have a title attribute",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/iframe-has-title.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/iframe-has-title.md",
     usedBy: {
       react: {
         versions: [
@@ -3240,7 +3240,7 @@ export const rules: Rules = {
     description:
       'Enforce `<img>` alt prop does not contain the word "image", "picture", or "photo"',
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/img-redundant-alt.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/img-redundant-alt.md",
     usedBy: {
       react: {
         versions: [
@@ -3259,7 +3259,7 @@ export const rules: Rules = {
     description:
       "Enforce that elements with interactive handlers like `onClick` must be focusable",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/interactive-supports-focus.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/interactive-supports-focus.md",
     usedBy: {
       react: {
         versions: [
@@ -3278,7 +3278,7 @@ export const rules: Rules = {
     description:
       "Enforce that a `label` tag has a text label and an associated control",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/label-has-associated-control.md",
     usedBy: {
       react: {
         versions: [
@@ -3304,7 +3304,7 @@ export const rules: Rules = {
   "jsx-a11y/label-has-for": {
     description: "Enforce that `<label>` elements have the `htmlFor` prop",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/label-has-for.md",
     usedBy: {
       react: {
         versions: [
@@ -3330,7 +3330,7 @@ export const rules: Rules = {
   "jsx-a11y/lang": {
     description: "Enforce lang attribute has a valid value",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/lang.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/lang.md",
     usedBy: {
       react: {
         versions: [
@@ -3349,7 +3349,7 @@ export const rules: Rules = {
     description:
       "Enforces that `<audio>` and `<video>` elements must have a `<track>` for captions",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/media-has-caption.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/media-has-caption.md",
     usedBy: {
       react: {
         versions: [
@@ -3374,7 +3374,7 @@ export const rules: Rules = {
     description:
       "Enforce that `onMouseOver`/`onMouseOut` are accompanied by `onFocus`/`onBlur` for keyboard-only users",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/mouse-events-have-key-events.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/mouse-events-have-key-events.md",
     usedBy: {
       react: {
         versions: [
@@ -3393,7 +3393,7 @@ export const rules: Rules = {
     description:
       "Enforce that the `accessKey` prop is not used on any element to avoid complications with keyboard commands used by a screenreader",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-access-key.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-access-key.md",
     usedBy: {
       react: {
         versions: [
@@ -3411,7 +3411,7 @@ export const rules: Rules = {
   "jsx-a11y/no-autofocus": {
     description: "Enforce autoFocus prop is not used",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-autofocus.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-autofocus.md",
     usedBy: {
       react: {
         versions: [
@@ -3435,7 +3435,7 @@ export const rules: Rules = {
   "jsx-a11y/no-distracting-elements": {
     description: "Enforce distracting elements are not used",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-distracting-elements.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-distracting-elements.md",
     usedBy: {
       react: {
         versions: [
@@ -3460,7 +3460,7 @@ export const rules: Rules = {
     description:
       "Enforce that interactive elements should not be assigned non-interactive roles",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-interactive-element-to-noninteractive-role.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-interactive-element-to-noninteractive-role.md",
     usedBy: {
       react: {
         versions: [
@@ -3485,7 +3485,7 @@ export const rules: Rules = {
     description:
       "Enforce that non-interactive elements should not be assigned mouse or keyboard event listeners",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-interactions.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-noninteractive-element-interactions.md",
     usedBy: {
       react: {
         versions: [
@@ -3512,7 +3512,7 @@ export const rules: Rules = {
     description:
       "Enforce that non-interactive elements should not be assigned interactive roles",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-element-to-interactive-role.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-noninteractive-element-to-interactive-role.md",
     usedBy: {
       react: {
         versions: [
@@ -3539,7 +3539,7 @@ export const rules: Rules = {
     description:
       "Enforce that `tabIndex` should only be declared on interactive elements",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-noninteractive-tabindex.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-noninteractive-tabindex.md",
     usedBy: {
       react: {
         versions: [
@@ -3564,7 +3564,7 @@ export const rules: Rules = {
     description:
       "Enforce usage of `onBlur` over `onChange` on select menus for accessibility",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-onchange.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-onchange.md",
     usedBy: {
       react: {
         versions: [
@@ -3583,7 +3583,7 @@ export const rules: Rules = {
     description:
       "Enforce explicit role property is not the same as implicit/default role property on element",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-redundant-roles.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-redundant-roles.md",
     usedBy: {
       react: {
         versions: [
@@ -3602,7 +3602,7 @@ export const rules: Rules = {
     description:
       "Enforce that non-interactive, visible elements (such as `<div>`) that have click handlers use the role attribute",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-static-element-interactions.md",
     usedBy: {
       react: {
         versions: [
@@ -3629,7 +3629,7 @@ export const rules: Rules = {
     description:
       "Enforce that elements with ARIA roles must have all required attributes for that role",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-has-required-aria-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/role-has-required-aria-props.md",
     usedBy: {
       react: {
         versions: [
@@ -3648,7 +3648,7 @@ export const rules: Rules = {
     description:
       "Enforce that elements with explicit or implicit roles defined contain only `aria-*` properties supported by that `role`",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/role-supports-aria-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/role-supports-aria-props.md",
     usedBy: {
       react: {
         versions: [
@@ -3666,7 +3666,7 @@ export const rules: Rules = {
   "jsx-a11y/scope": {
     description: "Enforce `scope` prop is only used on `<th>` elements",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/scope.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/scope.md",
     usedBy: {
       react: {
         versions: [
@@ -3684,7 +3684,7 @@ export const rules: Rules = {
   "jsx-a11y/tabindex-no-positive": {
     description: "Enforce `tabIndex` value is not greater than zero",
     docsUrl:
-      "https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/tabindex-no-positive.md",
+      "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/tabindex-no-positive.md",
     usedBy: {
       react: {
         versions: [
@@ -6696,7 +6696,8 @@ export const rules: Rules = {
   },
   "react-hooks/exhaustive-deps": {
     description: "Checks effect dependencies",
-    docsUrl: "https://reactjs.org/docs/hooks-rules.html",
+    docsUrl:
+      "https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks",
     usedBy: {
       react: {
         versions: [
@@ -6713,7 +6714,8 @@ export const rules: Rules = {
   },
   "react-hooks/rules-of-hooks": {
     description: "Checks rules of Hooks",
-    docsUrl: "https://reactjs.org/docs/hooks-rules.html",
+    docsUrl:
+      "https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks",
     usedBy: {
       react: {
         versions: [
@@ -6731,7 +6733,7 @@ export const rules: Rules = {
   "react/boolean-prop-naming": {
     description: "Enforces consistent naming for boolean props",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/boolean-prop-naming.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/boolean-prop-naming.md",
     usedBy: {
       react: {
         versions: [
@@ -6757,7 +6759,7 @@ export const rules: Rules = {
   "react/button-has-type": {
     description: 'Forbid "button" element without an explicit "type" attribute',
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/button-has-type.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/button-has-type.md",
     usedBy: {
       react: {
         versions: [
@@ -6784,7 +6786,7 @@ export const rules: Rules = {
     description:
       'Enforce all defaultProps are defined and not "required" in propTypes',
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/default-props-match-prop-types.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/default-props-match-prop-types.md",
     usedBy: {
       react: {
         versions: [
@@ -6809,7 +6811,7 @@ export const rules: Rules = {
     description:
       "Enforce consistent usage of destructuring assignment of props, state, and context",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/destructuring-assignment.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/destructuring-assignment.md",
     usedBy: {
       react: {
         versions: [
@@ -6827,7 +6829,7 @@ export const rules: Rules = {
   "react/display-name": {
     description: "Prevent missing displayName in a React component definition",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/display-name.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/display-name.md",
     usedBy: {
       react: {
         versions: [
@@ -6851,7 +6853,7 @@ export const rules: Rules = {
   "react/forbid-component-props": {
     description: "Forbid certain props on components",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-component-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-component-props.md",
     usedBy: {
       react: {
         versions: [
@@ -6869,7 +6871,7 @@ export const rules: Rules = {
   "react/forbid-dom-props": {
     description: "Forbid certain props on DOM Nodes",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-dom-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-dom-props.md",
     usedBy: {
       react: {
         versions: [
@@ -6887,7 +6889,7 @@ export const rules: Rules = {
   "react/forbid-elements": {
     description: "Forbid certain elements",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-elements.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-elements.md",
     usedBy: {
       react: {
         versions: [
@@ -6905,7 +6907,7 @@ export const rules: Rules = {
   "react/forbid-foreign-prop-types": {
     description: "Forbid using another component's propTypes",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-foreign-prop-types.md",
     usedBy: {
       react: {
         versions: [
@@ -6929,7 +6931,7 @@ export const rules: Rules = {
   "react/forbid-prop-types": {
     description: "Forbid certain propTypes",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-prop-types.md",
     usedBy: {
       react: {
         versions: [
@@ -6955,7 +6957,7 @@ export const rules: Rules = {
   "react/function-component-definition": {
     description: "Standardize the way function component get defined (fixable)",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/function-component-definition.md",
     usedBy: {
       react: {
         versions: [
@@ -6981,7 +6983,7 @@ export const rules: Rules = {
   "react/jsx-boolean-value": {
     description: "Enforce boolean attributes notation in JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-boolean-value.md",
     usedBy: {
       react: {
         versions: [
@@ -7006,7 +7008,7 @@ export const rules: Rules = {
     description:
       "Enforce or disallow spaces inside of curly braces in JSX attributes and expressions",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-child-element-spacing.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-child-element-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7024,7 +7026,7 @@ export const rules: Rules = {
   "react/jsx-closing-bracket-location": {
     description: "Enforce closing bracket location in JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-closing-bracket-location.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7042,7 +7044,7 @@ export const rules: Rules = {
   "react/jsx-closing-tag-location": {
     description: "Enforce closing tag location for multiline JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-tag-location.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-closing-tag-location.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7061,7 +7063,7 @@ export const rules: Rules = {
     description:
       "Disallow unnecessary JSX expressions when literals alone are sufficient or enfore JSX expressions on literals in JSX children or attributes",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-curly-brace-presence.md",
     usedBy: {
       react: {
         versions: [
@@ -7086,7 +7088,7 @@ export const rules: Rules = {
     description:
       "Enforce consistent linebreaks in curly braces in JSX attributes and expressions",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-newline.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-curly-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7105,7 +7107,7 @@ export const rules: Rules = {
     description:
       "Enforce or disallow spaces inside of curly braces in JSX attributes and expressions",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-spacing.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-curly-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7124,7 +7126,7 @@ export const rules: Rules = {
     description:
       "Enforce or disallow spaces around equal signs in JSX attributes",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-equals-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7142,7 +7144,7 @@ export const rules: Rules = {
   "react/jsx-filename-extension": {
     description: "Restrict file extensions that may contain JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-filename-extension.md",
     usedBy: {
       react: {
         versions: [
@@ -7166,7 +7168,7 @@ export const rules: Rules = {
   "react/jsx-first-prop-new-line": {
     description: "Enforce proper position of the first property in JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-first-prop-new-line.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-first-prop-new-line.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7184,7 +7186,7 @@ export const rules: Rules = {
   "react/jsx-fragments": {
     description: "Enforce shorthand or standard form for React fragments",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-fragments.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-fragments.md",
     usedBy: {
       react: {
         versions: [
@@ -7202,7 +7204,7 @@ export const rules: Rules = {
   "react/jsx-handler-names": {
     description: "Enforce event handler naming conventions in JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-handler-names.md",
     usedBy: {
       react: {
         versions: [
@@ -7228,7 +7230,7 @@ export const rules: Rules = {
   "react/jsx-indent": {
     description: "Enforce JSX indentation",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-indent.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7246,7 +7248,7 @@ export const rules: Rules = {
   "react/jsx-indent-props": {
     description: "Enforce props indentation in JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-indent-props.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7264,7 +7266,7 @@ export const rules: Rules = {
   "react/jsx-key": {
     description: "Report missing `key` props in iterators/collection literals",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-key.md",
     usedBy: {
       react: {
         versions: [
@@ -7282,7 +7284,7 @@ export const rules: Rules = {
   "react/jsx-max-depth": {
     description: "Validate JSX maximum depth",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-depth.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-max-depth.md",
     usedBy: {
       react: {
         versions: [
@@ -7300,7 +7302,7 @@ export const rules: Rules = {
   "react/jsx-max-props-per-line": {
     description: "Enforce maximum of props on a single line in JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-max-props-per-line.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7319,7 +7321,7 @@ export const rules: Rules = {
     description:
       "Require or prevent a new line after jsx elements and expressions",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-newline.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7338,7 +7340,7 @@ export const rules: Rules = {
     description:
       "Prevents usage of Function.prototype.bind and arrow functions in React component props",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-bind.md",
     usedBy: {
       react: {
         versions: [
@@ -7365,7 +7367,7 @@ export const rules: Rules = {
     description:
       "Comments inside children section of tag should be placed inside braces",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-comment-textnodes.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-comment-textnodes.md",
     usedBy: {
       react: {
         versions: [
@@ -7383,7 +7385,7 @@ export const rules: Rules = {
   "react/jsx-no-constructed-context-values": {
     description: "Prevent react contexts from taking non-stable values",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-constructed-context-values.md",
     usedBy: {
       react: {
         versions: [
@@ -7401,7 +7403,7 @@ export const rules: Rules = {
   "react/jsx-no-duplicate-props": {
     description: "Enforce no duplicate props",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-duplicate-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-duplicate-props.md",
     usedBy: {
       react: {
         versions: [
@@ -7425,7 +7427,7 @@ export const rules: Rules = {
   "react/jsx-no-literals": {
     description: "Prevent using string literals in React component definition",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-literals.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-literals.md",
     usedBy: {
       react: {
         versions: [
@@ -7443,7 +7445,7 @@ export const rules: Rules = {
   "react/jsx-no-script-url": {
     description: "Forbid `javascript:` URLs",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-script-url.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-script-url.md",
     usedBy: {
       react: {
         versions: [
@@ -7468,7 +7470,7 @@ export const rules: Rules = {
     description:
       'Forbid target="_blank" attribute without rel="noopener noreferrer"',
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-target-blank.md",
     usedBy: {
       react: {
         versions: [
@@ -7494,7 +7496,7 @@ export const rules: Rules = {
   "react/jsx-no-undef": {
     description: "Disallow undeclared variables in JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-undef.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-undef.md",
     usedBy: {
       react: {
         versions: [
@@ -7512,7 +7514,7 @@ export const rules: Rules = {
   "react/jsx-no-useless-fragment": {
     description: "Disallow unnecessary fragments",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-useless-fragment.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-useless-fragment.md",
     usedBy: {
       react: {
         versions: [
@@ -7530,7 +7532,7 @@ export const rules: Rules = {
   "react/jsx-one-expression-per-line": {
     description: "Require one JSX element per line",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-one-expression-per-line.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-one-expression-per-line.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7548,7 +7550,7 @@ export const rules: Rules = {
   "react/jsx-pascal-case": {
     description: "Enforce PascalCase for user-defined JSX components",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-pascal-case.md",
     usedBy: {
       react: {
         versions: [
@@ -7574,7 +7576,7 @@ export const rules: Rules = {
   "react/jsx-props-no-multi-spaces": {
     description: "Disallow multiple spaces between inline JSX props",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-multi-spaces.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-props-no-multi-spaces.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7592,7 +7594,7 @@ export const rules: Rules = {
   "react/jsx-sort-default-props": {
     description: "Enforce defaultProps declarations alphabetical sorting",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-default-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-sort-default-props.md",
     usedBy: {
       react: {
         versions: [
@@ -7610,7 +7612,7 @@ export const rules: Rules = {
   "react/jsx-sort-prop-types": {
     description: "Enforce propTypes declarations alphabetical sorting",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-prop-types.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-sort-prop-types.md",
     usedBy: {
       react: {
         versions: [
@@ -7628,7 +7630,7 @@ export const rules: Rules = {
   "react/jsx-sort-props": {
     description: "Enforce props alphabetical sorting",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-sort-props.md",
     usedBy: {
       react: {
         versions: [
@@ -7654,7 +7656,7 @@ export const rules: Rules = {
   "react/jsx-space-before-closing": {
     description: "Enforce spacing before closing bracket in JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-space-before-closing.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-space-before-closing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7673,7 +7675,7 @@ export const rules: Rules = {
     description:
       "Enforce whitespace in and around the JSX opening and closing brackets",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-tag-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7691,7 +7693,7 @@ export const rules: Rules = {
   "react/jsx-uses-react": {
     description: "Prevent React to be marked as unused",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-react.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-uses-react.md",
     usedBy: {
       react: {
         versions: [
@@ -7709,7 +7711,7 @@ export const rules: Rules = {
   "react/jsx-uses-vars": {
     description: "Prevent variables used in JSX to be marked as unused",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-vars.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-uses-vars.md",
     usedBy: {
       react: {
         versions: [
@@ -7727,7 +7729,7 @@ export const rules: Rules = {
   "react/jsx-wrap-multilines": {
     description: "Disallow missing parentheses around multiline JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-wrap-multilines.md",
     usedBy: {
       prettier: {
         versions: [
@@ -7745,7 +7747,7 @@ export const rules: Rules = {
   "react/no-access-state-in-setstate": {
     description: "Reports when this.state is accessed within setState",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-access-state-in-setstate.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-access-state-in-setstate.md",
     usedBy: {
       react: {
         versions: [
@@ -7763,7 +7765,7 @@ export const rules: Rules = {
   "react/no-adjacent-inline-elements": {
     description: "Prevent adjacent inline elements not separated by whitespace",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-adjacent-inline-elements.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-adjacent-inline-elements.md",
     usedBy: {
       react: {
         versions: [
@@ -7781,7 +7783,7 @@ export const rules: Rules = {
   "react/no-array-index-key": {
     description: "Prevent usage of Array index in keys",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-array-index-key.md",
     usedBy: {
       react: {
         versions: [
@@ -7800,7 +7802,7 @@ export const rules: Rules = {
     description:
       "Lifecycle methods should be methods on the prototype, not class fields",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-arrow-function-lifecycle.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-arrow-function-lifecycle.md",
     usedBy: {
       react: {
         versions: [
@@ -7818,7 +7820,7 @@ export const rules: Rules = {
   "react/no-children-prop": {
     description: "Prevent passing of children as props",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-children-prop.md",
     usedBy: {
       react: {
         versions: [
@@ -7836,7 +7838,7 @@ export const rules: Rules = {
   "react/no-danger": {
     description: "Prevent usage of dangerous JSX props",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-danger.md",
     usedBy: {
       react: {
         versions: [
@@ -7855,7 +7857,7 @@ export const rules: Rules = {
     description:
       "Report when a DOM element is using both children and dangerouslySetInnerHTML",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger-with-children.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-danger-with-children.md",
     usedBy: {
       react: {
         versions: [
@@ -7873,7 +7875,7 @@ export const rules: Rules = {
   "react/no-deprecated": {
     description: "Prevent usage of deprecated methods",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-deprecated.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-deprecated.md",
     usedBy: {
       react: {
         versions: [
@@ -7891,7 +7893,7 @@ export const rules: Rules = {
   "react/no-did-mount-set-state": {
     description: "Prevent usage of setState in componentDidMount",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-mount-set-state.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-did-mount-set-state.md",
     usedBy: {
       react: {
         versions: [
@@ -7909,7 +7911,7 @@ export const rules: Rules = {
   "react/no-did-update-set-state": {
     description: "Prevent usage of setState in componentDidUpdate",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-did-update-set-state.md",
     usedBy: {
       react: {
         versions: [
@@ -7927,7 +7929,7 @@ export const rules: Rules = {
   "react/no-direct-mutation-state": {
     description: "Prevent direct mutation of this.state",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-direct-mutation-state.md",
     usedBy: {
       react: {
         versions: [
@@ -7945,7 +7947,7 @@ export const rules: Rules = {
   "react/no-find-dom-node": {
     description: "Prevent usage of findDOMNode",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-find-dom-node.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-find-dom-node.md",
     usedBy: {
       react: {
         versions: [
@@ -7963,7 +7965,7 @@ export const rules: Rules = {
   "react/no-invalid-html-attribute": {
     description: "Prevent usage of invalid attributes",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-invalid-html-attribute.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-invalid-html-attribute.md",
     usedBy: {
       react: {
         versions: [
@@ -7981,7 +7983,7 @@ export const rules: Rules = {
   "react/no-is-mounted": {
     description: "Prevent usage of isMounted",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-is-mounted.md",
     usedBy: {
       react: {
         versions: [
@@ -7999,7 +8001,7 @@ export const rules: Rules = {
   "react/no-multi-comp": {
     description: "Prevent multiple component definition per file",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-multi-comp.md",
     usedBy: {
       react: {
         versions: [
@@ -8017,7 +8019,7 @@ export const rules: Rules = {
   "react/no-namespace": {
     description: "Enforce that namespaces are not used in React elements",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-namespace.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-namespace.md",
     usedBy: {
       react: {
         versions: [
@@ -8035,7 +8037,7 @@ export const rules: Rules = {
   "react/no-redundant-should-component-update": {
     description: "Flag shouldComponentUpdate when extending PureComponent",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-redundant-should-component-update.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-redundant-should-component-update.md",
     usedBy: {
       react: {
         versions: [
@@ -8053,7 +8055,7 @@ export const rules: Rules = {
   "react/no-render-return-value": {
     description: "Prevent usage of the return value of React.render",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-render-return-value.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-render-return-value.md",
     usedBy: {
       react: {
         versions: [
@@ -8071,7 +8073,7 @@ export const rules: Rules = {
   "react/no-set-state": {
     description: "Prevent usage of setState",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-set-state.md",
     usedBy: {
       react: {
         versions: [
@@ -8090,7 +8092,7 @@ export const rules: Rules = {
     description:
       "Prevent string definitions for references and prevent referencing this.refs",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-string-refs.md",
     usedBy: {
       react: {
         versions: [
@@ -8108,7 +8110,7 @@ export const rules: Rules = {
   "react/no-this-in-sfc": {
     description: 'Report "this" being used in stateless components',
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-this-in-sfc.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-this-in-sfc.md",
     usedBy: {
       react: {
         versions: [
@@ -8126,7 +8128,7 @@ export const rules: Rules = {
   "react/no-typos": {
     description: "Prevent common typos",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-typos.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-typos.md",
     usedBy: {
       react: {
         versions: [
@@ -8145,7 +8147,7 @@ export const rules: Rules = {
     description:
       "Detect unescaped HTML entities, which might represent malformed tags",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unescaped-entities.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unescaped-entities.md",
     usedBy: {
       react: {
         versions: [
@@ -8163,7 +8165,7 @@ export const rules: Rules = {
   "react/no-unknown-property": {
     description: "Prevent usage of unknown DOM property",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unknown-property.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unknown-property.md",
     usedBy: {
       next: {
         versions: [
@@ -8204,7 +8206,7 @@ export const rules: Rules = {
   "react/no-unsafe": {
     description: "Prevent usage of unsafe lifecycle methods",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unsafe.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unsafe.md",
     usedBy: {
       react: {
         versions: [
@@ -8222,7 +8224,7 @@ export const rules: Rules = {
   "react/no-unstable-nested-components": {
     description: "Prevent creating unstable components inside components",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unstable-nested-components.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unstable-nested-components.md",
     usedBy: {
       react: {
         versions: [
@@ -8240,7 +8242,7 @@ export const rules: Rules = {
   "react/no-unused-class-component-methods": {
     description: "Prevent declaring unused methods of component class",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-class-component-methods.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unused-class-component-methods.md",
     usedBy: {
       react: {
         versions: [
@@ -8258,7 +8260,7 @@ export const rules: Rules = {
   "react/no-unused-prop-types": {
     description: "Prevent definitions of unused prop types",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unused-prop-types.md",
     usedBy: {
       react: {
         versions: [
@@ -8284,7 +8286,7 @@ export const rules: Rules = {
   "react/no-unused-state": {
     description: "Prevent definition of unused state fields",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-state.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unused-state.md",
     usedBy: {
       react: {
         versions: [
@@ -8302,7 +8304,7 @@ export const rules: Rules = {
   "react/no-will-update-set-state": {
     description: "Prevent usage of setState in componentWillUpdate",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-will-update-set-state.md",
     usedBy: {
       react: {
         versions: [
@@ -8320,7 +8322,7 @@ export const rules: Rules = {
   "react/prefer-es6-class": {
     description: "Enforce ES5 or ES6 class for React Components",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/prefer-es6-class.md",
     usedBy: {
       react: {
         versions: [
@@ -8338,7 +8340,7 @@ export const rules: Rules = {
   "react/prefer-exact-props": {
     description: "Prefer exact proptype definitions",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-exact-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/prefer-exact-props.md",
     usedBy: {
       react: {
         versions: [
@@ -8356,7 +8358,7 @@ export const rules: Rules = {
   "react/prefer-read-only-props": {
     description: "Require read-only props",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-read-only-props.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/prefer-read-only-props.md",
     usedBy: {
       react: {
         versions: [
@@ -8375,7 +8377,7 @@ export const rules: Rules = {
     description:
       "Enforce stateless components to be written as a pure function",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-stateless-function.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/prefer-stateless-function.md",
     usedBy: {
       react: {
         versions: [
@@ -8400,7 +8402,7 @@ export const rules: Rules = {
     description:
       "Prevent missing props validation in a React component definition",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/prop-types.md",
     usedBy: {
       react: {
         versions: [
@@ -8426,7 +8428,7 @@ export const rules: Rules = {
   "react/react-in-jsx-scope": {
     description: "Prevent missing React when using JSX",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/react-in-jsx-scope.md",
     usedBy: {
       next: {
         versions: [
@@ -8456,7 +8458,7 @@ export const rules: Rules = {
     description:
       "Enforce React components to have a shouldComponentUpdate method",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-optimization.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/require-optimization.md",
     usedBy: {
       react: {
         versions: [
@@ -8481,7 +8483,7 @@ export const rules: Rules = {
     description:
       "Enforce ES5 or ES6 class for returning value in render function",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/require-render-return.md",
     usedBy: {
       react: {
         versions: [
@@ -8499,7 +8501,7 @@ export const rules: Rules = {
   "react/self-closing-comp": {
     description: "Prevent extra closing tags for components without children",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/self-closing-comp.md",
     usedBy: {
       react: {
         versions: [
@@ -8517,7 +8519,7 @@ export const rules: Rules = {
   "react/sort-comp": {
     description: "Enforce component methods order",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/sort-comp.md",
     usedBy: {
       react: {
         versions: [
@@ -8543,7 +8545,7 @@ export const rules: Rules = {
   "react/sort-prop-types": {
     description: "Enforce propTypes declarations alphabetical sorting",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/sort-prop-types.md",
     usedBy: {
       react: {
         versions: [
@@ -8570,7 +8572,7 @@ export const rules: Rules = {
     description:
       "State initialization in an ES6 class component should be in a constructor",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/state-in-constructor.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/state-in-constructor.md",
     usedBy: {
       react: {
         versions: [
@@ -8589,7 +8591,7 @@ export const rules: Rules = {
     description:
       "Defines where React component static properties should be positioned",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/static-property-placement.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/static-property-placement.md",
     usedBy: {
       react: {
         versions: [
@@ -8613,7 +8615,7 @@ export const rules: Rules = {
   "react/style-prop-object": {
     description: "Enforce style prop value is an object",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/style-prop-object.md",
     usedBy: {
       react: {
         versions: [
@@ -8632,7 +8634,7 @@ export const rules: Rules = {
     description:
       "Prevent passing of children to void DOM elements (e.g. <br />)",
     docsUrl:
-      "https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/void-dom-elements-no-children.md",
+      "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/void-dom-elements-no-children.md",
     usedBy: {
       react: {
         versions: [
@@ -9115,7 +9117,7 @@ export const rules: Rules = {
     description:
       "Enforces a consistent order of the Tailwind CSS classnames and its variants",
     docsUrl:
-      "https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/HEAD/docs/rules/classnames-order.md",
+      "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/classnames-order.md",
     usedBy: {
       tailwindcss: {
         versions: [
@@ -9133,7 +9135,7 @@ export const rules: Rules = {
   "tailwindcss/enforces-negative-arbitrary-values": {
     description: "Warns about `-` prefixed classnames using arbitrary values",
     docsUrl:
-      "https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/HEAD/docs/rules/enforces-negative-arbitrary-values.md",
+      "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/enforces-negative-arbitrary-values.md",
     usedBy: {
       tailwindcss: {
         versions: [
@@ -9151,7 +9153,7 @@ export const rules: Rules = {
   "tailwindcss/enforces-shorthand": {
     description: "Replaces multiple Tailwind CSS classnames by their shorthand",
     docsUrl:
-      "https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/HEAD/docs/rules/enforces-shorthand.md",
+      "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/enforces-shorthand.md",
     usedBy: {
       tailwindcss: {
         versions: [
@@ -9169,7 +9171,7 @@ export const rules: Rules = {
   "tailwindcss/migration-from-tailwind-2": {
     description: "Detect obsolete classnames when upgrading to Tailwind CSS v3",
     docsUrl:
-      "https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/HEAD/docs/rules/migration-from-tailwind-2.md",
+      "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/migration-from-tailwind-2.md",
     usedBy: {
       tailwindcss: {
         versions: [
@@ -9187,7 +9189,7 @@ export const rules: Rules = {
   "tailwindcss/no-arbitrary-value": {
     description: "Forbid using arbitrary values in classnames",
     docsUrl:
-      "https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/HEAD/docs/rules/no-arbitrary-value.md",
+      "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-arbitrary-value.md",
     usedBy: {
       tailwindcss: {
         versions: [
@@ -9205,7 +9207,7 @@ export const rules: Rules = {
   "tailwindcss/no-contradicting-classname": {
     description: 'Avoid contradicting Tailwind CSS classnames (`"w-3 w-5"`)',
     docsUrl:
-      "https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/HEAD/docs/rules/no-contradicting-classname.md",
+      "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-contradicting-classname.md",
     usedBy: {
       tailwindcss: {
         versions: [
@@ -9223,7 +9225,7 @@ export const rules: Rules = {
   "tailwindcss/no-custom-classname": {
     description: "Detect classnames which do not belong to Tailwind CSS",
     docsUrl:
-      "https://github.com/francoismassart/eslint-plugin-tailwindcss/blob/HEAD/docs/rules/no-custom-classname.md",
+      "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-custom-classname.md",
     usedBy: {
       tailwindcss: {
         versions: [
@@ -9294,7 +9296,7 @@ export const rules: Rules = {
   "unicorn/empty-brace-spaces": {
     description: "Enforce no spaces between braces",
     docsUrl:
-      "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/empty-brace-spaces.md",
+      "https://github.com/sindresorhus/eslint-plugin-unicorn/tree/main/docs/rules/empty-brace-spaces.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9312,7 +9314,7 @@ export const rules: Rules = {
   "unicorn/no-nested-ternary": {
     description: "Disallow nested ternary expressions",
     docsUrl:
-      "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/no-nested-ternary.md",
+      "https://github.com/sindresorhus/eslint-plugin-unicorn/tree/main/docs/rules/no-nested-ternary.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9330,7 +9332,7 @@ export const rules: Rules = {
   "unicorn/number-literal-case": {
     description: "Enforce proper case for numeric literals",
     docsUrl:
-      "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/main/docs/rules/number-literal-case.md",
+      "https://github.com/sindresorhus/eslint-plugin-unicorn/tree/main/docs/rules/number-literal-case.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9406,7 +9408,8 @@ export const rules: Rules = {
   "vue/array-bracket-newline": {
     description:
       "Enforce linebreaks after opening and before closing array brackets in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/array-bracket-newline",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/array-bracket-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9424,7 +9427,8 @@ export const rules: Rules = {
   "vue/array-bracket-spacing": {
     description:
       "Enforce consistent spacing inside array brackets in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/array-bracket-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/array-bracket-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9441,7 +9445,8 @@ export const rules: Rules = {
   },
   "vue/array-element-newline": {
     description: "Enforce line breaks after each array element in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/array-element-newline",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/array-element-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9459,7 +9464,8 @@ export const rules: Rules = {
   "vue/arrow-spacing": {
     description:
       "Enforce consistent spacing before and after the arrow in arrow functions in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/arrow-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/arrow-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9477,7 +9483,8 @@ export const rules: Rules = {
   "vue/block-spacing": {
     description:
       "Disallow or enforce spaces inside of blocks after opening block and before closing block in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/block-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/block-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9495,7 +9502,8 @@ export const rules: Rules = {
   "vue/block-tag-newline": {
     description:
       "Enforce line breaks after opening and before closing block-level tags",
-    docsUrl: "https://eslint.vuejs.org/rules/block-tag-newline",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/block-tag-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9512,7 +9520,8 @@ export const rules: Rules = {
   },
   "vue/brace-style": {
     description: "Enforce consistent brace style for blocks in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/brace-style",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/brace-style.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9529,7 +9538,8 @@ export const rules: Rules = {
   },
   "vue/comma-dangle": {
     description: "Require or disallow trailing commas in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/comma-dangle",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/comma-dangle.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9547,7 +9557,8 @@ export const rules: Rules = {
   "vue/comma-spacing": {
     description:
       "Enforce consistent spacing before and after commas in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/comma-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/comma-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9564,7 +9575,8 @@ export const rules: Rules = {
   },
   "vue/comma-style": {
     description: "Enforce consistent comma style in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/comma-style",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/comma-style.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9582,7 +9594,8 @@ export const rules: Rules = {
   "vue/dot-location": {
     description:
       "Enforce consistent newlines before and after dots in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/dot-location",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/dot-location.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9600,7 +9613,8 @@ export const rules: Rules = {
   "vue/func-call-spacing": {
     description:
       "Require or disallow spacing between function identifiers and their invocations in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/func-call-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/func-call-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9618,7 +9632,8 @@ export const rules: Rules = {
   "vue/html-closing-bracket-newline": {
     description:
       "Require or disallow a line break before tag's closing brackets",
-    docsUrl: "https://eslint.vuejs.org/rules/html-closing-bracket-newline",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/html-closing-bracket-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9635,7 +9650,8 @@ export const rules: Rules = {
   },
   "vue/html-closing-bracket-spacing": {
     description: "Require or disallow a space before tag's closing brackets",
-    docsUrl: "https://eslint.vuejs.org/rules/html-closing-bracket-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/html-closing-bracket-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9652,7 +9668,8 @@ export const rules: Rules = {
   },
   "vue/html-end-tags": {
     description: "Enforce end tag style",
-    docsUrl: "https://eslint.vuejs.org/rules/html-end-tags",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/html-end-tags.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9669,7 +9686,8 @@ export const rules: Rules = {
   },
   "vue/html-indent": {
     description: "Enforce consistent indentation in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/html-indent",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/html-indent.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9686,7 +9704,8 @@ export const rules: Rules = {
   },
   "vue/html-quotes": {
     description: "Enforce quotes style of HTML attributes",
-    docsUrl: "https://eslint.vuejs.org/rules/html-quotes",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/html-quotes.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9703,7 +9722,8 @@ export const rules: Rules = {
   },
   "vue/html-self-closing": {
     description: "Enforce self-closing style",
-    docsUrl: "https://eslint.vuejs.org/rules/html-self-closing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/html-self-closing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9721,7 +9741,8 @@ export const rules: Rules = {
   "vue/key-spacing": {
     description:
       "Enforce consistent spacing between keys and values in object literal properties in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/key-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/key-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9739,7 +9760,8 @@ export const rules: Rules = {
   "vue/keyword-spacing": {
     description:
       "Enforce consistent spacing before and after keywords in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/keyword-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/keyword-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9756,7 +9778,8 @@ export const rules: Rules = {
   },
   "vue/max-attributes-per-line": {
     description: "Enforce the maximum number of attributes per line",
-    docsUrl: "https://eslint.vuejs.org/rules/max-attributes-per-line",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/max-attributes-per-line.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9773,7 +9796,8 @@ export const rules: Rules = {
   },
   "vue/max-len": {
     description: "Enforce a maximum line length in `.vue` files",
-    docsUrl: "https://eslint.vuejs.org/rules/max-len",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/max-len.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9792,7 +9816,7 @@ export const rules: Rules = {
     description:
       "Require a line break before and after the contents of a multiline element",
     docsUrl:
-      "https://eslint.vuejs.org/rules/multiline-html-element-content-newline",
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/multiline-html-element-content-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9810,7 +9834,8 @@ export const rules: Rules = {
   "vue/multiline-ternary": {
     description:
       "Enforce newlines between operands of ternary expressions in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/multiline-ternary",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/multiline-ternary.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9827,7 +9852,8 @@ export const rules: Rules = {
   },
   "vue/mustache-interpolation-spacing": {
     description: "Enforce unified spacing in mustache interpolations",
-    docsUrl: "https://eslint.vuejs.org/rules/mustache-interpolation-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/mustache-interpolation-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9844,7 +9870,8 @@ export const rules: Rules = {
   },
   "vue/no-extra-parens": {
     description: "Disallow unnecessary parentheses in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/no-extra-parens",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/no-extra-parens.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9861,7 +9888,8 @@ export const rules: Rules = {
   },
   "vue/no-multi-spaces": {
     description: "Disallow multiple spaces",
-    docsUrl: "https://eslint.vuejs.org/rules/no-multi-spaces",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/no-multi-spaces.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9879,7 +9907,7 @@ export const rules: Rules = {
   "vue/no-spaces-around-equal-signs-in-attribute": {
     description: "Disallow spaces around equal signs in attribute",
     docsUrl:
-      "https://eslint.vuejs.org/rules/no-spaces-around-equal-signs-in-attribute",
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/no-spaces-around-equal-signs-in-attribute.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9897,7 +9925,8 @@ export const rules: Rules = {
   "vue/object-curly-newline": {
     description:
       "Enforce consistent line breaks after opening and before closing braces in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/object-curly-newline",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/object-curly-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9914,7 +9943,8 @@ export const rules: Rules = {
   },
   "vue/object-curly-spacing": {
     description: "Enforce consistent spacing inside braces in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/object-curly-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/object-curly-spacing.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9932,7 +9962,8 @@ export const rules: Rules = {
   "vue/object-property-newline": {
     description:
       "Enforce placing object properties on separate lines in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/object-property-newline",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/object-property-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9950,7 +9981,8 @@ export const rules: Rules = {
   "vue/operator-linebreak": {
     description:
       "Enforce consistent linebreak style for operators in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/operator-linebreak",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/operator-linebreak.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9968,7 +10000,8 @@ export const rules: Rules = {
   "vue/quote-props": {
     description:
       "Require quotes around object literal property names in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/quote-props",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/quote-props.md",
     usedBy: {
       prettier: {
         versions: [
@@ -9985,7 +10018,8 @@ export const rules: Rules = {
   },
   "vue/script-indent": {
     description: "Enforce consistent indentation in `<script>`",
-    docsUrl: "https://eslint.vuejs.org/rules/script-indent",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/script-indent.md",
     usedBy: {
       prettier: {
         versions: [
@@ -10004,7 +10038,7 @@ export const rules: Rules = {
     description:
       "Require a line break before and after the contents of a singleline element",
     docsUrl:
-      "https://eslint.vuejs.org/rules/singleline-html-element-content-newline",
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/singleline-html-element-content-newline.md",
     usedBy: {
       prettier: {
         versions: [
@@ -10022,7 +10056,8 @@ export const rules: Rules = {
   "vue/space-in-parens": {
     description:
       "Enforce consistent spacing inside parentheses in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/space-in-parens",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/space-in-parens.md",
     usedBy: {
       prettier: {
         versions: [
@@ -10039,7 +10074,8 @@ export const rules: Rules = {
   },
   "vue/space-infix-ops": {
     description: "Require spacing around infix operators in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/space-infix-ops",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/space-infix-ops.md",
     usedBy: {
       prettier: {
         versions: [
@@ -10057,7 +10093,8 @@ export const rules: Rules = {
   "vue/space-unary-ops": {
     description:
       "Enforce consistent spacing before or after unary operators in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/space-unary-ops",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/space-unary-ops.md",
     usedBy: {
       prettier: {
         versions: [
@@ -10075,7 +10112,8 @@ export const rules: Rules = {
   "vue/template-curly-spacing": {
     description:
       "Require or disallow spacing around embedded expressions of template strings in `<template>`",
-    docsUrl: "https://eslint.vuejs.org/rules/template-curly-spacing",
+    docsUrl:
+      "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/template-curly-spacing.md",
     usedBy: {
       prettier: {
         versions: [

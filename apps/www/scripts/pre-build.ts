@@ -1,26 +1,110 @@
+/* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
 import { defu } from "defu";
-import { type Linter } from "eslint";
+import { ESLint, type Linter } from "eslint";
 import stringify from "fast-json-stable-stringify";
 import path from "node:path";
-import { eslintRulesDescriptionConfig } from "@/config/eslint";
-import { rules as previousRules } from "@/generated/eslint";
 import {
+  eslintConfigNamesConfig,
+  eslintRulesDescriptionConfig,
+} from "@/config/eslint";
+import { rules as previousRules } from "@/generated/eslint";
+import { getESLintRuleDocsUrl } from "@/lib/eslint";
+import {
+  type ESLintConfigName,
   type Rule,
   type Rules,
   type RuleUsedBy,
   type RuleVersionEntry,
   type RuleVersionEntryValue,
 } from "@/types/eslint";
-import {
-  getESLintConfigs,
-  getESLintRuleDocsUrl,
-  getESLintRuleStringSeverityAndOptions,
-} from "./utils/eslint";
-import {
-  getStringifiedJSONWithPrettier,
-  writeWithPrettier,
-} from "./utils/prettier";
+import { getStringifiedJSONWithPrettier, writeWithPrettier } from "./utils";
+
+const getESLintStringSeverity = (
+  ruleEntry: Linter.RuleEntry,
+): Linter.StringSeverity => {
+  const levels = ["off", "warn", "error"] satisfies Linter.StringSeverity[];
+  const ruleLevel =
+    typeof ruleEntry === "number"
+      ? levels[ruleEntry]
+      : typeof ruleEntry?.[0] === "number"
+      ? levels[ruleEntry[0]]
+      : (ruleEntry?.[0] as Linter.StringSeverity);
+
+  if (!levels.includes(ruleLevel)) {
+    throw new Error(
+      `Rule \`${stringify(ruleEntry)}\` have unexpected severity`,
+    );
+  }
+
+  return ruleLevel;
+};
+
+const getESLintRuleStringSeverityAndOptions = (
+  ruleEntry: Linter.RuleEntry,
+): [Linter.StringSeverity, ...any] => {
+  const level = getESLintStringSeverity(ruleEntry);
+  const [_level, ...options] = Array.isArray(ruleEntry) ? ruleEntry : [];
+
+  return [level, ...options];
+};
+
+const getESLintConfig = async ({
+  configName,
+  ts = false,
+}: {
+  configName: ESLintConfigName;
+  ts?: boolean;
+}) => {
+  const engine = new ESLint({
+    baseConfig: {
+      extends: [`peppy/configs/${configName}`],
+    },
+    useEslintrc: false,
+  });
+
+  const eslintConfig: Linter.Config = ts
+    ? await engine.calculateConfigForFile("file.ts")
+    : await engine.calculateConfigForFile("file.js");
+
+  const rules = eslintConfig?.rules || {};
+  const sanitizedRules = Object.entries(rules).reduce<
+    Record<string, Linter.RuleLevelAndOptions>
+  >(
+    (acc, [rule, ruleEntry]) =>
+      ruleEntry
+        ? {
+            ...acc,
+            [rule]: getESLintRuleStringSeverityAndOptions(ruleEntry),
+          }
+        : { ...acc },
+    {},
+  );
+
+  return { ...eslintConfig, rules: sanitizedRules };
+};
+
+const getESLintConfigs = async () => {
+  const configsProps = eslintConfigNamesConfig.reduce<
+    Parameters<typeof getESLintConfig>[0][]
+  >(
+    (acc, configName) => [
+      ...acc,
+      { configName, ts: false },
+      { configName, ts: true },
+    ],
+    [],
+  );
+
+  const promises = configsProps.map(async (configProps) => {
+    const config = await getESLintConfig(configProps);
+    return { ...configProps, config };
+  });
+
+  const eslintConfigs = await Promise.all(promises);
+
+  return eslintConfigs;
+};
 
 const getVersionEntryValue = async (
   ruleEntry: Linter.RuleEntry,
@@ -170,7 +254,7 @@ const getUpdatedRules = async () => {
   return updatedRules;
 };
 
-const writeRulesFile = async () => {
+const generateESLintFile = async () => {
   const updatedRules = await getUpdatedRules();
 
   const content = `import { type Rules } from "@/types/eslint";
@@ -184,10 +268,12 @@ const writeRulesFile = async () => {
     content,
     options: { parser: "typescript" },
   });
+
+  console.log("ESLint file generated");
 };
 
 const run = async () => {
-  await writeRulesFile();
+  await generateESLintFile();
 };
 
 run();

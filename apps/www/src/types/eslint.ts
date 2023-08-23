@@ -1,5 +1,11 @@
 import { type Linter } from "eslint";
 
+export type ESLintPluginConfig = {
+  docsUrlTemplate: string;
+  pluginName: string | null;
+  pluginUrl: string | null;
+};
+
 export type ESLintConfigName =
   | "base"
   | "jest"

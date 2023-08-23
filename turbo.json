@@ -2,7 +2,6 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
-      "cache": false,
       "outputs": ["dist/**", ".vercel/output/**", ".next/**"],
       "dependsOn": ["^build"]
     },
@@ -19,7 +18,9 @@
     "lint": {
       "cache": false
     },
-    "type": {},
+    "type": {
+      "cache": false
+    },
     "check": {
       "cache": false
     },
@@ -28,6 +29,20 @@
     },
     "clean": {
       "cache": false
+    },
+    "www#build": {
+      "outputs": [
+        ".contentlayer/**",
+        ".next/**",
+        ".vercel/output/**",
+        "dist/**",
+        "src/generated/**"
+      ],
+      "dependsOn": ["eslint-config-peppy#build", "peppy#build"]
+    },
+    "eslint-config-peppy#build": {
+      "outputs": ["*.js", "*.d.ts", "configs/*.js", "configs/*.d.ts"],
+      "dependsOn": ["^build"]
     }
   }
 }

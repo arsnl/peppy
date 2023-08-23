@@ -1,17 +1,15 @@
 {
   "name": "www",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsx scripts/pre-build.ts && next build",
     "start": "next start",
     "format": "prettier --check .",
     "lint": "eslint .",
     "type": "contentlayer build && tsc --noEmit",
     "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
-    "clean": "rimraf .next .contentlayer .turbo node_modules",
-    "docgen": "tsx scripts/docgen.ts"
+    "clean": "rimraf .next .contentlayer .turbo node_modules"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
