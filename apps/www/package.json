@@ -3,13 +3,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "tsx scripts/pre-build.ts && next build",
+    "build": "pnpm pre-build && next build",
     "start": "next start",
     "format": "prettier --check .",
     "lint": "eslint .",
     "type": "contentlayer build && tsc --noEmit",
     "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
-    "clean": "rimraf .next .contentlayer .turbo node_modules"
+    "clean": "rimraf .next .contentlayer .turbo node_modules",
+    "pre-build": "tsx scripts/pre-build.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
