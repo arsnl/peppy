@@ -139,6 +139,7 @@ export const rules: Rules = {
     updates: ["2.0.0"],
   },
   "jest/prefer-to-be": {
+    description: "Suggest using `toBe()` for primitive literals",
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/prefer-to-be.md",
     js: { entry: '["error"]\n', level: "error" },
@@ -147,6 +148,7 @@ export const rules: Rules = {
     updates: ["3.0.0", "2.0.0"],
   },
   "jest/prefer-to-contain": {
+    description: "Suggest using `toContain()`",
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/prefer-to-contain.md",
     js: { entry: '["error"]\n', level: "error" },
@@ -155,6 +157,7 @@ export const rules: Rules = {
     updates: ["3.0.0", "2.0.0"],
   },
   "jest/prefer-to-have-length": {
+    description: "Suggest using `toHaveLength()`",
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/prefer-to-have-length.md",
     js: { entry: '["error"]\n', level: "error" },

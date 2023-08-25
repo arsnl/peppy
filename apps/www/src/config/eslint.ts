@@ -395,6 +395,9 @@ export const eslintRulesDescriptionConfig: Record<string, string> = {
   "jest/no-mocks-import": "Disallow manually importing from `__mocks__`",
   "jest/no-standalone-expect":
     "Disallow using `expect` outside of `it` or `test` blocks",
+  "jest/prefer-to-be": "Suggest using `toBe()` for primitive literals",
+  "jest/prefer-to-contain": "Suggest using `toContain()`",
+  "jest/prefer-to-have-length": "Suggest using `toHaveLength()`",
   "jest/no-test-prefixes": "Require using `.only` and `.skip` over `f` and `x`",
   "jest/valid-describe-callback": "Enforce valid `describe()` callback",
   "jest/valid-expect": "Enforce valid `expect()` usage",

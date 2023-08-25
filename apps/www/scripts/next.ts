@@ -205,6 +205,14 @@ const getUpdatedConfigsRules = async () => {
     (acc, [configName, rules]) =>
       Object.entries(rules).reduce((configsAcc, [ruleName, rule]) => {
         const configEntry = configsAcc[configName] || {};
+        const description = eslintRulesDescriptionConfig?.[ruleName];
+
+        if (!description) {
+          throw new Error(
+            `Missing description for rule \`${ruleName}\`. Add the description in \`eslintRulesDescriptionConfig\``,
+          );
+        }
+
         const state = getRuleState({
           previousRule: latestConfigsRules?.[configName]?.[ruleName],
           currentRule: currentConfigsRules?.[configName]?.[ruleName],
