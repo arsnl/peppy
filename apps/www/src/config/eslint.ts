@@ -643,6 +643,7 @@ export const eslintRulesDescriptionConfig: Record<string, string> = {
     "Disallow renaming import, export, and destructured assignments to the same name",
   "no-useless-return": "Disallow redundant return statements",
   "no-var": "Require `let` or `const` instead of `var`",
+  "no-void": "Disallow void operators",
   "no-whitespace-before-property": "Disallow whitespace before properties",
   "no-with": "Disallow `with` statements",
   "no-wrap-func":

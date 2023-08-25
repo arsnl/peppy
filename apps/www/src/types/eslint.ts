@@ -6,6 +6,13 @@ export type ESLintPluginConfig = {
   pluginUrl: string | null;
 };
 
+export type ESLintVersion = {
+  version: string;
+  configs: string[];
+};
+
+export type ESLintVersions = ESLintVersion[];
+
 export type ESLintConfigName =
   | "base"
   | "jest"
@@ -14,31 +21,20 @@ export type ESLintConfigName =
   | "react"
   | "tailwindcss";
 
-export type RuleVersionEntryValue = {
+export type RuleInfo = {
   level: Linter.StringSeverity;
   entry: string;
 };
 
-export type RuleVersionEntryValues = {
-  js?: RuleVersionEntryValue;
-  ts?: RuleVersionEntryValue;
-};
-
-export type RuleVersionEntry = {
-  version: string;
-  values: RuleVersionEntryValues | null;
-};
-
-export type RuleUsedByEntry = {
-  versions: RuleVersionEntry[];
-};
-
-export type RuleUsedBy = Record<string, RuleUsedByEntry>;
+export type RuleState = "new" | "changed" | "unchanged" | "removed";
 
 export type Rule = {
   docsUrl: string;
   description: string;
-  usedBy: RuleUsedBy;
+  updates: string[];
+  state: RuleState;
+  js?: RuleInfo;
+  ts?: RuleInfo;
 };
 
 export type Rules = Record<string, Rule>;

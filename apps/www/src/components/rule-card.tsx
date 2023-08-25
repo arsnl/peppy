@@ -6,41 +6,12 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import {
-  type ESLintConfigName,
-  type Rule,
-  type Rules,
-  type RuleUsedByEntry,
-} from "@/types/eslint";
+import { type ESLintConfigName, type Rule } from "@/types/eslint";
 
-export type RuleCardOptions = Pick<Rule, "docsUrl" | "description"> &
-  RuleUsedByEntry & {
-    ruleName: string;
-    configName: ESLintConfigName;
-    usedBy: ESLintConfigName[];
-  };
-
-export const getRuleCardOptions = ({
-  ruleName,
-  configName,
-  eslintRules,
-}: {
-  ruleName: string;
+export type RuleCardOptions = {
   configName: ESLintConfigName;
-  eslintRules: Rules;
-}): RuleCardOptions => {
-  const { docsUrl, usedBy, description } = eslintRules?.[ruleName] || {};
-  const { versions = [] } = usedBy?.[configName] || {};
-
-  return {
-    ruleName,
-    configName,
-    description,
-    docsUrl,
-    usedBy: Object.keys(usedBy) as ESLintConfigName[],
-    versions,
-  };
-};
+  ruleName: string;
+} & Pick<Rule, "description" | "docsUrl" | "js" | "ts" | "state" | "updates">;
 
 export type RuleCardProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
@@ -52,9 +23,10 @@ export const RuleCard = ({
   ruleName,
   description,
   docsUrl,
-  versions,
-  configName,
-  usedBy,
+  js,
+  ts,
+  state,
+  updates,
   className,
   ...props
 }: RuleCardProps) => {
@@ -116,14 +88,14 @@ export const RuleCard = ({
       <Collapsible open={activeCollapsible === "js"}>
         <CollapsibleContent>
           <pre>
-            <code>{versions?.[0]?.values?.js?.entry}</code>
+            <code>{js?.entry}</code>
           </pre>
         </CollapsibleContent>
       </Collapsible>
       <Collapsible open={activeCollapsible === "ts"}>
         <CollapsibleContent>
           <pre>
-            <code>{versions?.[0]?.values?.ts?.entry}</code>
+            <code>{ts?.entry}</code>
           </pre>
         </CollapsibleContent>
       </Collapsible>

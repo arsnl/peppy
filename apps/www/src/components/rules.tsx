@@ -1,7 +1,7 @@
 import * as React from "react";
 import { RuleCard, type RuleCardOptions } from "@/components/rule-card";
 import { Input } from "@/components/ui/input";
-import { rules } from "@/generated/eslint";
+import { getESLintRules } from "@/lib/eslint";
 import { cn } from "@/lib/utils";
 import type { ESLintConfigName } from "@/types/eslint";
 
@@ -9,31 +9,27 @@ export type RuleProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
   "children"
 > & {
-  configuration: ESLintConfigName;
+  configName: ESLintConfigName;
 };
 
-export const Rules = async ({
-  configuration,
-  className,
-  ...props
-}: RuleProps) => {
-  const filteredRules = Object.entries(rules).reduce<RuleCardOptions[]>(
-    (acc, [ruleName, ruleOptions]) => {
-      const { docsUrl, usedBy, description } = ruleOptions || {};
-      const { versions = [] } = usedBy?.[configuration] || {};
+export const Rules = async ({ configName, className, ...props }: RuleProps) => {
+  const eslintRules = await getESLintRules({ configName, version: "latest" });
 
-      const ruleCardOptions = {
+  const rulesProps = Object.entries(eslintRules || {}).map(
+    ([ruleName, rule]) => {
+      const { description, docsUrl, js, ts, state, updates } = rule || {};
+
+      return {
+        configName,
         ruleName,
-        configName: configuration,
         description,
         docsUrl,
-        usedBy: Object.keys(usedBy) as ESLintConfigName[],
-        versions,
+        js,
+        ts,
+        state,
+        updates,
       } satisfies RuleCardOptions;
-
-      return usedBy?.[configuration] ? [...acc, ruleCardOptions] : acc;
     },
-    [],
   );
 
   return (
@@ -43,7 +39,7 @@ export const Rules = async ({
       </div>
 
       <div className="flex flex-col gap-4 sm:gap-6">
-        {filteredRules.map((rule) => (
+        {rulesProps.map((rule) => (
           <RuleCard {...rule} key={rule.ruleName} />
         ))}
       </div>
