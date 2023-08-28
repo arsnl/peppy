@@ -1,104 +1,125 @@
 "use client";
 
-import * as React from "react";
-import { ExternalLinkIcon } from "lucide-react";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Collapsible, CollapsibleContent } from "@/components/ui/collapsible";
-import { Separator } from "@/components/ui/separator";
+import { type HTMLAttributes } from "react";
+import Link, { type LinkProps } from "next/link";
+import { Icons } from "@/components/icons";
+import { Badge } from "@/components/ui/badge";
+import { eslintRuleStateTextConfig } from "@/config/eslint";
 import { cn } from "@/lib/utils";
-import { type ESLintConfigName, type Rule } from "@/types/eslint";
+import {
+  type ESLintConfigName,
+  type ESLintRuleLevel,
+  type Rule,
+} from "@/types/eslint";
 
 export type RuleCardOptions = {
+  version: string;
   configName: ESLintConfigName;
   ruleName: string;
-} & Pick<Rule, "description" | "docsUrl" | "js" | "ts" | "state" | "updates">;
+  description: Rule["description"];
+  js?: ESLintRuleLevel;
+  ts?: ESLintRuleLevel;
+  state: Rule["state"];
+};
+
+type _RuleConfigurationIconProps = Omit<
+  HTMLAttributes<HTMLDivElement>,
+  "children"
+> & {
+  level?: Required<RuleCardOptions>["js" | "ts"];
+  Icon: (typeof Icons)[keyof typeof Icons];
+};
+
+const _RuleConfigurationIcon = ({
+  level,
+  Icon,
+  className,
+  ...props
+}: _RuleConfigurationIconProps) =>
+  level ? (
+    <div
+      className={cn(
+        "relative flex gap-1 rounded-md border p-1 text-muted-foreground sm:justify-start",
+        className,
+      )}
+      {...props}
+    >
+      <Icon className="h-5 w-5" />
+      <span
+        className={cn(
+          "absolute right-0 top-0 block h-2 w-2 -translate-y-1/2 translate-x-1/2 rounded-full",
+          {
+            "bg-muted-foreground": level === "off",
+            "bg-yellow-500": level === "warn",
+            "bg-red-500": level === "error",
+          },
+        )}
+      />
+    </div>
+  ) : null;
 
 export type RuleCardProps = Omit<
-  React.HTMLAttributes<HTMLDivElement>,
-  "children"
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  keyof LinkProps
 > &
+  Omit<LinkProps, "href" | "children"> &
   RuleCardOptions;
 
 export const RuleCard = ({
+  version,
+  configName,
   ruleName,
   description,
-  docsUrl,
   js,
   ts,
   state,
-  updates,
   className,
   ...props
-}: RuleCardProps) => {
-  type PanelType = "ts" | "js" | "versions";
+}: RuleCardProps) => (
+  <Link
+    href={`/configurations/${version}/${configName}/${ruleName}`}
+    className={cn(
+      "relative flex flex-col rounded-md border p-4 transition-colors hover:border-foreground hover:shadow-sm sm:flex-row sm:items-center sm:justify-between sm:gap-4",
+      className,
+    )}
+    {...props}
+  >
+    {state !== "unchanged" && (
+      <Badge
+        variant="outline"
+        className="absolute left-4 top-0 flex -translate-y-1/2 gap-2 rounded-full bg-background p-1 px-2 text-xs text-muted-foreground"
+      >
+        <span
+          className={cn("block h-2 w-2 rounded-full", {
+            "bg-green-500": state === "added",
+            "bg-sky-500": state === "changed",
+            "bg-red-500": state === "removed",
+          })}
+        />
+        {eslintRuleStateTextConfig[state]}
+      </Badge>
+    )}
 
-  const [activeCollapsible, setActiveCollapsible] =
-    React.useState<null | PanelType>(null);
-
-  const buttonClickHandler = (panel: PanelType) => () =>
-    setActiveCollapsible((v) => (v === panel ? null : panel));
-
-  return (
-    <div className={cn("rounded-md border p-5", className)} {...props}>
-      <div className="space-y-1">
-        <h3 className="text-base font-semibold tracking-tight md:text-lg">
-          {ruleName}
-        </h3>
-        <p className="text-sm text-muted-foreground">{description}</p>
-      </div>
-      <Separator className="my-4" />
-      <div className="flex h-5 items-center justify-end space-x-4 text-sm">
-        <Button
-          variant="link"
-          className="p-0"
-          onClick={buttonClickHandler("js")}
-        >
-          JavaScript
-        </Button>
-        <Separator orientation="vertical" />
-        <Button
-          variant="link"
-          className="p-0"
-          onClick={buttonClickHandler("ts")}
-        >
-          TypeScript
-        </Button>
-        <Separator orientation="vertical" />
-        <Button
-          variant="link"
-          className="p-0"
-          onClick={buttonClickHandler("versions")}
-        >
-          Versions
-        </Button>
-        <Separator orientation="vertical" />
-        <a
-          href={docsUrl}
-          target="_blank"
-          rel="noreferrer"
-          className={cn(buttonVariants({ variant: "link" }), "gap-1 p-0")}
-        >
-          <span>Docs</span>
-          <ExternalLinkIcon className="h-[1em] w-[1em] text-muted-foreground" />
-        </a>
-      </div>
-      <Collapsible open={activeCollapsible === "versions"}>
-        <CollapsibleContent>Versions placeholder</CollapsibleContent>
-      </Collapsible>
-      <Collapsible open={activeCollapsible === "js"}>
-        <CollapsibleContent>
-          <pre>
-            <code>{js?.entry}</code>
-          </pre>
-        </CollapsibleContent>
-      </Collapsible>
-      <Collapsible open={activeCollapsible === "ts"}>
-        <CollapsibleContent>
-          <pre>
-            <code>{ts?.entry}</code>
-          </pre>
-        </CollapsibleContent>
-      </Collapsible>
+    <div className="flex flex-col gap-1 pb-4 sm:pb-0">
+      <h3 className="text-sm font-semibold leading-tight tracking-tight">
+        {ruleName}
+      </h3>
+      <p className="text-sm leading-tight text-muted-foreground">
+        {description}
+      </p>
     </div>
-  );
-};
+
+    <div className="flex justify-end gap-2">
+      <_RuleConfigurationIcon
+        level={js}
+        Icon={Icons.JsOutline}
+        aria-label={`View JavaScript configuration for the rule ${ruleName}`}
+      />
+      <_RuleConfigurationIcon
+        level={ts}
+        Icon={Icons.TsOutline}
+        aria-label={`View TypeScript configuration for the rule ${ruleName}`}
+      />
+    </div>
+  </Link>
+);

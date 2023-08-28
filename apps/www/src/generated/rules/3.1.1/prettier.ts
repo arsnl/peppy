@@ -1192,7 +1192,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/array-element-newline.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["3.1.1"],
   },

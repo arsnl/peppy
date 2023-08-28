@@ -27,7 +27,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/block-spacing.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["3.0.0"],
   },
@@ -83,7 +83,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/key-spacing.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["3.0.0"],
   },
@@ -101,7 +101,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/typescript-eslint/typescript-eslint/tree/main/packages/eslint-plugin/docs/rules/lines-around-comment.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["3.0.0"],
   },
@@ -1383,7 +1383,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/vuejs/eslint-plugin-vue/tree/master/docs/rules/multiline-ternary.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["3.0.0"],
   },

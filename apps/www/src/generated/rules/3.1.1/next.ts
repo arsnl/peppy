@@ -49,7 +49,7 @@ export const rules: Rules = {
     description: "Client components cannot be async functions",
     docsUrl: "https://nextjs.org/docs/messages/no-async-client-component",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["3.1.1"],
   },

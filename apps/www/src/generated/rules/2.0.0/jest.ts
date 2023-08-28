@@ -8,7 +8,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/expect-expect.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["2.0.0"],
   },
@@ -17,7 +17,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-alias-methods.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["2.0.0"],
   },
@@ -26,7 +26,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-commented-out-tests.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["2.0.0"],
   },
@@ -35,7 +35,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-conditional-expect.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -44,7 +44,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-deprecated-functions.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -53,7 +53,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-disabled-tests.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["2.0.0"],
   },
@@ -62,7 +62,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-done-callback.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -71,7 +71,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-export.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -80,7 +80,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-focused-tests.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -89,7 +89,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-identical-title.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -98,7 +98,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-interpolation-in-snapshots.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -107,7 +107,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-jasmine-globals.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -116,7 +116,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-mocks-import.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -125,7 +125,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-standalone-expect.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -134,7 +134,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/no-test-prefixes.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -143,7 +143,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/prefer-to-be.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -152,7 +152,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/prefer-to-contain.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -161,7 +161,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/prefer-to-have-length.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -170,7 +170,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/valid-describe-callback.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -179,7 +179,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/valid-expect.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -189,7 +189,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/valid-expect-in-promise.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -198,7 +198,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jest-community/eslint-plugin-jest/tree/main/docs/rules/valid-title.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },

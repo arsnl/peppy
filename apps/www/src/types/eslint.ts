@@ -21,18 +21,20 @@ export type ESLintConfigName =
   | "react"
   | "tailwindcss";
 
+export type ESLintRuleLevel = Linter.StringSeverity;
+
 export type RuleInfo = {
-  level: Linter.StringSeverity;
+  level: ESLintRuleLevel;
   entry: string;
 };
 
-export type RuleState = "new" | "changed" | "unchanged" | "removed";
+export type ESLintRuleState = "added" | "changed" | "removed" | "unchanged";
 
 export type Rule = {
   docsUrl: string;
   description: string;
   updates: string[];
-  state: RuleState;
+  state: ESLintRuleState;
   js?: RuleInfo;
   ts?: RuleInfo;
 };

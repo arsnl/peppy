@@ -17,17 +17,16 @@ export const Rules = async ({ configName, className, ...props }: RuleProps) => {
 
   const rulesProps = Object.entries(eslintRules || {}).map(
     ([ruleName, rule]) => {
-      const { description, docsUrl, js, ts, state, updates } = rule || {};
+      const { description, js, ts, state } = rule || {};
 
       return {
+        version: "latest",
         configName,
         ruleName,
         description,
-        docsUrl,
-        js,
-        ts,
+        js: js?.level,
+        ts: ts?.level,
         state,
-        updates,
       } satisfies RuleCardOptions;
     },
   );
@@ -35,10 +34,10 @@ export const Rules = async ({ configName, className, ...props }: RuleProps) => {
   return (
     <div className={cn("w-full", className)} {...props}>
       <div className="flex items-center py-4">
-        <Input placeholder="Search rules..." className="max-w-sm" />
+        <Input placeholder="Filter rules..." className="max-w-sm" />
       </div>
 
-      <div className="flex flex-col gap-4 sm:gap-6">
+      <div className="grid gap-6">
         {rulesProps.map((rule) => (
           <RuleCard {...rule} key={rule.ruleName} />
         ))}

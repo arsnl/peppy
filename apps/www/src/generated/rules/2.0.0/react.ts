@@ -11,7 +11,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "enforceForClassFields": true,\n    "exceptMethods": [\n      "render",\n      "getInitialState",\n      "getDefaultProps",\n      "getChildContext",\n      "componentWillMount",\n      "UNSAFE_componentWillMount",\n      "componentDidMount",\n      "componentWillReceiveProps",\n      "UNSAFE_componentWillReceiveProps",\n      "shouldComponentUpdate",\n      "componentWillUpdate",\n      "UNSAFE_componentWillUpdate",\n      "componentDidUpdate",\n      "componentWillUnmount",\n      "componentDidCatch",\n      "getSnapshotBeforeUpdate"\n    ]\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "enforceForClassFields": true,\n    "exceptMethods": [\n      "render",\n      "getInitialState",\n      "getDefaultProps",\n      "getChildContext",\n      "componentWillMount",\n      "UNSAFE_componentWillMount",\n      "componentDidMount",\n      "componentWillReceiveProps",\n      "UNSAFE_componentWillReceiveProps",\n      "shouldComponentUpdate",\n      "componentWillUpdate",\n      "UNSAFE_componentWillUpdate",\n      "componentDidUpdate",\n      "componentWillUnmount",\n      "componentDidCatch",\n      "getSnapshotBeforeUpdate"\n    ]\n  }\n]\n',
@@ -25,7 +25,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/accessible-emoji.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -39,7 +39,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "area": [],\n    "elements": ["img", "object", "area", "input[type=\\"image\\"]"],\n    "img": [],\n    "input[type=\\"image\\"]": [],\n    "object": []\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "area": [],\n    "elements": ["img", "object", "area", "input[type=\\"image\\"]"],\n    "img": [],\n    "input[type=\\"image\\"]": [],\n    "object": []\n  }\n]\n',
@@ -52,7 +52,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/anchor-has-content.md",
     js: { entry: '["error", { "components": [] }]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", { "components": [] }]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -65,7 +65,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "aspects": ["noHref", "invalidHref", "preferButton"],\n    "components": ["Link"],\n    "specialLink": ["to"]\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "aspects": ["noHref", "invalidHref", "preferButton"],\n    "components": ["Link"],\n    "specialLink": ["to"]\n  }\n]\n',
@@ -78,7 +78,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-activedescendant-has-tabindex.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -87,7 +87,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-props.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -96,7 +96,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-proptypes.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -106,7 +106,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-role.md",
     js: { entry: '["error", { "ignoreNonDOM": false }]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", { "ignoreNonDOM": false }]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -116,7 +116,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/aria-unsupported-elements.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -125,7 +125,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/autocomplete-valid.md",
     js: { entry: '["off", { "inputComponents": [] }]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off", { "inputComponents": [] }]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -135,7 +135,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/click-events-have-key-events.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -149,7 +149,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "controlComponents": [],\n    "depth": 5,\n    "ignoreElements": [\n      "audio",\n      "canvas",\n      "embed",\n      "input",\n      "textarea",\n      "tr",\n      "video"\n    ],\n    "ignoreRoles": [\n      "grid",\n      "listbox",\n      "menu",\n      "menubar",\n      "radiogroup",\n      "row",\n      "tablist",\n      "toolbar",\n      "tree",\n      "treegrid"\n    ],\n    "labelAttributes": ["label"]\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "controlComponents": [],\n    "depth": 5,\n    "ignoreElements": [\n      "audio",\n      "canvas",\n      "embed",\n      "input",\n      "textarea",\n      "tr",\n      "video"\n    ],\n    "ignoreRoles": [\n      "grid",\n      "listbox",\n      "menu",\n      "menubar",\n      "radiogroup",\n      "row",\n      "tablist",\n      "toolbar",\n      "tree",\n      "treegrid"\n    ],\n    "labelAttributes": ["label"]\n  }\n]\n',
@@ -163,7 +163,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/heading-has-content.md",
     js: { entry: '["error", { "components": [""] }]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", { "components": [""] }]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -172,7 +172,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/html-has-lang.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -181,7 +181,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/iframe-has-title.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -191,7 +191,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/img-redundant-alt.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -201,7 +201,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/interactive-supports-focus.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -215,7 +215,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "assert": "both",\n    "controlComponents": [],\n    "depth": 25,\n    "labelAttributes": [],\n    "labelComponents": []\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "assert": "both",\n    "controlComponents": [],\n    "depth": 25,\n    "labelAttributes": [],\n    "labelComponents": []\n  }\n]\n',
@@ -232,7 +232,7 @@ export const rules: Rules = {
         '[\n  "off",\n  {\n    "allowChildren": false,\n    "components": [],\n    "required": { "every": ["nesting", "id"] }\n  }\n]\n',
       level: "off",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "off",\n  {\n    "allowChildren": false,\n    "components": [],\n    "required": { "every": ["nesting", "id"] }\n  }\n]\n',
@@ -245,7 +245,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/lang.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -258,7 +258,7 @@ export const rules: Rules = {
       entry: '["error", { "audio": [], "track": [], "video": [] }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "audio": [], "track": [], "video": [] }]\n',
       level: "error",
@@ -271,7 +271,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/mouse-events-have-key-events.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -281,7 +281,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-access-key.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -290,7 +290,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-autofocus.md",
     js: { entry: '["error", { "ignoreNonDOM": true }]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", { "ignoreNonDOM": true }]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -302,7 +302,7 @@ export const rules: Rules = {
       entry: '["error", { "elements": ["marquee", "blink"] }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "elements": ["marquee", "blink"] }]\n',
       level: "error",
@@ -318,7 +318,7 @@ export const rules: Rules = {
       entry: '["error", { "tr": ["none", "presentation"] }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "tr": ["none", "presentation"] }]\n',
       level: "error",
@@ -335,7 +335,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "handlers": [\n      "onClick",\n      "onMouseDown",\n      "onMouseUp",\n      "onKeyPress",\n      "onKeyDown",\n      "onKeyUp"\n    ]\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "handlers": [\n      "onClick",\n      "onMouseDown",\n      "onMouseUp",\n      "onKeyPress",\n      "onKeyDown",\n      "onKeyUp"\n    ]\n  }\n]\n',
@@ -353,7 +353,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "li": ["menuitem", "option", "row", "tab", "treeitem"],\n    "ol": [\n      "listbox",\n      "menu",\n      "menubar",\n      "radiogroup",\n      "tablist",\n      "tree",\n      "treegrid"\n    ],\n    "table": ["grid"],\n    "td": ["gridcell"],\n    "ul": [\n      "listbox",\n      "menu",\n      "menubar",\n      "radiogroup",\n      "tablist",\n      "tree",\n      "treegrid"\n    ]\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "li": ["menuitem", "option", "row", "tab", "treeitem"],\n    "ol": [\n      "listbox",\n      "menu",\n      "menubar",\n      "radiogroup",\n      "tablist",\n      "tree",\n      "treegrid"\n    ],\n    "table": ["grid"],\n    "td": ["gridcell"],\n    "ul": [\n      "listbox",\n      "menu",\n      "menubar",\n      "radiogroup",\n      "tablist",\n      "tree",\n      "treegrid"\n    ]\n  }\n]\n',
@@ -370,7 +370,7 @@ export const rules: Rules = {
       entry: '["error", { "roles": ["tabpanel"], "tags": [] }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "roles": ["tabpanel"], "tags": [] }]\n',
       level: "error",
@@ -383,7 +383,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-onchange.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -393,7 +393,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/no-redundant-roles.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -407,7 +407,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "handlers": [\n      "onClick",\n      "onMouseDown",\n      "onMouseUp",\n      "onKeyPress",\n      "onKeyDown",\n      "onKeyUp"\n    ]\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "handlers": [\n      "onClick",\n      "onMouseDown",\n      "onMouseUp",\n      "onKeyPress",\n      "onKeyDown",\n      "onKeyUp"\n    ]\n  }\n]\n',
@@ -421,7 +421,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/role-has-required-aria-props.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -431,7 +431,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/role-supports-aria-props.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -440,7 +440,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/scope.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -449,7 +449,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/main/docs/rules/tabindex-no-positive.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -458,7 +458,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -467,7 +467,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -480,7 +480,7 @@ export const rules: Rules = {
         '[\n  "off",\n  {\n    "message": "",\n    "propTypeNames": ["bool", "mutuallyExclusiveTrueProps"],\n    "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"\n  }\n]\n',
       level: "off",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "off",\n  {\n    "message": "",\n    "propTypeNames": ["bool", "mutuallyExclusiveTrueProps"],\n    "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"\n  }\n]\n',
@@ -496,7 +496,7 @@ export const rules: Rules = {
       entry: '["error", { "button": true, "reset": false, "submit": true }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "button": true, "reset": false, "submit": true }]\n',
       level: "error",
@@ -512,7 +512,7 @@ export const rules: Rules = {
       entry: '["error", { "allowRequiredDefaults": false }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "allowRequiredDefaults": false }]\n',
       level: "error",
@@ -525,7 +525,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/destructuring-assignment.md",
     js: { entry: '["error", "always"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", "always"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -534,7 +534,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/display-name.md",
     js: { entry: '["off", { "ignoreTranspilerName": false }]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off", { "ignoreTranspilerName": false }]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -543,7 +543,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-component-props.md",
     js: { entry: '["off", { "forbid": [] }]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off", { "forbid": [] }]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -552,7 +552,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-dom-props.md",
     js: { entry: '["off", { "forbid": [] }]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off", { "forbid": [] }]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -561,7 +561,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-elements.md",
     js: { entry: '["off", { "forbid": [] }]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off", { "forbid": [] }]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -570,7 +570,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/forbid-foreign-prop-types.md",
     js: { entry: '["warn", { "allowInPropTypes": true }]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn", { "allowInPropTypes": true }]\n', level: "warn" },
     updates: ["2.0.0"],
   },
@@ -583,7 +583,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "checkChildContextTypes": true,\n    "checkContextTypes": true,\n    "forbid": ["any", "array", "object"]\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "checkChildContextTypes": true,\n    "checkContextTypes": true,\n    "forbid": ["any", "array", "object"]\n  }\n]\n',
@@ -600,7 +600,7 @@ export const rules: Rules = {
         '[\n  "error",\n  { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }\n]\n',
@@ -613,7 +613,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-boolean-value.md",
     js: { entry: '["error", "never", { "always": [] }]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", "never", { "always": [] }]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -626,7 +626,7 @@ export const rules: Rules = {
       entry: '["error", { "children": "never", "props": "never" }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "children": "never", "props": "never" }]\n',
       level: "error",
@@ -641,7 +641,7 @@ export const rules: Rules = {
       entry: '["error", { "extensions": [".jsx", ".tsx"] }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "extensions": [".jsx", ".tsx"] }]\n',
       level: "error",
@@ -653,7 +653,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-fragments.md",
     js: { entry: '["error", "syntax"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", "syntax"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -666,7 +666,7 @@ export const rules: Rules = {
         '["off", { "eventHandlerPrefix": "handle", "eventHandlerPropPrefix": "on" }]\n',
       level: "off",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '["off", { "eventHandlerPrefix": "handle", "eventHandlerPropPrefix": "on" }]\n',
@@ -679,7 +679,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-key.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -688,7 +688,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-max-depth.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -702,7 +702,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "allowArrowFunctions": true,\n    "allowBind": false,\n    "allowFunctions": false,\n    "ignoreDOMComponents": true,\n    "ignoreRefs": true\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "allowArrowFunctions": true,\n    "allowBind": false,\n    "allowFunctions": false,\n    "ignoreDOMComponents": true,\n    "ignoreRefs": true\n  }\n]\n',
@@ -716,7 +716,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-comment-textnodes.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -725,7 +725,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-constructed-context-values.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -734,7 +734,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-duplicate-props.md",
     js: { entry: '["error", { "ignoreCase": true }]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", { "ignoreCase": true }]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -743,7 +743,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-literals.md",
     js: { entry: '["off", { "noStrings": true }]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off", { "noStrings": true }]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -755,7 +755,7 @@ export const rules: Rules = {
       entry: '["error", [{ "name": "Link", "props": ["to"] }]]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", [{ "name": "Link", "props": ["to"] }]]\n',
       level: "error",
@@ -772,7 +772,7 @@ export const rules: Rules = {
         '["error", { "enforceDynamicLinks": "always", "forms": false, "links": true }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '["error", { "enforceDynamicLinks": "always", "forms": false, "links": true }]\n',
@@ -785,7 +785,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-undef.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -794,7 +794,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-no-useless-fragment.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -806,7 +806,7 @@ export const rules: Rules = {
       entry: '["error", { "allowAllCaps": true, "ignore": [] }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "allowAllCaps": true, "ignore": [] }]\n',
       level: "error",
@@ -818,7 +818,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-sort-default-props.md",
     js: { entry: '["off", { "ignoreCase": true }]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off", { "ignoreCase": true }]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -827,7 +827,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-sort-prop-types.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -840,7 +840,7 @@ export const rules: Rules = {
         '[\n  "off",\n  {\n    "callbacksLast": false,\n    "ignoreCase": true,\n    "noSortAlphabetically": false,\n    "reservedFirst": true,\n    "shorthandFirst": false,\n    "shorthandLast": false\n  }\n]\n',
       level: "off",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "off",\n  {\n    "callbacksLast": false,\n    "ignoreCase": true,\n    "noSortAlphabetically": false,\n    "reservedFirst": true,\n    "shorthandFirst": false,\n    "shorthandLast": false\n  }\n]\n',
@@ -853,7 +853,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-uses-react.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -862,7 +862,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/jsx-uses-vars.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -871,7 +871,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-access-state-in-setstate.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -880,7 +880,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-adjacent-inline-elements.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -889,7 +889,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-array-index-key.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -899,7 +899,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-arrow-function-lifecycle.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -908,7 +908,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-children-prop.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -917,7 +917,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-danger.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["2.0.0"],
   },
@@ -927,7 +927,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-danger-with-children.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -936,7 +936,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-deprecated.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -945,7 +945,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-did-mount-set-state.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -954,7 +954,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-did-update-set-state.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -963,7 +963,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-direct-mutation-state.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -972,7 +972,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-find-dom-node.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -981,7 +981,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-invalid-html-attribute.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -990,7 +990,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-is-mounted.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -999,7 +999,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-multi-comp.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -1008,7 +1008,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-namespace.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1017,7 +1017,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-redundant-should-component-update.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1026,7 +1026,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-render-return-value.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1035,26 +1035,26 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-set-state.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
   "react/no-string-refs": {
     description:
-      "Prevent string definitions for references and prevent referencing this.refs",
+      "Prevent string definitions for references and prevent referencing `this.refs`",
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-string-refs.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
   "react/no-this-in-sfc": {
-    description: 'Report "this" being used in stateless components',
+    description: "Report `this` being used in stateless components",
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-this-in-sfc.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1063,7 +1063,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-typos.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1073,7 +1073,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unescaped-entities.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1082,7 +1082,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unknown-property.md",
     js: { entry: '["error", { "ignore": ["css"] }]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", { "ignore": ["css"] }]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1091,7 +1091,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unsafe.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -1100,7 +1100,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unstable-nested-components.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1109,7 +1109,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unused-class-component-methods.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["2.0.0"],
   },
@@ -1121,7 +1121,7 @@ export const rules: Rules = {
       entry: '["warn", { "customValidators": [], "skipShapeProps": true }]\n',
       level: "warn",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["warn", { "customValidators": [], "skipShapeProps": true }]\n',
       level: "warn",
@@ -1133,7 +1133,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-unused-state.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["2.0.0"],
   },
@@ -1142,7 +1142,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-will-update-set-state.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1151,7 +1151,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/prefer-es6-class.md",
     js: { entry: '["error", "always"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", "always"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1160,7 +1160,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/prefer-exact-props.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1169,7 +1169,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/prefer-read-only-props.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -1182,7 +1182,7 @@ export const rules: Rules = {
       entry: '["error", { "ignorePureComponents": true }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry: '["error", { "ignorePureComponents": true }]\n',
       level: "error",
@@ -1199,7 +1199,7 @@ export const rules: Rules = {
         '["error", { "customValidators": [], "ignore": [], "skipUndeclared": false }]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '["off", { "customValidators": [], "ignore": [], "skipUndeclared": false }]\n',
@@ -1212,7 +1212,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/react-in-jsx-scope.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1222,7 +1222,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/require-optimization.md",
     js: { entry: '["off", { "allowDecorators": [] }]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off", { "allowDecorators": [] }]\n', level: "off" },
     updates: ["2.0.0"],
   },
@@ -1232,7 +1232,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/require-render-return.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1241,7 +1241,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/self-closing-comp.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1254,7 +1254,7 @@ export const rules: Rules = {
         '[\n  "error",\n  {\n    "groups": {\n      "lifecycle": [\n        "displayName",\n        "propTypes",\n        "contextTypes",\n        "childContextTypes",\n        "mixins",\n        "statics",\n        "defaultProps",\n        "constructor",\n        "getDefaultProps",\n        "getInitialState",\n        "state",\n        "getChildContext",\n        "getDerivedStateFromProps",\n        "componentWillMount",\n        "UNSAFE_componentWillMount",\n        "componentDidMount",\n        "componentWillReceiveProps",\n        "UNSAFE_componentWillReceiveProps",\n        "shouldComponentUpdate",\n        "componentWillUpdate",\n        "UNSAFE_componentWillUpdate",\n        "getSnapshotBeforeUpdate",\n        "componentDidUpdate",\n        "componentDidCatch",\n        "componentWillUnmount"\n      ],\n      "rendering": ["/^render.+$/", "render"]\n    },\n    "order": [\n      "static-variables",\n      "static-methods",\n      "instance-variables",\n      "lifecycle",\n      "/^handle.+$/",\n      "/^on.+$/",\n      "getters",\n      "setters",\n      "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",\n      "instance-methods",\n      "everything-else",\n      "rendering"\n    ]\n  }\n]\n',
       level: "error",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "error",\n  {\n    "groups": {\n      "lifecycle": [\n        "displayName",\n        "propTypes",\n        "contextTypes",\n        "childContextTypes",\n        "mixins",\n        "statics",\n        "defaultProps",\n        "constructor",\n        "getDefaultProps",\n        "getInitialState",\n        "state",\n        "getChildContext",\n        "getDerivedStateFromProps",\n        "componentWillMount",\n        "UNSAFE_componentWillMount",\n        "componentDidMount",\n        "componentWillReceiveProps",\n        "UNSAFE_componentWillReceiveProps",\n        "shouldComponentUpdate",\n        "componentWillUpdate",\n        "UNSAFE_componentWillUpdate",\n        "getSnapshotBeforeUpdate",\n        "componentDidUpdate",\n        "componentDidCatch",\n        "componentWillUnmount"\n      ],\n      "rendering": ["/^render.+$/", "render"]\n    },\n    "order": [\n      "static-variables",\n      "static-methods",\n      "instance-variables",\n      "lifecycle",\n      "/^handle.+$/",\n      "/^on.+$/",\n      "getters",\n      "setters",\n      "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",\n      "instance-methods",\n      "everything-else",\n      "rendering"\n    ]\n  }\n]\n',
@@ -1271,7 +1271,7 @@ export const rules: Rules = {
         '[\n  "off",\n  {\n    "callbacksLast": false,\n    "ignoreCase": true,\n    "requiredFirst": false,\n    "sortShapeProp": true\n  }\n]\n',
       level: "off",
     },
-    state: "new",
+    state: "added",
     ts: {
       entry:
         '[\n  "off",\n  {\n    "callbacksLast": false,\n    "ignoreCase": true,\n    "requiredFirst": false,\n    "sortShapeProp": true\n  }\n]\n',
@@ -1285,7 +1285,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/state-in-constructor.md",
     js: { entry: '["error", "always"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", "always"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1295,7 +1295,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/static-property-placement.md",
     js: { entry: '["error", "property assignment"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error", "property assignment"]\n', level: "error" },
     updates: ["2.0.0"],
   },
@@ -1304,17 +1304,17 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/style-prop-object.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },
   "react/void-dom-elements-no-children": {
     description:
-      "Prevent passing of children to void DOM elements (e.g. <br />)",
+      "Prevent passing of children to void DOM elements (e.g. `<br />`)",
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/void-dom-elements-no-children.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["2.0.0"],
   },

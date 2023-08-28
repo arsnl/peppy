@@ -9,7 +9,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/classnames-order.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["3.0.0"],
   },
@@ -18,7 +18,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/enforces-negative-arbitrary-values.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["3.0.0"],
   },
@@ -27,7 +27,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/enforces-shorthand.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["3.0.0"],
   },
@@ -36,7 +36,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/migration-from-tailwind-2.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["3.0.0"],
   },
@@ -45,7 +45,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-arbitrary-value.md",
     js: { entry: '["off"]\n', level: "off" },
-    state: "new",
+    state: "added",
     ts: { entry: '["off"]\n', level: "off" },
     updates: ["3.0.0"],
   },
@@ -54,7 +54,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-contradicting-classname.md",
     js: { entry: '["error"]\n', level: "error" },
-    state: "new",
+    state: "added",
     ts: { entry: '["error"]\n', level: "error" },
     updates: ["3.0.0"],
   },
@@ -63,7 +63,7 @@ export const rules: Rules = {
     docsUrl:
       "https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/master/docs/rules/no-custom-classname.md",
     js: { entry: '["warn"]\n', level: "warn" },
-    state: "new",
+    state: "added",
     ts: { entry: '["warn"]\n', level: "warn" },
     updates: ["3.0.0"],
   },

@@ -1043,7 +1043,7 @@ export const rules: Rules = {
   },
   "react/no-string-refs": {
     description:
-      "Prevent string definitions for references and prevent referencing this.refs",
+      "Prevent string definitions for references and prevent referencing `this.refs`",
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-string-refs.md",
     js: { entry: '["error"]\n', level: "error" },
@@ -1052,7 +1052,7 @@ export const rules: Rules = {
     updates: ["2.0.0"],
   },
   "react/no-this-in-sfc": {
-    description: 'Report "this" being used in stateless components',
+    description: "Report `this` being used in stateless components",
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/no-this-in-sfc.md",
     js: { entry: '["error"]\n', level: "error" },
@@ -1312,7 +1312,7 @@ export const rules: Rules = {
   },
   "react/void-dom-elements-no-children": {
     description:
-      "Prevent passing of children to void DOM elements (e.g. <br />)",
+      "Prevent passing of children to void DOM elements (e.g. `<br />`)",
     docsUrl:
       "https://github.com/jsx-eslint/eslint-plugin-react/tree/main/docs/rules/void-dom-elements-no-children.md",
     js: { entry: '["error"]\n', level: "error" },

@@ -1,4 +1,24 @@
-import { type ESLintConfigName, type ESLintPluginConfig } from "@/types/eslint";
+import {
+  type ESLintConfigName,
+  type ESLintPluginConfig,
+  type ESLintRuleLevel,
+  type ESLintRuleState,
+} from "@/types/eslint";
+
+export const eslintRuleStateTextConfig: { [state in ESLintRuleState]: string } =
+  {
+    added: "New",
+    changed: "Changed",
+    removed: "Removed",
+    unchanged: "Unchanged",
+  };
+
+export const eslintRuleLevelTextConfig: { [level in ESLintRuleLevel]: string } =
+  {
+    off: "Off",
+    warn: "Warn",
+    error: "Error",
+  };
 
 export const eslintConfigNamesConfig = [
   "base",
@@ -801,8 +821,8 @@ export const eslintRulesDescriptionConfig: Record<string, string> = {
     "Prevent usage of the return value of React.render",
   "react/no-set-state": "Prevent usage of setState",
   "react/no-string-refs":
-    "Prevent string definitions for references and prevent referencing this.refs",
-  "react/no-this-in-sfc": 'Report "this" being used in stateless components',
+    "Prevent string definitions for references and prevent referencing `this.refs`",
+  "react/no-this-in-sfc": "Report `this` being used in stateless components",
   "react/no-typos": "Prevent common typos",
   "react/no-unescaped-entities":
     "Detect unescaped HTML entities, which might represent malformed tags",
@@ -839,7 +859,7 @@ export const eslintRulesDescriptionConfig: Record<string, string> = {
     "Defines where React component static properties should be positioned",
   "react/style-prop-object": "Enforce style prop value is an object",
   "react/void-dom-elements-no-children":
-    "Prevent passing of children to void DOM elements (e.g. <br />)",
+    "Prevent passing of children to void DOM elements (e.g. `<br />`)",
   "require-yield": "Require generator functions to contain `yield`",
   "rest-spread-spacing":
     "Enforce spacing between rest and spread operators and their expressions",

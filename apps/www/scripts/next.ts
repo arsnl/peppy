@@ -12,6 +12,7 @@ import { eslintVersions } from "@/generated/eslint-versions";
 import { getESLintRuleDocsUrl } from "@/lib/eslint";
 import {
   type ESLintConfigName,
+  type ESLintRuleLevel,
   type ESLintVersion,
   type Rule,
   type RuleInfo,
@@ -28,16 +29,14 @@ import {
 
 type ConfigsRules = Record<string, Rules>;
 
-const getESLintStringSeverity = (
-  ruleEntry: Linter.RuleEntry,
-): Linter.StringSeverity => {
-  const levels = ["off", "warn", "error"] satisfies Linter.StringSeverity[];
+const getESLintRuleLevel = (ruleEntry: Linter.RuleEntry): ESLintRuleLevel => {
+  const levels = ["off", "warn", "error"] satisfies ESLintRuleLevel[];
   const ruleLevel =
     typeof ruleEntry === "number"
       ? levels[ruleEntry]
       : typeof ruleEntry?.[0] === "number"
       ? levels[ruleEntry[0]]
-      : (ruleEntry?.[0] as Linter.StringSeverity);
+      : (ruleEntry?.[0] as ESLintRuleLevel);
 
   if (!levels.includes(ruleLevel)) {
     throw new Error(
@@ -50,8 +49,8 @@ const getESLintStringSeverity = (
 
 const getESLintRuleStringSeverityAndOptions = (
   ruleEntry: Linter.RuleEntry,
-): [Linter.StringSeverity, ...any] => {
-  const level = getESLintStringSeverity(ruleEntry);
+): [ESLintRuleLevel, ...any] => {
+  const level = getESLintRuleLevel(ruleEntry);
   const [, ...options] = Array.isArray(ruleEntry) ? ruleEntry : [];
 
   return [level, ...options];
@@ -126,7 +125,7 @@ const getRuleState = ({
   }
 
   if (!previousRule) {
-    return "new";
+    return "added";
   }
 
   if (!isJSONStringSames(currentRule.js?.entry, previousRule.js?.entry)) {
@@ -196,8 +195,8 @@ const getUpdatedConfigsRules = async () => {
   const allConfigsRules = defu(removedConfigsRules, currentConfigsRules);
 
   // Keep count of the changes.
-  // If there is no changes (0 new and changed), we don't need to update so we return null
-  const statesCount = { new: 0, changed: 0, unchanged: 0, removed: 0 };
+  // If there is no changes (0 added and changed), we don't need to update so we return null
+  const statesCount = { added: 0, changed: 0, unchanged: 0, removed: 0 };
 
   const updatedConfigsRules = Object.entries(
     allConfigsRules,
@@ -243,7 +242,7 @@ const getUpdatedConfigsRules = async () => {
     {},
   );
 
-  return statesCount.new || statesCount.changed || statesCount.removed
+  return statesCount.added || statesCount.changed || statesCount.removed
     ? updatedConfigsRules
     : null;
 };
