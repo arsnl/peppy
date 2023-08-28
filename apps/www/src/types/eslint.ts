@@ -1,11 +1,5 @@
 import { type Linter } from "eslint";
 
-export type ESLintPluginConfig = {
-  docsUrlTemplate: string;
-  pluginName: string | null;
-  pluginUrl: string | null;
-};
-
 export type ESLintVersion = {
   version: string;
   configs: string[];
@@ -31,8 +25,6 @@ export type RuleInfo = {
 export type ESLintRuleState = "added" | "changed" | "removed" | "unchanged";
 
 export type Rule = {
-  docsUrl: string;
-  description: string;
   updates: string[];
   state: ESLintRuleState;
   js?: RuleInfo;

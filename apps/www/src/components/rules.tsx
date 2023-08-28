@@ -1,4 +1,5 @@
 import * as React from "react";
+import { allRules } from "contentlayer/generated";
 import { RuleCard, type RuleCardOptions } from "@/components/rule-card";
 import { Input } from "@/components/ui/input";
 import { getESLintRules } from "@/lib/eslint";
@@ -17,13 +18,16 @@ export const Rules = async ({ configName, className, ...props }: RuleProps) => {
 
   const rulesProps = Object.entries(eslintRules || {}).map(
     ([ruleName, rule]) => {
-      const { description, js, ts, state } = rule || {};
+      const { js, ts, state } = rule || {};
+      const ruleContent = allRules.find(({ name }) => name === ruleName);
+      const { description } = ruleContent || {};
 
       return {
         version: "latest",
         configName,
         ruleName,
-        description,
+        // eslint-disable-next-line react/jsx-no-useless-fragment
+        description: <>{description?.raw || ""}</>, // TODO: Migrate to MDX
         js: js?.level,
         ts: ts?.level,
         state,

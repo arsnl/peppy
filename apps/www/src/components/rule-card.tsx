@@ -16,7 +16,7 @@ export type RuleCardOptions = {
   version: string;
   configName: ESLintConfigName;
   ruleName: string;
-  description: Rule["description"];
+  description: React.JSX.Element;
   js?: ESLintRuleLevel;
   ts?: ESLintRuleLevel;
   state: Rule["state"];
@@ -104,9 +104,9 @@ export const RuleCard = ({
       <h3 className="text-sm font-semibold leading-tight tracking-tight">
         {ruleName}
       </h3>
-      <p className="text-sm leading-tight text-muted-foreground">
+      <div className="text-sm leading-tight text-muted-foreground">
         {description}
-      </p>
+      </div>
     </div>
 
     <div className="flex justify-end gap-2">

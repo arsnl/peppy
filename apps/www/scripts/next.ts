@@ -4,12 +4,8 @@ import { defu } from "defu";
 import { ESLint, type Linter } from "eslint";
 import stringify from "fast-json-stable-stringify";
 import fsPromises from "node:fs/promises";
-import {
-  eslintConfigNamesConfig,
-  eslintRulesDescriptionConfig,
-} from "@/config/eslint";
+import { eslintConfigNamesConfig } from "@/config/eslint";
 import { eslintVersions } from "@/generated/eslint-versions";
-import { getESLintRuleDocsUrl } from "@/lib/eslint";
 import {
   type ESLintConfigName,
   type ESLintRuleLevel,
@@ -204,13 +200,6 @@ const getUpdatedConfigsRules = async () => {
     (acc, [configName, rules]) =>
       Object.entries(rules).reduce((configsAcc, [ruleName, rule]) => {
         const configEntry = configsAcc[configName] || {};
-        const description = eslintRulesDescriptionConfig?.[ruleName];
-
-        if (!description) {
-          throw new Error(
-            `Missing description for rule \`${ruleName}\`. Add the description in \`eslintRulesDescriptionConfig\``,
-          );
-        }
 
         const state = getRuleState({
           previousRule: latestConfigsRules?.[configName]?.[ruleName],
@@ -225,8 +214,6 @@ const getUpdatedConfigsRules = async () => {
 
         const updatedRuleEntry: Rule = {
           ...rule,
-          description: eslintRulesDescriptionConfig?.[ruleName],
-          docsUrl: getESLintRuleDocsUrl(ruleName),
           updates,
           state,
         };
