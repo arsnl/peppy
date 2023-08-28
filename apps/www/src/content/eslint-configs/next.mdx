@@ -1,0 +1,26 @@
+---
+name: Next
+description: Next ESLint configuration of Peppy.
+---
+
+## Usage
+
+Optional configuration if [Next](https://nextjs.org/) is used in your project.
+
+This configuration require `peppy/react` to be placed before in the list of extends.
+
+```js
+module.exports = {
+  extends: ["peppy", "peppy/react", "peppy/next"],
+};
+```
+
+## Dependencies
+
+The following dependencies are included in this configuration.
+
+- [@next/eslint-plugin-next](https://nextjs.org/docs/pages/building-your-application/configuring/eslint#eslint-plugin)
+
+## Rules
+
+<Rules configName="next" />

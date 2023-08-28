@@ -1,0 +1,29 @@
+---
+name: Base
+description: Default ESLint configuration containing all of the base rules.
+---
+
+## Usage
+
+Mandatory configuration that must always be placed first in the list of extends.
+
+```js
+module.exports = {
+  extends: ["peppy"],
+};
+```
+
+## Dependencies
+
+The following dependencies are included in this configuration.
+
+- [@rushstack/eslint-patch](https://github.com/microsoft/rushstack/tree/main/eslint/eslint-patch)
+- [eslint-plugin-import](https://github.com/import-js/eslint-plugin-import)
+- [eslint-plugin-simple-import-sort](https://github.com/lydell/eslint-plugin-simple-import-sort)
+- [@typescript-eslint/eslint-plugin](https://typescript-eslint.io/packages/eslint-plugin)
+- [@typescript-eslint/parser](https://typescript-eslint.io/packages/parser)
+- [eslint-import-resolver-typescript](https://github.com/import-js/eslint-import-resolver-typescript)
+
+## Rules
+
+<Rules configName="base" />
