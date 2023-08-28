@@ -69,11 +69,11 @@ export const MobileNav = () => {
   );
 };
 
-interface MobileLinkProps extends LinkProps {
+type MobileLinkProps = LinkProps & {
   onOpenChange?: (open: boolean) => void;
   children: React.ReactNode;
   className?: string;
-}
+};
 
 const MobileLink = ({
   href,

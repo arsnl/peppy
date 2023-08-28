@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/types/nav";
 
-export interface DocsSidebarNavProps {
+export type DocsSidebarNavProps = {
   items: NavItem[];
-}
+};
 
 export const DocsSidebarNav = ({ items }: DocsSidebarNavProps) => {
   const pathname = usePathname();
@@ -29,10 +29,10 @@ export const DocsSidebarNav = ({ items }: DocsSidebarNavProps) => {
   ) : null;
 };
 
-interface DocsSidebarNavItemsProps {
+type DocsSidebarNavItemsProps = {
   items: NavItem[];
   pathname: string | null;
-}
+};
 
 export const DocsSidebarNavItems = ({
   items,

@@ -12,13 +12,13 @@ import { getTableOfContents } from "@/lib/toc";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 
-interface DocPageProps {
+type DocPageProps = {
   params: {
     slug: string[];
   };
-}
+};
 
-async function getDocFromParams({ params }: DocPageProps) {
+const getDocFromParams = async ({ params }: DocPageProps) => {
   const slug = params.slug?.join("/") || "";
   const doc = allDocs.find(({ slugAsParams }) => slugAsParams === slug);
 
@@ -27,11 +27,11 @@ async function getDocFromParams({ params }: DocPageProps) {
   }
 
   return doc;
-}
+};
 
-export async function generateMetadata({
+export const generateMetadata = async ({
   params,
-}: DocPageProps): Promise<Metadata> {
+}: DocPageProps): Promise<Metadata> => {
   const doc = await getDocFromParams({ params });
 
   if (!doc) {
@@ -63,17 +63,16 @@ export async function generateMetadata({
       creator: "@im_arsnl",
     },
   };
-}
+};
 
-export async function generateStaticParams(): Promise<
+export const generateStaticParams = async (): Promise<
   DocPageProps["params"][]
-> {
-  return allDocs.map((doc) => ({
+> =>
+  allDocs.map((doc) => ({
     slug: doc.slugAsParams.split("/"),
   }));
-}
 
-export default async function DocPage({ params }: DocPageProps) {
+const DocPage = async ({ params }: DocPageProps) => {
   const doc = await getDocFromParams({ params });
 
   if (!doc) {
@@ -118,4 +117,6 @@ export default async function DocPage({ params }: DocPageProps) {
       )}
     </main>
   );
-}
+};
+
+export default DocPage;

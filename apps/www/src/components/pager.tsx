@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 import type { Doc } from "contentlayer/generated";
 import type { NavItem } from "@/types/nav";
 
-interface DocsPagerProps {
+type DocsPagerProps = {
   doc: Doc;
-}
+};
 
 export const DocsPager = ({ doc }: DocsPagerProps) => {
   const pager = getPagerForDoc(doc);
@@ -41,7 +41,7 @@ export const DocsPager = ({ doc }: DocsPagerProps) => {
   );
 };
 
-export function getPagerForDoc(doc: Doc) {
+export const getPagerForDoc = (doc: Doc) => {
   const flattenedLinks = [null, ...flatten(navConfig.sidebarNav), null];
   const activeIndex = flattenedLinks.findIndex(
     (link) => doc.slug === link?.href,
@@ -55,14 +55,13 @@ export function getPagerForDoc(doc: Doc) {
     prev,
     next,
   };
-}
+};
 
-export function flatten(links: NavItem[]): NavItem[] {
-  return links
+export const flatten = (links: NavItem[]): NavItem[] =>
+  links
     .reduce<NavItem[]>(
       (flat, link) =>
         flat.concat(link.items?.length ? flatten(link.items) : link),
       [],
     )
     .filter((link) => !link?.disabled && !link?.external);
-}

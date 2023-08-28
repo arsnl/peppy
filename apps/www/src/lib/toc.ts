@@ -5,7 +5,7 @@ import { visit } from "unist-util-visit";
 
 const textTypes = ["text", "emphasis", "strong", "inlineCode"];
 
-function flattenNode(tree: any) {
+const flattenNode = (tree: any) => {
   const p: any[] = [];
   visit(tree, (node) => {
     if (!textTypes.includes(node.type)) {
@@ -14,19 +14,19 @@ function flattenNode(tree: any) {
     p.push(node.value);
   });
   return p.join(``);
-}
+};
 
-interface Item {
+type Item = {
   title: string;
   url: string;
   items?: Item[];
-}
+};
 
-interface Items {
+type Items = {
   items?: Item[];
-}
+};
 
-function getItems(node: any, current: any): Items {
+const getItems = (node: any, current: any): Items => {
   if (!node) {
     return {};
   }
@@ -62,7 +62,7 @@ function getItems(node: any, current: any): Items {
   }
 
   return {};
-}
+};
 
 const getToc = () => (node: any, file: any) => {
   const table = toc(node);
@@ -73,10 +73,10 @@ const getToc = () => (node: any, file: any) => {
 
 export type TableOfContents = Items;
 
-export async function getTableOfContents(
+export const getTableOfContents = async (
   content: string,
-): Promise<TableOfContents> {
+): Promise<TableOfContents> => {
   const result = await remark().use(getToc).process(content);
 
   return result.data;
-}
+};

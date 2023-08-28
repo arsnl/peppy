@@ -2,9 +2,9 @@ import { DocsSidebarNav } from "@/components/sidebar-nav";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { navConfig } from "@/config/nav";
 
-interface DocsLayoutProps {
+type DocsLayoutProps = {
   children: React.ReactNode;
-}
+};
 
 const DocsLayout = ({ children }: DocsLayoutProps) => (
   <div className="border-b">

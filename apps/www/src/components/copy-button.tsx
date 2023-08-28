@@ -16,18 +16,18 @@ import type { DropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu";
 import type { Event } from "@/lib/events";
 import type { NpmCommands } from "@/types/unist";
 
-interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+type CopyButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
   value: string;
   src?: string;
   event?: Event["name"];
-}
+};
 
-async function copyToClipboardWithMeta(value: string, event?: Event) {
+const copyToClipboardWithMeta = async (value: string, event?: Event) => {
   navigator.clipboard.writeText(value);
   if (event) {
     trackEvent(event);
   }
-}
+};
 
 export const CopyButton = ({
   value,
@@ -75,11 +75,11 @@ export const CopyButton = ({
   );
 };
 
-interface CopyWithClassNamesProps extends DropdownMenuTriggerProps {
+type CopyWithClassNamesProps = DropdownMenuTriggerProps & {
   value: string;
   classNames: string;
   className?: string;
-}
+};
 
 export const CopyWithClassNames = ({
   value,
@@ -127,9 +127,9 @@ export const CopyWithClassNames = ({
   );
 };
 
-interface CopyNpmCommandButtonProps extends DropdownMenuTriggerProps {
+type CopyNpmCommandButtonProps = DropdownMenuTriggerProps & {
   commands: Required<NpmCommands>;
-}
+};
 
 export const CopyNpmCommandButton = ({
   commands,
@@ -197,10 +197,10 @@ export const CopyNpmCommandButton = ({
   );
 };
 
-interface CopyCodeButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+type CopyCodeButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
   value: string;
   event?: Event["name"];
-}
+};
 
 export const CopyCodeButton = ({
   value,

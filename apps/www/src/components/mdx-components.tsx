@@ -301,9 +301,9 @@ const components = {
   Rules: (props) => <Rules {...props} />,
 } satisfies MDXComponents;
 
-interface MdxProps {
+type MdxProps = {
   code: string;
-}
+};
 
 export const Mdx = ({ code }: MdxProps) => {
   const Component = getMDXComponent(code);

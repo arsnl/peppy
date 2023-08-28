@@ -5,9 +5,9 @@ import { useMounted } from "@/hooks/use-mounted";
 import { cn } from "@/lib/utils";
 import type { TableOfContents } from "@/lib/toc";
 
-interface TocProps {
+type TocProps = {
   toc: TableOfContents;
-}
+};
 
 export const DashboardTableOfContents = ({ toc }: TocProps) => {
   const itemIds = React.useMemo(
@@ -36,7 +36,7 @@ export const DashboardTableOfContents = ({ toc }: TocProps) => {
   );
 };
 
-function useActiveItem(itemIds: string[]) {
+const useActiveItem = (itemIds: string[]) => {
   const [activeId, setActiveId] = React.useState<string | null>(null);
 
   React.useEffect(() => {
@@ -69,13 +69,13 @@ function useActiveItem(itemIds: string[]) {
   }, [itemIds]);
 
   return activeId;
-}
+};
 
-interface TreeProps {
+type TreeProps = {
   tree: TableOfContents;
   level?: number;
   activeItem?: string | null;
-}
+};
 
 const Tree = ({ tree, level = 1, activeItem }: TreeProps) =>
   tree?.items?.length && level < 3 ? (

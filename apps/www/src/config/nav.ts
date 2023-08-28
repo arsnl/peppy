@@ -1,8 +1,8 @@
 import type { NavItem } from "@/types/nav";
 
-interface NavConfig {
+type NavConfig = {
   sidebarNav: NavItem[];
-}
+};
 
 export const navConfig: NavConfig = {
   sidebarNav: [

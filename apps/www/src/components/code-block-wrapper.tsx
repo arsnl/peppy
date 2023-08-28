@@ -9,9 +9,9 @@ import {
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
 
-interface CodeBlockProps extends React.HTMLAttributes<HTMLDivElement> {
+type CodeBlockProps = React.HTMLAttributes<HTMLDivElement> & {
   expandButtonTitle?: string;
-}
+};
 
 export const CodeBlockWrapper = ({
   expandButtonTitle = "View Code",
