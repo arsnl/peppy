@@ -53,9 +53,6 @@ export const Version = defineDocumentType(() => ({
     version: {
       type: "string",
     },
-    previousVersion: {
-      type: "string",
-    },
     ruleName: {
       type: "string",
       required: true,
