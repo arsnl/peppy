@@ -7,29 +7,31 @@ import fsPromises from "node:fs/promises";
 import path from "node:path";
 import {
   allESLintConfigs,
-  allVersions,
+  allRuleVersions,
 } from "../.contentlayer/generated/index.mjs";
 import { writeWithPrettier } from "./utils/commons";
+import { RULE_VERSIONS_FOLDER, VERSIONS_FOLDER } from "./utils/constants";
 import { getESLintConfig } from "./utils/eslint";
 import type {
   ESLintConfig,
-  Version,
+  RuleVersion,
 } from "../.contentlayer/generated/types.d.ts";
 
-type RuleVersion = {
-  configName: string;
-  ruleName: string;
-  tsEntry?: any;
-  jsEntry?: any;
-};
+type PartialRuleVersion = Pick<
+  RuleVersion,
+  "configName" | "ruleName" | "tsEntry" | "jsEntry"
+>;
 
 const CONFIG_NAMES = (allESLintConfigs as ESLintConfig[]).map(({ key }) => key);
 
-const LATEST_DOCUMENTS = (allVersions as Version[]).filter(
+const LATEST_DOCUMENTS = (allRuleVersions as RuleVersion[]).filter(
   (document) => document.version !== "next",
 );
 
-const sortRulesVersion = (a: RuleVersion, b: RuleVersion) => {
+const sortPartialRuleVersions = (
+  a: PartialRuleVersion,
+  b: PartialRuleVersion,
+) => {
   if (`${a.configName}${a.ruleName}` < `${b.configName}${b.ruleName}`) {
     return -1;
   }
@@ -39,8 +41,8 @@ const sortRulesVersion = (a: RuleVersion, b: RuleVersion) => {
   return 0;
 };
 
-const getCurrentRulesVersion = async () => {
-  const configsProps = CONFIG_NAMES.reduce<
+const getCurrentRuleVersions = async () => {
+  const eslintConfigsProps = CONFIG_NAMES.reduce<
     Parameters<typeof getESLintConfig>[0][]
   >(
     (acc, configName) => [
@@ -51,15 +53,15 @@ const getCurrentRulesVersion = async () => {
     [],
   );
 
-  const eslintConfigsPromises = configsProps.map(async (configProps) => {
+  const eslintConfigsPromises = eslintConfigsProps.map(async (configProps) => {
     const config = await getESLintConfig(configProps);
     return { ...configProps, config };
   });
 
   const eslintConfigs = await Promise.all(eslintConfigsPromises);
 
-  const rulesVersion = eslintConfigs
-    .reduce<RuleVersion[]>(
+  const partialRuleVersions = eslintConfigs
+    .reduce<PartialRuleVersion[]>(
       (rootAcc, { configName, ts, config }) =>
         Object.entries(config.rules).reduce((acc, [ruleName, ruleEntry]) => {
           const entryIndex = acc.findIndex(
@@ -87,61 +89,69 @@ const getCurrentRulesVersion = async () => {
         }, rootAcc),
       [],
     )
-    .sort(sortRulesVersion);
+    .sort(sortPartialRuleVersions);
 
-  return rulesVersion;
+  return partialRuleVersions;
 };
 
-const getNextRulesVersion = async () => {
-  const latestRulesVersion = LATEST_DOCUMENTS.map(
+const getNextPartialRuleVersions = async () => {
+  const latestPartialRuleVersions = LATEST_DOCUMENTS.map(
     ({ configName, ruleName, jsEntry, tsEntry }) => ({
       configName,
       ruleName,
       jsEntry,
       tsEntry,
     }),
-  ).sort(sortRulesVersion);
+  ).sort(sortPartialRuleVersions);
 
-  const currentRulesVersion = await getCurrentRulesVersion();
+  const currentPartialRuleVersions = await getCurrentRuleVersions();
 
-  if (stringify(currentRulesVersion) === stringify(latestRulesVersion)) {
+  if (
+    stringify(currentPartialRuleVersions) ===
+    stringify(latestPartialRuleVersions)
+  ) {
     return null;
   }
 
-  const removedRulesVersion = latestRulesVersion
+  const removedRulesVersion = latestPartialRuleVersions
     .filter(
-      (latestConfig) =>
-        !currentRulesVersion.some(
-          (config) =>
-            config.configName === latestConfig.configName &&
-            config.ruleName === latestConfig.ruleName,
+      (latestPartialRuleVersion) =>
+        !currentPartialRuleVersions.some(
+          (currentPartialRuleVersion) =>
+            currentPartialRuleVersion.configName ===
+              latestPartialRuleVersion.configName &&
+            currentPartialRuleVersion.ruleName ===
+              latestPartialRuleVersion.ruleName,
         ),
     )
-    .map((removedConfigRule) => ({
-      ...removedConfigRule,
+    .map((removedRuleVersion) => ({
+      ...removedRuleVersion,
       jsEntry: null,
       tsEntry: null,
     }));
 
-  return [...currentRulesVersion, ...removedRulesVersion];
+  return [...currentPartialRuleVersions, ...removedRulesVersion];
 };
 
 /**
  *  Update the next version in the generated files, if needed
  */
 (async () => {
-  const nextFolder = path.join(__dirname, `../src/content/versions/next`);
-  const nextRulesVersion = await getNextRulesVersion();
+  const nextRuleVersionsFolder = path.join(RULE_VERSIONS_FOLDER, "next");
+  const nextVersionFilepath = path.join(VERSIONS_FOLDER, "next.mdx");
+
+  const nextPartialRuleVersions = await getNextPartialRuleVersions();
 
   // Remove the previous next version folder
-  await fsPromises.rm(nextFolder, { recursive: true, force: true });
+  await fsPromises.rm(nextRuleVersionsFolder, { recursive: true, force: true });
+  await fsPromises.rm(nextVersionFilepath, { recursive: true, force: true });
 
-  // If there's no next version, we don't need to create the next version
-  if (!nextRulesVersion) {
+  // If there's no next rule versions, we don't need to create the next version
+  if (!nextPartialRuleVersions) {
     return console.log("Nothing changed since last release");
   }
 
-  const writeDocumentPromises = nextRulesVersion.map(
+  const writeRuleVersionPromises = nextPartialRuleVersions.map(
     async ({ configName, ruleName, tsEntry, jsEntry }) => {
       const latest = LATEST_DOCUMENTS.find(
         (document) =>
@@ -158,7 +168,10 @@ const getNextRulesVersion = async () => {
 
       const updates = latest?.updates || [];
 
-      const filepath = path.join(nextFolder, `${configName}/${ruleName}.mdx`);
+      const filepath = path.join(
+        nextRuleVersionsFolder,
+        `${configName}/${ruleName}.mdx`,
+      );
 
       const content = `---
 ruleName: "${ruleName}"
@@ -177,7 +190,15 @@ updates: ${stringify(updates)}
     },
   );
 
-  await Promise.all(writeDocumentPromises);
+  await Promise.all(writeRuleVersionPromises);
 
-  return console.log("Next version files updated");
+  await writeWithPrettier({
+    filepath: nextVersionFilepath,
+    content: `---
+publishedDate: ${new Date().toISOString()}
+---`,
+    options: { parser: "mdx" },
+  });
+
+  return console.log("Next rule version files updated");
 })();
