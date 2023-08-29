@@ -1,0 +1,42 @@
+---
+ruleName: "prefer-destructuring"
+version: "3.1.1"
+previousVersion: "3.1.0"
+jsEntry:
+  [
+    "error",
+    {
+      "AssignmentExpression": { "array": true, "object": false },
+      "VariableDeclarator": { "array": false, "object": true },
+    },
+    { "enforceForRenamedProperties": false },
+  ]
+previousJsEntry:
+  [
+    "error",
+    {
+      "AssignmentExpression": { "array": true, "object": false },
+      "VariableDeclarator": { "array": false, "object": true },
+    },
+    { "enforceForRenamedProperties": false },
+  ]
+tsEntry:
+  [
+    "error",
+    {
+      "AssignmentExpression": { "array": true, "object": false },
+      "VariableDeclarator": { "array": false, "object": true },
+    },
+    { "enforceForRenamedProperties": false },
+  ]
+previousTsEntry:
+  [
+    "error",
+    {
+      "AssignmentExpression": { "array": true, "object": false },
+      "VariableDeclarator": { "array": false, "object": true },
+    },
+    { "enforceForRenamedProperties": false },
+  ]
+updates: ["2.0.0"]
+---

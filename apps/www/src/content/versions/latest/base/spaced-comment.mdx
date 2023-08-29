@@ -1,0 +1,62 @@
+---
+ruleName: "spaced-comment"
+version: "3.1.1"
+previousVersion: "3.1.0"
+jsEntry:
+  [
+    "error",
+    "always",
+    {
+      "block":
+        {
+          "balanced": true,
+          "exceptions": ["-", "+"],
+          "markers": ["=", "!", ":", "::"],
+        },
+      "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
+    },
+  ]
+previousJsEntry:
+  [
+    "error",
+    "always",
+    {
+      "block":
+        {
+          "balanced": true,
+          "exceptions": ["-", "+"],
+          "markers": ["=", "!", ":", "::"],
+        },
+      "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
+    },
+  ]
+tsEntry:
+  [
+    "error",
+    "always",
+    {
+      "block":
+        {
+          "balanced": true,
+          "exceptions": ["-", "+"],
+          "markers": ["=", "!", ":", "::"],
+        },
+      "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
+    },
+  ]
+previousTsEntry:
+  [
+    "error",
+    "always",
+    {
+      "block":
+        {
+          "balanced": true,
+          "exceptions": ["-", "+"],
+          "markers": ["=", "!", ":", "::"],
+        },
+      "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
+    },
+  ]
+updates: ["2.0.0"]
+---
