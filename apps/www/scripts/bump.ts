@@ -9,7 +9,7 @@ import {
   getVersionnedConfigsRules,
   writeRulesFile,
   writeVersionFile,
-} from "./commons";
+} from "./utils/commons";
 
 const updateVersionsFile = async () => {
   const updatedVersions = eslintVersions.map((versionEntry) => ({

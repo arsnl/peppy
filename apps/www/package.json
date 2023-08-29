@@ -10,8 +10,8 @@
     "type": "contentlayer build && tsc --noEmit",
     "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
     "clean": "rimraf .next .contentlayer .turbo node_modules",
-    "next": "tsx scripts/next.ts",
-    "bump": "tsx scripts/bump.ts"
+    "next": "contentlayer build && tsx scripts/next.ts",
+    "bump": "contentlayer build && tsx scripts/bump.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",

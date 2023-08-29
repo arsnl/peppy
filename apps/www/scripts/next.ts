@@ -1,94 +1,46 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-relative-packages */
 /* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
-import { defu } from "defu";
-import { ESLint, type Linter } from "eslint";
 import stringify from "fast-json-stable-stringify";
 import fsPromises from "node:fs/promises";
-import { eslintConfigNamesConfig } from "@/config/eslint";
-import { eslintVersions } from "@/generated/eslint-versions";
+import path from "node:path";
 import {
-  type ESLintConfigName,
-  type ESLintRuleLevel,
-  type ESLintVersion,
-  type Rule,
-  type RuleInfo,
-  type Rules,
-} from "@/types/eslint";
-import {
-  getGeneratedVersionPath,
-  getStringifiedJSONWithPrettier,
-  getVersionnedConfigsRules,
-  isJSONStringSames,
-  writeRulesFile,
-  writeVersionFile,
-} from "./commons";
+  allESLintConfigs,
+  allVersions,
+} from "../.contentlayer/generated/index.mjs";
+import { writeWithPrettier } from "./utils/commons";
+import { getESLintConfig } from "./utils/eslint";
+import type {
+  ESLintConfig,
+  Version,
+} from "../.contentlayer/generated/types.d.ts";
 
-type ConfigsRules = Record<string, Rules>;
+type RuleVersion = {
+  configName: string;
+  ruleName: string;
+  tsEntry?: any;
+  jsEntry?: any;
+};
 
-const getESLintRuleLevel = (ruleEntry: Linter.RuleEntry): ESLintRuleLevel => {
-  const levels = ["off", "warn", "error"] satisfies ESLintRuleLevel[];
-  const ruleLevel =
-    typeof ruleEntry === "number"
-      ? levels[ruleEntry]
-      : typeof ruleEntry?.[0] === "number"
-      ? levels[ruleEntry[0]]
-      : (ruleEntry?.[0] as ESLintRuleLevel);
+const CONFIG_NAMES = (allESLintConfigs as ESLintConfig[]).map(({ key }) => key);
 
-  if (!levels.includes(ruleLevel)) {
-    throw new Error(
-      `Rule \`${stringify(ruleEntry)}\` have unexpected severity`,
-    );
+const LATEST_DOCUMENTS = (allVersions as Version[]).filter(
+  (document) => document.version !== "next",
+);
+
+const sortRulesVersion = (a: RuleVersion, b: RuleVersion) => {
+  if (`${a.configName}${a.ruleName}` < `${b.configName}${b.ruleName}`) {
+    return -1;
   }
-
-  return ruleLevel;
+  if (`${a.configName}${a.ruleName}` > `${b.configName}${b.ruleName}`) {
+    return 1;
+  }
+  return 0;
 };
 
-const getESLintRuleStringSeverityAndOptions = (
-  ruleEntry: Linter.RuleEntry,
-): [ESLintRuleLevel, ...any] => {
-  const level = getESLintRuleLevel(ruleEntry);
-  const [, ...options] = Array.isArray(ruleEntry) ? ruleEntry : [];
-
-  return [level, ...options];
-};
-
-const getESLintConfig = async ({
-  configName,
-  ts = false,
-}: {
-  configName: ESLintConfigName;
-  ts?: boolean;
-}) => {
-  const engine = new ESLint({
-    baseConfig: {
-      extends: [`peppy/configs/${configName}`],
-    },
-    useEslintrc: false,
-  });
-
-  const eslintConfig: Linter.Config = ts
-    ? await engine.calculateConfigForFile("file.ts")
-    : await engine.calculateConfigForFile("file.js");
-
-  const rules = eslintConfig?.rules || {};
-  const sanitizedRules = Object.entries(rules).reduce<
-    Record<string, Linter.RuleLevelAndOptions>
-  >(
-    (acc, [rule, ruleEntry]) =>
-      ruleEntry
-        ? {
-            ...acc,
-            [rule]: getESLintRuleStringSeverityAndOptions(ruleEntry),
-          }
-        : { ...acc },
-    {},
-  );
-
-  return { ...eslintConfig, rules: sanitizedRules };
-};
-
-const getESLintConfigs = async () => {
-  const configsProps = eslintConfigNamesConfig.reduce<
+const getCurrentRulesVersion = async () => {
+  const configsProps = CONFIG_NAMES.reduce<
     Parameters<typeof getESLintConfig>[0][]
   >(
     (acc, configName) => [
@@ -99,182 +51,133 @@ const getESLintConfigs = async () => {
     [],
   );
 
-  const promises = configsProps.map(async (configProps) => {
+  const eslintConfigsPromises = configsProps.map(async (configProps) => {
     const config = await getESLintConfig(configProps);
     return { ...configProps, config };
   });
 
-  const eslintConfigs = await Promise.all(promises);
+  const eslintConfigs = await Promise.all(eslintConfigsPromises);
 
-  return eslintConfigs;
-};
+  const rulesVersion = eslintConfigs
+    .reduce<RuleVersion[]>(
+      (rootAcc, { configName, ts, config }) =>
+        Object.entries(config.rules).reduce((acc, [ruleName, ruleEntry]) => {
+          const entryIndex = acc.findIndex(
+            (ent) => ent.configName === configName && ent.ruleName === ruleName,
+          );
 
-const getRuleState = ({
-  previousRule,
-  currentRule,
-}: {
-  previousRule?: Rule;
-  currentRule: Rule;
-}): Rule["state"] => {
-  if (!currentRule) {
-    return "removed";
-  }
-
-  if (!previousRule) {
-    return "added";
-  }
-
-  if (!isJSONStringSames(currentRule.js?.entry, previousRule.js?.entry)) {
-    return "changed";
-  }
-
-  if (!isJSONStringSames(currentRule.ts?.entry, previousRule.ts?.entry)) {
-    return "changed";
-  }
-
-  return "unchanged";
-};
-
-const getRuleInfo = async (ruleEntry: Linter.RuleEntry): Promise<RuleInfo> => {
-  const ruleStringSeverityAndOptions =
-    getESLintRuleStringSeverityAndOptions(ruleEntry);
-  const [level] = ruleStringSeverityAndOptions;
-  const entry = await getStringifiedJSONWithPrettier(
-    ruleStringSeverityAndOptions,
-  );
-  return { level, entry };
-};
-
-const getUpdatedConfigsRules = async () => {
-  const eslintConfigs = await getESLintConfigs();
-  const latestConfigsRules = await getVersionnedConfigsRules("latest");
-
-  const currentConfigsRules = await eslintConfigs.reduce<Promise<ConfigsRules>>(
-    async (acc, { configName, ts, config }) =>
-      Object.entries(config?.rules || {}).reduce(
-        async (configsAccPromise, [ruleName, configRuleEntry]) => {
-          const configsAcc = await configsAccPromise;
-          const configEntry = configsAcc[configName] || {};
-          const ruleEntry = configEntry[ruleName] || {};
-          const ruleInfo = await getRuleInfo(configRuleEntry);
-
-          const updatedRuleEntry: Rule = {
-            ...ruleEntry,
-            [ts ? "ts" : "js"]: ruleInfo,
+          if (entryIndex === -1) {
+            return [
+              ...acc,
+              {
+                configName,
+                ruleName,
+                jsEntry: null,
+                tsEntry: null,
+                [ts ? "tsEntry" : "jsEntry"]: ruleEntry || null,
+              },
+            ];
+          }
+          acc[entryIndex] = {
+            ...acc[entryIndex],
+            [ts ? "tsEntry" : "jsEntry"]: ruleEntry || null,
           };
 
-          return {
-            ...configsAcc,
-            [configName]: {
-              ...configEntry,
-              [ruleName]: updatedRuleEntry,
-            },
-          };
-        },
-        acc,
-      ),
-    Promise.resolve({}),
-  );
+          return acc;
+        }, rootAcc),
+      [],
+    )
+    .sort(sortRulesVersion);
 
-  const removedConfigsRules: ConfigsRules = Object.fromEntries(
-    Object.entries(currentConfigsRules).map(([configName, currentRules]) => {
-      const latestRules = latestConfigsRules?.[configName] || {};
-      const missingRules = Object.entries(latestRules).filter(
-        ([ruleName, latestRule]) =>
-          !currentRules[ruleName] && latestRule.state !== "removed",
-      );
+  return rulesVersion;
+};
 
-      return [configName, Object.fromEntries(missingRules)];
+const getNextRulesVersion = async () => {
+  const latestRulesVersion = LATEST_DOCUMENTS.map(
+    ({ configName, ruleName, jsEntry, tsEntry }) => ({
+      configName,
+      ruleName,
+      jsEntry,
+      tsEntry,
     }),
-  );
+  ).sort(sortRulesVersion);
 
-  const allConfigsRules = defu(removedConfigsRules, currentConfigsRules);
+  const currentRulesVersion = await getCurrentRulesVersion();
 
-  // Keep count of the changes.
-  // If there is no changes (0 added and changed), we don't need to update so we return null
-  const statesCount = { added: 0, changed: 0, unchanged: 0, removed: 0 };
+  if (stringify(currentRulesVersion) === stringify(latestRulesVersion)) {
+    return null;
+  }
 
-  const updatedConfigsRules = Object.entries(
-    allConfigsRules,
-  ).reduce<ConfigsRules>(
-    (acc, [configName, rules]) =>
-      Object.entries(rules).reduce((configsAcc, [ruleName, rule]) => {
-        const configEntry = configsAcc[configName] || {};
+  const removedRulesVersion = latestRulesVersion
+    .filter(
+      (latestConfig) =>
+        !currentRulesVersion.some(
+          (config) =>
+            config.configName === latestConfig.configName &&
+            config.ruleName === latestConfig.ruleName,
+        ),
+    )
+    .map((removedConfigRule) => ({
+      ...removedConfigRule,
+      jsEntry: null,
+      tsEntry: null,
+    }));
 
-        const state = getRuleState({
-          previousRule: latestConfigsRules?.[configName]?.[ruleName],
-          currentRule: currentConfigsRules?.[configName]?.[ruleName],
-        });
-        const latestUpdates =
-          latestConfigsRules?.[configName]?.[ruleName]?.updates || [];
-        const updates =
-          state === "unchanged" ? latestUpdates : ["next", ...latestUpdates];
-
-        statesCount[state] += 1;
-
-        const updatedRuleEntry: Rule = {
-          ...rule,
-          updates,
-          state,
-        };
-
-        return {
-          ...configsAcc,
-          [configName]: {
-            ...configEntry,
-            [ruleName]: updatedRuleEntry,
-          },
-        };
-      }, acc),
-    {},
-  );
-
-  return statesCount.added || statesCount.changed || statesCount.removed
-    ? updatedConfigsRules
-    : null;
-};
-
-const updateRulesFile = async (updatedConfigsRules: ConfigsRules) => {
-  await fsPromises.rm(getGeneratedVersionPath({ version: "next" }), {
-    recursive: true,
-    force: true,
-  });
-
-  const writePromises = Object.entries(updatedConfigsRules).map(
-    async ([configName, rules]) => {
-      await writeRulesFile({ rules, version: "next", config: configName });
-    },
-  );
-
-  await Promise.all(writePromises);
-};
-
-const updateVersionsFile = async (updatedConfigsRules: ConfigsRules) => {
-  const eslintVersionsWithoutNext = eslintVersions.filter(
-    (version) => version.version !== "next",
-  );
-
-  const nextVersion: ESLintVersion = {
-    version: "next",
-    configs: Object.keys(updatedConfigsRules).sort(),
-  };
-
-  const updatedVersions = [nextVersion, ...eslintVersionsWithoutNext];
-
-  await writeVersionFile(updatedVersions);
+  return [...currentRulesVersion, ...removedRulesVersion];
 };
 
 /**
  *  Update the next version in the generated files, if needed
  */
 (async () => {
-  const updatedConfigsRules = await getUpdatedConfigsRules();
+  const nextFolder = path.join(__dirname, `../src/content/versions/next`);
+  const nextRulesVersion = await getNextRulesVersion();
 
-  if (!updatedConfigsRules) {
+  // Remove the previous next version folder
+  await fsPromises.rm(nextFolder, { recursive: true, force: true });
+
+  // If there's no next version, we don't need to create the next version
+  if (!nextRulesVersion) {
     return console.log("Nothing changed since last release");
   }
-  await updateRulesFile(updatedConfigsRules);
-  await updateVersionsFile(updatedConfigsRules);
+
+  const writeDocumentPromises = nextRulesVersion.map(
+    async ({ configName, ruleName, tsEntry, jsEntry }) => {
+      const latest = LATEST_DOCUMENTS.find(
+        (document) =>
+          document.configName === configName && document.ruleName === ruleName,
+      );
+
+      const previousJsEntry = latest?.jsEntry
+        ? stringify(latest?.jsEntry)
+        : null;
+
+      const previousTsEntry = latest?.tsEntry
+        ? stringify(latest?.tsEntry)
+        : null;
+
+      const updates = latest?.updates || [];
+
+      const filepath = path.join(nextFolder, `${configName}/${ruleName}.mdx`);
+
+      const content = `---
+ruleName: "${ruleName}"
+jsEntry: ${jsEntry ? stringify(jsEntry) : null}
+previousJsEntry: ${previousJsEntry}
+tsEntry: ${tsEntry ? stringify(tsEntry) : null}
+previousTsEntry: ${previousTsEntry}
+updates: ${stringify(updates)}
+---`;
+
+      return writeWithPrettier({
+        filepath,
+        content,
+        options: { parser: "mdx" },
+      });
+    },
+  );
+
+  await Promise.all(writeDocumentPromises);
 
   return console.log("Next version files updated");
 })();
