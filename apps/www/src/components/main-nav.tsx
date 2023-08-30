@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Icons } from "@/components/icons";
+import { Icon } from "@/components/icon";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +13,7 @@ export const MainNav = () => {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Icons.Logo className="h-6 w-6" />
+        <Icon icon="peppy" className="h-6 w-6" />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>

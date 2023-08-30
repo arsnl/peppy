@@ -1,14 +1,9 @@
 "use client";
 
 import * as React from "react";
-import {
-  CircleIcon,
-  LaptopIcon,
-  MoonIcon,
-  SunIcon,
-} from "@radix-ui/react-icons";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
+import { Icon } from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
@@ -76,7 +71,7 @@ export const CommandMenu = ({ ...props }: DialogProps) => {
                   }}
                 >
                   <div className="mr-2 flex h-4 w-4 items-center justify-center">
-                    <CircleIcon className="h-3 w-3" />
+                    <Icon icon="circle" className="h-3 w-3" />
                   </div>
                   {navItem.title}
                 </CommandItem>
@@ -86,15 +81,15 @@ export const CommandMenu = ({ ...props }: DialogProps) => {
           <CommandSeparator />
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
-              <SunIcon className="mr-2 h-4 w-4" />
+              <Icon icon="sun" className="mr-2 h-4 w-4" />
               Light
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
-              <MoonIcon className="mr-2 h-4 w-4" />
+              <Icon icon="moon" className="mr-2 h-4 w-4" />
               Dark
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
-              <LaptopIcon className="mr-2 h-4 w-4" />
+              <Icon icon="laptop" className="mr-2 h-4 w-4" />
               System
             </CommandItem>
           </CommandGroup>

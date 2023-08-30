@@ -2,7 +2,7 @@
 
 import { type HTMLAttributes } from "react";
 import Link, { type LinkProps } from "next/link";
-import { Icons } from "@/components/icons";
+import { Icon, type IconName } from "@/components/icon";
 import { Badge } from "@/components/ui/badge";
 import { eslintRuleStateTextConfig } from "@/config/eslint";
 import { cn } from "@/lib/utils";
@@ -27,12 +27,12 @@ type _RuleConfigurationIconProps = Omit<
   "children"
 > & {
   level?: Required<RuleCardOptions>["js" | "ts"];
-  Icon: (typeof Icons)[keyof typeof Icons];
+  icon: IconName;
 };
 
 const _RuleConfigurationIcon = ({
   level,
-  Icon,
+  icon,
   className,
   ...props
 }: _RuleConfigurationIconProps) =>
@@ -44,7 +44,7 @@ const _RuleConfigurationIcon = ({
       )}
       {...props}
     >
-      <Icon className="h-5 w-5" />
+      <Icon icon={icon} className="h-5 w-5" />
       <span
         className={cn(
           "absolute right-0 top-0 block h-2 w-2 -translate-y-1/2 translate-x-1/2 rounded-full",
@@ -112,12 +112,12 @@ export const RuleCard = ({
     <div className="flex justify-end gap-2">
       <_RuleConfigurationIcon
         level={js}
-        Icon={Icons.JsOutline}
+        icon="javascript-outline"
         aria-label={`View JavaScript configuration for the rule ${ruleName}`}
       />
       <_RuleConfigurationIcon
         level={ts}
-        Icon={Icons.TsOutline}
+        icon="typescript-outline"
         aria-label={`View TypeScript configuration for the rule ${ruleName}`}
       />
     </div>

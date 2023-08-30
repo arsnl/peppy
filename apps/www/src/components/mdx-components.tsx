@@ -1,13 +1,14 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 
 import * as React from "react";
-import { TerminalIcon } from "lucide-react";
 import { type MDXComponents } from "mdx/types";
 import Image from "next/image";
 import Link from "next/link";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import { CodeBlockWrapper } from "@/components/code-block-wrapper";
+import { ConfigurationCards } from "@/components/configuration-cards";
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button";
+import { Icon } from "@/components/icon";
 import { Rules } from "@/components/rules";
 import {
   Accordion,
@@ -272,18 +273,10 @@ const components = {
       {...props}
     />
   ),
-  LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
-    <Link
-      className={cn(
-        "flex w-full flex-col items-center rounded-xl border bg-card p-6 text-card-foreground shadow transition-colors hover:bg-muted/50 sm:p-10",
-        className,
-      )}
-      {...props}
-    />
-  ),
+  ConfigurationCards: (props) => <ConfigurationCards {...props} />,
   Todo: ({ children, className, ...props }) => (
     <Alert className={cn("my-4", className)} {...props}>
-      <TerminalIcon className="h-4 w-4" />
+      <Icon icon="terminal" className="h-4 w-4" />
       <AlertTitle className="mb-2 font-semibold">We need your help!</AlertTitle>
       <AlertDescription className="flex flex-col gap-2">
         <p>

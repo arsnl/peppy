@@ -1,10 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { ViewVerticalIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Icons } from "@/components/icons";
+import { Icon } from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -23,7 +22,7 @@ export const MobileNav = () => {
           variant="ghost"
           className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
-          <ViewVerticalIcon className="h-5 w-5" />
+          <Icon icon="columns" className="h-5 w-5" />
           <span className="sr-only">Toggle Menu</span>
         </Button>
       </SheetTrigger>
@@ -33,7 +32,7 @@ export const MobileNav = () => {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          <Icons.Logo className="mr-2 h-6 w-6" />
+          <Icon icon="peppy" className="mr-2 h-6 w-6" />
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">

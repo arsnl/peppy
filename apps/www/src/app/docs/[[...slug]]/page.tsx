@@ -1,8 +1,8 @@
 import "@/styles/mdx.css";
-import { ChevronRightIcon } from "@radix-ui/react-icons";
 import { allDocs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
+import { Icon } from "@/components/icon";
 import { Mdx } from "@/components/mdx-components";
 import { DocsPager } from "@/components/pager";
 import { DashboardTableOfContents } from "@/components/toc";
@@ -86,7 +86,7 @@ const DocPage = async ({ params }: DocPageProps) => {
       <div className="mx-auto w-full min-w-0">
         <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
           <div className="truncate">Docs</div>
-          <ChevronRightIcon className="h-4 w-4" />
+          <Icon icon="chevron-right" className="h-4 w-4" />
           <div className="font-medium text-foreground">{doc.title}</div>
         </div>
         <div className="space-y-2">

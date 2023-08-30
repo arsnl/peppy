@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CopyCodeButton } from "@/components/copy-button";
 import { Heading, HeadingSubtext, HeadingTitle } from "@/components/heading";
-import { Icons } from "@/components/icons";
+import { Icon } from "@/components/icon";
 import { Section } from "@/components/section";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
@@ -37,7 +37,7 @@ export const SectionHero = () => (
         href={siteConfig.links.github}
         className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
       >
-        <Icons.GitHub className="mr-2 h-4 w-4" />
+        <Icon icon="github" className="mr-2 h-4 w-4" />
         GitHub
       </Link>
     </div>

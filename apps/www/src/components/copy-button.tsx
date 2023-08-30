@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
-import { TerminalIcon } from "lucide-react";
+import { Icon } from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -67,9 +66,9 @@ export const CopyButton = ({
     >
       <span className="sr-only">Copy</span>
       {hasCopied ? (
-        <CheckIcon className="h-3 w-3" />
+        <Icon icon="check" className="h-3 w-3" />
       ) : (
-        <CopyIcon className="h-3 w-3" />
+        <Icon icon="copy" className="h-3 w-3" />
       )}
     </Button>
   );
@@ -108,9 +107,9 @@ export const CopyWithClassNames = ({
           className={cn("relative z-10 h-6 w-6 text-foreground", className)}
         >
           {hasCopied ? (
-            <CheckIcon className="h-3 w-3" />
+            <Icon icon="check" className="h-3 w-3" />
           ) : (
-            <CopyIcon className="h-3 w-3" />
+            <Icon icon="copy" className="h-3 w-3" />
           )}
           <span className="sr-only">Copy</span>
         </Button>
@@ -169,9 +168,9 @@ export const CopyNpmCommandButton = ({
           )}
         >
           {hasCopied ? (
-            <CheckIcon className="h-3 w-3" />
+            <Icon icon="check" className="h-3 w-3" />
           ) : (
-            <CopyIcon className="h-3 w-3" />
+            <Icon icon="copy" className="h-3 w-3" />
           )}
           <span className="sr-only">Copy</span>
         </Button>
@@ -239,13 +238,9 @@ export const CopyCodeButton = ({
       }}
       {...props}
     >
-      <TerminalIcon className="h-[1em] w-[1em]" />
+      <Icon icon="terminal" />
       <code>{value}</code>
-      {hasCopied ? (
-        <CheckIcon className="h-[1em] w-[1em]" />
-      ) : (
-        <CopyIcon className="h-[1em] w-[1em]" />
-      )}
+      {hasCopied ? <Icon icon="check" /> : <Icon icon="copy" />}
     </Button>
   );
 };
