@@ -31,6 +31,10 @@ export const ESLintConfig = defineDocumentType(() => ({
       type: "string",
       required: true,
     },
+    icon: {
+      type: "string",
+      required: true,
+    },
   },
   computedFields,
 }));
