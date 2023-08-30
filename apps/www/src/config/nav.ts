@@ -1,8 +1,16 @@
+import "server-only";
+import { sortedESLintConfig } from "@/config/eslint-configs";
 import type { NavItem } from "@/types/nav";
 
-type NavConfig = {
+export type NavConfig = {
   sidebarNav: NavItem[];
 };
+
+const eslintConfigNavItems = sortedESLintConfig.map((config) => ({
+  title: config.name,
+  href: config.href,
+  items: [],
+}));
 
 export const navConfig: NavConfig = {
   sidebarNav: [
@@ -34,36 +42,7 @@ export const navConfig: NavConfig = {
           href: "/docs/configurations",
           items: [],
         },
-        {
-          title: "Base",
-          href: "/docs/configurations/base",
-          items: [],
-        },
-        {
-          title: "React",
-          href: "/docs/configurations/react",
-          items: [],
-        },
-        {
-          title: "Next",
-          href: "/docs/configurations/next",
-          items: [],
-        },
-        {
-          title: "Jest",
-          href: "/docs/configurations/jest",
-          items: [],
-        },
-        {
-          title: "Tailwind CSS",
-          href: "/docs/configurations/tailwindcss",
-          items: [],
-        },
-        {
-          title: "Prettier",
-          href: "/docs/configurations/prettier",
-          items: [],
-        },
+        ...eslintConfigNavItems,
       ],
     },
     {

@@ -7,12 +7,15 @@ import { Icon } from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { navConfig } from "@/config/nav";
+import { type NavConfig } from "@/config/nav";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import type { LinkProps } from "next/link";
 
-export const MobileNav = () => {
+export type MobileNavProps = {
+  navConfig: NavConfig;
+};
+export const MobileNav = ({ navConfig }: MobileNavProps) => {
   const [open, setOpen] = React.useState(false);
 
   return (

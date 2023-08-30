@@ -14,11 +14,14 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { navConfig } from "@/config/nav";
+import { type NavConfig } from "@/config/nav";
 import { cn } from "@/lib/utils";
 import type { DialogProps } from "@radix-ui/react-alert-dialog";
 
-export const CommandMenu = ({ ...props }: DialogProps) => {
+export type CommandMenuProps = DialogProps & {
+  navConfig: NavConfig;
+};
+export const CommandMenu = ({ navConfig, ...props }: CommandMenuProps) => {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const { setTheme } = useTheme();

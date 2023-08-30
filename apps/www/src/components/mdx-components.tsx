@@ -6,8 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import { CodeBlockWrapper } from "@/components/code-block-wrapper";
-import { ConfigurationCards } from "@/components/configuration-cards";
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button";
+import { ESLintConfigCards } from "@/components/eslint-config-cards";
 import { Icon } from "@/components/icon";
 import { Rules } from "@/components/rules";
 import {
@@ -273,7 +273,7 @@ const components = {
       {...props}
     />
   ),
-  ConfigurationCards: (props) => <ConfigurationCards {...props} />,
+  ESLintConfigCards: (props) => <ESLintConfigCards {...props} />,
   Todo: ({ children, className, ...props }) => (
     <Alert className={cn("my-4", className)} {...props}>
       <Icon icon="terminal" className="h-4 w-4" />
