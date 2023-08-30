@@ -4,7 +4,7 @@ import {
 } from "contentlayer/source-files";
 
 const computedFields: ComputedFields = {
-  key: {
+  version: {
     type: "string",
     resolve: (doc) => doc._raw.sourceFileName.replace(".mdx", ""),
   },

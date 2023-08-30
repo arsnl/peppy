@@ -1,76 +1,88 @@
-/* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-console */
 import { version } from "eslint-config-peppy/package.json";
 import fsPromises from "node:fs/promises";
-import { eslintVersions } from "@/generated/eslint-versions";
-import { type Rule, type Rules } from "@/types/eslint";
 import {
-  getGeneratedVersionPath,
-  getVersionnedConfigsRules,
-  writeRulesFile,
-  writeVersionFile,
-} from "./utils/commons";
-
-const updateVersionsFile = async () => {
-  const updatedVersions = eslintVersions.map((versionEntry) => ({
-    ...versionEntry,
-    version: versionEntry.version === "next" ? version : versionEntry.version,
-  }));
-
-  await writeVersionFile(updatedVersions);
-};
-
-const updateRulesFiles = async () => {
-  const configsRules = await getVersionnedConfigsRules("next");
-
-  const updatedConfigsRules = Object.entries(configsRules).reduce<
-    Record<string, Rules>
-  >(
-    (acc, [configName, rules]) =>
-      Object.entries(rules).reduce((configsAcc, [ruleName, rule]) => {
-        const configEntry = configsAcc[configName] || {};
-
-        const updatedRuleEntry: Rule = {
-          ...rule,
-          updates: rule?.updates?.map((update) =>
-            update === "next" ? version : update,
-          ),
-        };
-
-        return {
-          ...configsAcc,
-          [configName]: {
-            ...configEntry,
-            [ruleName]: updatedRuleEntry,
-          },
-        };
-      }, acc),
-    {},
-  );
-
-  // Write rules files for the new version
-  await Promise.all(
-    Object.entries(updatedConfigsRules).map(async ([configName, rules]) =>
-      writeRulesFile({ rules, version, config: configName }),
-    ),
-  );
-
-  // Remove rules files for the next version
-  await fsPromises.rm(getGeneratedVersionPath({ version: "next" }), {
-    recursive: true,
-  });
-};
+  contentlayerBuild,
+  getLatestVersion,
+  getRuleVersions,
+  removeNextVersion,
+  RULE_VERSIONS_LATEST_FOLDER,
+  RULE_VERSIONS_TEMP_FOLDER,
+  writeRuleVersion,
+  writeVersion,
+} from "./utils/contentlayer";
 
 /**
  * Bump the version next version in the generated files to the current version
  */
 (async () => {
-  if (eslintVersions?.[0]?.version !== "next") {
+  // Clear the cache and build the contentlayer files
+  await contentlayerBuild();
+
+  // Get the rule versions for the next version
+  const nextRuleVersions = await getRuleVersions(true);
+
+  // Get the latest version from contentlayer
+  const latestVersion = await getLatestVersion();
+
+  // If there's no next rule versions, we don't need to bump
+  if (!nextRuleVersions?.length) {
     return console.log("Nothing to bump");
   }
 
-  await updateRulesFiles();
-  await updateVersionsFile();
+  // If the latest and current versions are the same, we prevent the bump
+  if (latestVersion === version) {
+    console.error("You cannot bump the version to the same version.");
+    console.error(
+      "Ensure you have updated the version in package.json before running this script.",
+    );
+    throw new Error("Version bump failed");
+  }
 
-  return console.log("Bump completed");
+  // Write the rule versions in the temp folder
+  await Promise.all(
+    nextRuleVersions.map(
+      async ({
+        configName,
+        ruleName,
+        tsEntry,
+        previousJsEntry,
+        jsEntry,
+        previousTsEntry,
+        updates = [],
+        state,
+      }) =>
+        writeRuleVersion({
+          configName,
+          ruleName,
+          version,
+          jsEntry,
+          previousJsEntry,
+          tsEntry,
+          previousTsEntry,
+          updates: state === "unchanged" ? updates : [version, ...updates],
+        }),
+    ),
+  );
+
+  // Remove the previous next version folder and the next version file
+  await removeNextVersion();
+
+  // Remove the previous latest version folder
+  await fsPromises.rm(RULE_VERSIONS_LATEST_FOLDER, {
+    recursive: true,
+    force: true,
+  });
+
+  // Rename the temp folder to the latest version folder
+  await fsPromises.rename(
+    RULE_VERSIONS_TEMP_FOLDER,
+    RULE_VERSIONS_LATEST_FOLDER,
+  );
+
+  // Write the version file
+  await writeVersion({ version });
+
+  return console.log(`Bumped to version ${version}`);
 })();

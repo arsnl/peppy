@@ -4,14 +4,14 @@ import {
 } from "contentlayer/source-files";
 
 const computedFields: ComputedFields = {
-  key: {
+  nameKey: {
     type: "string",
     resolve: (doc) => doc._raw.sourceFileName.replace(".mdx", ""),
   },
   extendKey: {
     type: "string",
     resolve: (doc) => {
-      const key = computedFields.key.resolve(doc);
+      const key = computedFields.nameKey.resolve(doc);
 
       return `peppy${key === "base" ? "" : `/${key}`}`;
     },

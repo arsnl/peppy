@@ -10,8 +10,8 @@
     "type": "contentlayer build && tsc --noEmit",
     "fix": "prettier --write --log-level warn . && npm run lint -- --fix",
     "clean": "rimraf .next .contentlayer .turbo node_modules",
-    "next": "contentlayer build && tsx scripts/next.ts",
-    "bump": "contentlayer build && tsx scripts/bump.ts"
+    "next": "tsx scripts/next.ts",
+    "bump": "tsx scripts/bump.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
@@ -59,6 +59,7 @@
   "devDependencies": {
     "@types/mdx": "^2.0.5",
     "defu": "^6.1.2",
+    "execa": "5.1.1",
     "fast-json-stable-stringify": "^2.1.0",
     "rehype-autolink-headings": "^6.1.1",
     "rehype-pretty-code": "^0.10.0",

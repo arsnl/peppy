@@ -13,10 +13,6 @@ const computedFields: ComputedFields = {
       return configName;
     },
   },
-  version: {
-    type: "string",
-    resolve: (doc) => doc.version || "next",
-  },
   jsLevel: {
     type: "string",
     resolve: (doc) => doc?.jsEntry?.[0] ?? null,
@@ -50,10 +46,11 @@ export const RuleVersion = defineDocumentType(() => ({
   filePathPattern: `rule-versions/**/*.mdx`,
   contentType: "mdx",
   fields: {
-    version: {
-      type: "string",
-    },
     ruleName: {
+      type: "string",
+      required: true,
+    },
+    version: {
       type: "string",
       required: true,
     },
@@ -71,6 +68,7 @@ export const RuleVersion = defineDocumentType(() => ({
     },
     updates: {
       type: "json",
+      required: true,
     },
   },
   computedFields,
