@@ -1,18 +1,17 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { ESLint, type Linter } from "eslint";
 import stringify from "fast-json-stable-stringify";
-import { type ESLintRuleLevel } from "@/types/eslint";
 
 export const getESLintRuleLevel = (
   ruleEntry: Linter.RuleEntry,
-): ESLintRuleLevel => {
-  const levels = ["off", "warn", "error"] satisfies ESLintRuleLevel[];
+): Linter.StringSeverity => {
+  const levels = ["off", "warn", "error"] satisfies Linter.StringSeverity[];
   const ruleLevel =
     typeof ruleEntry === "number"
       ? levels[ruleEntry]
       : typeof ruleEntry?.[0] === "number"
       ? levels[ruleEntry[0]]
-      : (ruleEntry?.[0] as ESLintRuleLevel);
+      : (ruleEntry?.[0] as Linter.StringSeverity);
 
   if (!levels.includes(ruleLevel)) {
     throw new Error(
@@ -25,7 +24,7 @@ export const getESLintRuleLevel = (
 
 export const getESLintRuleStringSeverityAndOptions = (
   ruleEntry: Linter.RuleEntry,
-): [ESLintRuleLevel, ...any] => {
+): [Linter.StringSeverity, ...any] => {
   const level = getESLintRuleLevel(ruleEntry);
   const [, ...options] = Array.isArray(ruleEntry) ? ruleEntry : [];
 

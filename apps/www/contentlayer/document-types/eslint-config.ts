@@ -16,6 +16,11 @@ const computedFields: ComputedFields = {
       return `peppy${key === "base" ? "" : `/${key}`}`;
     },
   },
+  slug: {
+    type: "string",
+    resolve: (doc) =>
+      `/docs/configurations/${computedFields.nameKey.resolve(doc)}`,
+  },
 };
 
 export const ESLintConfig = defineDocumentType(() => ({

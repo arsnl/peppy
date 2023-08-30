@@ -10,13 +10,11 @@ export const otherESLintConfigs = allESLintConfigs
   .filter((config) => config.nameKey !== "base")
   .sort((a, b) => a.name.localeCompare(b.name));
 
-export const sortedESLintConfig: Array<
-  ESLintConfig & { href: string; icon: IconName }
-> = [
+// TODO: find a way to change the contentlayer type for icon to IconName instead of string
+export const sortedESLintConfig: Array<ESLintConfig & { icon: IconName }> = [
   ...(baseESLintConfig ? [baseESLintConfig] : []),
   ...otherESLintConfigs,
 ].map((config) => ({
   ...config,
   icon: config.icon as IconName,
-  href: `/docs/configurations/${config.nameKey}`,
 }));

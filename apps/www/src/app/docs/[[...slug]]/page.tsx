@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
 import { Icon } from "@/components/icon";
 import { Mdx } from "@/components/mdx-components";
-import { DocsPager } from "@/components/pager";
+import { Pager } from "@/components/pager";
 import { DashboardTableOfContents } from "@/components/toc";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { siteConfig } from "@/config/site";
@@ -102,7 +102,7 @@ const DocPage = async ({ params }: DocPageProps) => {
         <div className="pb-12 pt-8">
           <Mdx code={doc.body.code} />
         </div>
-        <DocsPager doc={doc} />
+        <Pager doc={doc} />
       </div>
       {doc.toc && (
         <div className="hidden text-sm xl:block">

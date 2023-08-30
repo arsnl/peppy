@@ -6,6 +6,10 @@ import {
 import stringify from "fast-json-stable-stringify";
 
 const computedFields: ComputedFields = {
+  ruleKey: {
+    type: "string",
+    resolve: (doc) => doc.ruleName.replace("/", "_"),
+  },
   configName: {
     type: "string",
     resolve: (doc) => {
@@ -38,6 +42,34 @@ const computedFields: ComputedFields = {
           })
         ? "updated"
         : "unchanged",
+  },
+  stateLabel: {
+    type: "string",
+    resolve: (doc) => {
+      const state = computedFields.state.resolve(doc) as any;
+
+      switch (state) {
+        case "new":
+          return "New";
+        case "removed":
+          return "Removed";
+        case "updated":
+          return "Updated";
+        case "unchanged":
+          return "Unchanged";
+        default:
+          return "Unknown";
+      }
+    },
+  },
+  slug: {
+    type: "string",
+    resolve: (doc) => {
+      const configName = computedFields.configName.resolve(doc);
+      const ruleKey = computedFields.ruleKey.resolve(doc);
+
+      return `/docs/configurations/${configName}/${ruleKey}`;
+    },
   },
 };
 

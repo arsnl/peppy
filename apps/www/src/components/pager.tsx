@@ -1,17 +1,19 @@
+import { type Doc, type ESLintConfig } from "contentlayer/generated";
 import Link from "next/link";
 import { Icon } from "@/components/icon";
 import { buttonVariants } from "@/components/ui/button";
 import { navConfig } from "@/config/nav";
 import { cn } from "@/lib/utils";
-import type { Doc } from "contentlayer/generated";
-import type { NavItem } from "@/types/nav";
+import { type NavItem } from "@/types/nav";
 
-type DocsPagerProps = {
-  doc: Doc;
+type Document = Doc | ESLintConfig;
+
+export type PagerProps = {
+  doc: Document;
 };
 
-export const DocsPager = ({ doc }: DocsPagerProps) => {
-  const pager = getPagerForDoc(doc);
+export const Pager = ({ doc }: PagerProps) => {
+  const pager = getPager(doc);
 
   if (!pager) {
     return null;
@@ -41,7 +43,7 @@ export const DocsPager = ({ doc }: DocsPagerProps) => {
   );
 };
 
-export const getPagerForDoc = (doc: Doc) => {
+export const getPager = (doc: Document) => {
   const flattenedLinks = [null, ...flatten(navConfig.sidebarNav), null];
   const activeIndex = flattenedLinks.findIndex(
     (link) => doc.slug === link?.href,

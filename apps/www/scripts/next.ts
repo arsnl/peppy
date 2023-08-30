@@ -21,13 +21,10 @@ const sortPartialRuleVersions = (
   a: PartialRuleVersion,
   b: PartialRuleVersion,
 ) => {
-  if (`${a.configName}${a.ruleName}` < `${b.configName}${b.ruleName}`) {
-    return -1;
-  }
-  if (`${a.configName}${a.ruleName}` > `${b.configName}${b.ruleName}`) {
-    return 1;
-  }
-  return 0;
+  const aKey = `${a.configName}${a.ruleName}`;
+  const bKey = `${b.configName}${b.ruleName}`;
+
+  return aKey.localeCompare(bKey);
 };
 
 const getCurrentRuleVersions = async () => {

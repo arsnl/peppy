@@ -63,16 +63,8 @@ export const getLatestVersion = async () => {
   const allVersions = await getAllVersions();
 
   return allVersions
-    .filter((doc) => doc.version !== "next")
-    .sort((a, b) => {
-      if (a.version < b.version) {
-        return 1;
-      }
-      if (a.version > b.version) {
-        return -1;
-      }
-      return 0;
-    })[0].version;
+    .sort((a, b) => b.version.localeCompare(a.version))
+    .filter((doc) => doc.version !== "next")[0].version;
 };
 
 export const writeRuleVersion = async ({

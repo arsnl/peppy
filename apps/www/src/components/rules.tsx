@@ -2,38 +2,39 @@ import * as React from "react";
 import { allRules } from "contentlayer/generated";
 import { RuleCard, type RuleCardOptions } from "@/components/rule-card";
 import { Input } from "@/components/ui/input";
-import { getESLintRules } from "@/lib/eslint";
+import { getRuleVersions } from "@/config/rule-version";
 import { cn } from "@/lib/utils";
-import type { ESLintConfigName } from "@/types/eslint";
 
 export type RuleProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
   "children"
 > & {
-  configName: ESLintConfigName;
+  configName: string;
 };
 
 export const Rules = async ({ configName, className, ...props }: RuleProps) => {
-  const eslintRules = await getESLintRules({ configName, version: "latest" });
+  const ruleVersions = getRuleVersions({ configName });
+  const rulesProps = ruleVersions.map((ruleVersion) => {
+    const { version, ruleName, jsLevel, tsLevel, state, stateLabel, slug } =
+      ruleVersion;
 
-  const rulesProps = Object.entries(eslintRules || {}).map(
-    ([ruleName, rule]) => {
-      const { js, ts, state } = rule || {};
-      const ruleContent = allRules.find(({ name }) => name === ruleName);
-      const { description } = ruleContent || {};
+    // TODO: Remove and remplace with computed property on the ruleVersion
+    const ruleContent = allRules.find(({ name }) => name === ruleName);
+    const { description } = ruleContent || {};
 
-      return {
-        version: "latest",
-        configName,
-        ruleName,
-        // eslint-disable-next-line react/jsx-no-useless-fragment
-        description: <>{description?.raw || ""}</>, // TODO: Migrate to MDX
-        js: js?.level,
-        ts: ts?.level,
-        state,
-      } satisfies RuleCardOptions;
-    },
-  );
+    return {
+      version,
+      ruleName,
+      configName,
+      jsLevel,
+      tsLevel,
+      state,
+      stateLabel,
+      slug,
+      // eslint-disable-next-line react/jsx-no-useless-fragment
+      description: <>{description?.raw || ""}</>, // TODO: Migrate to MDX
+    } satisfies RuleCardOptions;
+  });
 
   return (
     <div className={cn("w-full", className)} {...props}>

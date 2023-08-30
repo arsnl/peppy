@@ -1,5 +1,5 @@
 import "server-only";
-import { sortedESLintConfig } from "@/config/eslint-configs";
+import { sortedESLintConfig } from "@/config/eslint-config";
 import type { NavItem } from "@/types/nav";
 
 export type NavConfig = {
@@ -8,7 +8,7 @@ export type NavConfig = {
 
 const eslintConfigNavItems = sortedESLintConfig.map((config) => ({
   title: config.name,
-  href: config.href,
+  href: config.slug,
   items: [],
 }));
 

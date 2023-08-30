@@ -1,32 +1,29 @@
 "use client";
 
 import { type HTMLAttributes } from "react";
+import { type RuleVersion } from "contentlayer/generated";
 import Link, { type LinkProps } from "next/link";
 import { Icon, type IconName } from "@/components/icon";
 import { Badge } from "@/components/ui/badge";
-import { eslintRuleStateTextConfig } from "@/config/eslint";
 import { cn } from "@/lib/utils";
-import {
-  type ESLintConfigName,
-  type ESLintRuleLevel,
-  type Rule,
-} from "@/types/eslint";
 
-export type RuleCardOptions = {
-  version: string;
-  configName: ESLintConfigName;
-  ruleName: string;
-  description: React.JSX.Element;
-  js?: ESLintRuleLevel;
-  ts?: ESLintRuleLevel;
-  state: Rule["state"];
-};
+export type RuleCardOptions = Pick<
+  RuleVersion,
+  | "version"
+  | "ruleName"
+  | "configName"
+  | "jsLevel"
+  | "tsLevel"
+  | "state"
+  | "stateLabel"
+  | "slug"
+> & { description: any }; // TODO: Migrate to RuleVersion then use the RuleVersion property
 
 type _RuleConfigurationIconProps = Omit<
   HTMLAttributes<HTMLDivElement>,
   "children"
 > & {
-  level?: Required<RuleCardOptions>["js" | "ts"];
+  level?: Required<RuleCardOptions>["jsLevel" | "tsLevel"];
   icon: IconName;
 };
 
@@ -67,17 +64,19 @@ export type RuleCardProps = Omit<
 
 export const RuleCard = ({
   version,
-  configName,
   ruleName,
-  description,
-  js,
-  ts,
+  configName,
+  jsLevel,
+  tsLevel,
   state,
+  stateLabel,
+  slug,
+  description,
   className,
   ...props
 }: RuleCardProps) => (
   <Link
-    href={`/configurations/${version}/${configName}/${ruleName}`}
+    href={slug}
     className={cn(
       "relative flex flex-col rounded-md border p-4 transition-colors hover:border-foreground hover:shadow-sm sm:flex-row sm:items-center sm:justify-between sm:gap-4",
       className,
@@ -91,12 +90,12 @@ export const RuleCard = ({
       >
         <span
           className={cn("block h-2 w-2 rounded-full", {
-            "bg-green-500": state === "added",
-            "bg-sky-500": state === "changed",
+            "bg-green-500": state === "new",
             "bg-red-500": state === "removed",
+            "bg-sky-500": state === "updated",
           })}
         />
-        {eslintRuleStateTextConfig[state]}
+        {stateLabel}
       </Badge>
     )}
 
@@ -111,12 +110,12 @@ export const RuleCard = ({
 
     <div className="flex justify-end gap-2">
       <_RuleConfigurationIcon
-        level={js}
+        level={jsLevel}
         icon="javascript-outline"
         aria-label={`View JavaScript configuration for the rule ${ruleName}`}
       />
       <_RuleConfigurationIcon
-        level={ts}
+        level={tsLevel}
         icon="typescript-outline"
         aria-label={`View TypeScript configuration for the rule ${ruleName}`}
       />
