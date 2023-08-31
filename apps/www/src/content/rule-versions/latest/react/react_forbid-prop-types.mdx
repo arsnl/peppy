@@ -1,0 +1,26 @@
+---
+version: "3.1.1"
+ruleKey: "react/forbid-prop-types"
+description: Forbid certain propTypes
+jsEntry:
+  [
+    "error",
+    {
+      "checkChildContextTypes": true,
+      "checkContextTypes": true,
+      "forbid": ["any", "array", "object"],
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "checkChildContextTypes": true,
+      "checkContextTypes": true,
+      "forbid": ["any", "array", "object"],
+    },
+  ]
+previousTsEntry: null
+updates: ["3.1.1"]
+---

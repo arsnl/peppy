@@ -6,7 +6,7 @@ import {
 const computedFields: ComputedFields = {
   version: {
     type: "string",
-    resolve: (doc) => doc._raw.sourceFileName.replace(".mdx", ""),
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/i, ""),
   },
 };
 

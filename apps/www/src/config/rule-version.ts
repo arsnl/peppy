@@ -7,8 +7,8 @@ export const currentRuleVersions = allRuleVersions.filter(
 );
 
 export const sortedCurrentRuleVersions = currentRuleVersions.sort((a, b) =>
-  a.ruleName.localeCompare(b.ruleName),
+  a.ruleKey.localeCompare(b.ruleKey),
 );
 
-export const getRuleVersions = ({ configName }: { configName: string }) =>
-  sortedCurrentRuleVersions.filter((doc) => doc.configName === configName);
+export const getRuleVersions = ({ configKey }: { configKey: string }) =>
+  sortedCurrentRuleVersions.filter((doc) => doc.configKey === configKey);

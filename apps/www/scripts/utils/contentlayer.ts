@@ -8,6 +8,7 @@ import execa from "execa";
 import stringify from "fast-json-stable-stringify";
 import fsPromises from "node:fs/promises";
 import path from "node:path";
+import { rulesConfig } from "@/config/rule";
 import { writeWithPrettier } from "./common";
 
 export type { ESLintConfig, RuleVersion, Version };
@@ -47,9 +48,9 @@ export const getAllRuleVersions = async () =>
 export const getAllVersions = async () =>
   import(GENERATED_PATH).then((mod) => mod.allVersions as Version[]);
 
-export const getESLintConfigNameKeys = async () => {
+export const getESLintConfigKeys = async () => {
   const allESLintConfigs = await getAllESLintConfigs();
-  return allESLintConfigs.map((doc) => doc.nameKey);
+  return allESLintConfigs.map((doc) => doc.key);
 };
 
 export const getRuleVersions = async (next: boolean = false) => {
@@ -64,12 +65,12 @@ export const getLatestVersion = async () => {
 
   return allVersions
     .sort((a, b) => b.version.localeCompare(a.version))
-    .filter((doc) => doc.version !== "next")[0].version;
+    .filter((doc) => doc.version !== "next")?.[0]?.version;
 };
 
 export const writeRuleVersion = async ({
-  configName,
-  ruleName,
+  configKey,
+  ruleKey,
   version,
   jsEntry,
   previousJsEntry,
@@ -78,8 +79,8 @@ export const writeRuleVersion = async ({
   updates,
 }: Pick<
   RuleVersion,
-  | "configName"
-  | "ruleName"
+  | "configKey"
+  | "ruleKey"
   | "version"
   | "jsEntry"
   | "previousJsEntry"
@@ -89,11 +90,17 @@ export const writeRuleVersion = async ({
 >) => {
   const folder =
     version === "next" ? RULE_VERSIONS_NEXT_FOLDER : RULE_VERSIONS_TEMP_FOLDER;
-  const filepath = path.join(folder, `/${configName}/${ruleName}.mdx`);
+  const filepath = path.join(
+    folder,
+    `/${configKey}/${ruleKey.replace(/\//g, "_")}.mdx`,
+  );
+
+  // replace all the slash in a string by _
 
   const content = `---
-ruleName: "${ruleName}"
 version: "${version}"
+ruleKey: "${ruleKey}"
+description: ${rulesConfig?.[ruleKey]?.description || null}
 jsEntry: ${jsEntry ? stringify(jsEntry) : null}
 previousJsEntry: ${previousJsEntry ? stringify(previousJsEntry) : null}
 tsEntry: ${tsEntry ? stringify(tsEntry) : null}

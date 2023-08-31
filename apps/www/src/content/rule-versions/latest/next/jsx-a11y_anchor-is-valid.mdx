@@ -1,0 +1,26 @@
+---
+version: "3.1.1"
+ruleKey: "jsx-a11y/anchor-is-valid"
+description: Enforce all anchors are valid, navigable elements
+jsEntry:
+  [
+    "error",
+    {
+      "aspects": ["invalidHref", "preferButton"],
+      "components": ["Link"],
+      "specialLink": ["hrefLeft", "hrefRight"],
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "aspects": ["invalidHref", "preferButton"],
+      "components": ["Link"],
+      "specialLink": ["hrefLeft", "hrefRight"],
+    },
+  ]
+previousTsEntry: null
+updates: ["3.1.1"]
+---

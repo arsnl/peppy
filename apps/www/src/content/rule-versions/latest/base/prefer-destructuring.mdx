@@ -1,6 +1,7 @@
 ---
-ruleName: "prefer-destructuring"
 version: "3.1.1"
+ruleKey: "prefer-destructuring"
+description: Require destructuring from arrays and/or objects
 jsEntry:
   [
     "error",
@@ -10,15 +11,7 @@ jsEntry:
     },
     { "enforceForRenamedProperties": false },
   ]
-previousJsEntry:
-  [
-    "error",
-    {
-      "AssignmentExpression": { "array": true, "object": false },
-      "VariableDeclarator": { "array": false, "object": true },
-    },
-    { "enforceForRenamedProperties": false },
-  ]
+previousJsEntry: null
 tsEntry:
   [
     "error",
@@ -28,14 +21,6 @@ tsEntry:
     },
     { "enforceForRenamedProperties": false },
   ]
-previousTsEntry:
-  [
-    "error",
-    {
-      "AssignmentExpression": { "array": true, "object": false },
-      "VariableDeclarator": { "array": false, "object": true },
-    },
-    { "enforceForRenamedProperties": false },
-  ]
-updates: ["2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

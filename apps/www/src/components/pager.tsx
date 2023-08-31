@@ -46,7 +46,7 @@ export const Pager = ({ doc }: PagerProps) => {
 export const getPager = (doc: Document) => {
   const flattenedLinks = [null, ...flatten(navConfig.sidebarNav), null];
   const activeIndex = flattenedLinks.findIndex(
-    (link) => doc.slug === link?.href,
+    (link) => doc.href === link?.href,
   );
   const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
   const next =

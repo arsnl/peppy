@@ -4,22 +4,26 @@ import {
 } from "contentlayer/source-files";
 
 const computedFields: ComputedFields = {
-  nameKey: {
-    type: "string",
-    resolve: (doc) => doc._raw.sourceFileName.replace(".mdx", ""),
-  },
-  extendKey: {
+  eslintExtend: {
     type: "string",
     resolve: (doc) => {
-      const key = computedFields.nameKey.resolve(doc);
+      const key = computedFields.key.resolve(doc);
 
       return `peppy${key === "base" ? "" : `/${key}`}`;
     },
   },
+  key: {
+    type: "string",
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/i, ""),
+  },
   slug: {
     type: "string",
+    resolve: (doc) => computedFields.key.resolve(doc),
+  },
+  href: {
+    type: "string",
     resolve: (doc) =>
-      `/docs/configurations/${computedFields.nameKey.resolve(doc)}`,
+      `/docs/configurations/${computedFields.slug.resolve(doc)}`,
   },
 };
 

@@ -1,6 +1,7 @@
 ---
-ruleName: "new-cap"
 version: "3.1.1"
+ruleKey: "new-cap"
+description: Require constructor names to begin with a capital letter
 jsEntry:
   [
     "error",
@@ -13,18 +14,7 @@ jsEntry:
       "properties": true,
     },
   ]
-previousJsEntry:
-  [
-    "error",
-    {
-      "capIsNew": false,
-      "capIsNewExceptions":
-        ["Immutable.Map", "Immutable.Set", "Immutable.List"],
-      "newIsCap": true,
-      "newIsCapExceptions": [],
-      "properties": true,
-    },
-  ]
+previousJsEntry: null
 tsEntry:
   [
     "error",
@@ -37,17 +27,6 @@ tsEntry:
       "properties": true,
     },
   ]
-previousTsEntry:
-  [
-    "error",
-    {
-      "capIsNew": false,
-      "capIsNewExceptions":
-        ["Immutable.Map", "Immutable.Set", "Immutable.List"],
-      "newIsCap": true,
-      "newIsCapExceptions": [],
-      "properties": true,
-    },
-  ]
-updates: ["2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

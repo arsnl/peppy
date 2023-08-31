@@ -1,0 +1,26 @@
+---
+version: "3.1.1"
+ruleKey: "react/boolean-prop-naming"
+description: Enforces consistent naming for boolean props
+jsEntry:
+  [
+    "off",
+    {
+      "message": "",
+      "propTypeNames": ["bool", "mutuallyExclusiveTrueProps"],
+      "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+",
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "off",
+    {
+      "message": "",
+      "propTypeNames": ["bool", "mutuallyExclusiveTrueProps"],
+      "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+",
+    },
+  ]
+previousTsEntry: null
+updates: ["3.1.1"]
+---

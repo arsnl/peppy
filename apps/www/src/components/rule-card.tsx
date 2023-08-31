@@ -10,13 +10,13 @@ import { cn } from "@/lib/utils";
 export type RuleCardOptions = Pick<
   RuleVersion,
   | "version"
-  | "ruleName"
-  | "configName"
+  | "ruleKey"
+  | "configKey"
   | "jsLevel"
   | "tsLevel"
   | "state"
   | "stateLabel"
-  | "slug"
+  | "href"
 > & { description: any }; // TODO: Migrate to RuleVersion then use the RuleVersion property
 
 type _RuleConfigurationIconProps = Omit<
@@ -64,19 +64,19 @@ export type RuleCardProps = Omit<
 
 export const RuleCard = ({
   version,
-  ruleName,
-  configName,
+  ruleKey,
+  configKey,
   jsLevel,
   tsLevel,
   state,
   stateLabel,
-  slug,
+  href,
   description,
   className,
   ...props
 }: RuleCardProps) => (
   <Link
-    href={slug}
+    href={href}
     className={cn(
       "relative flex flex-col rounded-md border p-4 transition-colors hover:border-foreground hover:shadow-sm sm:flex-row sm:items-center sm:justify-between sm:gap-4",
       className,
@@ -101,7 +101,7 @@ export const RuleCard = ({
 
     <div className="flex flex-col gap-1 pb-4 sm:pb-0">
       <h3 className="text-sm font-semibold leading-tight tracking-tight">
-        {ruleName}
+        {ruleKey}
       </h3>
       <div className="text-sm leading-tight text-muted-foreground">
         {description}
@@ -112,12 +112,12 @@ export const RuleCard = ({
       <_RuleConfigurationIcon
         level={jsLevel}
         icon="javascript-outline"
-        aria-label={`View JavaScript configuration for the rule ${ruleName}`}
+        aria-label={`View JavaScript configuration for the rule ${ruleKey}`}
       />
       <_RuleConfigurationIcon
         level={tsLevel}
         icon="typescript-outline"
-        aria-label={`View TypeScript configuration for the rule ${ruleName}`}
+        aria-label={`View TypeScript configuration for the rule ${ruleKey}`}
       />
     </div>
   </Link>

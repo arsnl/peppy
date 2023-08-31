@@ -1,6 +1,7 @@
 ---
-ruleName: "dot-notation"
 version: "3.1.1"
+ruleKey: "dot-notation"
+description: Enforce dot notation whenever possible
 jsEntry:
   [
     "error",
@@ -12,17 +13,7 @@ jsEntry:
       "allowProtectedClassPropertyAccess": false,
     },
   ]
-previousJsEntry:
-  [
-    "error",
-    {
-      "allowIndexSignaturePropertyAccess": false,
-      "allowKeywords": true,
-      "allowPattern": "",
-      "allowPrivateClassPropertyAccess": false,
-      "allowProtectedClassPropertyAccess": false,
-    },
-  ]
+previousJsEntry: null
 tsEntry:
   [
     "off",
@@ -34,16 +25,6 @@ tsEntry:
       "allowProtectedClassPropertyAccess": false,
     },
   ]
-previousTsEntry:
-  [
-    "off",
-    {
-      "allowIndexSignaturePropertyAccess": false,
-      "allowKeywords": true,
-      "allowPattern": "",
-      "allowPrivateClassPropertyAccess": false,
-      "allowProtectedClassPropertyAccess": false,
-    },
-  ]
-updates: ["2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

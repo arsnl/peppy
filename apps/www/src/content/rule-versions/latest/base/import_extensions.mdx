@@ -1,0 +1,27 @@
+---
+version: "3.1.1"
+ruleKey: "import/extensions"
+description: Ensure consistent use of file extension within the import path
+jsEntry:
+  [
+    "error",
+    "ignorePackages",
+    { "cjs": "never", "js": "never", "jsx": "never", "mjs": "never" },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    "ignorePackages",
+    {
+      "cjs": "never",
+      "js": "never",
+      "jsx": "never",
+      "mjs": "never",
+      "ts": "never",
+      "tsx": "never",
+    },
+  ]
+previousTsEntry: null
+updates: ["3.1.1"]
+---

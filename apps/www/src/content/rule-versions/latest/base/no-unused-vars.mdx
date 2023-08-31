@@ -1,6 +1,7 @@
 ---
-ruleName: "no-unused-vars"
 version: "3.1.1"
+ruleKey: "no-unused-vars"
+description: Disallow unused variables
 jsEntry:
   [
     "warn",
@@ -11,16 +12,7 @@ jsEntry:
       "vars": "all",
     },
   ]
-previousJsEntry:
-  [
-    "warn",
-    {
-      "args": "after-used",
-      "argsIgnorePattern": "^_",
-      "ignoreRestSiblings": true,
-      "vars": "all",
-    },
-  ]
+previousJsEntry: null
 tsEntry:
   [
     "off",
@@ -31,15 +23,6 @@ tsEntry:
       "vars": "all",
     },
   ]
-previousTsEntry:
-  [
-    "off",
-    {
-      "args": "after-used",
-      "argsIgnorePattern": "^_",
-      "ignoreRestSiblings": true,
-      "vars": "all",
-    },
-  ]
-updates: ["2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

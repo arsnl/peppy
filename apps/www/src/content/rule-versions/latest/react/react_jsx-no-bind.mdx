@@ -1,0 +1,30 @@
+---
+version: "3.1.1"
+ruleKey: "react/jsx-no-bind"
+description: Prevents usage of Function.prototype.bind and arrow functions in React component props
+jsEntry:
+  [
+    "error",
+    {
+      "allowArrowFunctions": true,
+      "allowBind": false,
+      "allowFunctions": false,
+      "ignoreDOMComponents": true,
+      "ignoreRefs": true,
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "allowArrowFunctions": true,
+      "allowBind": false,
+      "allowFunctions": false,
+      "ignoreDOMComponents": true,
+      "ignoreRefs": true,
+    },
+  ]
+previousTsEntry: null
+updates: ["3.1.1"]
+---

@@ -44,8 +44,8 @@ import {
   await Promise.all(
     nextRuleVersions.map(
       async ({
-        configName,
-        ruleName,
+        configKey,
+        ruleKey,
         tsEntry,
         previousJsEntry,
         jsEntry,
@@ -54,8 +54,8 @@ import {
         state,
       }) =>
         writeRuleVersion({
-          configName,
-          ruleName,
+          configKey,
+          ruleKey,
           version,
           jsEntry,
           previousJsEntry,

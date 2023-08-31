@@ -1,6 +1,7 @@
 ---
-ruleName: "spaced-comment"
 version: "3.1.1"
+ruleKey: "spaced-comment"
+description: Enforce consistent spacing after the `//` or `/*` in a comment
 jsEntry:
   [
     "error",
@@ -15,20 +16,7 @@ jsEntry:
       "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
     },
   ]
-previousJsEntry:
-  [
-    "error",
-    "always",
-    {
-      "block":
-        {
-          "balanced": true,
-          "exceptions": ["-", "+"],
-          "markers": ["=", "!", ":", "::"],
-        },
-      "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
-    },
-  ]
+previousJsEntry: null
 tsEntry:
   [
     "error",
@@ -43,19 +31,6 @@ tsEntry:
       "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
     },
   ]
-previousTsEntry:
-  [
-    "error",
-    "always",
-    {
-      "block":
-        {
-          "balanced": true,
-          "exceptions": ["-", "+"],
-          "markers": ["=", "!", ":", "::"],
-        },
-      "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
-    },
-  ]
-updates: ["2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

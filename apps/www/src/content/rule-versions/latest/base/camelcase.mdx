@@ -1,6 +1,7 @@
 ---
-ruleName: "camelcase"
 version: "3.1.1"
+ruleKey: "camelcase"
+description: Enforce camelCase naming convention
 jsEntry:
   [
     "error",
@@ -11,16 +12,7 @@ jsEntry:
       "properties": "never",
     },
   ]
-previousJsEntry:
-  [
-    "error",
-    {
-      "ignoreDestructuring": false,
-      "ignoreGlobals": false,
-      "ignoreImports": false,
-      "properties": "never",
-    },
-  ]
+previousJsEntry: null
 tsEntry:
   [
     "off",
@@ -31,15 +23,6 @@ tsEntry:
       "properties": "never",
     },
   ]
-previousTsEntry:
-  [
-    "off",
-    {
-      "ignoreDestructuring": false,
-      "ignoreGlobals": false,
-      "ignoreImports": false,
-      "properties": "never",
-    },
-  ]
-updates: ["2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

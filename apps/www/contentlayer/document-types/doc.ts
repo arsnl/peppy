@@ -4,13 +4,18 @@ import {
 } from "contentlayer/source-files";
 
 const computedFields: ComputedFields = {
-  slug: {
-    type: "string",
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
-  },
-  slugAsParams: {
+  key: {
     type: "string",
     resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/"),
+  },
+  slug: {
+    type: "string",
+    // return the last part of the path
+    resolve: (doc) => doc._raw.flattenedPath.split("/").slice(-1)[0],
+  },
+  href: {
+    type: "string",
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
   },
 };
 

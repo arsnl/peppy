@@ -1,0 +1,38 @@
+---
+version: "3.1.1"
+ruleKey: "jsx-a11y/no-static-element-interactions"
+description: Enforce that non-interactive, visible elements (such as `<div>`) that have click handlers use the role attribute
+jsEntry:
+  [
+    "error",
+    {
+      "handlers":
+        [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp",
+        ],
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "handlers":
+        [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp",
+        ],
+    },
+  ]
+previousTsEntry: null
+updates: ["3.1.1"]
+---

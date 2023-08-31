@@ -1,19 +1,20 @@
 ---
-ruleName: "lines-between-class-members"
 version: "3.1.1"
+ruleKey: "lines-between-class-members"
+description: Require or disallow an empty line between class members
 jsEntry:
   [
     "error",
     "always",
     { "exceptAfterOverload": true, "exceptAfterSingleLine": false },
   ]
-previousJsEntry: ["error", "always", { "exceptAfterSingleLine": false }]
+previousJsEntry: null
 tsEntry:
   [
     "off",
     "always",
     { "exceptAfterOverload": true, "exceptAfterSingleLine": false },
   ]
-previousTsEntry: ["off", "always", { "exceptAfterSingleLine": false }]
-updates: ["3.1.1", "2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

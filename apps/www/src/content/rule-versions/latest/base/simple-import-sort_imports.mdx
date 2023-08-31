@@ -1,0 +1,52 @@
+---
+version: "3.1.1"
+ruleKey: "simple-import-sort/imports"
+description: Enforce sorting of the imports
+jsEntry:
+  [
+    "error",
+    {
+      "groups":
+        [
+          [
+            "^\\u0000",
+            "^react(/.*)?(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(@\\/|~[^/]*\\/).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^\\..*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(\\u0000$)$",
+            "^(@\\/|~[^/]*\\/).*(\\u0000$)$",
+            "^\\..*(\\u0000$)$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(.(css|scss|sass|less))$",
+            "^(@\\/|~[^/]*\\/).*(.(css|scss|sass|less))$",
+            "^\\..*(.(css|scss|sass|less))$",
+          ],
+        ],
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "groups":
+        [
+          [
+            "^\\u0000",
+            "^react(/.*)?(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(@\\/|~[^/]*\\/).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^\\..*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(\\u0000$)$",
+            "^(@\\/|~[^/]*\\/).*(\\u0000$)$",
+            "^\\..*(\\u0000$)$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(.(css|scss|sass|less))$",
+            "^(@\\/|~[^/]*\\/).*(.(css|scss|sass|less))$",
+            "^\\..*(.(css|scss|sass|less))$",
+          ],
+        ],
+    },
+  ]
+previousTsEntry: null
+updates: ["3.1.1"]
+---

@@ -3,11 +3,11 @@ import { allESLintConfigs, type ESLintConfig } from "contentlayer/generated";
 import { type IconName } from "@/components/icon";
 
 export const baseESLintConfig = allESLintConfigs.find(
-  (config) => config.nameKey === "base",
+  (config) => config.key === "base",
 );
 
 export const otherESLintConfigs = allESLintConfigs
-  .filter((config) => config.nameKey !== "base")
+  .filter((config) => config.key !== "base")
   .sort((a, b) => a.name.localeCompare(b.name));
 
 // TODO: find a way to change the contentlayer type for icon to IconName instead of string

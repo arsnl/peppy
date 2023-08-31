@@ -1,6 +1,7 @@
 ---
-ruleName: "class-methods-use-this"
 version: "3.1.1"
+ruleKey: "class-methods-use-this"
+description: Enforce that class methods utilize `this`
 jsEntry:
   [
     "error",
@@ -27,32 +28,7 @@ jsEntry:
         ],
     },
   ]
-previousJsEntry:
-  [
-    "error",
-    {
-      "enforceForClassFields": true,
-      "exceptMethods":
-        [
-          "render",
-          "getInitialState",
-          "getDefaultProps",
-          "getChildContext",
-          "componentWillMount",
-          "UNSAFE_componentWillMount",
-          "componentDidMount",
-          "componentWillReceiveProps",
-          "UNSAFE_componentWillReceiveProps",
-          "shouldComponentUpdate",
-          "componentWillUpdate",
-          "UNSAFE_componentWillUpdate",
-          "componentDidUpdate",
-          "componentWillUnmount",
-          "componentDidCatch",
-          "getSnapshotBeforeUpdate",
-        ],
-    },
-  ]
+previousJsEntry: null
 tsEntry:
   [
     "error",
@@ -79,31 +55,6 @@ tsEntry:
         ],
     },
   ]
-previousTsEntry:
-  [
-    "error",
-    {
-      "enforceForClassFields": true,
-      "exceptMethods":
-        [
-          "render",
-          "getInitialState",
-          "getDefaultProps",
-          "getChildContext",
-          "componentWillMount",
-          "UNSAFE_componentWillMount",
-          "componentDidMount",
-          "componentWillReceiveProps",
-          "UNSAFE_componentWillReceiveProps",
-          "shouldComponentUpdate",
-          "componentWillUpdate",
-          "UNSAFE_componentWillUpdate",
-          "componentDidUpdate",
-          "componentWillUnmount",
-          "componentDidCatch",
-          "getSnapshotBeforeUpdate",
-        ],
-    },
-  ]
-updates: ["2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

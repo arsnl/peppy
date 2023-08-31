@@ -4,19 +4,10 @@ import {
   defineDocumentType,
 } from "contentlayer/source-files";
 import stringify from "fast-json-stable-stringify";
+import { eslintPluginsConfig } from "../../src/config/eslint-plugin";
+import { rulesConfig } from "../../src/config/rule";
 
 const computedFields: ComputedFields = {
-  ruleKey: {
-    type: "string",
-    resolve: (doc) => doc.ruleName.replace("/", "_"),
-  },
-  configName: {
-    type: "string",
-    resolve: (doc) => {
-      const [, , configName] = doc._raw.flattenedPath.split("/");
-      return configName;
-    },
-  },
   jsLevel: {
     type: "string",
     resolve: (doc) => doc?.jsEntry?.[0] ?? null,
@@ -62,13 +53,58 @@ const computedFields: ComputedFields = {
       }
     },
   },
-  slug: {
+  description: {
+    type: "string",
+    resolve: (doc) =>
+      // This computed field is used to update the description
+      // without having to run the next/bump scripts and rewrite
+      // all the files in the content folder. Also, having the
+      // description as "required" prevent the build from passing
+      // if a description is missing in the rule configuration.
+      rulesConfig[doc.ruleKey]?.description || doc.description,
+  },
+  docUrl: {
     type: "string",
     resolve: (doc) => {
-      const configName = computedFields.configName.resolve(doc);
-      const ruleKey = computedFields.ruleKey.resolve(doc);
+      const { ruleKey } = doc;
+      const noPrefixRuleKey = ruleKey.split("/").pop();
+      const pluginName = ruleKey.split("/").slice(0, -1).join("/") || "eslint";
 
-      return `/docs/configurations/${configName}/${ruleKey}`;
+      const { docsUrlTemplate = "", pluginUrl } =
+        eslintPluginsConfig[pluginName] || {};
+
+      return docsUrlTemplate
+        .replace(/\{ruleKey\}/g, ruleKey || "")
+        .replace(/\{pluginUrl\}/g, pluginUrl || "")
+        .replace(/\{noPrefixRuleKey\}/g, noPrefixRuleKey || "");
+    },
+  },
+  configKey: {
+    type: "string",
+    resolve: (doc) => {
+      const [, , configKey] = doc._raw.flattenedPath.split("/");
+      return configKey;
+    },
+  },
+  configSlug: {
+    type: "string",
+    resolve: (doc) => computedFields.configKey.resolve(doc),
+  },
+  key: {
+    type: "string",
+    resolve: (doc) => doc.ruleKey.replace(/\//g, "_"),
+  },
+  slug: {
+    type: "string",
+    resolve: (doc) => computedFields.key.resolve(doc),
+  },
+  href: {
+    type: "string",
+    resolve: (doc) => {
+      const configSlug = computedFields.configSlug.resolve(doc);
+      const ruleSlug = computedFields.slug.resolve(doc);
+
+      return `/docs/configurations/${configSlug}/${ruleSlug}`;
     },
   },
 };
@@ -78,11 +114,15 @@ export const RuleVersion = defineDocumentType(() => ({
   filePathPattern: `rule-versions/**/*.mdx`,
   contentType: "mdx",
   fields: {
-    ruleName: {
+    version: {
       type: "string",
       required: true,
     },
-    version: {
+    ruleKey: {
+      type: "string",
+      required: true,
+    },
+    description: {
       type: "string",
       required: true,
     },

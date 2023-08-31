@@ -32,15 +32,15 @@ export const getESLintRuleStringSeverityAndOptions = (
 };
 
 export const getESLintConfig = async ({
-  configName,
+  configKey,
   ts = false,
 }: {
-  configName: string;
+  configKey: string;
   ts?: boolean;
 }) => {
   const engine = new ESLint({
     baseConfig: {
-      extends: [`peppy/configs/${configName}`],
+      extends: [`peppy/configs/${configKey}`],
     },
     useEslintrc: false,
   });

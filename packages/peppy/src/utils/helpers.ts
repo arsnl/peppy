@@ -275,7 +275,7 @@ export const addESLintConfigurationFile = async ({
     cwd,
     data: `/** @type {import("eslint").Linter.Config} */\nmodule.exports = ${JSON.stringify(
       configuration,
-    )}`.replace('"__dirname"', "__dirname"),
+    )}`.replace(/"__dirname"/g, "__dirname"),
   });
 
   spinner.succeed(`ESLint configuration file added`);

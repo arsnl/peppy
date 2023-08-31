@@ -1,5 +1,4 @@
 import * as React from "react";
-import { allRules } from "contentlayer/generated";
 import { RuleCard, type RuleCardOptions } from "@/components/rule-card";
 import { Input } from "@/components/ui/input";
 import { getRuleVersions } from "@/config/rule-version";
@@ -9,30 +8,33 @@ export type RuleProps = Omit<
   React.HTMLAttributes<HTMLDivElement>,
   "children"
 > & {
-  configName: string;
+  configKey: string;
 };
 
-export const Rules = async ({ configName, className, ...props }: RuleProps) => {
-  const ruleVersions = getRuleVersions({ configName });
+export const Rules = async ({ configKey, className, ...props }: RuleProps) => {
+  const ruleVersions = getRuleVersions({ configKey });
   const rulesProps = ruleVersions.map((ruleVersion) => {
-    const { version, ruleName, jsLevel, tsLevel, state, stateLabel, slug } =
-      ruleVersion;
-
-    // TODO: Remove and remplace with computed property on the ruleVersion
-    const ruleContent = allRules.find(({ name }) => name === ruleName);
-    const { description } = ruleContent || {};
-
-    return {
+    const {
       version,
-      ruleName,
-      configName,
+      ruleKey,
       jsLevel,
       tsLevel,
       state,
       stateLabel,
-      slug,
-      // eslint-disable-next-line react/jsx-no-useless-fragment
-      description: <>{description?.raw || ""}</>, // TODO: Migrate to MDX
+      href,
+      description,
+    } = ruleVersion;
+
+    return {
+      version,
+      ruleKey,
+      configKey,
+      jsLevel,
+      tsLevel,
+      state,
+      stateLabel,
+      href,
+      description,
     } satisfies RuleCardOptions;
   });
 
@@ -44,7 +46,7 @@ export const Rules = async ({ configName, className, ...props }: RuleProps) => {
 
       <div className="grid gap-6">
         {rulesProps.map((rule) => (
-          <RuleCard {...rule} key={rule.ruleName} />
+          <RuleCard {...rule} key={rule.ruleKey} />
         ))}
       </div>
     </div>

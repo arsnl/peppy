@@ -1,6 +1,7 @@
 ---
-ruleName: "no-useless-rename"
 version: "3.1.1"
+ruleKey: "no-useless-rename"
+description: Disallow renaming import, export, and destructured assignments to the same name
 jsEntry:
   [
     "error",
@@ -10,15 +11,7 @@ jsEntry:
       "ignoreImport": false,
     },
   ]
-previousJsEntry:
-  [
-    "error",
-    {
-      "ignoreDestructuring": false,
-      "ignoreExport": false,
-      "ignoreImport": false,
-    },
-  ]
+previousJsEntry: null
 tsEntry:
   [
     "error",
@@ -28,14 +21,6 @@ tsEntry:
       "ignoreImport": false,
     },
   ]
-previousTsEntry:
-  [
-    "error",
-    {
-      "ignoreDestructuring": false,
-      "ignoreExport": false,
-      "ignoreImport": false,
-    },
-  ]
-updates: ["2.0.0"]
+previousTsEntry: null
+updates: ["3.1.1"]
 ---

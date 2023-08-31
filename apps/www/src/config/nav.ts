@@ -8,7 +8,7 @@ export type NavConfig = {
 
 const eslintConfigNavItems = sortedESLintConfig.map((config) => ({
   title: config.name,
-  href: config.slug,
+  href: config.href,
   items: [],
 }));
 

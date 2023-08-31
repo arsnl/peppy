@@ -3,7 +3,7 @@
 import stringify from "fast-json-stable-stringify";
 import {
   contentlayerBuild,
-  getESLintConfigNameKeys,
+  getESLintConfigKeys,
   getRuleVersions,
   removeNextVersion,
   type RuleVersion,
@@ -14,27 +14,27 @@ import { getESLintConfig } from "./utils/eslint";
 
 type PartialRuleVersion = Pick<
   RuleVersion,
-  "configName" | "ruleName" | "tsEntry" | "jsEntry"
+  "configKey" | "ruleKey" | "tsEntry" | "jsEntry"
 >;
 
 const sortPartialRuleVersions = (
   a: PartialRuleVersion,
   b: PartialRuleVersion,
 ) => {
-  const aKey = `${a.configName}${a.ruleName}`;
-  const bKey = `${b.configName}${b.ruleName}`;
+  const aKey = `${a.configKey}${a.ruleKey}`;
+  const bKey = `${b.configKey}${b.ruleKey}`;
 
   return aKey.localeCompare(bKey);
 };
 
 const getCurrentRuleVersions = async () => {
-  const eslintConfigsProps = (await getESLintConfigNameKeys()).reduce<
+  const eslintConfigsProps = (await getESLintConfigKeys()).reduce<
     Parameters<typeof getESLintConfig>[0][]
   >(
-    (acc, configName) => [
+    (acc, configKey) => [
       ...acc,
-      { configName, ts: false },
-      { configName, ts: true },
+      { configKey, ts: false },
+      { configKey, ts: true },
     ],
     [],
   );
@@ -48,18 +48,19 @@ const getCurrentRuleVersions = async () => {
 
   const partialRuleVersions = eslintConfigs
     .reduce<PartialRuleVersion[]>(
-      (rootAcc, { configName, ts, config }) =>
-        Object.entries(config.rules).reduce((acc, [ruleName, ruleEntry]) => {
+      (rootAcc, { configKey, ts, config }) =>
+        Object.entries(config.rules).reduce((acc, [ruleKey, ruleEntry]) => {
           const entryIndex = acc.findIndex(
-            (ent) => ent.configName === configName && ent.ruleName === ruleName,
+            (entry) =>
+              entry.configKey === configKey && entry.ruleKey === ruleKey,
           );
 
           if (entryIndex === -1) {
             return [
               ...acc,
               {
-                configName,
-                ruleName,
+                configKey,
+                ruleKey,
                 jsEntry: null,
                 tsEntry: null,
                 [ts ? "tsEntry" : "jsEntry"]: ruleEntry || null,
@@ -82,9 +83,9 @@ const getCurrentRuleVersions = async () => {
 
 const getNextPartialRuleVersions = async () => {
   const latestPartialRuleVersions = (await getRuleVersions())
-    .map(({ configName, ruleName, jsEntry, tsEntry }) => ({
-      configName,
-      ruleName,
+    .map(({ configKey, ruleKey, jsEntry, tsEntry }) => ({
+      configKey,
+      ruleKey,
       jsEntry,
       tsEntry,
     }))
@@ -105,10 +106,10 @@ const getNextPartialRuleVersions = async () => {
       (latestPartialRuleVersion) =>
         !currentPartialRuleVersions.some(
           (currentPartialRuleVersion) =>
-            currentPartialRuleVersion.configName ===
-              latestPartialRuleVersion.configName &&
-            currentPartialRuleVersion.ruleName ===
-              latestPartialRuleVersion.ruleName,
+            currentPartialRuleVersion.configKey ===
+              latestPartialRuleVersion.configKey &&
+            currentPartialRuleVersion.ruleKey ===
+              latestPartialRuleVersion.ruleKey,
         ),
     )
     .map((removedRuleVersion) => ({
@@ -142,7 +143,7 @@ const getNextPartialRuleVersions = async () => {
   // Write the rule versions in the next folder
   await Promise.all(
     nextPartialRuleVersions.map(
-      async ({ configName, ruleName, tsEntry, jsEntry }) => {
+      async ({ configKey, ruleKey, tsEntry, jsEntry }) => {
         const ruleVersions = await getRuleVersions();
         const {
           jsEntry: previousJsEntry,
@@ -150,13 +151,12 @@ const getNextPartialRuleVersions = async () => {
           updates,
         } = ruleVersions.find(
           (document) =>
-            document.configName === configName &&
-            document.ruleName === ruleName,
+            document.configKey === configKey && document.ruleKey === ruleKey,
         ) || {};
 
         return writeRuleVersion({
-          configName,
-          ruleName,
+          configKey,
+          ruleKey,
           version: "next",
           jsEntry,
           previousJsEntry,
