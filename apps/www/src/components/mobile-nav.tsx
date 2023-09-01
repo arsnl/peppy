@@ -40,14 +40,13 @@ export const MobileNav = ({ navConfig }: MobileNavProps) => {
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
           <div className="flex flex-col space-y-2">
-            {navConfig.map((item, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <div key={index} className="flex flex-col space-y-3 pt-6">
+            {navConfig.map((item) => (
+              <div key={item.title} className="flex flex-col space-y-3 pt-6">
                 <h4 className="font-medium">{item.title}</h4>
                 {item?.items?.length &&
                   // eslint-disable-next-line @typescript-eslint/no-shadow
                   item.items.map((item) => (
-                    <React.Fragment key={item.href}>
+                    <React.Fragment key={item.title}>
                       {!item.disabled &&
                         (item.href ? (
                           <MobileLink

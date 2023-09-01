@@ -1,9 +1,8 @@
-"use client";
-
 import { type HTMLAttributes } from "react";
 import { type RuleVersion } from "contentlayer/generated";
 import Link, { type LinkProps } from "next/link";
 import { Icon, type IconName } from "@/components/icon";
+import { Mdx } from "@/components/mdx";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
@@ -12,12 +11,13 @@ export type RuleCardOptions = Pick<
   | "version"
   | "ruleKey"
   | "configKey"
+  | "description"
   | "jsLevel"
   | "tsLevel"
   | "state"
   | "stateLabel"
   | "href"
-> & { description: any }; // TODO: Migrate to RuleVersion then use the RuleVersion property
+>;
 
 type _RuleConfigurationIconProps = Omit<
   HTMLAttributes<HTMLDivElement>,
@@ -100,25 +100,16 @@ export const RuleCard = ({
     )}
 
     <div className="flex flex-col gap-1 pb-4 sm:pb-0">
-      <h3 className="text-sm font-semibold leading-tight tracking-tight">
-        {ruleKey}
-      </h3>
-      <div className="text-sm leading-tight text-muted-foreground">
-        {description}
-      </div>
+      <h3 className="font-semibold tracking-tight">{ruleKey}</h3>
+      <Mdx
+        code={description.code}
+        className="text-sm leading-tight text-muted-foreground"
+      />
     </div>
 
     <div className="flex justify-end gap-2">
-      <_RuleConfigurationIcon
-        level={jsLevel}
-        icon="javascript-outline"
-        aria-label={`View JavaScript configuration for the rule ${ruleKey}`}
-      />
-      <_RuleConfigurationIcon
-        level={tsLevel}
-        icon="typescript-outline"
-        aria-label={`View TypeScript configuration for the rule ${ruleKey}`}
-      />
+      <_RuleConfigurationIcon level={jsLevel} icon="javascript-outline" />
+      <_RuleConfigurationIcon level={tsLevel} icon="typescript-outline" />
     </div>
   </Link>
 );

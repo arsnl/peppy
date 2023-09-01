@@ -1,9 +1,8 @@
 import "@/styles/mdx.css";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Balancer from "react-wrap-balancer";
 import { Icon } from "@/components/icon";
-import { Mdx } from "@/components/mdx-components";
+import { Mdx } from "@/components/mdx";
 import { DashboardTableOfContents } from "@/components/toc";
 import { buttonVariants } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -47,10 +46,10 @@ export const generateMetadata = async ({
 
   return {
     title: rule.ruleKey,
-    description: rule.description,
+    description: rule.descriptionString,
     openGraph: {
       title: rule.ruleKey,
-      description: rule.description,
+      description: rule.descriptionString,
       type: "article",
       url: rule.href,
       images: [
@@ -65,7 +64,7 @@ export const generateMetadata = async ({
     twitter: {
       card: "summary_large_image",
       title: rule.ruleKey,
-      description: rule.description,
+      description: rule.descriptionString,
       images: [siteConfig.ogImage],
       creator: "@im_arsnl",
     },
@@ -102,22 +101,19 @@ const ESLintConfigPage = async ({ params }: RuleVersionPageProps) => {
           <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-tight")}>
             {rule.ruleKey}
           </h1>
-          {rule.description && (
-            <p className="text-lg text-muted-foreground">
-              <Balancer>{rule.description}</Balancer>
-            </p>
-          )}
+          <Mdx
+            code={rule.description.code}
+            className="text-lg text-muted-foreground"
+          />
         </div>
-        <div className="pb-12 pt-8">
-          <Mdx code={rule.body.code} />
-        </div>
+        <Mdx code={rule.body.code} className="pb-12 pt-8" />
         <div className="flex flex-row items-center justify-between">
           <Link
             href={eslintConfig.href}
             className={buttonVariants({ variant: "outline" })}
           >
             <Icon icon="chevron-right" className="mr-2 h-4 w-4 rotate-180" />
-            {eslintConfig.name}
+            {`${eslintConfig.name} configuration page`}
           </Link>
         </div>
       </div>

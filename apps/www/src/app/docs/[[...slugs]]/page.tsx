@@ -3,7 +3,7 @@ import { allDocs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
 import { Icon } from "@/components/icon";
-import { Mdx } from "@/components/mdx-components";
+import { Mdx } from "@/components/mdx";
 import { Pager } from "@/components/pager";
 import { DashboardTableOfContents } from "@/components/toc";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -99,9 +99,7 @@ const DocPage = async ({ params }: DocPageProps) => {
             </p>
           )}
         </div>
-        <div className="pb-12 pt-8">
-          <Mdx code={doc.body.code} />
-        </div>
+        <Mdx code={doc.body.code} className="pb-12 pt-8" />
         <Pager doc={doc} />
       </div>
       {doc.toc && (

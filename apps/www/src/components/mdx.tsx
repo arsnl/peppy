@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/heading-has-content */
-
+import "server-only";
 import * as React from "react";
 import { type MDXComponents } from "mdx/types";
 import Image from "next/image";
@@ -9,7 +9,6 @@ import { CodeBlockWrapper } from "@/components/code-block-wrapper";
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button";
 import { ESLintConfigCards } from "@/components/eslint-config-cards";
 import { Icon } from "@/components/icon";
-import { Rules } from "@/components/rules";
 import {
   Accordion,
   AccordionContent,
@@ -24,7 +23,7 @@ import { cn } from "@/lib/utils";
 import type { Event } from "@/lib/events";
 import type { NpmCommands } from "@/types/unist";
 
-const components = {
+export const MdxComponents = {
   Accordion: (props) => <Accordion {...props} />,
   AccordionContent: (props) => <AccordionContent {...props} />,
   AccordionItem: (props) => <AccordionItem {...props} />,
@@ -41,6 +40,7 @@ const components = {
       {...props}
     />
   ),
+  H1: (props) => MdxComponents.h1(props),
   h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h2
       className={cn(
@@ -50,6 +50,7 @@ const components = {
       {...props}
     />
   ),
+  H2: (props) => MdxComponents.h2(props),
   h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h3
       className={cn(
@@ -59,6 +60,7 @@ const components = {
       {...props}
     />
   ),
+  H3: (props) => MdxComponents.h3(props),
   h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h4
       className={cn(
@@ -68,6 +70,7 @@ const components = {
       {...props}
     />
   ),
+  H4: (props) => MdxComponents.h4(props),
   h5: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h5
       className={cn(
@@ -77,6 +80,7 @@ const components = {
       {...props}
     />
   ),
+  H5: (props) => MdxComponents.h5(props),
   h6: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h6
       className={cn(
@@ -86,6 +90,7 @@ const components = {
       {...props}
     />
   ),
+  H6: (props) => MdxComponents.h6(props),
   a: ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) => (
     // eslint-disable-next-line jsx-a11y/anchor-has-content
     <a
@@ -93,27 +98,33 @@ const components = {
       {...props}
     />
   ),
+  A: (props) => MdxComponents.A(props),
   p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
     <p
       className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
       {...props}
     />
   ),
+  P: (props) => MdxComponents.P(props),
   ul: ({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) => (
     <ul className={cn("my-6 ml-6 list-disc", className)} {...props} />
   ),
+  Ul: (props) => MdxComponents.Ul(props),
   ol: ({ className, ...props }: React.HTMLAttributes<HTMLOListElement>) => (
     <ol className={cn("my-6 ml-6 list-decimal", className)} {...props} />
   ),
+  Ol: (props) => MdxComponents.Ol(props),
   li: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <li className={cn("mt-2", className)} {...props} />
   ),
+  Li: (props) => MdxComponents.Li(props),
   blockquote: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <blockquote
       className={cn("mt-6 border-l-2 pl-6 italic", className)}
       {...props}
     />
   ),
+  Blockquote: (props) => MdxComponents.Blockquote(props),
   img: ({
     className,
     alt,
@@ -122,20 +133,24 @@ const components = {
     // eslint-disable-next-line @next/next/no-img-element
     <img className={cn("rounded-md", className)} alt={alt} {...props} />
   ),
+  Img: (props) => MdxComponents.Img(props),
   hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
     <hr className="my-4 md:my-8" {...props} />
   ),
+  Hr: (props) => MdxComponents.Hr(props),
   table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto">
       <table className={cn("w-full", className)} {...props} />
     </div>
   ),
+  Table: (props) => MdxComponents.Table(props),
   tr: ({ className, ...props }: React.HTMLAttributes<HTMLTableRowElement>) => (
     <tr
       className={cn("m-0 border-t p-0 even:bg-muted", className)}
       {...props}
     />
   ),
+  Tr: (props) => MdxComponents.Tr(props),
   th: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <th
       className={cn(
@@ -145,6 +160,7 @@ const components = {
       {...props}
     />
   ),
+  Th: (props) => MdxComponents.Th(props),
   td: ({ className, ...props }: React.HTMLAttributes<HTMLTableCellElement>) => (
     <td
       className={cn(
@@ -154,6 +170,7 @@ const components = {
       {...props}
     />
   ),
+  Td: (props) => MdxComponents.Td(props),
   pre: ({
     className,
     __rawString__,
@@ -198,6 +215,7 @@ const components = {
       )}
     </>
   ),
+  Pre: (props) => MdxComponents.Pre(props),
   code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
     <code
       className={cn(
@@ -207,6 +225,7 @@ const components = {
       {...props}
     />
   ),
+  Code: (props) => MdxComponents.Code(props),
   // eslint-disable-next-line jsx-a11y/alt-text
   Image: (props) => <Image {...props} />,
   AspectRatio: (props) => <AspectRatio {...props} />,
@@ -291,19 +310,18 @@ const components = {
     </Alert>
   ),
   Badge: (props) => <Badge {...props} />,
-  Rules: (props) => <Rules {...props} />,
 } satisfies MDXComponents;
 
-type MdxProps = {
+type MdxProps = React.HTMLAttributes<HTMLDivElement> & {
   code: string;
 };
 
-export const Mdx = ({ code }: MdxProps) => {
+export const Mdx = ({ code, className, ...props }: MdxProps) => {
   const Component = getMDXComponent(code);
 
   return (
-    <div className="mdx">
-      <Component components={components} />
+    <div className={cn("mdx", className)} {...props}>
+      <Component components={MdxComponents} />
     </div>
   );
 };

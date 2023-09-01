@@ -28,12 +28,11 @@ export const MainNav = ({ navConfig = [] }: MainNavProps) => {
       </Link>
       <nav className="flex items-center space-x-6 text-sm font-medium">
         {navConfig.map(
-          (item, index) =>
+          (item) =>
             item.href &&
             !item.disabled && (
               <Link
-                // eslint-disable-next-line react/no-array-index-key
-                key={index}
+                key={item.title}
                 href={item.href}
                 className={cn(
                   "transition-colors hover:text-foreground/80",

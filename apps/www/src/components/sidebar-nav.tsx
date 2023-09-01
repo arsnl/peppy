@@ -14,11 +14,10 @@ type _SidebarNavItemsProps = {
 const _SidebarNavItems = ({ items, closestHref }: _SidebarNavItemsProps) =>
   items?.length ? (
     <div className="grid grid-flow-row auto-rows-max text-sm">
-      {items.map((item, index) =>
+      {items.map((item) =>
         item.href && !item.disabled ? (
           <Link
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
+            key={item.title}
             href={item.href}
             className={cn(
               "group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
@@ -34,8 +33,7 @@ const _SidebarNavItems = ({ items, closestHref }: _SidebarNavItemsProps) =>
           </Link>
         ) : (
           <span
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
+            key={item.title}
             className={cn(
               "flex w-full cursor-not-allowed items-center rounded-md p-2 text-muted-foreground hover:underline",
               item.disabled && "cursor-not-allowed opacity-60",
@@ -59,9 +57,8 @@ export const SidebarNav = ({ navConfig }: SidebarNavProps) => {
 
   return navConfig.length ? (
     <div className="w-full">
-      {navConfig.map((navItem, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <div key={index} className={cn("pb-4")}>
+      {navConfig.map((navItem) => (
+        <div key={navItem.title} className={cn("pb-4")}>
           <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
             {navItem.title}
           </h4>

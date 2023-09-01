@@ -3,8 +3,9 @@ import { allESLintConfigs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
 import { Icon } from "@/components/icon";
-import { Mdx } from "@/components/mdx-components";
+import { Mdx, MdxComponents } from "@/components/mdx";
 import { Pager } from "@/components/pager";
+import { Rules } from "@/components/rules";
 import { DashboardTableOfContents } from "@/components/toc";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { siteConfig } from "@/config/site";
@@ -76,7 +77,10 @@ const ESLintConfigPage = async ({ params }: ESLintConfigPageProps) => {
     notFound();
   }
 
-  const toc = await getTableOfContents(eslintConfig.body.raw);
+  const processedToc = await getTableOfContents(eslintConfig.body.raw);
+  const toc = {
+    items: [...(processedToc.items || []), { title: "Rules", url: "#rules" }],
+  };
 
   return (
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
@@ -98,6 +102,8 @@ const ESLintConfigPage = async ({ params }: ESLintConfigPageProps) => {
         </div>
         <div className="pb-12 pt-8">
           <Mdx code={eslintConfig.body.code} />
+          <MdxComponents.H2 id="rules">Rules</MdxComponents.H2>
+          <Rules configKey={eslintConfig.key} />
         </div>
         <Pager doc={eslintConfig} />
       </div>

@@ -52,6 +52,10 @@ const computedFields: ComputedFields = {
       }
     },
   },
+  descriptionString: {
+    type: "string",
+    resolve: (doc) => doc.description.raw.replace(/`/g, "'"),
+  },
   docUrl: {
     type: "string",
     resolve: (doc) => {
@@ -112,7 +116,7 @@ export const RuleVersion = defineDocumentType(() => ({
       required: true,
     },
     description: {
-      type: "string",
+      type: "mdx",
       required: true,
     },
     jsEntry: {
