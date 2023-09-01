@@ -14,12 +14,12 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { type NavConfig } from "@/config/nav";
 import { cn } from "@/lib/utils";
 import type { DialogProps } from "@radix-ui/react-alert-dialog";
+import type { NavItem } from "@/types/nav";
 
 export type CommandMenuProps = DialogProps & {
-  navConfig: NavConfig;
+  navConfig: NavItem[];
 };
 export const CommandMenu = ({ navConfig, ...props }: CommandMenuProps) => {
   const router = useRouter();
@@ -63,7 +63,7 @@ export const CommandMenu = ({ navConfig, ...props }: CommandMenuProps) => {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          {navConfig.sidebarNav.map((group) => (
+          {navConfig.map((group) => (
             <CommandGroup key={group.title} heading={group.title}>
               {group.items?.map((navItem) => (
                 <CommandItem

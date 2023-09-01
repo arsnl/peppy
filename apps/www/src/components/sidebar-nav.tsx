@@ -2,42 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { getClosestNavItem } from "@/lib/nav";
 import { cn } from "@/lib/utils";
 import type { NavItem } from "@/types/nav";
 
-export type DocsSidebarNavProps = {
+type _SidebarNavItemsProps = {
   items: NavItem[];
+  closestHref: string | null;
 };
 
-export const DocsSidebarNav = ({ items }: DocsSidebarNavProps) => {
-  const pathname = usePathname();
-
-  return items.length ? (
-    <div className="w-full">
-      {items.map((item, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <div key={index} className={cn("pb-4")}>
-          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
-            {item.title}
-          </h4>
-          {item?.items?.length && (
-            <DocsSidebarNavItems items={item.items} pathname={pathname} />
-          )}
-        </div>
-      ))}
-    </div>
-  ) : null;
-};
-
-type DocsSidebarNavItemsProps = {
-  items: NavItem[];
-  pathname: string | null;
-};
-
-export const DocsSidebarNavItems = ({
-  items,
-  pathname,
-}: DocsSidebarNavItemsProps) =>
+const _SidebarNavItems = ({ items, closestHref }: _SidebarNavItemsProps) =>
   items?.length ? (
     <div className="grid grid-flow-row auto-rows-max text-sm">
       {items.map((item, index) =>
@@ -49,7 +23,7 @@ export const DocsSidebarNavItems = ({
             className={cn(
               "group flex w-full items-center rounded-md border border-transparent px-2 py-1 hover:underline",
               item.disabled && "cursor-not-allowed opacity-60",
-              pathname === item.href
+              item.href === closestHref
                 ? "font-medium text-foreground"
                 : "text-muted-foreground",
             )}
@@ -73,3 +47,29 @@ export const DocsSidebarNavItems = ({
       )}
     </div>
   ) : null;
+
+export type SidebarNavProps = {
+  navConfig: NavItem[];
+};
+
+export const SidebarNav = ({ navConfig }: SidebarNavProps) => {
+  const pathname = usePathname();
+  const closestNavtItem = getClosestNavItem({ pathname, navItems: navConfig });
+  const closestHref = closestNavtItem?.href ?? null;
+
+  return navConfig.length ? (
+    <div className="w-full">
+      {navConfig.map((navItem, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <div key={index} className={cn("pb-4")}>
+          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold">
+            {navItem.title}
+          </h4>
+          {navItem?.items?.length && (
+            <_SidebarNavItems items={navItem.items} closestHref={closestHref} />
+          )}
+        </div>
+      ))}
+    </div>
+  ) : null;
+};

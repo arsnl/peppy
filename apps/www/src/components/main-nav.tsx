@@ -5,10 +5,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/icon";
 import { siteConfig } from "@/config/site";
+import { getClosestNavItem } from "@/lib/nav";
 import { cn } from "@/lib/utils";
+import type { NavItem } from "@/types/nav";
 
-export const MainNav = () => {
+export type MainNavProps = {
+  navConfig: NavItem[];
+};
+
+export const MainNav = ({ navConfig = [] }: MainNavProps) => {
   const pathname = usePathname();
+  const closestNavtItem = getClosestNavItem({ pathname, navItems: navConfig });
+  const closestHref = closestNavtItem?.href ?? null;
 
   return (
     <div className="mr-4 hidden md:flex">
@@ -19,29 +27,28 @@ export const MainNav = () => {
         </span>
       </Link>
       <nav className="flex items-center space-x-6 text-sm font-medium">
-        <Link
-          href="/docs"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/docs") &&
-              !pathname?.startsWith("/docs/configurations")
-              ? "text-foreground"
-              : "text-foreground/60",
-          )}
-        >
-          Docs
-        </Link>
-        <Link
-          href="/docs/configurations"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/docs/configurations")
-              ? "text-foreground"
-              : "text-foreground/60",
-          )}
-        >
-          Configurations
-        </Link>
+        {navConfig.map(
+          (item, index) =>
+            item.href &&
+            !item.disabled && (
+              <Link
+                // eslint-disable-next-line react/no-array-index-key
+                key={index}
+                href={item.href}
+                className={cn(
+                  "transition-colors hover:text-foreground/80",
+                  item.disabled && "cursor-not-allowed opacity-60",
+                  item.href === closestHref
+                    ? "text-foreground"
+                    : "text-foreground/60",
+                )}
+                target={item.external ? "_blank" : ""}
+                rel={item.external ? "noreferrer" : ""}
+              >
+                {item.title}
+              </Link>
+            ),
+        )}
       </nav>
     </div>
   );

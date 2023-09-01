@@ -5,7 +5,6 @@ import {
 } from "contentlayer/source-files";
 import stringify from "fast-json-stable-stringify";
 import { eslintPluginsConfig } from "../../src/config/eslint-plugin";
-import { rulesConfig } from "../../src/config/rule";
 
 const computedFields: ComputedFields = {
   jsLevel: {
@@ -52,16 +51,6 @@ const computedFields: ComputedFields = {
           return "Unknown";
       }
     },
-  },
-  description: {
-    type: "string",
-    resolve: (doc) =>
-      // This computed field is used to update the description
-      // without having to run the next/bump scripts and rewrite
-      // all the files in the content folder. Also, having the
-      // description as "required" prevent the build from passing
-      // if a description is missing in the rule configuration.
-      rulesConfig[doc.ruleKey]?.description || doc.description,
   },
   docUrl: {
     type: "string",

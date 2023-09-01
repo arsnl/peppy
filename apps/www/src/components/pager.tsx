@@ -2,9 +2,9 @@ import { type Doc, type ESLintConfig } from "contentlayer/generated";
 import Link from "next/link";
 import { Icon } from "@/components/icon";
 import { buttonVariants } from "@/components/ui/button";
-import { navConfig } from "@/config/nav";
+import { sidebarNavConfig } from "@/config/nav";
+import { getFlattenNavItems } from "@/lib/nav";
 import { cn } from "@/lib/utils";
-import { type NavItem } from "@/types/nav";
 
 type Document = Doc | ESLintConfig;
 
@@ -44,26 +44,14 @@ export const Pager = ({ doc }: PagerProps) => {
 };
 
 export const getPager = (doc: Document) => {
-  const flattenedLinks = [null, ...flatten(navConfig.sidebarNav), null];
-  const activeIndex = flattenedLinks.findIndex(
-    (link) => doc.href === link?.href,
+  const flattenedLinks = getFlattenNavItems(sidebarNavConfig).filter(
+    (link) => !!link.href && !link?.disabled && !link?.external,
   );
-  const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
-  const next =
-    activeIndex !== flattenedLinks.length - 1
-      ? flattenedLinks[activeIndex + 1]
-      : null;
-  return {
-    prev,
-    next,
-  };
-};
+  const activeIndex = flattenedLinks.findIndex(({ href }) => doc.href === href);
+  const linksBeforeActive = flattenedLinks.slice(0, activeIndex);
+  const linksAfterActive = flattenedLinks.slice(activeIndex + 1);
+  const prev = linksBeforeActive.slice(-1)?.[0] || null;
+  const next = linksAfterActive[0] || null;
 
-export const flatten = (links: NavItem[]): NavItem[] =>
-  links
-    .reduce<NavItem[]>(
-      (flat, link) =>
-        flat.concat(link.items?.length ? flatten(link.items) : link),
-      [],
-    )
-    .filter((link) => !link?.disabled && !link?.external);
+  return { prev, next };
+};
