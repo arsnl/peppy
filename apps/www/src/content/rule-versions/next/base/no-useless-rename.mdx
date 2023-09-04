@@ -1,0 +1,71 @@
+---
+version: "next"
+ruleKey: "no-useless-rename"
+description: Disallow renaming import, export, and destructured assignments to the same name
+jsEntry:
+  [
+    "error",
+    {
+      "ignoreDestructuring": false,
+      "ignoreExport": false,
+      "ignoreImport": false,
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "ignoreDestructuring": false,
+      "ignoreExport": false,
+      "ignoreImport": false,
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "error",
+  { "ignoreDestructuring": false, "ignoreExport": false, "ignoreImport": false }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "error",
+  { "ignoreDestructuring": false, "ignoreExport": false, "ignoreImport": false }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="no-useless-rename" />

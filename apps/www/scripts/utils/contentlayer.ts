@@ -76,7 +76,7 @@ export const writeRuleVersion = async ({
   previousJsEntry,
   tsEntry,
   previousTsEntry,
-  updates,
+  history,
 }: Pick<
   RuleVersion,
   | "configKey"
@@ -86,16 +86,13 @@ export const writeRuleVersion = async ({
   | "previousJsEntry"
   | "tsEntry"
   | "previousTsEntry"
-  | "updates"
->) => {
+> & { history: Pick<RuleVersion["history"][0], "version" | "state">[] }) => {
   const folder =
     version === "next" ? RULE_VERSIONS_NEXT_FOLDER : RULE_VERSIONS_TEMP_FOLDER;
   const filepath = path.join(
     folder,
     `/${configKey}/${ruleKey.replace(/\//g, "_")}.mdx`,
   );
-
-  // replace all the slash in a string by _
 
   const content = `---
 version: "${version}"
@@ -105,8 +102,56 @@ jsEntry: ${jsEntry ? stringify(jsEntry) : null}
 previousJsEntry: ${previousJsEntry ? stringify(previousJsEntry) : null}
 tsEntry: ${tsEntry ? stringify(tsEntry) : null}
 previousTsEntry: ${previousTsEntry ? stringify(previousTsEntry) : null}
-updates: ${stringify(updates || [])}
----`;
+history: ${stringify(history || [])}
+---
+
+<Tabs defaultValue="${jsEntry ? "js" : "ts"}">
+
+<TabsList>
+${
+  jsEntry
+    ? `<TabsTrigger value="js"><div className="flex gap-2 items-center"><RuleLevelIcon level="${jsEntry[0]}" /><p>JavaScript</p></div></TabsTrigger>`
+    : ""
+}${
+    tsEntry
+      ? `<TabsTrigger value="ts"><div className="flex gap-2 items-center"><RuleLevelIcon ts level="${tsEntry[0]}" /><p>TypeScript</p></div></TabsTrigger>`
+      : ""
+  }
+</TabsList>
+
+${
+  jsEntry
+    ? `<TabsContent value="js">
+
+\`\`\`json
+${stringify(jsEntry)}
+\`\`\`
+    
+</TabsContent>
+`
+    : ""
+}
+
+${
+  tsEntry
+    ? `<TabsContent value="ts">
+
+\`\`\`json
+${stringify(tsEntry)}
+\`\`\`
+    
+</TabsContent>
+`
+    : ""
+}
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="${ruleKey}" />
+
+`;
 
   return writeWithPrettier({
     filepath,

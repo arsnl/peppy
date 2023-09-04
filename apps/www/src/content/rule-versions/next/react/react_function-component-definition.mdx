@@ -1,0 +1,69 @@
+---
+version: "next"
+ruleKey: "react/function-component-definition"
+description: Standardize the way function component get defined (fixable)
+jsEntry:
+  [
+    "error",
+    {
+      "namedComponents": "arrow-function",
+      "unnamedComponents": "arrow-function",
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "namedComponents": "arrow-function",
+      "unnamedComponents": "arrow-function",
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "error",
+  { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "error",
+  { "namedComponents": "arrow-function", "unnamedComponents": "arrow-function" }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/function-component-definition" />

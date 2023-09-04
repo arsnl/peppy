@@ -2,9 +2,22 @@
 import {
   type ComputedFields,
   defineDocumentType,
+  defineNestedType,
 } from "contentlayer/source-files";
 import stringify from "fast-json-stable-stringify";
 import { eslintPluginsConfig } from "../../src/config/eslint-plugin";
+
+const VersionHistory = defineNestedType(() => ({
+  name: "VersionHistory",
+  fields: {
+    version: { type: "string", required: true },
+    state: {
+      type: "enum",
+      options: ["new", "removed", "updated", "unchanged"],
+      required: true,
+    },
+  },
+}));
 
 const computedFields: ComputedFields = {
   jsLevel: {
@@ -100,6 +113,20 @@ const computedFields: ComputedFields = {
       return `/docs/configurations/${configSlug}/${ruleSlug}`;
     },
   },
+  history: {
+    type: "json",
+    resolve: (doc) => {
+      const state = computedFields.state.resolve(doc);
+      const version = doc?.version || "next";
+      const previousHistory = [...(doc?.history ?? [])].filter(
+        (entry) => entry.version !== version,
+      );
+
+      return state === "unchanged"
+        ? previousHistory
+        : [{ version, state }, ...previousHistory];
+    },
+  },
 };
 
 export const RuleVersion = defineDocumentType(() => ({
@@ -131,8 +158,13 @@ export const RuleVersion = defineDocumentType(() => ({
     previousTsEntry: {
       type: "json",
     },
-    updates: {
-      type: "json",
+    state: {
+      type: "enum",
+      options: ["new", "removed", "updated", "unchanged"],
+    },
+    history: {
+      type: "list",
+      of: VersionHistory,
       required: true,
     },
   },

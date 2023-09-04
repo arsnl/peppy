@@ -1,0 +1,83 @@
+---
+version: "next"
+ruleKey: "no-unused-expressions"
+description: Disallow unused expressions
+jsEntry:
+  [
+    "error",
+    {
+      "allowShortCircuit": true,
+      "allowTaggedTemplates": true,
+      "allowTernary": true,
+      "enforceForJSX": false,
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "off",
+    {
+      "allowShortCircuit": true,
+      "allowTaggedTemplates": true,
+      "allowTernary": true,
+      "enforceForJSX": false,
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="off" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "error",
+  {
+    "allowShortCircuit": true,
+    "allowTaggedTemplates": true,
+    "allowTernary": true,
+    "enforceForJSX": false
+  }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "off",
+  {
+    "allowShortCircuit": true,
+    "allowTaggedTemplates": true,
+    "allowTernary": true,
+    "enforceForJSX": false
+  }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="no-unused-expressions" />

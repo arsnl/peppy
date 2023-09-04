@@ -1,0 +1,79 @@
+---
+version: "next"
+ruleKey: "jsx-a11y/label-has-for"
+description: Enforce that `<label>` elements have the `htmlFor` prop
+jsEntry:
+  [
+    "off",
+    {
+      "allowChildren": false,
+      "components": [],
+      "required": { "every": ["nesting", "id"] },
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "off",
+    {
+      "allowChildren": false,
+      "components": [],
+      "required": { "every": ["nesting", "id"] },
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="off" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="off" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "off",
+  {
+    "allowChildren": false,
+    "components": [],
+    "required": { "every": ["nesting", "id"] }
+  }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "off",
+  {
+    "allowChildren": false,
+    "components": [],
+    "required": { "every": ["nesting", "id"] }
+  }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="jsx-a11y/label-has-for" />

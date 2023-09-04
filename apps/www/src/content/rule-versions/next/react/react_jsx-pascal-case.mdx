@@ -1,0 +1,63 @@
+---
+version: "next"
+ruleKey: "react/jsx-pascal-case"
+description: Enforce PascalCase for user-defined JSX components
+jsEntry:
+  [
+    "error",
+    { "allowAllCaps": true, "allowLeadingUnderscore": true, "ignore": [] },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    { "allowAllCaps": true, "allowLeadingUnderscore": true, "ignore": [] },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "error",
+  { "allowAllCaps": true, "allowLeadingUnderscore": true, "ignore": [] }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "error",
+  { "allowAllCaps": true, "allowLeadingUnderscore": true, "ignore": [] }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/jsx-pascal-case" />

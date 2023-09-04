@@ -1,0 +1,97 @@
+---
+version: "next"
+ruleKey: "spaced-comment"
+description: Enforce consistent spacing after the `//` or `/*` in a comment
+jsEntry:
+  [
+    "error",
+    "always",
+    {
+      "block":
+        {
+          "balanced": true,
+          "exceptions": ["-", "+"],
+          "markers": ["=", "!", ":", "::"],
+        },
+      "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    "always",
+    {
+      "block":
+        {
+          "balanced": true,
+          "exceptions": ["-", "+"],
+          "markers": ["=", "!", ":", "::"],
+        },
+      "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] },
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "error",
+  "always",
+  {
+    "block": {
+      "balanced": true,
+      "exceptions": ["-", "+"],
+      "markers": ["=", "!", ":", "::"]
+    },
+    "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] }
+  }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "error",
+  "always",
+  {
+    "block": {
+      "balanced": true,
+      "exceptions": ["-", "+"],
+      "markers": ["=", "!", ":", "::"]
+    },
+    "line": { "exceptions": ["-", "+"], "markers": ["=", "!", "/"] }
+  }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="spaced-comment" />

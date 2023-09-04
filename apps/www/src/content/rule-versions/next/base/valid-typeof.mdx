@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "valid-typeof"
+description: Enforce comparing `typeof` expressions against valid strings
+jsEntry: ["error", { "requireStringLiterals": true }]
+previousJsEntry: null
+tsEntry: ["off", { "requireStringLiterals": true }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="off" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "requireStringLiterals": true }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["off", { "requireStringLiterals": true }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="valid-typeof" />

@@ -3,7 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Icon } from "@/components/icon";
 import { Mdx } from "@/components/mdx";
+import { RuleStateBadge } from "@/components/rule-state-badge";
 import { DashboardTableOfContents } from "@/components/toc";
+import { badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { getESlintConfigs } from "@/config/eslint-config";
@@ -106,6 +108,26 @@ const ESLintConfigPage = async ({ params }: RuleVersionPageProps) => {
             className="text-lg text-muted-foreground"
           />
         </div>
+
+        <div className="flex items-center space-x-2 pt-4">
+          <RuleStateBadge state={rule.state} stateLabel={rule.stateLabel} />
+          {rule.docUrl && (
+            <Link
+              href={rule.docUrl}
+              target="_blank"
+              rel="noreferrer"
+              className={cn(
+                badgeVariants({ variant: "outline" }),
+                "flex gap-2 rounded-full bg-background p-1 px-2 text-xs hover:bg-muted",
+              )}
+              alt-text={`Check the documentation of the rule ${rule.ruleKey} on the official plugin documentation`}
+            >
+              <Icon icon="eslint" className="h-3 w-3" />
+              API Reference
+            </Link>
+          )}
+        </div>
+
         <Mdx code={rule.body.code} className="pb-12 pt-8" />
         <div className="flex flex-row items-center justify-between">
           <Link

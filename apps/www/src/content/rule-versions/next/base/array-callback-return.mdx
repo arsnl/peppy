@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "array-callback-return"
+description: Enforce `return` statements in callbacks of array methods
+jsEntry: ["error", { "allowImplicit": true, "checkForEach": false }]
+previousJsEntry: null
+tsEntry: ["error", { "allowImplicit": true, "checkForEach": false }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "allowImplicit": true, "checkForEach": false }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "allowImplicit": true, "checkForEach": false }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="array-callback-return" />

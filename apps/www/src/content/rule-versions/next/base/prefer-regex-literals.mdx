@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "prefer-regex-literals"
+description: Disallow use of the `RegExp` constructor in favor of regular expression literals
+jsEntry: ["error", { "disallowRedundantWrapping": true }]
+previousJsEntry: null
+tsEntry: ["error", { "disallowRedundantWrapping": true }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "disallowRedundantWrapping": true }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "disallowRedundantWrapping": true }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="prefer-regex-literals" />

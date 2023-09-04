@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "no-unsafe-optional-chaining"
+description: Disallow use of optional chaining in contexts where the `undefined` value is not allowed
+jsEntry: ["error", { "disallowArithmeticOperators": true }]
+previousJsEntry: null
+tsEntry: ["error", { "disallowArithmeticOperators": true }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "disallowArithmeticOperators": true }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "disallowArithmeticOperators": true }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="no-unsafe-optional-chaining" />

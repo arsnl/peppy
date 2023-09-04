@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "jsx-a11y/aria-role"
+description: Enforce that elements with ARIA roles must use a valid, non-abstract ARIA role
+jsEntry: ["error", { "ignoreNonDOM": false }]
+previousJsEntry: null
+tsEntry: ["error", { "ignoreNonDOM": false }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "ignoreNonDOM": false }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "ignoreNonDOM": false }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="jsx-a11y/aria-role" />

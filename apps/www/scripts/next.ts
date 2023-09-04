@@ -148,7 +148,7 @@ const getNextPartialRuleVersions = async () => {
         const {
           jsEntry: previousJsEntry,
           tsEntry: previousTsEntry,
-          updates,
+          history = [],
         } = ruleVersions.find(
           (document) =>
             document.configKey === configKey && document.ruleKey === ruleKey,
@@ -162,7 +162,7 @@ const getNextPartialRuleVersions = async () => {
           previousJsEntry,
           tsEntry,
           previousTsEntry,
-          updates,
+          history,
         });
       },
     ),

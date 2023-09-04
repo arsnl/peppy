@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "react/default-props-match-prop-types"
+description: Enforce all defaultProps are defined and not "required" in propTypes
+jsEntry: ["error", { "allowRequiredDefaults": false }]
+previousJsEntry: null
+tsEntry: ["error", { "allowRequiredDefaults": false }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "allowRequiredDefaults": false }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "allowRequiredDefaults": false }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/default-props-match-prop-types" />

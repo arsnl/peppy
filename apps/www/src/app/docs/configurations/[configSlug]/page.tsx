@@ -3,7 +3,8 @@ import { allESLintConfigs } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Balancer from "react-wrap-balancer";
 import { Icon } from "@/components/icon";
-import { Mdx, MdxComponents } from "@/components/mdx";
+import { Mdx } from "@/components/mdx";
+import { H2 } from "@/components/mdx/h2";
 import { Pager } from "@/components/pager";
 import { Rules } from "@/components/rules";
 import { DashboardTableOfContents } from "@/components/toc";
@@ -102,7 +103,7 @@ const ESLintConfigPage = async ({ params }: ESLintConfigPageProps) => {
         </div>
         <div className="pb-12 pt-8">
           <Mdx code={eslintConfig.body.code} />
-          <MdxComponents.H2 id="rules">Rules</MdxComponents.H2>
+          <H2 id="rules">Rules</H2>
           <Rules configKey={eslintConfig.key} />
         </div>
         <Pager doc={eslintConfig} />

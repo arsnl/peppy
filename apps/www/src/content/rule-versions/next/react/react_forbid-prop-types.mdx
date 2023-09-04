@@ -1,0 +1,79 @@
+---
+version: "next"
+ruleKey: "react/forbid-prop-types"
+description: Forbid certain propTypes
+jsEntry:
+  [
+    "error",
+    {
+      "checkChildContextTypes": true,
+      "checkContextTypes": true,
+      "forbid": ["any", "array", "object"],
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "checkChildContextTypes": true,
+      "checkContextTypes": true,
+      "forbid": ["any", "array", "object"],
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "error",
+  {
+    "checkChildContextTypes": true,
+    "checkContextTypes": true,
+    "forbid": ["any", "array", "object"]
+  }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "error",
+  {
+    "checkChildContextTypes": true,
+    "checkContextTypes": true,
+    "forbid": ["any", "array", "object"]
+  }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/forbid-prop-types" />

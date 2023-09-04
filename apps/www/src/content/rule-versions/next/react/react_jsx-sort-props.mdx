@@ -1,0 +1,91 @@
+---
+version: "next"
+ruleKey: "react/jsx-sort-props"
+description: Enforce props alphabetical sorting
+jsEntry:
+  [
+    "off",
+    {
+      "callbacksLast": false,
+      "ignoreCase": true,
+      "noSortAlphabetically": false,
+      "reservedFirst": true,
+      "shorthandFirst": false,
+      "shorthandLast": false,
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "off",
+    {
+      "callbacksLast": false,
+      "ignoreCase": true,
+      "noSortAlphabetically": false,
+      "reservedFirst": true,
+      "shorthandFirst": false,
+      "shorthandLast": false,
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="off" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="off" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "off",
+  {
+    "callbacksLast": false,
+    "ignoreCase": true,
+    "noSortAlphabetically": false,
+    "reservedFirst": true,
+    "shorthandFirst": false,
+    "shorthandLast": false
+  }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "off",
+  {
+    "callbacksLast": false,
+    "ignoreCase": true,
+    "noSortAlphabetically": false,
+    "reservedFirst": true,
+    "shorthandFirst": false,
+    "shorthandLast": false
+  }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/jsx-sort-props" />

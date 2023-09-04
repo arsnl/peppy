@@ -7,6 +7,7 @@ export type IconName =
   | "circle"
   | "columns"
   | "copy"
+  | "eslint"
   | "gem"
   | "github"
   | "javascript-outline"

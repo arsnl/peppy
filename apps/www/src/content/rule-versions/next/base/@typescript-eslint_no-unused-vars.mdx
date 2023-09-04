@@ -1,0 +1,52 @@
+---
+version: "next"
+ruleKey: "@typescript-eslint/no-unused-vars"
+description: Disallow unused variables
+jsEntry: null
+previousJsEntry: null
+tsEntry:
+  [
+    "warn",
+    {
+      "args": "after-used",
+      "argsIgnorePattern": "^_",
+      "ignoreRestSiblings": true,
+      "vars": "all",
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="ts">
+
+<TabsList>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="warn" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="ts">
+
+```json
+[
+  "warn",
+  {
+    "args": "after-used",
+    "argsIgnorePattern": "^_",
+    "ignoreRestSiblings": true,
+    "vars": "all"
+  }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="@typescript-eslint/no-unused-vars" />

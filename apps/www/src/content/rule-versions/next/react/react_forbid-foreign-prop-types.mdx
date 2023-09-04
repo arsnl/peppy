@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "react/forbid-foreign-prop-types"
+description: Forbid using another component's propTypes
+jsEntry: ["warn", { "allowInPropTypes": true }]
+previousJsEntry: null
+tsEntry: ["warn", { "allowInPropTypes": true }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="warn" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="warn" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["warn", { "allowInPropTypes": true }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["warn", { "allowInPropTypes": true }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/forbid-foreign-prop-types" />

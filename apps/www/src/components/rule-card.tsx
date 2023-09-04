@@ -1,9 +1,8 @@
-import { type HTMLAttributes } from "react";
 import { type RuleVersion } from "contentlayer/generated";
 import Link, { type LinkProps } from "next/link";
-import { Icon, type IconName } from "@/components/icon";
 import { Mdx } from "@/components/mdx";
-import { Badge } from "@/components/ui/badge";
+import { RuleLevelIcon } from "@/components/rule-level-icon";
+import { RuleStateBadge } from "@/components/rule-state-badge";
 import { cn } from "@/lib/utils";
 
 export type RuleCardOptions = Pick<
@@ -18,42 +17,6 @@ export type RuleCardOptions = Pick<
   | "stateLabel"
   | "href"
 >;
-
-type _RuleConfigurationIconProps = Omit<
-  HTMLAttributes<HTMLDivElement>,
-  "children"
-> & {
-  level?: Required<RuleCardOptions>["jsLevel" | "tsLevel"];
-  icon: IconName;
-};
-
-const _RuleConfigurationIcon = ({
-  level,
-  icon,
-  className,
-  ...props
-}: _RuleConfigurationIconProps) =>
-  level ? (
-    <div
-      className={cn(
-        "relative flex gap-1 rounded-md border p-1 text-muted-foreground sm:justify-start",
-        className,
-      )}
-      {...props}
-    >
-      <Icon icon={icon} className="h-5 w-5" />
-      <span
-        className={cn(
-          "absolute right-0 top-0 block h-2 w-2 -translate-y-1/2 translate-x-1/2 rounded-full",
-          {
-            "bg-muted-foreground": level === "off",
-            "bg-yellow-500": level === "warn",
-            "bg-red-500": level === "error",
-          },
-        )}
-      />
-    </div>
-  ) : null;
 
 export type RuleCardProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -83,22 +46,11 @@ export const RuleCard = ({
     )}
     {...props}
   >
-    {state !== "unchanged" && (
-      <Badge
-        variant="outline"
-        className="absolute left-4 top-0 flex -translate-y-1/2 gap-2 rounded-full bg-background p-1 px-2 text-xs text-muted-foreground"
-      >
-        <span
-          className={cn("block h-2 w-2 rounded-full", {
-            "bg-green-500": state === "new",
-            "bg-red-500": state === "removed",
-            "bg-sky-500": state === "updated",
-          })}
-        />
-        {stateLabel}
-      </Badge>
-    )}
-
+    <RuleStateBadge
+      state={state}
+      stateLabel={stateLabel}
+      className="absolute left-4 top-0 -translate-y-1/2 text-muted-foreground"
+    />
     <div className="flex flex-col gap-1 pb-4 sm:pb-0">
       <h3 className="font-semibold tracking-tight">{ruleKey}</h3>
       <Mdx
@@ -108,8 +60,15 @@ export const RuleCard = ({
     </div>
 
     <div className="flex justify-end gap-2">
-      <_RuleConfigurationIcon level={jsLevel} icon="javascript-outline" />
-      <_RuleConfigurationIcon level={tsLevel} icon="typescript-outline" />
+      <RuleLevelIcon
+        level={jsLevel}
+        className="text-muted-foreground sm:justify-start"
+      />
+      <RuleLevelIcon
+        level={tsLevel}
+        ts
+        className="text-muted-foreground sm:justify-start"
+      />
     </div>
   </Link>
 );

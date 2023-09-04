@@ -1,0 +1,87 @@
+---
+version: "next"
+ruleKey: "react/jsx-no-bind"
+description: Prevents usage of Function.prototype.bind and arrow functions in React component props
+jsEntry:
+  [
+    "error",
+    {
+      "allowArrowFunctions": true,
+      "allowBind": false,
+      "allowFunctions": false,
+      "ignoreDOMComponents": true,
+      "ignoreRefs": true,
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "allowArrowFunctions": true,
+      "allowBind": false,
+      "allowFunctions": false,
+      "ignoreDOMComponents": true,
+      "ignoreRefs": true,
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "error",
+  {
+    "allowArrowFunctions": true,
+    "allowBind": false,
+    "allowFunctions": false,
+    "ignoreDOMComponents": true,
+    "ignoreRefs": true
+  }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "error",
+  {
+    "allowArrowFunctions": true,
+    "allowBind": false,
+    "allowFunctions": false,
+    "ignoreDOMComponents": true,
+    "ignoreRefs": true
+  }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/jsx-no-bind" />

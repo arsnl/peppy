@@ -50,10 +50,14 @@ import {
         previousJsEntry,
         jsEntry,
         previousTsEntry,
-        updates = [],
-        state,
-      }) =>
-        writeRuleVersion({
+        history = [],
+        state = "new",
+      }) => {
+        const previousHistory = history.filter(
+          (entry: any) => entry.version !== version && entry.version !== "next",
+        );
+
+        return writeRuleVersion({
           configKey,
           ruleKey,
           version,
@@ -61,8 +65,12 @@ import {
           previousJsEntry,
           tsEntry,
           previousTsEntry,
-          updates: state === "unchanged" ? updates : [version, ...updates],
-        }),
+          history:
+            state === "unchanged"
+              ? history
+              : [{ version, state }, ...previousHistory],
+        });
+      },
     ),
   );
 

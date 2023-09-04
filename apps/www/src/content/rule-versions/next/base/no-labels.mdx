@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "no-labels"
+description: Disallow labeled statements
+jsEntry: ["error", { "allowLoop": false, "allowSwitch": false }]
+previousJsEntry: null
+tsEntry: ["error", { "allowLoop": false, "allowSwitch": false }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "allowLoop": false, "allowSwitch": false }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "allowLoop": false, "allowSwitch": false }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="no-labels" />

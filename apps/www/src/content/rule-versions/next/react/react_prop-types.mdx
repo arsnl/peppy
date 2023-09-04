@@ -1,0 +1,51 @@
+---
+version: "next"
+ruleKey: "react/prop-types"
+description: Prevent missing props validation in a React component definition
+jsEntry:
+  ["error", { "customValidators": [], "ignore": [], "skipUndeclared": false }]
+previousJsEntry: null
+tsEntry:
+  ["off", { "customValidators": [], "ignore": [], "skipUndeclared": false }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="off" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "customValidators": [], "ignore": [], "skipUndeclared": false }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["off", { "customValidators": [], "ignore": [], "skipUndeclared": false }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/prop-types" />

@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "react/jsx-filename-extension"
+description: Restrict file extensions that may contain JSX
+jsEntry: ["error", { "extensions": [".jsx", ".tsx"] }]
+previousJsEntry: null
+tsEntry: ["error", { "extensions": [".jsx", ".tsx"] }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "extensions": [".jsx", ".tsx"] }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "extensions": [".jsx", ".tsx"] }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/jsx-filename-extension" />

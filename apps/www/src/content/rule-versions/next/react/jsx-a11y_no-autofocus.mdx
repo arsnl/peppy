@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "jsx-a11y/no-autofocus"
+description: Enforce autoFocus prop is not used
+jsEntry: ["error", { "ignoreNonDOM": true }]
+previousJsEntry: null
+tsEntry: ["error", { "ignoreNonDOM": true }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "ignoreNonDOM": true }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "ignoreNonDOM": true }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="jsx-a11y/no-autofocus" />

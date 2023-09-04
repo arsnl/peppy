@@ -1,0 +1,251 @@
+---
+version: "next"
+ruleKey: "no-restricted-properties"
+description: Disallow certain properties on certain objects
+jsEntry:
+  [
+    "error",
+    {
+      "message": "arguments.callee is deprecated.",
+      "object": "arguments",
+      "property": "callee",
+    },
+    {
+      "message": "Please use Number.isFinite instead.",
+      "object": "global",
+      "property": "isFinite",
+    },
+    {
+      "message": "Please use Number.isFinite instead.",
+      "object": "self",
+      "property": "isFinite",
+    },
+    {
+      "message": "Please use Number.isFinite instead.",
+      "object": "window",
+      "property": "isFinite",
+    },
+    {
+      "message": "Please use Number.isNaN instead.",
+      "object": "global",
+      "property": "isNaN",
+    },
+    {
+      "message": "Please use Number.isNaN instead.",
+      "object": "self",
+      "property": "isNaN",
+    },
+    {
+      "message": "Please use Number.isNaN instead.",
+      "object": "window",
+      "property": "isNaN",
+    },
+    {
+      "message": "Please use Object.defineProperty instead.",
+      "property": "__defineGetter__",
+    },
+    {
+      "message": "Please use Object.defineProperty instead.",
+      "property": "__defineSetter__",
+    },
+    {
+      "message": "Use the exponentiation operator (**) instead.",
+      "object": "Math",
+      "property": "pow",
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "message": "arguments.callee is deprecated.",
+      "object": "arguments",
+      "property": "callee",
+    },
+    {
+      "message": "Please use Number.isFinite instead.",
+      "object": "global",
+      "property": "isFinite",
+    },
+    {
+      "message": "Please use Number.isFinite instead.",
+      "object": "self",
+      "property": "isFinite",
+    },
+    {
+      "message": "Please use Number.isFinite instead.",
+      "object": "window",
+      "property": "isFinite",
+    },
+    {
+      "message": "Please use Number.isNaN instead.",
+      "object": "global",
+      "property": "isNaN",
+    },
+    {
+      "message": "Please use Number.isNaN instead.",
+      "object": "self",
+      "property": "isNaN",
+    },
+    {
+      "message": "Please use Number.isNaN instead.",
+      "object": "window",
+      "property": "isNaN",
+    },
+    {
+      "message": "Please use Object.defineProperty instead.",
+      "property": "__defineGetter__",
+    },
+    {
+      "message": "Please use Object.defineProperty instead.",
+      "property": "__defineSetter__",
+    },
+    {
+      "message": "Use the exponentiation operator (**) instead.",
+      "object": "Math",
+      "property": "pow",
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+[
+  "error",
+  {
+    "message": "arguments.callee is deprecated.",
+    "object": "arguments",
+    "property": "callee"
+  },
+  {
+    "message": "Please use Number.isFinite instead.",
+    "object": "global",
+    "property": "isFinite"
+  },
+  {
+    "message": "Please use Number.isFinite instead.",
+    "object": "self",
+    "property": "isFinite"
+  },
+  {
+    "message": "Please use Number.isFinite instead.",
+    "object": "window",
+    "property": "isFinite"
+  },
+  {
+    "message": "Please use Number.isNaN instead.",
+    "object": "global",
+    "property": "isNaN"
+  },
+  {
+    "message": "Please use Number.isNaN instead.",
+    "object": "self",
+    "property": "isNaN"
+  },
+  {
+    "message": "Please use Number.isNaN instead.",
+    "object": "window",
+    "property": "isNaN"
+  },
+  {
+    "message": "Please use Object.defineProperty instead.",
+    "property": "__defineGetter__"
+  },
+  {
+    "message": "Please use Object.defineProperty instead.",
+    "property": "__defineSetter__"
+  },
+  {
+    "message": "Use the exponentiation operator (**) instead.",
+    "object": "Math",
+    "property": "pow"
+  }
+]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+[
+  "error",
+  {
+    "message": "arguments.callee is deprecated.",
+    "object": "arguments",
+    "property": "callee"
+  },
+  {
+    "message": "Please use Number.isFinite instead.",
+    "object": "global",
+    "property": "isFinite"
+  },
+  {
+    "message": "Please use Number.isFinite instead.",
+    "object": "self",
+    "property": "isFinite"
+  },
+  {
+    "message": "Please use Number.isFinite instead.",
+    "object": "window",
+    "property": "isFinite"
+  },
+  {
+    "message": "Please use Number.isNaN instead.",
+    "object": "global",
+    "property": "isNaN"
+  },
+  {
+    "message": "Please use Number.isNaN instead.",
+    "object": "self",
+    "property": "isNaN"
+  },
+  {
+    "message": "Please use Number.isNaN instead.",
+    "object": "window",
+    "property": "isNaN"
+  },
+  {
+    "message": "Please use Object.defineProperty instead.",
+    "property": "__defineGetter__"
+  },
+  {
+    "message": "Please use Object.defineProperty instead.",
+    "property": "__defineSetter__"
+  },
+  {
+    "message": "Use the exponentiation operator (**) instead.",
+    "object": "Math",
+    "property": "pow"
+  }
+]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="no-restricted-properties" />

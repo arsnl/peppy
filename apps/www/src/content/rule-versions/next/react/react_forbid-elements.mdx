@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "react/forbid-elements"
+description: Forbid certain elements
+jsEntry: ["off", { "forbid": [] }]
+previousJsEntry: null
+tsEntry: ["off", { "forbid": [] }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="off" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="off" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["off", { "forbid": [] }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["off", { "forbid": [] }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/forbid-elements" />

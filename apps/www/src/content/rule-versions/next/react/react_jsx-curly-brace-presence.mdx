@@ -1,0 +1,49 @@
+---
+version: "next"
+ruleKey: "react/jsx-curly-brace-presence"
+description: Disallow unnecessary JSX expressions when literals alone are sufficient or enfore JSX expressions on literals in JSX children or attributes
+jsEntry: ["error", { "children": "never", "props": "never" }]
+previousJsEntry: null
+tsEntry: ["error", { "children": "never", "props": "never" }]
+previousTsEntry: null
+history: []
+---
+
+<Tabs defaultValue="js">
+
+<TabsList>
+  <TabsTrigger value="js">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon level="error" />
+      <p>JavaScript</p>
+    </div>
+  </TabsTrigger>
+  <TabsTrigger value="ts">
+    <div className="flex gap-2 items-center">
+      <RuleLevelIcon ts level="error" />
+      <p>TypeScript</p>
+    </div>
+  </TabsTrigger>
+</TabsList>
+
+<TabsContent value="js">
+
+```json
+["error", { "children": "never", "props": "never" }]
+```
+
+</TabsContent>
+
+<TabsContent value="ts">
+
+```json
+["error", { "children": "never", "props": "never" }]
+```
+
+</TabsContent>
+
+</Tabs>
+
+## Version History
+
+<RuleHistory ruleKey="react/jsx-curly-brace-presence" />
