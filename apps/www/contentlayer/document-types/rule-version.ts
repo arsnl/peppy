@@ -5,6 +5,7 @@ import {
   defineNestedType,
 } from "contentlayer/source-files";
 import stringify from "fast-json-stable-stringify";
+import prettier from "prettier";
 import { eslintPluginsConfig } from "../../src/config/eslint-plugin";
 
 const VersionHistory = defineNestedType(() => ({
@@ -24,9 +25,75 @@ const computedFields: ComputedFields = {
     type: "string",
     resolve: (doc) => doc?.jsEntry?.[0] ?? null,
   },
+  jsUpdated: {
+    type: "boolean",
+    resolve: (doc) => {
+      const { jsEntry, previousJsEntry } = doc;
+      return (
+        !!jsEntry &&
+        !!previousJsEntry &&
+        stringify(jsEntry) !== stringify(previousJsEntry)
+      );
+    },
+  },
+  jsEntryStringified: {
+    type: "string",
+    resolve: async (doc) => {
+      const { jsEntry } = doc;
+      return jsEntry
+        ? prettier.format(stringify(jsEntry), {
+            parser: "json",
+          })
+        : "";
+    },
+  },
+  previousJsEntryStringified: {
+    type: "string",
+    resolve: async (doc) => {
+      const { previousJsEntry } = doc;
+      return previousJsEntry
+        ? prettier.format(stringify(previousJsEntry), {
+            parser: "json",
+          })
+        : "";
+    },
+  },
   tsLevel: {
     type: "string",
     resolve: (doc) => doc?.tsEntry?.[0] ?? null,
+  },
+  tsUpdated: {
+    type: "boolean",
+    resolve: (doc) => {
+      const { tsEntry, previousTsEntry } = doc;
+      return (
+        !!tsEntry &&
+        !!previousTsEntry &&
+        stringify(tsEntry) !== stringify(previousTsEntry)
+      );
+    },
+  },
+  tsEntryStringified: {
+    type: "string",
+    resolve: async (doc) => {
+      const { tsEntry } = doc;
+      return tsEntry
+        ? prettier.format(stringify(tsEntry), {
+            parser: "json",
+          })
+        : "";
+    },
+  },
+  previousTsEntryStringified: {
+    type: "string",
+    resolve: async (doc) => {
+      const { previousTsEntry } = doc;
+      return previousTsEntry
+        ? prettier.format(stringify(previousTsEntry), {
+            parser: "json",
+          })
+        : "";
+    },
   },
   state: {
     type: "enum",
@@ -35,14 +102,8 @@ const computedFields: ComputedFields = {
         ? "new"
         : !doc?.jsEntry && !doc?.tsEntry
         ? "removed"
-        : stringify({
-            js: doc?.jsEntry || null,
-            ts: doc?.tsEntry || null,
-          }) !==
-          stringify({
-            js: doc?.previousJsEntry || null,
-            ts: doc?.previousTsEntry || null,
-          })
+        : computedFields.jsUpdated.resolve(doc) ||
+          computedFields.tsUpdated.resolve(doc)
         ? "updated"
         : "unchanged",
   },

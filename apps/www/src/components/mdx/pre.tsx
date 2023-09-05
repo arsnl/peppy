@@ -19,12 +19,9 @@ export const Pre = ({
   __src__?: string;
   __event__?: Event["name"];
 } & NpmCommands) => (
-  <>
+  <div className="relative mb-4 mt-6 overflow-hidden rounded-lg border bg-muted/30">
     <pre
-      className={cn(
-        "mb-4 mt-6 max-h-[650px] overflow-x-auto rounded-lg border bg-muted/30 py-4",
-        className,
-      )}
+      className={cn("max-h-[650px] overflow-x-auto py-4", className)}
       {...props}
     />
     {__rawString__ && !__npmCommand__ && (
@@ -45,5 +42,5 @@ export const Pre = ({
         className={cn("absolute right-4 top-4", __withMeta__ && "top-16")}
       />
     )}
-  </>
+  </div>
 );

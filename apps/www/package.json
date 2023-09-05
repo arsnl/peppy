@@ -35,6 +35,7 @@
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
     "contentlayer": "^0.3.4",
+    "diff": "^5.1.0",
     "eslint": "8.46.0",
     "mdast-util-toc": "^7.0.0",
     "next": "13.4.13",
@@ -56,6 +57,7 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "@types/diff": "^5.0.3",
     "@types/mdx": "^2.0.5",
     "defu": "^6.1.2",
     "execa": "5.1.1",

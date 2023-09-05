@@ -1,0 +1,45 @@
+---
+version: "3.1.1"
+ruleKey: "no-unused-expressions"
+description: Disallow unused expressions
+jsEntry:
+  [
+    "error",
+    {
+      "allowShortCircuit": true,
+      "allowTaggedTemplates": true,
+      "allowTernary": true,
+      "enforceForJSX": false,
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "off",
+    {
+      "allowShortCircuit": true,
+      "allowTaggedTemplates": true,
+      "allowTernary": true,
+      "enforceForJSX": false,
+    },
+  ]
+previousTsEntry: null
+history: [{ "state": "new", "version": "3.1.1" }]
+---
+
+<RuleInfos 
+  configKey="base" 
+  ruleKey="no-unused-expressions" 
+>
+  <>
+    ```json
+    ["error",{"allowShortCircuit":true,"allowTaggedTemplates":true,"allowTernary":true,"enforceForJSX":false}]
+    ```
+  </>
+
+  <>
+    ```json
+    ["off",{"allowShortCircuit":true,"allowTaggedTemplates":true,"allowTernary":true,"enforceForJSX":false}]
+    ```
+  </>
+</RuleInfos>

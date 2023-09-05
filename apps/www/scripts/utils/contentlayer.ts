@@ -109,17 +109,14 @@ history: ${stringify(history || [])}
   configKey="${configKey}" 
   ruleKey="${ruleKey}" 
 >
-  <>
-    \`\`\`json
-    ${stringify(jsEntry || {})}
-    \`\`\`
-  </>
 
-  <>
-    \`\`\`json
-    ${stringify(tsEntry || {})}
-    \`\`\`
-  </>
+\`\`\`json
+${stringify(jsEntry || {})}
+\`\`\`
+
+\`\`\`json
+${stringify(tsEntry || {})}
+\`\`\`
 </RuleInfos>
 `;
 

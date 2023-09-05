@@ -1,4 +1,5 @@
 import "server-only";
+import React from "react";
 import { Icon } from "@/components/icon";
 import { Link } from "@/components/link";
 import { sidebarNavConfig } from "@/config/nav";
@@ -39,12 +40,12 @@ export const Breadcrumb = ({
       {...props}
     >
       {parentNavItems.map((item) => (
-        <>
+        <React.Fragment key={item.href}>
           <Link href={item.href || ""} className="truncate">
             {item.breadcrumbTitle || item.title}
           </Link>
           <Icon icon="chevron-right" className="h-4 w-4" />
-        </>
+        </React.Fragment>
       ))}
       <div className="font-medium text-foreground">
         {currentNavItem?.breadcrumbTitle || title}

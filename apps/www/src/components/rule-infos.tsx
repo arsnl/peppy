@@ -7,6 +7,7 @@ import { Tabs } from "@/components/mdx/tabs";
 import { TabsContent } from "@/components/mdx/tabs-content";
 import { TabsList } from "@/components/mdx/tabs-list";
 import { TabsTrigger } from "@/components/mdx/tabs-trigger";
+import { RuleDiff } from "@/components/rule-diff";
 import { RuleLevelIcon } from "@/components/rule-level-icon";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
@@ -39,8 +40,14 @@ export const RuleInfos = ({
   const {
     jsLevel,
     jsEntry,
+    jsUpdated,
+    jsEntryStringified,
+    previousJsEntryStringified,
     tsLevel,
     tsEntry,
+    tsUpdated,
+    tsEntryStringified,
+    previousTsEntryStringified,
     state,
     version: ruleVersion,
     history,
@@ -70,8 +77,28 @@ export const RuleInfos = ({
             )}
           </TabsList>
 
-          {jsEntry && <TabsContent value="js">{jsCode}</TabsContent>}
-          {tsEntry && <TabsContent value="ts">{tsCode}</TabsContent>}
+          {jsEntry && (
+            <TabsContent value="js">
+              {jsCode}
+              {jsUpdated && (
+                <RuleDiff
+                  oldString={previousJsEntryStringified}
+                  newString={jsEntryStringified}
+                />
+              )}
+            </TabsContent>
+          )}
+          {tsEntry && (
+            <TabsContent value="ts">
+              {tsCode}
+              {tsUpdated && (
+                <RuleDiff
+                  oldString={previousTsEntryStringified}
+                  newString={tsEntryStringified}
+                />
+              )}
+            </TabsContent>
+          )}
         </Tabs>
       )}
       {state === "removed" && (
