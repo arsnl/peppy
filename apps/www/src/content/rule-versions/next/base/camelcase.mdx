@@ -27,57 +27,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="base" 
+  ruleKey="camelcase" 
+>
+  <>
+    ```json
+    ["error",{"ignoreDestructuring":false,"ignoreGlobals":false,"ignoreImports":false,"properties":"never"}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="off" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "error",
-  {
-    "ignoreDestructuring": false,
-    "ignoreGlobals": false,
-    "ignoreImports": false,
-    "properties": "never"
-  }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "off",
-  {
-    "ignoreDestructuring": false,
-    "ignoreGlobals": false,
-    "ignoreImports": false,
-    "properties": "never"
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="camelcase" />
+  <>
+    ```json
+    ["off",{"ignoreDestructuring":false,"ignoreGlobals":false,"ignoreImports":false,"properties":"never"}]
+    ```
+  </>
+</RuleInfos>

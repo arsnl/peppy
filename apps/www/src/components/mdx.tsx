@@ -34,8 +34,7 @@ import { Th } from "@/components/mdx/th";
 import { Todo } from "@/components/mdx/todo";
 import { Tr } from "@/components/mdx/tr";
 import { Ul } from "@/components/mdx/ul";
-import { RuleHistory } from "@/components/rule-history";
-import { RuleLevelIcon } from "@/components/rule-level-icon";
+import { RuleInfos } from "@/components/rule-infos";
 import {
   Accordion,
   AccordionContent,
@@ -90,8 +89,7 @@ export const MdxComponents = {
   Todo: (props) => <Todo {...props} />,
   Badge: (props) => <Badge {...props} />,
   Icon: (props) => <Icon {...props} />,
-  RuleHistory: (props) => <RuleHistory {...props} />,
-  RuleLevelIcon: (props) => <RuleLevelIcon {...props} />,
+  RuleInfos: (props) => <RuleInfos {...props} />,
 } satisfies MDXComponents;
 
 type MdxProps = React.HTMLAttributes<HTMLDivElement> & {

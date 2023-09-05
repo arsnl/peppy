@@ -26,56 +26,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="base" 
+  ruleKey="import/extensions" 
+>
+  <>
+    ```json
+    ["error","ignorePackages",{"cjs":"never","js":"never","jsx":"never","mjs":"never"}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="error" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "error",
-  "ignorePackages",
-  { "cjs": "never", "js": "never", "jsx": "never", "mjs": "never" }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "error",
-  "ignorePackages",
-  {
-    "cjs": "never",
-    "js": "never",
-    "jsx": "never",
-    "mjs": "never",
-    "ts": "never",
-    "tsx": "never"
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="import/extensions" />
+  <>
+    ```json
+    ["error","ignorePackages",{"cjs":"never","js":"never","jsx":"never","mjs":"never","ts":"never","tsx":"never"}]
+    ```
+  </>
+</RuleInfos>

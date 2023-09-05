@@ -1,17 +1,15 @@
 import "@/styles/mdx.css";
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumb } from "@/components/breadcrumb";
 import { Icon } from "@/components/icon";
+import { Link } from "@/components/link";
 import { Mdx } from "@/components/mdx";
 import { RuleStateBadge } from "@/components/rule-state-badge";
-import { DashboardTableOfContents } from "@/components/toc";
 import { badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { getESlintConfigs } from "@/config/eslint-config";
 import { getRuleVersions } from "@/config/rule-version";
 import { siteConfig } from "@/config/site";
-import { getTableOfContents } from "@/lib/toc";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 
@@ -89,16 +87,11 @@ const ESLintConfigPage = async ({ params }: RuleVersionPageProps) => {
   }
 
   const { rule, eslintConfig } = ruleVersion;
-  const toc = await getTableOfContents(rule.body.raw);
 
   return (
     <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
       <div className="mx-auto w-full min-w-0">
-        <div className="mb-4 flex items-center space-x-1 text-sm text-muted-foreground">
-          <div className="truncate">Docs</div>
-          <Icon icon="chevron-right" className="h-4 w-4" />
-          <div className="font-medium text-foreground">{rule.ruleKey}</div>
-        </div>
+        <Breadcrumb href={rule.href} title={rule.ruleKey} />
         <div className="space-y-2">
           <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-tight")}>
             {rule.ruleKey}
@@ -118,7 +111,7 @@ const ESLintConfigPage = async ({ params }: RuleVersionPageProps) => {
               rel="noreferrer"
               className={cn(
                 badgeVariants({ variant: "outline" }),
-                "flex gap-2 rounded-full bg-background p-1 px-2 text-xs hover:bg-muted",
+                "flex gap-2 rounded-full bg-background p-1 px-2 text-xs hover:bg-muted hover:no-underline",
               )}
               alt-text={`Check the documentation of the rule ${rule.ruleKey} on the official plugin documentation`}
             >
@@ -132,21 +125,14 @@ const ESLintConfigPage = async ({ params }: RuleVersionPageProps) => {
         <div className="flex flex-row items-center justify-between">
           <Link
             href={eslintConfig.href}
-            className={buttonVariants({ variant: "outline" })}
+            className={cn(
+              buttonVariants({ variant: "outline" }),
+              "hover:no-underline",
+            )}
           >
             <Icon icon="chevron-right" className="mr-2 h-4 w-4 rotate-180" />
-            {`${eslintConfig.name} configuration page`}
+            {`${eslintConfig.name}`}
           </Link>
-        </div>
-      </div>
-
-      <div className="hidden text-sm xl:block">
-        <div className="sticky top-16 -mt-10 pt-4">
-          <ScrollArea className="pb-10">
-            <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-              <DashboardTableOfContents toc={toc} />
-            </div>
-          </ScrollArea>
         </div>
       </div>
     </main>

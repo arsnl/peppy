@@ -31,59 +31,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="base" 
+  ruleKey="new-cap" 
+>
+  <>
+    ```json
+    ["error",{"capIsNew":false,"capIsNewExceptions":["Immutable.Map","Immutable.Set","Immutable.List"],"newIsCap":true,"newIsCapExceptions":[],"properties":true}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="error" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "error",
-  {
-    "capIsNew": false,
-    "capIsNewExceptions": ["Immutable.Map", "Immutable.Set", "Immutable.List"],
-    "newIsCap": true,
-    "newIsCapExceptions": [],
-    "properties": true
-  }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "error",
-  {
-    "capIsNew": false,
-    "capIsNewExceptions": ["Immutable.Map", "Immutable.Set", "Immutable.List"],
-    "newIsCap": true,
-    "newIsCapExceptions": [],
-    "properties": true
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="new-cap" />
+  <>
+    ```json
+    ["error",{"capIsNew":false,"capIsNewExceptions":["Immutable.Map","Immutable.Set","Immutable.List"],"newIsCap":true,"newIsCapExceptions":[],"properties":true}]
+    ```
+  </>
+</RuleInfos>

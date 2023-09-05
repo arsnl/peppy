@@ -25,55 +25,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="react" 
+  ruleKey="jsx-a11y/anchor-is-valid" 
+>
+  <>
+    ```json
+    ["error",{"aspects":["noHref","invalidHref","preferButton"],"components":["Link"],"specialLink":["to"]}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="error" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "error",
-  {
-    "aspects": ["noHref", "invalidHref", "preferButton"],
-    "components": ["Link"],
-    "specialLink": ["to"]
-  }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "error",
-  {
-    "aspects": ["noHref", "invalidHref", "preferButton"],
-    "components": ["Link"],
-    "specialLink": ["to"]
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="jsx-a11y/anchor-is-valid" />
+  <>
+    ```json
+    ["error",{"aspects":["noHref","invalidHref","preferButton"],"components":["Link"],"specialLink":["to"]}]
+    ```
+  </>
+</RuleInfos>

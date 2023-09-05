@@ -18,35 +18,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="ts">
+<RuleInfos 
+  configKey="base" 
+  ruleKey="@typescript-eslint/no-unused-vars" 
+>
+  <>
+    ```json
+    {}
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="warn" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="ts">
-
-```json
-[
-  "warn",
-  {
-    "args": "after-used",
-    "argsIgnorePattern": "^_",
-    "ignoreRestSiblings": true,
-    "vars": "all"
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="@typescript-eslint/no-unused-vars" />
+  <>
+    ```json
+    ["warn",{"args":"after-used","argsIgnorePattern":"^_","ignoreRestSiblings":true,"vars":"all"}]
+    ```
+  </>
+</RuleInfos>

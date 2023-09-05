@@ -65,91 +65,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="react" 
+  ruleKey="jsx-a11y/no-noninteractive-element-to-interactive-role" 
+>
+  <>
+    ```json
+    ["error",{"li":["menuitem","option","row","tab","treeitem"],"ol":["listbox","menu","menubar","radiogroup","tablist","tree","treegrid"],"table":["grid"],"td":["gridcell"],"ul":["listbox","menu","menubar","radiogroup","tablist","tree","treegrid"]}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="error" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "error",
-  {
-    "li": ["menuitem", "option", "row", "tab", "treeitem"],
-    "ol": [
-      "listbox",
-      "menu",
-      "menubar",
-      "radiogroup",
-      "tablist",
-      "tree",
-      "treegrid"
-    ],
-    "table": ["grid"],
-    "td": ["gridcell"],
-    "ul": [
-      "listbox",
-      "menu",
-      "menubar",
-      "radiogroup",
-      "tablist",
-      "tree",
-      "treegrid"
-    ]
-  }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "error",
-  {
-    "li": ["menuitem", "option", "row", "tab", "treeitem"],
-    "ol": [
-      "listbox",
-      "menu",
-      "menubar",
-      "radiogroup",
-      "tablist",
-      "tree",
-      "treegrid"
-    ],
-    "table": ["grid"],
-    "td": ["gridcell"],
-    "ul": [
-      "listbox",
-      "menu",
-      "menubar",
-      "radiogroup",
-      "tablist",
-      "tree",
-      "treegrid"
-    ]
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="jsx-a11y/no-noninteractive-element-to-interactive-role" />
+  <>
+    ```json
+    ["error",{"li":["menuitem","option","row","tab","treeitem"],"ol":["listbox","menu","menubar","radiogroup","tablist","tree","treegrid"],"table":["grid"],"td":["gridcell"],"ul":["listbox","menu","menubar","radiogroup","tablist","tree","treegrid"]}]
+    ```
+  </>
+</RuleInfos>

@@ -27,57 +27,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="base" 
+  ruleKey="no-unused-vars" 
+>
+  <>
+    ```json
+    ["warn",{"args":"after-used","argsIgnorePattern":"^_","ignoreRestSiblings":true,"vars":"all"}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="warn" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="off" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "warn",
-  {
-    "args": "after-used",
-    "argsIgnorePattern": "^_",
-    "ignoreRestSiblings": true,
-    "vars": "all"
-  }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "off",
-  {
-    "args": "after-used",
-    "argsIgnorePattern": "^_",
-    "ignoreRestSiblings": true,
-    "vars": "all"
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="no-unused-vars" />
+  <>
+    ```json
+    ["off",{"args":"after-used","argsIgnorePattern":"^_","ignoreRestSiblings":true,"vars":"all"}]
+    ```
+  </>
+</RuleInfos>

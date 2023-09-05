@@ -37,65 +37,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="react" 
+  ruleKey="jsx-a11y/no-noninteractive-element-interactions" 
+>
+  <>
+    ```json
+    ["error",{"handlers":["onClick","onMouseDown","onMouseUp","onKeyPress","onKeyDown","onKeyUp"]}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="error" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "error",
-  {
-    "handlers": [
-      "onClick",
-      "onMouseDown",
-      "onMouseUp",
-      "onKeyPress",
-      "onKeyDown",
-      "onKeyUp"
-    ]
-  }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "error",
-  {
-    "handlers": [
-      "onClick",
-      "onMouseDown",
-      "onMouseUp",
-      "onKeyPress",
-      "onKeyDown",
-      "onKeyUp"
-    ]
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="jsx-a11y/no-noninteractive-element-interactions" />
+  <>
+    ```json
+    ["error",{"handlers":["onClick","onMouseDown","onMouseUp","onKeyPress","onKeyDown","onKeyUp"]}]
+    ```
+  </>
+</RuleInfos>

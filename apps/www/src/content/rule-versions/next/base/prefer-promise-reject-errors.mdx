@@ -9,41 +9,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="base" 
+  ruleKey="prefer-promise-reject-errors" 
+>
+  <>
+    ```json
+    ["error",{"allowEmptyReject":true}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="error" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-["error", { "allowEmptyReject": true }]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-["error", { "allowEmptyReject": true }]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="prefer-promise-reject-errors" />
+  <>
+    ```json
+    ["error",{"allowEmptyReject":true}]
+    ```
+  </>
+</RuleInfos>

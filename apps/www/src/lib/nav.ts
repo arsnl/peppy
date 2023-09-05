@@ -25,3 +25,33 @@ export const getClosestNavItem = ({
         current.href.length > closest.href.length ? current : closest,
       );
 };
+
+export const getBreadcrumbNavItems = ({
+  pathname,
+  navItems,
+}: {
+  pathname: string;
+  navItems: NavItem[];
+}) => {
+  const pathSegments = pathname.split("/").filter((segment) => segment);
+  const breadcrumbNavItems: NavItem[] = [];
+
+  pathSegments.reduce((prev, curr) => {
+    const pathSegment = `${prev}/${curr}`;
+    const matchingNavItem = getClosestNavItem({
+      pathname: pathSegment,
+      navItems,
+    });
+
+    if (
+      matchingNavItem &&
+      !breadcrumbNavItems.some((item) => item.href === matchingNavItem.href)
+    ) {
+      breadcrumbNavItems.push(matchingNavItem);
+    }
+
+    return pathSegment;
+  }, "");
+
+  return breadcrumbNavItems;
+};

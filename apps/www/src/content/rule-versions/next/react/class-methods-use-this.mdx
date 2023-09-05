@@ -59,87 +59,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="react" 
+  ruleKey="class-methods-use-this" 
+>
+  <>
+    ```json
+    ["error",{"enforceForClassFields":true,"exceptMethods":["render","getInitialState","getDefaultProps","getChildContext","componentWillMount","UNSAFE_componentWillMount","componentDidMount","componentWillReceiveProps","UNSAFE_componentWillReceiveProps","shouldComponentUpdate","componentWillUpdate","UNSAFE_componentWillUpdate","componentDidUpdate","componentWillUnmount","componentDidCatch","getSnapshotBeforeUpdate"]}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="error" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "error",
-  {
-    "enforceForClassFields": true,
-    "exceptMethods": [
-      "render",
-      "getInitialState",
-      "getDefaultProps",
-      "getChildContext",
-      "componentWillMount",
-      "UNSAFE_componentWillMount",
-      "componentDidMount",
-      "componentWillReceiveProps",
-      "UNSAFE_componentWillReceiveProps",
-      "shouldComponentUpdate",
-      "componentWillUpdate",
-      "UNSAFE_componentWillUpdate",
-      "componentDidUpdate",
-      "componentWillUnmount",
-      "componentDidCatch",
-      "getSnapshotBeforeUpdate"
-    ]
-  }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "error",
-  {
-    "enforceForClassFields": true,
-    "exceptMethods": [
-      "render",
-      "getInitialState",
-      "getDefaultProps",
-      "getChildContext",
-      "componentWillMount",
-      "UNSAFE_componentWillMount",
-      "componentDidMount",
-      "componentWillReceiveProps",
-      "UNSAFE_componentWillReceiveProps",
-      "shouldComponentUpdate",
-      "componentWillUpdate",
-      "UNSAFE_componentWillUpdate",
-      "componentDidUpdate",
-      "componentWillUnmount",
-      "componentDidCatch",
-      "getSnapshotBeforeUpdate"
-    ]
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="class-methods-use-this" />
+  <>
+    ```json
+    ["error",{"enforceForClassFields":true,"exceptMethods":["render","getInitialState","getDefaultProps","getChildContext","componentWillMount","UNSAFE_componentWillMount","componentDidMount","componentWillReceiveProps","UNSAFE_componentWillReceiveProps","shouldComponentUpdate","componentWillUpdate","UNSAFE_componentWillUpdate","componentDidUpdate","componentWillUnmount","componentDidCatch","getSnapshotBeforeUpdate"]}]
+    ```
+  </>
+</RuleInfos>

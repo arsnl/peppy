@@ -17,47 +17,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="base" 
+  ruleKey="import/no-unresolved" 
+>
+  <>
+    ```json
+    ["error",{"caseSensitive":true,"caseSensitiveStrict":false,"commonjs":true}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="error" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="off" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "error",
-  { "caseSensitive": true, "caseSensitiveStrict": false, "commonjs": true }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "off",
-  { "caseSensitive": true, "caseSensitiveStrict": false, "commonjs": true }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="import/no-unresolved" />
+  <>
+    ```json
+    ["off",{"caseSensitive":true,"caseSensitiveStrict":false,"commonjs":true}]
+    ```
+  </>
+</RuleInfos>

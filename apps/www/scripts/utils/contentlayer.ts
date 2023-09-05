@@ -105,52 +105,22 @@ previousTsEntry: ${previousTsEntry ? stringify(previousTsEntry) : null}
 history: ${stringify(history || [])}
 ---
 
-<Tabs defaultValue="${jsEntry ? "js" : "ts"}">
+<RuleInfos 
+  configKey="${configKey}" 
+  ruleKey="${ruleKey}" 
+>
+  <>
+    \`\`\`json
+    ${stringify(jsEntry || {})}
+    \`\`\`
+  </>
 
-<TabsList>
-${
-  jsEntry
-    ? `<TabsTrigger value="js"><div className="flex gap-2 items-center"><RuleLevelIcon level="${jsEntry[0]}" /><p>JavaScript</p></div></TabsTrigger>`
-    : ""
-}${
-    tsEntry
-      ? `<TabsTrigger value="ts"><div className="flex gap-2 items-center"><RuleLevelIcon ts level="${tsEntry[0]}" /><p>TypeScript</p></div></TabsTrigger>`
-      : ""
-  }
-</TabsList>
-
-${
-  jsEntry
-    ? `<TabsContent value="js">
-
-\`\`\`json
-${stringify(jsEntry)}
-\`\`\`
-    
-</TabsContent>
-`
-    : ""
-}
-
-${
-  tsEntry
-    ? `<TabsContent value="ts">
-
-\`\`\`json
-${stringify(tsEntry)}
-\`\`\`
-    
-</TabsContent>
-`
-    : ""
-}
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="${ruleKey}" />
-
+  <>
+    \`\`\`json
+    ${stringify(tsEntry || {})}
+    \`\`\`
+  </>
+</RuleInfos>
 `;
 
   return writeWithPrettier({

@@ -27,6 +27,7 @@ export const sidebarNavConfig: NavItem[] = [
     items: [
       {
         title: "Quickstart",
+        breadcrumbTitle: "Docs",
         href: "/docs",
         items: [],
       },
@@ -47,6 +48,7 @@ export const sidebarNavConfig: NavItem[] = [
     items: [
       {
         title: "Overview",
+        breadcrumbTitle: "Configurations",
         href: "/docs/configurations",
         items: [],
       },

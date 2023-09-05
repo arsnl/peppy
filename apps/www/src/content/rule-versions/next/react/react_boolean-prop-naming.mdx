@@ -25,55 +25,19 @@ previousTsEntry: null
 history: []
 ---
 
-<Tabs defaultValue="js">
+<RuleInfos 
+  configKey="react" 
+  ruleKey="react/boolean-prop-naming" 
+>
+  <>
+    ```json
+    ["off",{"message":"","propTypeNames":["bool","mutuallyExclusiveTrueProps"],"rule":"^(is|has)[A-Z]([A-Za-z0-9]?)+"}]
+    ```
+  </>
 
-<TabsList>
-  <TabsTrigger value="js">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon level="off" />
-      <p>JavaScript</p>
-    </div>
-  </TabsTrigger>
-  <TabsTrigger value="ts">
-    <div className="flex gap-2 items-center">
-      <RuleLevelIcon ts level="off" />
-      <p>TypeScript</p>
-    </div>
-  </TabsTrigger>
-</TabsList>
-
-<TabsContent value="js">
-
-```json
-[
-  "off",
-  {
-    "message": "",
-    "propTypeNames": ["bool", "mutuallyExclusiveTrueProps"],
-    "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"
-  }
-]
-```
-
-</TabsContent>
-
-<TabsContent value="ts">
-
-```json
-[
-  "off",
-  {
-    "message": "",
-    "propTypeNames": ["bool", "mutuallyExclusiveTrueProps"],
-    "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"
-  }
-]
-```
-
-</TabsContent>
-
-</Tabs>
-
-## Version History
-
-<RuleHistory ruleKey="react/boolean-prop-naming" />
+  <>
+    ```json
+    ["off",{"message":"","propTypeNames":["bool","mutuallyExclusiveTrueProps"],"rule":"^(is|has)[A-Z]([A-Za-z0-9]?)+"}]
+    ```
+  </>
+</RuleInfos>

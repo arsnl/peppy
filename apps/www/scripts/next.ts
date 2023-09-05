@@ -125,15 +125,15 @@ const getNextPartialRuleVersions = async () => {
  *  Update the next version in the generated files, if needed
  */
 (async () => {
+  // Remove the previous next version folder and the next version file
+  await removeNextVersion();
+
   // Clear the cache and build the contentlayer files
   await contentlayerBuild();
 
   // Get the next rule versions.
   // If there's no changes between the current and the latest version, the value is null
   const nextPartialRuleVersions = await getNextPartialRuleVersions();
-
-  // Remove the previous next version folder and the next version file
-  await removeNextVersion();
 
   // If there's no next rule versions, we don't need to create the next version
   if (!nextPartialRuleVersions) {

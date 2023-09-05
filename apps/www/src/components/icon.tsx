@@ -8,6 +8,7 @@ export type IconName =
   | "columns"
   | "copy"
   | "eslint"
+  | "file-x"
   | "gem"
   | "github"
   | "javascript-outline"

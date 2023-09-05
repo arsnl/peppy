@@ -1,4 +1,4 @@
-import OLink from "next/link";
+import { Link as OLink } from "@/components/link";
 import { cn } from "@/lib/utils";
 
 export const Link = ({
