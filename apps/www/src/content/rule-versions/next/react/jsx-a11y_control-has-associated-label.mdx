@@ -1,0 +1,127 @@
+---
+version: "next"
+ruleKey: "jsx-a11y/control-has-associated-label"
+description: Enforce that a control (an interactive element) has a text label
+jsEntry:
+  [
+    "error",
+    {
+      "controlComponents": [],
+      "depth": 5,
+      "ignoreElements":
+        ["audio", "canvas", "embed", "input", "textarea", "tr", "video"],
+      "ignoreRoles":
+        [
+          "grid",
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "row",
+          "tablist",
+          "toolbar",
+          "tree",
+          "treegrid",
+        ],
+      "labelAttributes": ["label"],
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "controlComponents": [],
+      "depth": 5,
+      "ignoreElements":
+        ["audio", "canvas", "embed", "input", "textarea", "tr", "video"],
+      "ignoreRoles":
+        [
+          "grid",
+          "listbox",
+          "menu",
+          "menubar",
+          "radiogroup",
+          "row",
+          "tablist",
+          "toolbar",
+          "tree",
+          "treegrid",
+        ],
+      "labelAttributes": ["label"],
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<RuleInfos 
+  configKey="react" 
+  ruleKey="jsx-a11y/control-has-associated-label" 
+>
+
+```json
+[
+  "error",
+  {
+    "controlComponents": [],
+    "depth": 5,
+    "ignoreElements": [
+      "audio",
+      "canvas",
+      "embed",
+      "input",
+      "textarea",
+      "tr",
+      "video"
+    ],
+    "ignoreRoles": [
+      "grid",
+      "listbox",
+      "menu",
+      "menubar",
+      "radiogroup",
+      "row",
+      "tablist",
+      "toolbar",
+      "tree",
+      "treegrid"
+    ],
+    "labelAttributes": ["label"]
+  }
+]
+```
+
+```json
+[
+  "error",
+  {
+    "controlComponents": [],
+    "depth": 5,
+    "ignoreElements": [
+      "audio",
+      "canvas",
+      "embed",
+      "input",
+      "textarea",
+      "tr",
+      "video"
+    ],
+    "ignoreRoles": [
+      "grid",
+      "listbox",
+      "menu",
+      "menubar",
+      "radiogroup",
+      "row",
+      "tablist",
+      "toolbar",
+      "tree",
+      "treegrid"
+    ],
+    "labelAttributes": ["label"]
+  }
+]
+```
+
+</RuleInfos>

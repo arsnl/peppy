@@ -2,18 +2,16 @@ import "server-only";
 import { allESLintConfigs, type ESLintConfig } from "contentlayer/generated";
 import { type IconName } from "@/components/icon";
 
-const baseESLintConfig = allESLintConfigs.find(
-  (config) => config.key === "base",
-);
+const base = allESLintConfigs.find((config) => config.key === "base");
 
-const otherESLintConfigs = allESLintConfigs
+const others = allESLintConfigs
   .filter((config) => config.key !== "base")
   .sort((a, b) => a.name.localeCompare(b.name));
 
 // TODO: find a way to change the contentlayer type for icon to IconName instead of string
-const sortedESLintConfig: Array<ESLintConfig & { icon: IconName }> = [
-  ...(baseESLintConfig ? [baseESLintConfig] : []),
-  ...otherESLintConfigs,
+const sorted: Array<ESLintConfig & { icon: IconName }> = [
+  ...(base ? [base] : []),
+  ...others,
 ].map((config) => ({
   ...config,
   icon: config.icon as IconName,
@@ -26,7 +24,7 @@ export const getESlintConfigs = ({
   configKey?: string;
   configSlug?: string;
 } = {}) =>
-  sortedESLintConfig.filter(
+  sorted.filter(
     (doc) =>
       (configKey ? doc.key === configKey : true) &&
       (configSlug ? doc.slug === configSlug : true),

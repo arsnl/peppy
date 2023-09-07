@@ -1,0 +1,101 @@
+---
+version: "next"
+ruleKey: "no-param-reassign"
+description: Disallow reassigning `function` parameters
+jsEntry:
+  [
+    "error",
+    {
+      "ignorePropertyModificationsFor":
+        [
+          "acc",
+          "accumulator",
+          "e",
+          "ctx",
+          "context",
+          "req",
+          "request",
+          "res",
+          "response",
+          "$scope",
+          "staticContext",
+        ],
+      "props": true,
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "ignorePropertyModificationsFor":
+        [
+          "acc",
+          "accumulator",
+          "e",
+          "ctx",
+          "context",
+          "req",
+          "request",
+          "res",
+          "response",
+          "$scope",
+          "staticContext",
+        ],
+      "props": true,
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<RuleInfos 
+  configKey="base" 
+  ruleKey="no-param-reassign" 
+>
+
+```json
+[
+  "error",
+  {
+    "ignorePropertyModificationsFor": [
+      "acc",
+      "accumulator",
+      "e",
+      "ctx",
+      "context",
+      "req",
+      "request",
+      "res",
+      "response",
+      "$scope",
+      "staticContext"
+    ],
+    "props": true
+  }
+]
+```
+
+```json
+[
+  "error",
+  {
+    "ignorePropertyModificationsFor": [
+      "acc",
+      "accumulator",
+      "e",
+      "ctx",
+      "context",
+      "req",
+      "request",
+      "res",
+      "response",
+      "$scope",
+      "staticContext"
+    ],
+    "props": true
+  }
+]
+```
+
+</RuleInfos>

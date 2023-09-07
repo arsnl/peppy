@@ -14,7 +14,7 @@ export const RuleStateIcon = ({
 }: RuleStateIconProps) => (
   <Icon
     icon={
-      state === "new"
+      state === "introduced"
         ? "plus-circle"
         : state === "removed"
         ? "minus-circle"
@@ -27,7 +27,7 @@ export const RuleStateIcon = ({
     className={cn(
       "h-6 w-6",
       {
-        "text-green-500": state === "new",
+        "text-green-500": state === "introduced",
         "text-red-500": state === "removed",
         "text-sky-500": state === "updated",
         "text-muted-foreground": state === "none" || state === "unchanged",

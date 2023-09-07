@@ -1,0 +1,55 @@
+---
+version: "next"
+ruleKey: "import/no-cycle"
+description: Forbid a module from importing a module with a dependency path back to itself
+jsEntry:
+  [
+    "error",
+    {
+      "allowUnsafeDynamicCyclicDependency": false,
+      "ignoreExternal": false,
+      "maxDepth": "∞",
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "allowUnsafeDynamicCyclicDependency": false,
+      "ignoreExternal": false,
+      "maxDepth": "∞",
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<RuleInfos 
+  configKey="base" 
+  ruleKey="import/no-cycle" 
+>
+
+```json
+[
+  "error",
+  {
+    "allowUnsafeDynamicCyclicDependency": false,
+    "ignoreExternal": false,
+    "maxDepth": "∞"
+  }
+]
+```
+
+```json
+[
+  "error",
+  {
+    "allowUnsafeDynamicCyclicDependency": false,
+    "ignoreExternal": false,
+    "maxDepth": "∞"
+  }
+]
+```
+
+</RuleInfos>

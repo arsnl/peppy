@@ -1,0 +1,59 @@
+---
+version: "next"
+ruleKey: "no-unused-vars"
+description: Disallow unused variables
+jsEntry:
+  [
+    "warn",
+    {
+      "args": "after-used",
+      "argsIgnorePattern": "^_",
+      "ignoreRestSiblings": true,
+      "vars": "all",
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "off",
+    {
+      "args": "after-used",
+      "argsIgnorePattern": "^_",
+      "ignoreRestSiblings": true,
+      "vars": "all",
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<RuleInfos 
+  configKey="base" 
+  ruleKey="no-unused-vars" 
+>
+
+```json
+[
+  "warn",
+  {
+    "args": "after-used",
+    "argsIgnorePattern": "^_",
+    "ignoreRestSiblings": true,
+    "vars": "all"
+  }
+]
+```
+
+```json
+[
+  "off",
+  {
+    "args": "after-used",
+    "argsIgnorePattern": "^_",
+    "ignoreRestSiblings": true,
+    "vars": "all"
+  }
+]
+```
+
+</RuleInfos>

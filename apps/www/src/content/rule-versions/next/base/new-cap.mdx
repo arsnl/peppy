@@ -1,0 +1,65 @@
+---
+version: "next"
+ruleKey: "new-cap"
+description: Require constructor names to begin with a capital letter
+jsEntry:
+  [
+    "error",
+    {
+      "capIsNew": false,
+      "capIsNewExceptions":
+        ["Immutable.Map", "Immutable.Set", "Immutable.List"],
+      "newIsCap": true,
+      "newIsCapExceptions": [],
+      "properties": true,
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "capIsNew": false,
+      "capIsNewExceptions":
+        ["Immutable.Map", "Immutable.Set", "Immutable.List"],
+      "newIsCap": true,
+      "newIsCapExceptions": [],
+      "properties": true,
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<RuleInfos 
+  configKey="base" 
+  ruleKey="new-cap" 
+>
+
+```json
+[
+  "error",
+  {
+    "capIsNew": false,
+    "capIsNewExceptions": ["Immutable.Map", "Immutable.Set", "Immutable.List"],
+    "newIsCap": true,
+    "newIsCapExceptions": [],
+    "properties": true
+  }
+]
+```
+
+```json
+[
+  "error",
+  {
+    "capIsNew": false,
+    "capIsNewExceptions": ["Immutable.Map", "Immutable.Set", "Immutable.List"],
+    "newIsCap": true,
+    "newIsCapExceptions": [],
+    "properties": true
+  }
+]
+```
+
+</RuleInfos>

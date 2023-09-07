@@ -9,7 +9,7 @@ import prettier from "prettier";
 import { eslintPluginsConfig } from "../../src/config/eslint-plugin";
 
 const LEVEL_ENUMS = ["off", "warn", "error", "none"];
-const STATE_ENUMS = ["new", "removed", "updated", "unchanged", "none"];
+const STATE_ENUMS = ["introduced", "removed", "updated", "unchanged", "none"];
 
 const VersionHistory = defineNestedType(() => ({
   name: "VersionHistory",
@@ -39,7 +39,7 @@ const computedFields: ComputedFields = {
       const { jsEntry: currentEntry, previousJsEntry: previousEntry } = doc;
 
       return !previousEntry && currentEntry
-        ? "new"
+        ? "introduced"
         : previousEntry && !currentEntry
         ? "removed"
         : !!currentEntry &&
@@ -83,7 +83,7 @@ const computedFields: ComputedFields = {
       const { tsEntry: currentEntry, previousTsEntry: previousEntry } = doc;
 
       return !previousEntry && currentEntry
-        ? "new"
+        ? "introduced"
         : previousEntry && !currentEntry
         ? "removed"
         : !!currentEntry &&

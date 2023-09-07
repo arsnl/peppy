@@ -1,0 +1,105 @@
+---
+version: "next"
+ruleKey: "simple-import-sort/imports"
+description: Enforce sorting of the imports
+jsEntry:
+  [
+    "error",
+    {
+      "groups":
+        [
+          [
+            "^\\u0000",
+            "^react(/.*)?(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(@\\/|~[^/]*\\/).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^\\..*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(\\u0000$)$",
+            "^(@\\/|~[^/]*\\/).*(\\u0000$)$",
+            "^\\..*(\\u0000$)$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(.(css|scss|sass|less))$",
+            "^(@\\/|~[^/]*\\/).*(.(css|scss|sass|less))$",
+            "^\\..*(.(css|scss|sass|less))$",
+          ],
+        ],
+    },
+  ]
+previousJsEntry: null
+tsEntry:
+  [
+    "error",
+    {
+      "groups":
+        [
+          [
+            "^\\u0000",
+            "^react(/.*)?(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(@\\/|~[^/]*\\/).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^\\..*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(\\u0000$)$",
+            "^(@\\/|~[^/]*\\/).*(\\u0000$)$",
+            "^\\..*(\\u0000$)$",
+            "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(.(css|scss|sass|less))$",
+            "^(@\\/|~[^/]*\\/).*(.(css|scss|sass|less))$",
+            "^\\..*(.(css|scss|sass|less))$",
+          ],
+        ],
+    },
+  ]
+previousTsEntry: null
+history: []
+---
+
+<RuleInfos 
+  configKey="base" 
+  ruleKey="simple-import-sort/imports" 
+>
+
+```json
+[
+  "error",
+  {
+    "groups": [
+      [
+        "^\\u0000",
+        "^react(/.*)?(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^(@\\/|~[^/]*\\/).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^\\..*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(\\u0000$)$",
+        "^(@\\/|~[^/]*\\/).*(\\u0000$)$",
+        "^\\..*(\\u0000$)$",
+        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(.(css|scss|sass|less))$",
+        "^(@\\/|~[^/]*\\/).*(.(css|scss|sass|less))$",
+        "^\\..*(.(css|scss|sass|less))$"
+      ]
+    ]
+  }
+]
+```
+
+```json
+[
+  "error",
+  {
+    "groups": [
+      [
+        "^\\u0000",
+        "^react(/.*)?(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^(@\\/|~[^/]*\\/).*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^\\..*(?<!(.(css|scss|sass|less)|\\u0000$))$",
+        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(\\u0000$)$",
+        "^(@\\/|~[^/]*\\/).*(\\u0000$)$",
+        "^\\..*(\\u0000$)$",
+        "^(?!(@\\/|~[^/]*\\/))(@?\\w).*(.(css|scss|sass|less))$",
+        "^(@\\/|~[^/]*\\/).*(.(css|scss|sass|less))$",
+        "^\\..*(.(css|scss|sass|less))$"
+      ]
+    ]
+  }
+]
+```
+
+</RuleInfos>

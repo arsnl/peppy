@@ -5,8 +5,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/toaster";
+import { fontConfig } from "@/config/font";
 import { siteConfig } from "@/config/site";
-import { fontMono, fontSans } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 
@@ -99,8 +99,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => (
     <body
       className={cn(
         "min-h-screen bg-background font-sans antialiased",
-        fontSans.variable,
-        fontMono.variable,
+        fontConfig.sans.variable,
+        fontConfig.mono.variable,
       )}
     >
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

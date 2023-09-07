@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/table";
 import { getRuleVersions } from "@/config/rule-version";
 import { type VersionType } from "@/config/version";
+import { getVersionHistoryChangesString } from "@/lib/history";
 import { type TableOfContents } from "@/lib/toc";
 import { cn } from "@/lib/utils";
 
@@ -93,17 +94,14 @@ const _RuleCode = ({
               <RuleStateIcon state={state} />
             </div>
             <Balancer>
-              Settings{" "}
-              <span className="font-semibold">
-                {state === "new" ? "introduced" : state}
-              </span>
+              Settings <span className="font-semibold">{state}</span>
             </Balancer>
           </div>
         </div>
         <Separator />
       </div>
 
-      {state === "new" || state === "unchanged" ? (
+      {state === "introduced" || state === "unchanged" ? (
         code
       ) : state === "updated" ? (
         <Tabs defaultValue="current">
@@ -190,25 +188,17 @@ export const RuleInfos = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {history.map((historyEntry) => (
-            <TableRow key={historyEntry.version}>
+          {history.map((versionHistory) => (
+            <TableRow key={versionHistory.version}>
               <TableCell>
                 <Code>
-                  {historyEntry.version === "next"
+                  {versionHistory.version === "next"
                     ? "next"
-                    : `v${historyEntry.version}`}
+                    : `v${versionHistory.version}`}
                 </Code>
               </TableCell>
               <TableCell>
-                {historyEntry.jsState === "new" ? ( // TODO: Modify this block to display the correct message for each state
-                  <p>Rule introduced</p>
-                ) : historyEntry.jsState === "updated" ? (
-                  <p>Rule updated</p>
-                ) : historyEntry.jsState === "removed" ? (
-                  <p>Rule removed</p>
-                ) : (
-                  ""
-                )}
+                <p>{getVersionHistoryChangesString(versionHistory)}</p>
               </TableCell>
             </TableRow>
           ))}
