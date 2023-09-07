@@ -23,22 +23,35 @@ tsEntry:
     },
   ]
 previousTsEntry: null
-history: [{ "state": "new", "version": "3.1.1" }]
+history: [{ "jsState": "new", "tsState": "new", "version": "3.1.1" }]
 ---
 
 <RuleInfos 
   configKey="base" 
   ruleKey="import/extensions" 
 >
-  <>
-    ```json
-    ["error","ignorePackages",{"cjs":"never","js":"never","jsx":"never","mjs":"never"}]
-    ```
-  </>
 
-  <>
-    ```json
-    ["error","ignorePackages",{"cjs":"never","js":"never","jsx":"never","mjs":"never","ts":"never","tsx":"never"}]
-    ```
-  </>
+```json
+[
+  "error",
+  "ignorePackages",
+  { "cjs": "never", "js": "never", "jsx": "never", "mjs": "never" }
+]
+```
+
+```json
+[
+  "error",
+  "ignorePackages",
+  {
+    "cjs": "never",
+    "js": "never",
+    "jsx": "never",
+    "mjs": "never",
+    "ts": "never",
+    "tsx": "never"
+  }
+]
+```
+
 </RuleInfos>

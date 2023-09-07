@@ -18,9 +18,9 @@ export const Rules = async ({ configKey, className, ...props }: RuleProps) => {
       version,
       ruleKey,
       jsLevel,
+      jsState,
       tsLevel,
-      state,
-      stateLabel,
+      tsState,
       href,
       description,
     } = ruleVersion;
@@ -30,9 +30,9 @@ export const Rules = async ({ configKey, className, ...props }: RuleProps) => {
       ruleKey,
       configKey,
       jsLevel,
+      jsState,
       tsLevel,
-      state,
-      stateLabel,
+      tsState,
       href,
       description,
     } satisfies RuleCardOptions;

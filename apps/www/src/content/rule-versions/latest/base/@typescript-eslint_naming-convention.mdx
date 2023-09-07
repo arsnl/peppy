@@ -27,22 +27,40 @@ tsEntry:
     },
   ]
 previousTsEntry: null
-history: [{ "state": "new", "version": "3.1.1" }]
+history: [{ "jsState": "none", "tsState": "new", "version": "3.1.1" }]
 ---
 
 <RuleInfos 
   configKey="base" 
   ruleKey="@typescript-eslint/naming-convention" 
 >
-  <>
-    ```json
-    {}
-    ```
-  </>
 
-  <>
-    ```json
-    ["error",{"format":["camelCase","PascalCase","UPPER_CASE"],"leadingUnderscore":"allow","selector":"variable","trailingUnderscore":"allow"},{"format":["camelCase","PascalCase"],"leadingUnderscore":"allow","selector":"function","trailingUnderscore":"allow"},{"format":["PascalCase","UPPER_CASE"],"leadingUnderscore":"allow","selector":"typeLike","trailingUnderscore":"allow"}]
-    ```
-  </>
+```json
+{}
+```
+
+```json
+[
+  "error",
+  {
+    "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+    "leadingUnderscore": "allow",
+    "selector": "variable",
+    "trailingUnderscore": "allow"
+  },
+  {
+    "format": ["camelCase", "PascalCase"],
+    "leadingUnderscore": "allow",
+    "selector": "function",
+    "trailingUnderscore": "allow"
+  },
+  {
+    "format": ["PascalCase", "UPPER_CASE"],
+    "leadingUnderscore": "allow",
+    "selector": "typeLike",
+    "trailingUnderscore": "allow"
+  }
+]
+```
+
 </RuleInfos>

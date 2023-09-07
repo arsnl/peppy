@@ -86,7 +86,9 @@ export const writeRuleVersion = async ({
   | "previousJsEntry"
   | "tsEntry"
   | "previousTsEntry"
-> & { history: Pick<RuleVersion["history"][0], "version" | "state">[] }) => {
+> & {
+  history: Pick<RuleVersion["history"][0], "version" | "jsState" | "tsState">[];
+}) => {
   const folder =
     version === "next" ? RULE_VERSIONS_NEXT_FOLDER : RULE_VERSIONS_TEMP_FOLDER;
   const filepath = path.join(

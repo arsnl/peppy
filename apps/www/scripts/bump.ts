@@ -51,7 +51,8 @@ import {
         jsEntry,
         previousTsEntry,
         history = [],
-        state = "new",
+        jsState,
+        tsState,
       }) => {
         const previousHistory = history.filter(
           (entry: any) => entry.version !== version && entry.version !== "next",
@@ -66,9 +67,10 @@ import {
           tsEntry,
           previousTsEntry,
           history:
-            state === "unchanged"
+            (jsState === "unchanged" || jsState === "none") &&
+            (tsState === "unchanged" || tsState === "none")
               ? history
-              : [{ version, state }, ...previousHistory],
+              : [{ version, jsState, tsState }, ...previousHistory],
         });
       },
     ),

@@ -8,13 +8,21 @@ import stringify from "fast-json-stable-stringify";
 import prettier from "prettier";
 import { eslintPluginsConfig } from "../../src/config/eslint-plugin";
 
+const LEVEL_ENUMS = ["off", "warn", "error", "none"];
+const STATE_ENUMS = ["new", "removed", "updated", "unchanged", "none"];
+
 const VersionHistory = defineNestedType(() => ({
   name: "VersionHistory",
   fields: {
     version: { type: "string", required: true },
-    state: {
+    jsState: {
       type: "enum",
-      options: ["new", "removed", "updated", "unchanged"],
+      options: STATE_ENUMS,
+      required: true,
+    },
+    tsState: {
+      type: "enum",
+      options: STATE_ENUMS,
       required: true,
     },
   },
@@ -22,18 +30,25 @@ const VersionHistory = defineNestedType(() => ({
 
 const computedFields: ComputedFields = {
   jsLevel: {
-    type: "string",
-    resolve: (doc) => doc?.jsEntry?.[0] ?? null,
+    type: "enum",
+    resolve: (doc) => doc?.jsEntry?.[0] ?? "none",
   },
-  jsUpdated: {
-    type: "boolean",
+  jsState: {
+    type: "enum",
     resolve: (doc) => {
-      const { jsEntry, previousJsEntry } = doc;
-      return (
-        !!jsEntry &&
-        !!previousJsEntry &&
-        stringify(jsEntry) !== stringify(previousJsEntry)
-      );
+      const { jsEntry: currentEntry, previousJsEntry: previousEntry } = doc;
+
+      return !previousEntry && currentEntry
+        ? "new"
+        : previousEntry && !currentEntry
+        ? "removed"
+        : !!currentEntry &&
+          !!previousEntry &&
+          stringify(currentEntry) !== stringify(previousEntry)
+        ? "updated"
+        : !previousEntry && !currentEntry
+        ? "none"
+        : "unchanged";
     },
   },
   jsEntryStringified: {
@@ -59,18 +74,25 @@ const computedFields: ComputedFields = {
     },
   },
   tsLevel: {
-    type: "string",
-    resolve: (doc) => doc?.tsEntry?.[0] ?? null,
+    type: "enum",
+    resolve: (doc) => doc?.tsEntry?.[0] ?? "none",
   },
-  tsUpdated: {
-    type: "boolean",
+  tsState: {
+    type: "enum",
     resolve: (doc) => {
-      const { tsEntry, previousTsEntry } = doc;
-      return (
-        !!tsEntry &&
-        !!previousTsEntry &&
-        stringify(tsEntry) !== stringify(previousTsEntry)
-      );
+      const { tsEntry: currentEntry, previousTsEntry: previousEntry } = doc;
+
+      return !previousEntry && currentEntry
+        ? "new"
+        : previousEntry && !currentEntry
+        ? "removed"
+        : !!currentEntry &&
+          !!previousEntry &&
+          stringify(currentEntry) !== stringify(previousEntry)
+        ? "updated"
+        : !previousEntry && !currentEntry
+        ? "none"
+        : "unchanged";
     },
   },
   tsEntryStringified: {
@@ -93,37 +115,6 @@ const computedFields: ComputedFields = {
             parser: "json",
           })
         : "";
-    },
-  },
-  state: {
-    type: "enum",
-    resolve: (doc) =>
-      !doc?.previousJsEntry && !doc?.previousTsEntry
-        ? "new"
-        : !doc?.jsEntry && !doc?.tsEntry
-        ? "removed"
-        : computedFields.jsUpdated.resolve(doc) ||
-          computedFields.tsUpdated.resolve(doc)
-        ? "updated"
-        : "unchanged",
-  },
-  stateLabel: {
-    type: "string",
-    resolve: (doc) => {
-      const state = computedFields.state.resolve(doc) as any;
-
-      switch (state) {
-        case "new":
-          return "New";
-        case "removed":
-          return "Removed";
-        case "updated":
-          return "Updated";
-        case "unchanged":
-          return "Unchanged";
-        default:
-          return "Unknown";
-      }
     },
   },
   descriptionString: {
@@ -177,15 +168,17 @@ const computedFields: ComputedFields = {
   history: {
     type: "json",
     resolve: (doc) => {
-      const state = computedFields.state.resolve(doc);
+      const jsState = computedFields.jsState.resolve(doc);
+      const tsState = computedFields.tsState.resolve(doc);
       const version = doc?.version || "next";
       const previousHistory = [...(doc?.history ?? [])].filter(
         (entry) => entry.version !== version,
       );
 
-      return state === "unchanged"
+      return (jsState === "unchanged" || jsState === "none") &&
+        (tsState === "unchanged" || tsState === "none")
         ? previousHistory
-        : [{ version, state }, ...previousHistory];
+        : [{ version, jsState, tsState }, ...previousHistory];
     },
   },
 };
@@ -210,18 +203,34 @@ export const RuleVersion = defineDocumentType(() => ({
     jsEntry: {
       type: "json",
     },
+    jsLevel: {
+      type: "enum",
+      options: LEVEL_ENUMS,
+      default: "none",
+    },
+    jsState: {
+      type: "enum",
+      options: STATE_ENUMS,
+      default: "none",
+    },
     previousJsEntry: {
       type: "json",
     },
     tsEntry: {
       type: "json",
     },
+    tsLevel: {
+      type: "enum",
+      options: LEVEL_ENUMS,
+      default: "none",
+    },
+    tsState: {
+      type: "enum",
+      options: STATE_ENUMS,
+      default: "none",
+    },
     previousTsEntry: {
       type: "json",
-    },
-    state: {
-      type: "enum",
-      options: ["new", "removed", "updated", "unchanged"],
     },
     history: {
       type: "list",

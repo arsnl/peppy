@@ -1,37 +1,36 @@
-import { type HTMLAttributes } from "react";
 import { type RuleVersion } from "contentlayer/generated";
 import { Icon } from "@/components/icon";
 import { cn } from "@/lib/utils";
+import type { IconProps } from "@/components/icon";
 
-export type RuleLevelIconProps = Omit<
-  HTMLAttributes<HTMLDivElement>,
-  "children"
-> & {
-  level?: Required<RuleVersion>["jsLevel" | "tsLevel"];
-  ts?: boolean;
+export type RuleLevelIconProps = Omit<IconProps, "icon"> & {
+  level: Required<RuleVersion>["jsLevel" | "tsLevel"];
 };
 
 export const RuleLevelIcon = ({
   level,
-  ts,
   className,
   ...props
-}: RuleLevelIconProps) =>
-  level ? (
-    <div className={cn("relative", className)} {...props}>
-      <Icon
-        icon={ts ? "typescript-outline" : "javascript-outline"}
-        className="h-6 w-6"
-      />
-      <span
-        className={cn(
-          "absolute right-0 top-0 block h-2 w-2 -translate-y-1/3 translate-x-1/3 rounded-full",
-          {
-            "bg-muted-foreground": level === "off",
-            "bg-yellow-500": level === "warn",
-            "bg-red-500": level === "error",
-          },
-        )}
-      />
-    </div>
-  ) : null;
+}: RuleLevelIconProps) => (
+  <Icon
+    icon={
+      level === "off"
+        ? "shield-ban"
+        : level === "warn"
+        ? "shield-alert"
+        : level === "error"
+        ? "shield-x"
+        : "shield"
+    }
+    className={cn(
+      "h-6 w-6",
+      {
+        "text-yellow-500": level === "warn",
+        "text-red-500": level === "error",
+        "text-muted-foreground": level === "none" || level === "off",
+      },
+      className,
+    )}
+    {...props}
+  />
+);

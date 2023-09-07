@@ -28,22 +28,38 @@ tsEntry:
     },
   ]
 previousTsEntry: null
-history: [{ "state": "new", "version": "3.1.1" }]
+history: [{ "jsState": "new", "tsState": "new", "version": "3.1.1" }]
 ---
 
 <RuleInfos 
   configKey="base" 
   ruleKey="new-cap" 
 >
-  <>
-    ```json
-    ["error",{"capIsNew":false,"capIsNewExceptions":["Immutable.Map","Immutable.Set","Immutable.List"],"newIsCap":true,"newIsCapExceptions":[],"properties":true}]
-    ```
-  </>
 
-  <>
-    ```json
-    ["error",{"capIsNew":false,"capIsNewExceptions":["Immutable.Map","Immutable.Set","Immutable.List"],"newIsCap":true,"newIsCapExceptions":[],"properties":true}]
-    ```
-  </>
+```json
+[
+  "error",
+  {
+    "capIsNew": false,
+    "capIsNewExceptions": ["Immutable.Map", "Immutable.Set", "Immutable.List"],
+    "newIsCap": true,
+    "newIsCapExceptions": [],
+    "properties": true
+  }
+]
+```
+
+```json
+[
+  "error",
+  {
+    "capIsNew": false,
+    "capIsNewExceptions": ["Immutable.Map", "Immutable.Set", "Immutable.List"],
+    "newIsCap": true,
+    "newIsCapExceptions": [],
+    "properties": true
+  }
+]
+```
+
 </RuleInfos>

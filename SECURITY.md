@@ -1,4 +1,4 @@
-<div align="center"><br/><br/><img src="apps/www/public/assets/logos/logotype.svg" width="300" role="presentation" /></div>
+<div align="center"><br/><br/><img src="apps/www/public/assets/logos/logotype.svg" width="300" role="presentation" aria-hidden /></div>
 <h3 align="center">Hassle-free ESLint configurations<br/> for peppier development</h3>
 
 # Security Policy

@@ -4,9 +4,11 @@ import { Breadcrumb } from "@/components/breadcrumb";
 import { Icon } from "@/components/icon";
 import { Link } from "@/components/link";
 import { Mdx } from "@/components/mdx";
-import { RuleStateBadge } from "@/components/rule-state-badge";
+import { getRuleInfoTOC } from "@/components/rule-infos";
+import { DashboardTableOfContents } from "@/components/toc";
 import { badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { getESlintConfigs } from "@/config/eslint-config";
 import { getRuleVersions } from "@/config/rule-version";
 import { siteConfig } from "@/config/site";
@@ -79,7 +81,7 @@ export const generateStaticParams = async (): Promise<
     ruleSlug,
   }));
 
-const ESLintConfigPage = async ({ params }: RuleVersionPageProps) => {
+const RuleVersionPage = async ({ params }: RuleVersionPageProps) => {
   const ruleVersion = await getRuleVersionFromParams({ params });
 
   if (!ruleVersion) {
@@ -103,7 +105,6 @@ const ESLintConfigPage = async ({ params }: RuleVersionPageProps) => {
         </div>
 
         <div className="flex items-center space-x-2 pt-4">
-          <RuleStateBadge state={rule.state} stateLabel={rule.stateLabel} />
           {rule.docUrl && (
             <Link
               href={rule.docUrl}
@@ -135,8 +136,17 @@ const ESLintConfigPage = async ({ params }: RuleVersionPageProps) => {
           </Link>
         </div>
       </div>
+      <div className="hidden text-sm xl:block">
+        <div className="sticky top-16 -mt-10 pt-4">
+          <ScrollArea className="pb-10">
+            <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
+              <DashboardTableOfContents toc={getRuleInfoTOC(rule)} />
+            </div>
+          </ScrollArea>
+        </div>
+      </div>
     </main>
   );
 };
 
-export default ESLintConfigPage;
+export default RuleVersionPage;
