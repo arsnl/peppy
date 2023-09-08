@@ -20,9 +20,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getChangesString } from "@/lib/changelog/changelog.util";
+import { getRuleChangesString } from "@/lib/changelog/changelog.util";
 import { getRuleVersions } from "@/lib/rule-version/rule-version.content";
-import { type TableOfContents } from "@/lib/toc/toc.type";
+import { type TocItems } from "@/lib/toc/toc.type";
 import { cn } from "@/lib/utils";
 import { type VersionType } from "@/lib/version/version.type";
 
@@ -46,7 +46,7 @@ export const getRuleInfoTOC = (rule: RuleVersion) => {
       url: `#${HEADINGS[id].id}`,
     }));
 
-  return { items } satisfies TableOfContents;
+  return { items } satisfies TocItems;
 };
 
 type _RuleCodeProps = Omit<React.HTMLAttributes<HTMLDivElement>, "children"> & {
@@ -198,7 +198,7 @@ export const RuleInfos = ({
                 </Code>
               </TableCell>
               <TableCell>
-                <p>{getChangesString(RuleVersionHistoryEntry)}</p>
+                <p>{getRuleChangesString(RuleVersionHistoryEntry)}</p>
               </TableCell>
             </TableRow>
           ))}

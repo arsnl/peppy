@@ -7,7 +7,7 @@ import { Mdx } from "@/components/mdx";
 import { H2 } from "@/components/mdx/h2";
 import { Pager } from "@/components/pager";
 import { Rules } from "@/components/rules";
-import { DashboardTableOfContents } from "@/components/toc";
+import { TOC } from "@/components/toc";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { siteConfig } from "@/lib/site/site.config";
 import { getTableOfContents } from "@/lib/toc/toc.util";
@@ -102,14 +102,14 @@ const ESLintConfigPage = async ({ params }: ESLintConfigPageProps) => {
           <H2 id="rules">Rules</H2>
           <Rules configKey={eslintConfig.key} />
         </div>
-        <Pager doc={eslintConfig} />
+        <Pager href={eslintConfig.href} />
       </div>
 
       <div className="hidden text-sm xl:block">
         <div className="sticky top-16 -mt-10 pt-4">
           <ScrollArea className="pb-10">
             <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-              <DashboardTableOfContents toc={toc} />
+              <TOC toc={toc} />
             </div>
           </ScrollArea>
         </div>

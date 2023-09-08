@@ -8,5 +8,11 @@ const current = sorted?.[0]?.version;
 
 const latest = sorted.filter(({ version }) => version !== "next")?.[0]?.version;
 
-export const getVersion = (version: VersionType) =>
-  version === "current" ? current : version === "latest" ? latest : "next";
+export const getVersions = (version?: string | VersionType) => {
+  const computedVersion =
+    version === "current" ? current : version === "latest" ? latest : version;
+
+  return sorted.filter((doc) =>
+    computedVersion ? doc.version === computedVersion : true,
+  );
+};

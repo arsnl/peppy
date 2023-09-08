@@ -1,6 +1,6 @@
 import "server-only";
 import { allRuleVersions } from "contentlayer/generated";
-import { getVersion } from "@/lib/version/version.content";
+import { getVersions } from "@/lib/version/version.content";
 import { type VersionType } from "@/lib/version/version.type";
 
 const sorted = allRuleVersions.sort((a, b) =>
@@ -20,7 +20,7 @@ export const getRuleVersions = ({
   ruleKey?: string;
   ruleSlug?: string;
 } = {}) => {
-  const computedVersion = getVersion(version);
+  const computedVersion = getVersions(version)?.[0]?.version;
 
   return sorted.filter(
     (doc) =>

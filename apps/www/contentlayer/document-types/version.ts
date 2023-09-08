@@ -2,7 +2,7 @@ import {
   type ComputedFields,
   defineDocumentType,
 } from "contentlayer/source-files";
-import { VersionChangesEntry } from "../nested-types/version-changes-entry";
+import { VersionRuleChangesEntry } from "../nested-types/version-rule-changes-entry";
 
 const computedFields: ComputedFields = {
   version: {
@@ -20,9 +20,9 @@ export const Version = defineDocumentType(() => ({
       type: "date",
       required: true,
     },
-    changes: {
+    ruleChanges: {
       type: "list",
-      of: VersionChangesEntry,
+      of: VersionRuleChangesEntry,
       required: true,
     },
   },

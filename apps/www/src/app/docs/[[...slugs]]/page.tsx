@@ -5,7 +5,7 @@ import Balancer from "react-wrap-balancer";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { Mdx } from "@/components/mdx";
 import { Pager } from "@/components/pager";
-import { DashboardTableOfContents } from "@/components/toc";
+import { TOC } from "@/components/toc";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { siteConfig } from "@/lib/site/site.config";
 import { getTableOfContents } from "@/lib/toc/toc.util";
@@ -96,14 +96,14 @@ const DocPage = async ({ params }: DocPageProps) => {
           )}
         </div>
         <Mdx code={doc.body.code} className="pb-12 pt-8" />
-        <Pager doc={doc} />
+        <Pager href={doc.href} />
       </div>
       {doc.toc && (
         <div className="hidden text-sm xl:block">
           <div className="sticky top-16 -mt-10 pt-4">
             <ScrollArea className="pb-10">
               <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-                <DashboardTableOfContents toc={toc} />
+                <TOC toc={toc} />
               </div>
             </ScrollArea>
           </div>

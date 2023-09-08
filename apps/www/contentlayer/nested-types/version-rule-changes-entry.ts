@@ -1,8 +1,8 @@
 import { defineNestedType } from "contentlayer/source-files";
 import { STATE_ENUMS } from "../constant";
 
-export const VersionChangesEntry = defineNestedType(() => ({
-  name: "VersionChangesEntry",
+export const VersionRuleChangesEntry = defineNestedType(() => ({
+  name: "VersionRuleChangesEntry",
   fields: {
     ruleKey: {
       type: "string",

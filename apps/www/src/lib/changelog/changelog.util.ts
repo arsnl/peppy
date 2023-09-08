@@ -1,10 +1,10 @@
 import {
   type RuleVersionHistoryEntry,
-  type VersionChangesEntry,
+  type VersionRuleChangesEntry,
 } from "contentlayer/generated";
 
-export const getChangesString = (
-  entry: RuleVersionHistoryEntry | VersionChangesEntry,
+export const getRuleChangesString = (
+  entry: RuleVersionHistoryEntry | VersionRuleChangesEntry,
 ) => {
   const { jsState, tsState } = entry;
   const jsStateString =

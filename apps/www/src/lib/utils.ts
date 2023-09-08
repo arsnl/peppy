@@ -11,3 +11,11 @@ export const formatDate = (input: string | number): string => {
     year: "numeric",
   });
 };
+
+export const formatMonth = (input: string | number): string => {
+  const date = new Date(input);
+  return date.toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
+};

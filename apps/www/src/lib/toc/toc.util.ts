@@ -2,7 +2,7 @@
 import { toc } from "mdast-util-toc";
 import { remark } from "remark";
 import { visit } from "unist-util-visit";
-import { type TableOfContents, type TocItems } from "@/lib/toc/toc.type";
+import { type TocItems } from "@/lib/toc/toc.type";
 
 const textTypes = ["text", "emphasis", "strong", "inlineCode"];
 
@@ -64,7 +64,7 @@ const getToc = () => (node: any, file: any) => {
 
 export const getTableOfContents = async (
   content: string,
-): Promise<TableOfContents> => {
+): Promise<TocItems> => {
   const result = await remark().use(getToc).process(content);
 
   return result.data;

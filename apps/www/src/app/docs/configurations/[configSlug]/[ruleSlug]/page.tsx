@@ -5,7 +5,7 @@ import { Icon } from "@/components/icon";
 import { Link } from "@/components/link";
 import { Mdx } from "@/components/mdx";
 import { getRuleInfoTOC } from "@/components/rule-infos";
-import { DashboardTableOfContents } from "@/components/toc";
+import { TOC } from "@/components/toc";
 import { badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -140,7 +140,7 @@ const RuleVersionPage = async ({ params }: RuleVersionPageProps) => {
         <div className="sticky top-16 -mt-10 pt-4">
           <ScrollArea className="pb-10">
             <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-              <DashboardTableOfContents toc={getRuleInfoTOC(rule)} />
+              <TOC toc={getRuleInfoTOC(rule)} />
             </div>
           </ScrollArea>
         </div>

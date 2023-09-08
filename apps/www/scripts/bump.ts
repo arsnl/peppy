@@ -4,9 +4,9 @@ import { version } from "eslint-config-peppy/package.json";
 import fsPromises from "node:fs/promises";
 import {
   contentlayerBuild,
-  getLatestVersion,
   getRuleVersions,
-  removeNextVersion,
+  getVersion,
+  removeRuleVersionsNextFolder,
   RULE_VERSIONS_LATEST_FOLDER,
   RULE_VERSIONS_TEMP_FOLDER,
   writeRuleVersion,
@@ -22,10 +22,10 @@ import {
   await contentlayerBuild();
 
   // Get the rule versions for the next version
-  const nextRuleVersions = await getRuleVersions(true);
+  const nextRuleVersions = getRuleVersions(true);
 
   // Get the latest version from contentlayer
-  const latestVersion = await getLatestVersion();
+  const latestVersion = getVersion()?.version;
 
   // If there's no next rule versions, we don't need to bump
   if (!nextRuleVersions?.length) {
@@ -56,7 +56,7 @@ import {
         tsState,
       }) => {
         const previousHistory = history.filter(
-          (entry: any) => entry.version !== version && entry.version !== "next",
+          (entry) => entry.version !== version && entry.version !== "next",
         );
 
         return writeRuleVersion({
@@ -77,10 +77,10 @@ import {
     ),
   );
 
-  // Remove the previous next version folder and the next version file
-  await removeNextVersion();
+  // Remove the next version folder
+  await removeRuleVersionsNextFolder();
 
-  // Remove the previous latest version folder
+  // Remove the latest version folder
   await fsPromises.rm(RULE_VERSIONS_LATEST_FOLDER, {
     recursive: true,
     force: true,

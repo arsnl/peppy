@@ -4,8 +4,10 @@ import stringify from "fast-json-stable-stringify";
 import {
   contentlayerBuild,
   getESLintConfigKeys,
+  getNextVersionFileBody,
   getRuleVersions,
   removeNextVersion,
+  removeRuleVersionsNextFolder,
   type RuleVersion,
   writeRuleVersion,
   writeVersion,
@@ -17,10 +19,7 @@ type PartialRuleVersion = Pick<
   "configKey" | "ruleKey" | "tsEntry" | "jsEntry"
 >;
 
-const sortPartialRuleVersions = (
-  a: PartialRuleVersion,
-  b: PartialRuleVersion,
-) => {
+const sortRules = (a: PartialRuleVersion, b: PartialRuleVersion) => {
   const aKey = `${a.configKey}${a.ruleKey}`;
   const bKey = `${b.configKey}${b.ruleKey}`;
 
@@ -28,7 +27,7 @@ const sortPartialRuleVersions = (
 };
 
 const getCurrentRuleVersions = async () => {
-  const eslintConfigsProps = (await getESLintConfigKeys()).reduce<
+  const eslintConfigsProps = getESLintConfigKeys().reduce<
     Parameters<typeof getESLintConfig>[0][]
   >(
     (acc, configKey) => [
@@ -76,100 +75,86 @@ const getCurrentRuleVersions = async () => {
         }, rootAcc),
       [],
     )
-    .sort(sortPartialRuleVersions);
+    .sort(sortRules);
 
   return partialRuleVersions;
-};
-
-const getNextPartialRuleVersions = async () => {
-  const latestPartialRuleVersions = (await getRuleVersions())
-    .map(({ configKey, ruleKey, jsEntry, tsEntry }) => ({
-      configKey,
-      ruleKey,
-      jsEntry,
-      tsEntry,
-    }))
-    .filter(({ jsEntry, tsEntry }) => !!jsEntry || !!tsEntry) // filter out the removed rules
-    .sort(sortPartialRuleVersions);
-
-  const currentPartialRuleVersions = await getCurrentRuleVersions();
-
-  if (
-    stringify(currentPartialRuleVersions) ===
-    stringify(latestPartialRuleVersions)
-  ) {
-    return null;
-  }
-
-  const removedRulesVersion = latestPartialRuleVersions
-    .filter(
-      (latestPartialRuleVersion) =>
-        !currentPartialRuleVersions.some(
-          (currentPartialRuleVersion) =>
-            currentPartialRuleVersion.configKey ===
-              latestPartialRuleVersion.configKey &&
-            currentPartialRuleVersion.ruleKey ===
-              latestPartialRuleVersion.ruleKey,
-        ),
-    )
-    .map((removedRuleVersion) => ({
-      ...removedRuleVersion,
-      jsEntry: null,
-      tsEntry: null,
-    }));
-
-  return [...currentPartialRuleVersions, ...removedRulesVersion];
 };
 
 /**
  *  Update the next version in the generated files, if needed
  */
 (async () => {
-  // Remove the previous next version folder and the next version file
-  await removeNextVersion();
+  await removeRuleVersionsNextFolder();
+  const nextVersionFileBody = getNextVersionFileBody();
 
-  // Clear the cache and build the contentlayer files
   console.log("Rebuilding contentlayer to validate the next version");
   await contentlayerBuild();
 
-  // Get the next rule versions.
-  // If there's no changes between the current and the latest version, the value is null
-  const nextPartialRuleVersions = await getNextPartialRuleVersions();
+  const currentRules = await getCurrentRuleVersions();
 
-  // If there's no next rule versions, we don't need to create the next version
-  if (!nextPartialRuleVersions) {
-    return console.log("Nothing changed since last release");
+  // Get the latest rules from contentlayer and remove the ones without entry because that mean they were removed
+  const latestRules = getRuleVersions()
+    .map(({ configKey, ruleKey, jsEntry, tsEntry }) => ({
+      configKey,
+      ruleKey,
+      jsEntry,
+      tsEntry,
+    }))
+    .filter(({ jsEntry, tsEntry }) => !!jsEntry || !!tsEntry)
+    .sort(sortRules);
+
+  // Compare the current rules with the latest rules to check the ones missing in the current rules
+  const removedRules = latestRules
+    .filter(
+      (latest) =>
+        !currentRules.some(
+          (current) =>
+            current.configKey === latest.configKey &&
+            current.ruleKey === latest.ruleKey,
+        ),
+    )
+    .map((removed) => ({
+      ...removed,
+      jsEntry: null,
+      tsEntry: null,
+    }));
+
+  const nextRules = [...currentRules, ...removedRules];
+  const hasRuleChanges = stringify(currentRules) !== stringify(latestRules);
+
+  // If there's no rule changes and no next version body, a next version is not needed
+  if (!hasRuleChanges && !nextVersionFileBody) {
+    await removeNextVersion();
+    return console.log("Nothing changed since the last version.");
   }
+
+  const ruleVersions = getRuleVersions();
 
   // Write the rule versions in the next folder
   await Promise.all(
-    nextPartialRuleVersions.map(
-      async ({ configKey, ruleKey, tsEntry, jsEntry }) => {
-        const ruleVersions = await getRuleVersions();
-        const {
-          jsEntry: previousJsEntry,
-          tsEntry: previousTsEntry,
-          history = [],
-        } = ruleVersions.find(
-          (document) =>
-            document.configKey === configKey && document.ruleKey === ruleKey,
-        ) || {};
+    nextRules.map(async ({ configKey, ruleKey, tsEntry, jsEntry }) => {
+      const {
+        jsEntry: previousJsEntry,
+        tsEntry: previousTsEntry,
+        history = [],
+      } = ruleVersions.find(
+        (document) =>
+          document.configKey === configKey && document.ruleKey === ruleKey,
+      ) || {};
 
-        return writeRuleVersion({
-          configKey,
-          ruleKey,
-          version: "next",
-          jsEntry,
-          previousJsEntry,
-          tsEntry,
-          previousTsEntry,
-          history,
-        });
-      },
-    ),
+      return writeRuleVersion({
+        configKey,
+        ruleKey,
+        version: "next",
+        jsEntry,
+        previousJsEntry,
+        tsEntry,
+        previousTsEntry,
+        history,
+      });
+    }),
   );
 
-  // Write the next version file
   await writeVersion({ version: "next" });
 
   return console.log("Next rule version files updated");

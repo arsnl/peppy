@@ -11,7 +11,7 @@ import type * as ContentlayerGenerated from "contentlayer/generated";
 type ESLintConfig = ContentlayerGenerated.ESLintConfig;
 type RuleVersion = ContentlayerGenerated.RuleVersion;
 type Version = ContentlayerGenerated.Version;
-type VersionChangesEntry = ContentlayerGenerated.VersionChangesEntry;
+type VersionRuleChangesEntry = ContentlayerGenerated.VersionRuleChangesEntry;
 
 export type { ESLintConfig, RuleVersion, Version };
 
@@ -58,25 +58,31 @@ export const getFreshContentlayerGenerated = () => {
   ) as typeof ContentlayerGenerated;
 };
 
-export const getESLintConfigKeys = async () => {
+export const getESLintConfigKeys = () => {
   const { allESLintConfigs } = getFreshContentlayerGenerated();
+
   return allESLintConfigs.map((doc) => doc.key);
 };
 
-export const getRuleVersions = async (next: boolean = false) => {
+export const getRuleVersions = (next: boolean = false) => {
   const { allRuleVersions } = getFreshContentlayerGenerated();
+
   return allRuleVersions.filter((doc) =>
     next ? doc.version === "next" : doc.version !== "next",
   );
 };
 
-export const getLatestVersion = async () => {
+export const getVersion = (next: boolean = false) => {
   const { allVersions } = getFreshContentlayerGenerated();
 
   return allVersions
     .sort((a, b) => b.version.localeCompare(a.version))
-    .filter((doc) => doc.version !== "next")?.[0]?.version;
+    .filter((doc) =>
+      next ? doc.version === "next" : doc.version !== "next",
+    )?.[0];
 };
+
+export const getNextVersionFileBody = () => getVersion(true)?.body?.raw || "";
 
 export const writeRuleVersion = async ({
   configKey,
@@ -143,12 +149,15 @@ export const writeVersion = async ({ version }: Pick<Version, "version">) => {
   const filepath = path.join(VERSIONS_FOLDER, `/${version}.mdx`);
   console.log("Rebuilding contentlayer before writing the version");
   await contentlayerBuild();
-  const ruleVersions = await getRuleVersions(version === "next");
+  const ruleVersions = getRuleVersions(version === "next");
+  const nextVersionFileBody = getNextVersionFileBody();
 
-  const changes = ruleVersions
+  await removeNextVersion();
+
+  const ruleChanges = ruleVersions
     .reduce<
       Pick<
-        VersionChangesEntry,
+        VersionRuleChangesEntry,
         "configKey" | "ruleKey" | "jsState" | "tsState"
       >[]
     >((acc, ruleVersion) => {
@@ -168,22 +177,29 @@ export const writeVersion = async ({ version }: Pick<Version, "version">) => {
 
   const content = `---
 publishedDate: ${new Date().toISOString()}
-changes: ${stringify(changes)}
----`;
+ruleChanges: ${stringify(ruleChanges)}
+---
+${nextVersionFileBody}
+`;
 
-  return writeWithPrettier({
-    filepath,
-    content,
-    options: { parser: "mdx" },
-  });
+  if (!!ruleChanges.length || nextVersionFileBody) {
+    await writeWithPrettier({
+      filepath,
+      content,
+      options: { parser: "mdx" },
+    });
+  }
 };
 
 export const removeNextVersion = async () => {
-  await fsPromises.rm(RULE_VERSIONS_NEXT_FOLDER, {
+  await fsPromises.rm(path.join(VERSIONS_FOLDER, "next.mdx"), {
     recursive: true,
     force: true,
   });
-  await fsPromises.rm(path.join(VERSIONS_FOLDER, "next.mdx"), {
+};
+
+export const removeRuleVersionsNextFolder = async () => {
+  await fsPromises.rm(RULE_VERSIONS_NEXT_FOLDER, {
     recursive: true,
     force: true,
   });

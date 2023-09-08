@@ -7,5 +7,3 @@ export type TocItem = {
 export type TocItems = {
   items?: TocItem[];
 };
-
-export type TableOfContents = TocItems;

@@ -1,4 +1,3 @@
-import { type Doc, type ESLintConfig } from "contentlayer/generated";
 import Link from "next/link";
 import { Icon } from "@/components/icon";
 import { buttonVariants } from "@/components/ui/button";
@@ -6,14 +5,10 @@ import { sidebarNavConfig } from "@/lib/nav/nav.config";
 import { getFlattenNavItems } from "@/lib/nav/nav.util";
 import { cn } from "@/lib/utils";
 
-type Document = Doc | ESLintConfig;
+export type PagerProps = { href: string };
 
-export type PagerProps = {
-  doc: Document;
-};
-
-export const Pager = ({ doc }: PagerProps) => {
-  const pager = getPager(doc);
+export const Pager = ({ href }: PagerProps) => {
+  const pager = getPager(href);
 
   if (!pager) {
     return null;
@@ -43,11 +38,13 @@ export const Pager = ({ doc }: PagerProps) => {
   );
 };
 
-export const getPager = (doc: Document) => {
+export const getPager = (href: string) => {
   const flattenedLinks = getFlattenNavItems(sidebarNavConfig).filter(
     (link) => !!link.href && !link?.disabled && !link?.external,
   );
-  const activeIndex = flattenedLinks.findIndex(({ href }) => doc.href === href);
+  const activeIndex = flattenedLinks.findIndex(
+    ({ href: linkHref }) => linkHref === href,
+  );
   const linksBeforeActive = flattenedLinks.slice(0, activeIndex);
   const linksAfterActive = flattenedLinks.slice(activeIndex + 1);
   const prev = linksBeforeActive.slice(-1)?.[0] || null;

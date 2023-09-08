@@ -2,39 +2,8 @@
 
 import * as React from "react";
 import { useMounted } from "@/hooks/use-mounted";
-import { type TableOfContents } from "@/lib/toc/toc.type";
+import { type TocItems } from "@/lib/toc/toc.type";
 import { cn } from "@/lib/utils";
-
-type TocProps = {
-  toc: TableOfContents;
-};
-
-export const DashboardTableOfContents = ({ toc }: TocProps) => {
-  const itemIds = React.useMemo(
-    () =>
-      toc.items
-        ? toc.items
-            .flatMap((item) => [item.url, item?.items?.map(({ url }) => url)])
-            .flat()
-            .map((id) => id?.split("#")?.[1] || "")
-            .filter(Boolean)
-        : [],
-    [toc],
-  );
-  const activeHeading = useActiveItem(itemIds);
-  const mounted = useMounted();
-
-  if (!toc?.items || !mounted) {
-    return null;
-  }
-
-  return (
-    <div className="space-y-2">
-      <p className="font-medium">On This Page</p>
-      <Tree tree={toc} activeItem={activeHeading} />
-    </div>
-  );
-};
 
 const useActiveItem = (itemIds: string[]) => {
   const [activeId, setActiveId] = React.useState<string | null>(null);
@@ -72,7 +41,7 @@ const useActiveItem = (itemIds: string[]) => {
 };
 
 type TreeProps = {
-  tree: TableOfContents;
+  tree: TocItems;
   level?: number;
   activeItem?: string | null;
 };
@@ -100,3 +69,34 @@ const Tree = ({ tree, level = 1, activeItem }: TreeProps) =>
       ))}
     </ul>
   ) : null;
+
+type TocProps = {
+  toc: TocItems;
+};
+
+export const TOC = ({ toc }: TocProps) => {
+  const itemIds = React.useMemo(
+    () =>
+      toc.items
+        ? toc.items
+            .flatMap((item) => [item.url, item?.items?.map(({ url }) => url)])
+            .flat()
+            .map((id) => id?.split("#")?.[1] || "")
+            .filter(Boolean)
+        : [],
+    [toc],
+  );
+  const activeHeading = useActiveItem(itemIds);
+  const mounted = useMounted();
+
+  if (!toc?.items || !mounted) {
+    return null;
+  }
+
+  return (
+    <div className="space-y-2">
+      <p className="font-medium">On This Page</p>
+      <Tree tree={toc} activeItem={activeHeading} />
+    </div>
+  );
+};
