@@ -5,8 +5,8 @@ import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
 import { buttonVariants } from "@/components/ui/button";
-import { mainNavConfig, sidebarNavConfig } from "@/config/nav";
-import { siteConfig } from "@/config/site";
+import { mainNavConfig, sidebarNavConfig } from "@/lib/nav/nav.config";
+import { siteConfig } from "@/lib/site/site.config";
 import { cn } from "@/lib/utils";
 
 export const SiteHeader = () => (

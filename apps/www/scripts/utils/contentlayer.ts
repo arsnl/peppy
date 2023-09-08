@@ -1,22 +1,19 @@
+/* eslint-disable no-console */
 /* eslint-disable import/no-extraneous-dependencies */
-import {
-  type ESLintConfig,
-  type RuleVersion,
-  type Version,
-} from "contentlayer/generated";
 import execa from "execa";
 import stringify from "fast-json-stable-stringify";
 import fsPromises from "node:fs/promises";
 import path from "node:path";
-import { rulesConfig } from "@/config/rule";
+import { rulesConfig } from "@/lib/rule-version/rule-version.config";
 import { writeWithPrettier } from "./common";
+import type * as ContentlayerGenerated from "contentlayer/generated";
+
+type ESLintConfig = ContentlayerGenerated.ESLintConfig;
+type RuleVersion = ContentlayerGenerated.RuleVersion;
+type Version = ContentlayerGenerated.Version;
+type VersionChangesEntry = ContentlayerGenerated.VersionChangesEntry;
 
 export type { ESLintConfig, RuleVersion, Version };
-
-const GENERATED_PATH = path.join(
-  __dirname,
-  "../../.contentlayer/generated/index.mjs",
-);
 
 export const CONTENT_FOLDER = path.join(__dirname, `../../src/content`);
 
@@ -39,29 +36,42 @@ export const RULE_VERSIONS_LATEST_FOLDER = path.join(
 
 export const VERSIONS_FOLDER = path.join(CONTENT_FOLDER, "/versions");
 
-export const getAllESLintConfigs = async () =>
-  import(GENERATED_PATH).then((mod) => mod.allESLintConfigs as ESLintConfig[]);
+/**
+ * Get the contentlayer generated files without cache since the
+ * genereated files are cached and changed a lot in a short lapse of time
+ */
+export const getFreshContentlayerGenerated = () => {
+  const contentlayerGeneratedFolder = path.join(
+    __dirname,
+    "../../.contentlayer/generated",
+  );
 
-export const getAllRuleVersions = async () =>
-  import(GENERATED_PATH).then((mod) => mod.allRuleVersions as RuleVersion[]);
+  Object.keys(require.cache).forEach((key) => {
+    if (key.startsWith(contentlayerGeneratedFolder)) {
+      delete require.cache[key];
+    }
+  });
 
-export const getAllVersions = async () =>
-  import(GENERATED_PATH).then((mod) => mod.allVersions as Version[]);
+  // eslint-disable-next-line global-require, import/no-dynamic-require
+  return require(
+    path.join(contentlayerGeneratedFolder, "index.mjs"),
+  ) as typeof ContentlayerGenerated;
+};
 
 export const getESLintConfigKeys = async () => {
-  const allESLintConfigs = await getAllESLintConfigs();
+  const { allESLintConfigs } = getFreshContentlayerGenerated();
   return allESLintConfigs.map((doc) => doc.key);
 };
 
 export const getRuleVersions = async (next: boolean = false) => {
-  const allRuleVersions = await getAllRuleVersions();
+  const { allRuleVersions } = getFreshContentlayerGenerated();
   return allRuleVersions.filter((doc) =>
     next ? doc.version === "next" : doc.version !== "next",
   );
 };
 
 export const getLatestVersion = async () => {
-  const allVersions = await getAllVersions();
+  const { allVersions } = getFreshContentlayerGenerated();
 
   return allVersions
     .sort((a, b) => b.version.localeCompare(a.version))
@@ -131,9 +141,34 @@ ${stringify(tsEntry || {})}
 
 export const writeVersion = async ({ version }: Pick<Version, "version">) => {
   const filepath = path.join(VERSIONS_FOLDER, `/${version}.mdx`);
+  console.log("Rebuilding contentlayer before writing the version");
+  await contentlayerBuild();
+  const ruleVersions = await getRuleVersions(version === "next");
+
+  const changes = ruleVersions
+    .reduce<
+      Pick<
+        VersionChangesEntry,
+        "configKey" | "ruleKey" | "jsState" | "tsState"
+      >[]
+    >((acc, ruleVersion) => {
+      const { configKey, ruleKey, jsState, tsState } = ruleVersion;
+
+      return (jsState === "none" || jsState === "unchanged") &&
+        (tsState === "none" || tsState === "unchanged")
+        ? acc
+        : [...acc, { configKey, ruleKey, jsState, tsState }];
+    }, [])
+    .sort((a, b) => {
+      const keyA = `${a.configKey}/${a.ruleKey}`;
+      const keyB = `${b.configKey}/${b.ruleKey}`;
+
+      return keyA.localeCompare(keyB);
+    });
 
   const content = `---
 publishedDate: ${new Date().toISOString()}
+changes: ${stringify(changes)}
 ---`;
 
   return writeWithPrettier({

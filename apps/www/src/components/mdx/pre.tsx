@@ -1,5 +1,5 @@
 import { CopyButton, CopyNpmCommandButton } from "@/components/copy-button";
-import { type Event } from "@/lib/events";
+import { type Event } from "@/lib/event/event.type";
 import { cn } from "@/lib/utils";
 import { type NpmCommands } from "@/types/unist";
 

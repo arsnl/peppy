@@ -5,8 +5,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Toaster } from "@/components/ui/toaster";
-import { fontConfig } from "@/config/font";
-import { siteConfig } from "@/config/site";
+import { fontConfig } from "@/lib/font/font.config";
+import { siteConfig } from "@/lib/site/site.config";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 

@@ -2,6 +2,7 @@
 import { toc } from "mdast-util-toc";
 import { remark } from "remark";
 import { visit } from "unist-util-visit";
+import { type TableOfContents, type TocItems } from "@/lib/toc/toc.type";
 
 const textTypes = ["text", "emphasis", "strong", "inlineCode"];
 
@@ -16,17 +17,7 @@ const flattenNode = (tree: any) => {
   return p.join(``);
 };
 
-type Item = {
-  title: string;
-  url: string;
-  items?: Item[];
-};
-
-type Items = {
-  items?: Item[];
-};
-
-const getItems = (node: any, current: any): Items => {
+const getItems = (node: any, current: any): TocItems => {
   if (!node) {
     return {};
   }
@@ -70,8 +61,6 @@ const getToc = () => (node: any, file: any) => {
 
   file.data = items;
 };
-
-export type TableOfContents = Items;
 
 export const getTableOfContents = async (
   content: string,

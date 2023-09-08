@@ -2,15 +2,15 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { type LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
 import { Icon } from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { siteConfig } from "@/config/site";
+import { type NavItem } from "@/lib/nav/nav.type";
+import { siteConfig } from "@/lib/site/site.config";
 import { cn } from "@/lib/utils";
-import type { LinkProps } from "next/link";
-import type { NavItem } from "@/types/nav";
 
 export type MobileNavProps = {
   navConfig: NavItem[];

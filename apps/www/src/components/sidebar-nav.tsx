@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { getClosestNavItem } from "@/lib/nav";
+import { type NavItem } from "@/lib/nav/nav.type";
+import { getClosestNavItem } from "@/lib/nav/nav.util";
 import { cn } from "@/lib/utils";
-import type { NavItem } from "@/types/nav";
 
 type _SidebarNavItemsProps = {
   items: NavItem[];

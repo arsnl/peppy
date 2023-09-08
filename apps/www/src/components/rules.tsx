@@ -1,7 +1,7 @@
 import * as React from "react";
 import { RuleCard, type RuleCardOptions } from "@/components/rule-card";
 import { Input } from "@/components/ui/input";
-import { getRuleVersions } from "@/config/rule-version";
+import { getRuleVersions } from "@/lib/rule-version/rule-version.content";
 import { cn } from "@/lib/utils";
 
 export type RuleProps = Omit<

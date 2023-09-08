@@ -4,10 +4,10 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/icon";
-import { siteConfig } from "@/config/site";
-import { getClosestNavItem } from "@/lib/nav";
+import { type NavItem } from "@/lib/nav/nav.type";
+import { getClosestNavItem } from "@/lib/nav/nav.util";
+import { siteConfig } from "@/lib/site/site.config";
 import { cn } from "@/lib/utils";
-import type { NavItem } from "@/types/nav";
 
 export type MainNavProps = {
   navConfig: NavItem[];

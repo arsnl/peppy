@@ -1,9 +1,12 @@
-import { type VersionHistory } from "contentlayer/generated";
+import {
+  type RuleVersionHistoryEntry,
+  type VersionChangesEntry,
+} from "contentlayer/generated";
 
-export const getVersionHistoryChangesString = (
-  versionHistory: VersionHistory,
+export const getChangesString = (
+  entry: RuleVersionHistoryEntry | VersionChangesEntry,
 ) => {
-  const { jsState, tsState } = versionHistory;
+  const { jsState, tsState } = entry;
   const jsStateString =
     jsState === "none" || jsState === "unchanged" ? "" : jsState;
   const tsStateString =

@@ -5,7 +5,7 @@ import { Heading, HeadingSubtext, HeadingTitle } from "@/components/heading";
 import { Icon } from "@/components/icon";
 import { Section } from "@/components/section";
 import { buttonVariants } from "@/components/ui/button";
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/lib/site/site.config";
 import { cn } from "@/lib/utils";
 
 export const SectionHero = () => (

@@ -2,31 +2,12 @@
 import {
   type ComputedFields,
   defineDocumentType,
-  defineNestedType,
 } from "contentlayer/source-files";
 import stringify from "fast-json-stable-stringify";
 import prettier from "prettier";
-import { eslintPluginsConfig } from "../../src/config/eslint-plugin";
-
-const LEVEL_ENUMS = ["off", "warn", "error", "none"];
-const STATE_ENUMS = ["introduced", "removed", "updated", "unchanged", "none"];
-
-const VersionHistory = defineNestedType(() => ({
-  name: "VersionHistory",
-  fields: {
-    version: { type: "string", required: true },
-    jsState: {
-      type: "enum",
-      options: STATE_ENUMS,
-      required: true,
-    },
-    tsState: {
-      type: "enum",
-      options: STATE_ENUMS,
-      required: true,
-    },
-  },
-}));
+import { eslintPluginsConfig } from "../../src/lib/rule-version/rule-version.config";
+import { LEVEL_ENUMS, STATE_ENUMS } from "../constant";
+import { RuleVersionHistoryEntry } from "../nested-types/rule-version-history-entry";
 
 const computedFields: ComputedFields = {
   jsLevel: {
@@ -234,7 +215,7 @@ export const RuleVersion = defineDocumentType(() => ({
     },
     history: {
       type: "list",
-      of: VersionHistory,
+      of: RuleVersionHistoryEntry,
       required: true,
     },
   },

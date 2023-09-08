@@ -129,6 +129,7 @@ const getNextPartialRuleVersions = async () => {
   await removeNextVersion();
 
   // Clear the cache and build the contentlayer files
+  console.log("Rebuilding contentlayer to validate the next version");
   await contentlayerBuild();
 
   // Get the next rule versions.

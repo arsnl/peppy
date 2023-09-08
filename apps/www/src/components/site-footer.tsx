@@ -1,4 +1,4 @@
-import { siteConfig } from "@/config/site";
+import { siteConfig } from "@/lib/site/site.config";
 
 export const SiteFooter = () => (
   <footer className="py-6 md:px-8 md:py-0">

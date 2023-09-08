@@ -1,8 +1,9 @@
 import "server-only";
 import { allRuleVersions } from "contentlayer/generated";
-import { getVersion, type VersionType } from "@/config/version";
+import { getVersion } from "@/lib/version/version.content";
+import { type VersionType } from "@/lib/version/version.type";
 
-export const sortedAllRuleVersions = allRuleVersions.sort((a, b) =>
+const sorted = allRuleVersions.sort((a, b) =>
   a.ruleKey.localeCompare(b.ruleKey),
 );
 
@@ -21,7 +22,7 @@ export const getRuleVersions = ({
 } = {}) => {
   const computedVersion = getVersion(version);
 
-  return sortedAllRuleVersions.filter(
+  return sorted.filter(
     (doc) =>
       doc.version === computedVersion &&
       (configKey ? doc.configKey === configKey : true) &&

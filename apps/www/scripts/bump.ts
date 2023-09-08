@@ -18,6 +18,7 @@ import {
  */
 (async () => {
   // Clear the cache and build the contentlayer files
+  console.log("Rebuilding contentlayer before bumping");
   await contentlayerBuild();
 
   // Get the rule versions for the next version

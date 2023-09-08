@@ -1,7 +1,6 @@
-import va from "@vercel/analytics";
 import { z } from "zod";
 
-const eventSchema = z.object({
+export const eventSchema = z.object({
   name: z.enum([
     "copy_npm_command",
     "copy_usage_import_code",
@@ -13,12 +12,3 @@ const eventSchema = z.object({
     .record(z.union([z.string(), z.number(), z.boolean(), z.null()]))
     .optional(),
 });
-
-export type Event = z.infer<typeof eventSchema>;
-
-export const trackEvent = (input: Event): void => {
-  const event = eventSchema.parse(input);
-  if (event) {
-    va.track(event.name, event.properties);
-  }
-};

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "@/components/icon";
-import { getESlintConfigs } from "@/config/eslint-config";
+import { getESlintConfigs } from "@/lib/eslint-config/eslint-config.content";
 
 export const ESLintConfigCards = () => (
   <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6">

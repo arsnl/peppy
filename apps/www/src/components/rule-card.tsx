@@ -50,7 +50,7 @@ export const RuleCard = ({
       <h3 className="font-semibold tracking-tight">{ruleKey}</h3>
       <Mdx
         code={description.code}
-        className="text-sm leading-tight text-muted-foreground"
+        className="text-sm text-muted-foreground [&>p]:leading-tight"
       />
     </div>
 

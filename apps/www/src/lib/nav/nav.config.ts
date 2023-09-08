@@ -1,12 +1,6 @@
 import "server-only";
-import { getESlintConfigs } from "@/config/eslint-config";
-import type { NavItem } from "@/types/nav";
-
-const eslintConfigNavItems = getESlintConfigs().map((config) => ({
-  title: config.name,
-  href: config.href,
-  items: [],
-}));
+import { getESlintConfigs } from "@/lib/eslint-config/eslint-config.content";
+import { type NavItem } from "@/lib/nav/nav.type";
 
 export const mainNavConfig: NavItem[] = [
   {
@@ -20,6 +14,12 @@ export const mainNavConfig: NavItem[] = [
     items: [],
   },
 ];
+
+const eslintConfigNavItems = getESlintConfigs().map((config) => ({
+  title: config.name,
+  href: config.href,
+  items: [],
+}));
 
 export const sidebarNavConfig: NavItem[] = [
   {

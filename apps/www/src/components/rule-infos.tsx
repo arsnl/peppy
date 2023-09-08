@@ -20,11 +20,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getRuleVersions } from "@/config/rule-version";
-import { type VersionType } from "@/config/version";
-import { getVersionHistoryChangesString } from "@/lib/history";
-import { type TableOfContents } from "@/lib/toc";
+import { getChangesString } from "@/lib/changelog/changelog.util";
+import { getRuleVersions } from "@/lib/rule-version/rule-version.content";
+import { type TableOfContents } from "@/lib/toc/toc.type";
 import { cn } from "@/lib/utils";
+import { type VersionType } from "@/lib/version/version.type";
 
 const HEADINGS = {
   js: { title: "JavaScript", id: "javascript" },
@@ -188,17 +188,17 @@ export const RuleInfos = ({
           </TableRow>
         </TableHeader>
         <TableBody>
-          {history.map((versionHistory) => (
-            <TableRow key={versionHistory.version}>
+          {history.map((RuleVersionHistoryEntry) => (
+            <TableRow key={RuleVersionHistoryEntry.version}>
               <TableCell>
                 <Code>
-                  {versionHistory.version === "next"
+                  {RuleVersionHistoryEntry.version === "next"
                     ? "next"
-                    : `v${versionHistory.version}`}
+                    : `v${RuleVersionHistoryEntry.version}`}
                 </Code>
               </TableCell>
               <TableCell>
-                <p>{getVersionHistoryChangesString(versionHistory)}</p>
+                <p>{getChangesString(RuleVersionHistoryEntry)}</p>
               </TableCell>
             </TableRow>
           ))}

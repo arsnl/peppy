@@ -7,8 +7,8 @@ import { Mdx } from "@/components/mdx";
 import { Pager } from "@/components/pager";
 import { DashboardTableOfContents } from "@/components/toc";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { siteConfig } from "@/config/site";
-import { getTableOfContents } from "@/lib/toc";
+import { siteConfig } from "@/lib/site/site.config";
+import { getTableOfContents } from "@/lib/toc/toc.util";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 

@@ -14,9 +14,9 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
+import { type NavItem } from "@/lib/nav/nav.type";
 import { cn } from "@/lib/utils";
 import type { DialogProps } from "@radix-ui/react-alert-dialog";
-import type { NavItem } from "@/types/nav";
 
 export type CommandMenuProps = DialogProps & {
   navConfig: NavItem[];

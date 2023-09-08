@@ -6619,7 +6619,7 @@ packages:
     dependencies:
       chalk: 4.1.2
       diff-sequences: 29.4.3
-      jest-get-type: 29.4.3
+      jest-get-type: 29.6.3
       pretty-format: 29.6.3
     dev: false
 

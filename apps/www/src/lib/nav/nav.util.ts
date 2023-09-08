@@ -1,4 +1,4 @@
-import type { NavItem } from "@/types/nav";
+import { type NavItem } from "@/lib/nav/nav.type";
 
 export const getFlattenNavItems = (navItems: NavItem[] = []): NavItem[] =>
   navItems.reduce<NavItem[]>(

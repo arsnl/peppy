@@ -9,9 +9,9 @@ import { DashboardTableOfContents } from "@/components/toc";
 import { badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { getESlintConfigs } from "@/config/eslint-config";
-import { getRuleVersions } from "@/config/rule-version";
-import { siteConfig } from "@/config/site";
+import { getESlintConfigs } from "@/lib/eslint-config/eslint-config.content";
+import { getRuleVersions } from "@/lib/rule-version/rule-version.content";
+import { siteConfig } from "@/lib/site/site.config";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 

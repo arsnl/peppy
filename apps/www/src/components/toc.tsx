@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { useMounted } from "@/hooks/use-mounted";
+import { type TableOfContents } from "@/lib/toc/toc.type";
 import { cn } from "@/lib/utils";
-import type { TableOfContents } from "@/lib/toc";
 
 type TocProps = {
   toc: TableOfContents;

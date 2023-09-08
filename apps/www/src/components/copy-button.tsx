@@ -9,10 +9,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { trackEvent } from "@/lib/events";
+import { type Event } from "@/lib/event/event.type";
+import { trackEvent } from "@/lib/event/event.util";
 import { cn } from "@/lib/utils";
 import type { DropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu";
-import type { Event } from "@/lib/events";
 import type { NpmCommands } from "@/types/unist";
 
 type CopyButtonProps = React.HTMLAttributes<HTMLButtonElement> & {

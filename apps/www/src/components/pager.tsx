@@ -2,8 +2,8 @@ import { type Doc, type ESLintConfig } from "contentlayer/generated";
 import Link from "next/link";
 import { Icon } from "@/components/icon";
 import { buttonVariants } from "@/components/ui/button";
-import { sidebarNavConfig } from "@/config/nav";
-import { getFlattenNavItems } from "@/lib/nav";
+import { sidebarNavConfig } from "@/lib/nav/nav.config";
+import { getFlattenNavItems } from "@/lib/nav/nav.util";
 import { cn } from "@/lib/utils";
 
 type Document = Doc | ESLintConfig;

@@ -8,5 +8,3 @@ export const siteConfig = {
     github: "https://github.com/arsnl/peppy",
   },
 };
-
-export type SiteConfig = typeof siteConfig;

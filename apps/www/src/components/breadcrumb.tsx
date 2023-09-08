@@ -2,8 +2,8 @@ import "server-only";
 import React from "react";
 import { Icon } from "@/components/icon";
 import { Link } from "@/components/link";
-import { sidebarNavConfig } from "@/config/nav";
-import { getBreadcrumbNavItems } from "@/lib/nav";
+import { sidebarNavConfig } from "@/lib/nav/nav.config";
+import { getBreadcrumbNavItems } from "@/lib/nav/nav.util";
 import { cn } from "@/lib/utils";
 
 export type BreadcrumbProps = Omit<
