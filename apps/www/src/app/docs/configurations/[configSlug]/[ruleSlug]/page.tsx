@@ -1,14 +1,12 @@
 import "@/styles/mdx.css";
 import { notFound } from "next/navigation";
-import { Breadcrumb } from "@/components/breadcrumb";
+import { DocLayout } from "@/components/doc-layout";
 import { Icon } from "@/components/icon";
 import { Link } from "@/components/link";
 import { Mdx } from "@/components/mdx";
 import { getRuleInfoTOC } from "@/components/rule-infos";
-import { TOC } from "@/components/toc";
 import { badgeVariants } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { getESlintConfigs } from "@/lib/eslint-config/eslint-config.content";
 import { getRuleVersions } from "@/lib/rule-version/rule-version.content";
 import { siteConfig } from "@/lib/site/site.config";
@@ -90,62 +88,48 @@ const RuleVersionPage = async ({ params }: RuleVersionPageProps) => {
 
   const { rule, eslintConfig } = ruleVersion;
 
+  const pager = (
+    <div className="flex flex-row items-center justify-between">
+      <Link
+        href={eslintConfig.href}
+        className={cn(
+          buttonVariants({ variant: "outline" }),
+          "hover:no-underline",
+        )}
+      >
+        <Icon icon="chevron-right" className="mr-2 h-4 w-4 rotate-180" />
+        {`${eslintConfig.name}`}
+      </Link>
+    </div>
+  );
+
   return (
-    <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
-      <div className="mx-auto w-full min-w-0">
-        <Breadcrumb href={rule.href} title={rule.ruleKey} />
-        <div className="space-y-2">
-          <h1 className={cn("scroll-m-20 text-4xl font-bold tracking-tight")}>
-            {rule.ruleKey}
-          </h1>
-          <Mdx
-            code={rule.description.code}
-            className="text-lg text-muted-foreground"
-          />
-        </div>
-
-        <div className="flex items-center space-x-2 pt-4">
-          {rule.docUrl && (
-            <Link
-              href={rule.docUrl}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                badgeVariants({ variant: "outline" }),
-                "flex gap-2 rounded-full bg-background p-1 px-2 text-xs hover:bg-muted hover:no-underline",
-              )}
-              alt-text={`Check the documentation of the rule ${rule.ruleKey} on the official plugin documentation`}
-            >
-              <Icon icon="eslint" className="h-3 w-3" />
-              API Reference
-            </Link>
-          )}
-        </div>
-
-        <Mdx code={rule.body.code} className="pb-12 pt-8" />
-        <div className="flex flex-row items-center justify-between">
+    <DocLayout
+      href={rule.href}
+      title={rule.ruleKey}
+      description={rule.description}
+      toc={getRuleInfoTOC(rule)}
+      pager={pager}
+    >
+      <div className="flex items-center space-x-2 pt-4">
+        {rule.docUrl && (
           <Link
-            href={eslintConfig.href}
+            href={rule.docUrl}
+            target="_blank"
+            rel="noreferrer"
             className={cn(
-              buttonVariants({ variant: "outline" }),
-              "hover:no-underline",
+              badgeVariants({ variant: "outline" }),
+              "flex gap-2 rounded-full bg-background p-1 px-2 text-xs hover:bg-muted hover:no-underline",
             )}
+            alt-text={`Check the documentation of the rule ${rule.ruleKey} on the official plugin documentation`}
           >
-            <Icon icon="chevron-right" className="mr-2 h-4 w-4 rotate-180" />
-            {`${eslintConfig.name}`}
+            <Icon icon="eslint" className="h-3 w-3" />
+            API Reference
           </Link>
-        </div>
+        )}
       </div>
-      <div className="hidden text-sm xl:block">
-        <div className="sticky top-16 -mt-10 pt-4">
-          <ScrollArea className="pb-10">
-            <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-              <TOC toc={getRuleInfoTOC(rule)} />
-            </div>
-          </ScrollArea>
-        </div>
-      </div>
-    </main>
+      <Mdx code={rule.body.code} className="pb-12 pt-8" />
+    </DocLayout>
   );
 };
 
