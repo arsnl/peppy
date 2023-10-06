@@ -1,6 +1,6 @@
 import "server-only";
 import React from "react";
-import { Icon } from "@/components/icon";
+import { CaretRightIcon } from "@/components/icon";
 import { Link } from "@/components/link";
 import { sidebarNavConfig } from "@/lib/nav/nav.config";
 import { getBreadcrumbNavItems } from "@/lib/nav/nav.util";
@@ -44,7 +44,7 @@ export const Breadcrumb = ({
           <Link href={item.href || ""} className="truncate">
             {item.breadcrumbTitle || item.title}
           </Link>
-          <Icon icon="chevron-right" className="h-4 w-4" />
+          <CaretRightIcon className="h-4 w-4" />
         </React.Fragment>
       ))}
       <div className="font-medium text-foreground">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Icon } from "@/components/icon";
+import { CaretRightIcon } from "@/components/icon";
 import { buttonVariants } from "@/components/ui/button";
 import { sidebarNavConfig } from "@/lib/nav/nav.config";
 import { getFlattenNavItems } from "@/lib/nav/nav.util";
@@ -21,7 +21,7 @@ export const Pager = ({ href }: PagerProps) => {
           href={pager.prev.href}
           className={buttonVariants({ variant: "outline" })}
         >
-          <Icon icon="chevron-right" className="mr-2 h-4 w-4 rotate-180" />
+          <CaretRightIcon className="mr-2 h-4 w-4 rotate-180" />
           {pager.prev.title}
         </Link>
       )}
@@ -31,7 +31,7 @@ export const Pager = ({ href }: PagerProps) => {
           className={cn(buttonVariants({ variant: "outline" }), "ml-auto")}
         >
           {pager.next.title}
-          <Icon icon="chevron-right" className="ml-2 h-4 w-4" />
+          <CaretRightIcon className="ml-2 h-4 w-4" />
         </Link>
       )}
     </div>

@@ -1,7 +1,13 @@
 import { type RuleVersion } from "contentlayer/generated";
-import { Icon } from "@/components/icon";
+import {
+  ArrowCircleUpIcon,
+  CheckCircleIcon,
+  CircleIcon,
+  type IconProps,
+  MinusCircleIcon,
+  PlusCircleIcon,
+} from "@/components/icon";
 import { cn } from "@/lib/utils";
-import type { IconProps } from "@/components/icon";
 
 export type RuleStateIconProps = Omit<IconProps, "icon"> & {
   state: Required<RuleVersion>["jsState" | "tsState"];
@@ -11,29 +17,31 @@ export const RuleStateIcon = ({
   state,
   className,
   ...props
-}: RuleStateIconProps) => (
-  <Icon
-    icon={
-      state === "introduced"
-        ? "plus-circle"
-        : state === "removed"
-        ? "minus-circle"
-        : state === "updated"
-        ? "arrow-up-circle"
-        : state === "unchanged"
-        ? "circle-equal"
-        : "circle"
-    }
-    className={cn(
-      "h-6 w-6",
-      {
-        "text-green-500": state === "introduced",
-        "text-red-500": state === "removed",
-        "text-sky-500": state === "updated",
-        "text-muted-foreground": state === "none" || state === "unchanged",
-      },
-      className,
-    )}
-    {...props}
-  />
-);
+}: RuleStateIconProps) => {
+  const Icon =
+    state === "introduced"
+      ? PlusCircleIcon
+      : state === "removed"
+      ? MinusCircleIcon
+      : state === "updated"
+      ? ArrowCircleUpIcon
+      : state === "unchanged"
+      ? CheckCircleIcon
+      : CircleIcon;
+
+  return (
+    <Icon
+      className={cn(
+        "h-6 w-6",
+        {
+          "text-green-500": state === "introduced",
+          "text-red-500": state === "removed",
+          "text-sky-500": state === "updated",
+          "text-muted-foreground": state === "none" || state === "unchanged",
+        },
+        className,
+      )}
+      {...props}
+    />
+  );
+};

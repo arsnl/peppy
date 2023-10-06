@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Icon } from "@/components/icon";
+import { IconLogo } from "@/components/icon-logo";
 import { getESlintConfigs } from "@/lib/eslint-config/eslint-config.content";
 
 export const ESLintConfigCards = () => (
@@ -10,7 +10,7 @@ export const ESLintConfigCards = () => (
         href={config.href}
         key={config.key}
       >
-        {config.icon && <Icon icon={config.icon} className="h-10 w-10" />}
+        {config.icon && <IconLogo icon={config.icon} className="h-10 w-10" />}
         <p className="mt-2 font-medium">{config.name}</p>
       </Link>
     ))}

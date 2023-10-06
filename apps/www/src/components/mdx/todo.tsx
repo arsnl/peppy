@@ -1,4 +1,4 @@
-import { Icon } from "@/components/icon";
+import { TerminalIcon } from "@/components/icon";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { cn } from "@/lib/utils";
 
@@ -8,7 +8,7 @@ export const Todo = ({
   ...props
 }: React.ComponentProps<typeof Alert>) => (
   <Alert className={cn("my-4", className)} {...props}>
-    <Icon icon="terminal" className="h-4 w-4" />
+    <TerminalIcon className="h-4 w-4" />
     <AlertTitle className="mb-2 font-semibold">We need your help!</AlertTitle>
     <AlertDescription className="flex flex-col gap-2">
       <p>

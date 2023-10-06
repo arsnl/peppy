@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Icon } from "@/components/icon";
+import { IconLogo } from "@/components/icon-logo";
 import { type NavItem } from "@/lib/nav/nav.type";
 import { getClosestNavItem } from "@/lib/nav/nav.util";
 import { siteConfig } from "@/lib/site/site.config";
@@ -21,7 +21,7 @@ export const MainNav = ({ navConfig = [] }: MainNavProps) => {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Icon icon="peppy" className="h-6 w-6" />
+        <IconLogo icon="peppy" className="h-6 w-6" />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>

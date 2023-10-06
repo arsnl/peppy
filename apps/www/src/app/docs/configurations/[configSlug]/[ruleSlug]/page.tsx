@@ -1,7 +1,8 @@
 import "@/styles/mdx.css";
 import { notFound } from "next/navigation";
 import { DocLayout } from "@/components/doc-layout";
-import { Icon } from "@/components/icon";
+import { CaretRightIcon } from "@/components/icon";
+import { IconLogo } from "@/components/icon-logo";
 import { Link } from "@/components/link";
 import { Mdx } from "@/components/mdx";
 import { getRuleInfoTOC } from "@/components/rule-infos";
@@ -97,7 +98,7 @@ const RuleVersionPage = async ({ params }: RuleVersionPageProps) => {
           "hover:no-underline",
         )}
       >
-        <Icon icon="chevron-right" className="mr-2 h-4 w-4 rotate-180" />
+        <CaretRightIcon className="mr-2 h-4 w-4 rotate-180" />
         {`${eslintConfig.name}`}
       </Link>
     </div>
@@ -123,7 +124,7 @@ const RuleVersionPage = async ({ params }: RuleVersionPageProps) => {
             )}
             alt-text={`Check the documentation of the rule ${rule.ruleKey} on the official plugin documentation`}
           >
-            <Icon icon="eslint" className="h-3 w-3" />
+            <IconLogo icon="eslint" className="h-3 w-3" />
             API Reference
           </Link>
         )}

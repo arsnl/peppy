@@ -4,6 +4,9 @@ const { createContentlayerPlugin } = require("next-contentlayer");
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  experimental: {
+    optimizePackageImports: ["@phosphor-icons/react"],
+  },
 };
 
 const withContentlayer = createContentlayerPlugin({

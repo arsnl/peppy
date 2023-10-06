@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Icon } from "@/components/icon";
+import { CheckIcon, CopyIcon, TerminalIcon } from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -66,9 +66,9 @@ export const CopyButton = ({
     >
       <span className="sr-only">Copy</span>
       {hasCopied ? (
-        <Icon icon="check" className="h-3 w-3" />
+        <CheckIcon className="h-3 w-3" />
       ) : (
-        <Icon icon="copy" className="h-3 w-3" />
+        <CopyIcon className="h-3 w-3" />
       )}
     </Button>
   );
@@ -107,9 +107,9 @@ export const CopyWithClassNames = ({
           className={cn("relative z-10 h-6 w-6 text-foreground", className)}
         >
           {hasCopied ? (
-            <Icon icon="check" className="h-3 w-3" />
+            <CheckIcon className="h-3 w-3" />
           ) : (
-            <Icon icon="copy" className="h-3 w-3" />
+            <CopyIcon className="h-3 w-3" />
           )}
           <span className="sr-only">Copy</span>
         </Button>
@@ -168,9 +168,9 @@ export const CopyNpmCommandButton = ({
           )}
         >
           {hasCopied ? (
-            <Icon icon="check" className="h-3 w-3" />
+            <CheckIcon className="h-3 w-3" />
           ) : (
-            <Icon icon="copy" className="h-3 w-3" />
+            <CopyIcon className="h-3 w-3" />
           )}
           <span className="sr-only">Copy</span>
         </Button>
@@ -238,9 +238,9 @@ export const CopyCodeButton = ({
       }}
       {...props}
     >
-      <Icon icon="terminal" />
+      <TerminalIcon />
       <code>{value}</code>
-      {hasCopied ? <Icon icon="check" /> : <Icon icon="copy" />}
+      {hasCopied ? <CheckIcon /> : <CopyIcon />}
     </Button>
   );
 };

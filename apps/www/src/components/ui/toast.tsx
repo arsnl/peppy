@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ToastPrimitives from "@radix-ui/react-toast";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Icon } from "@/components/icon";
+import { XIcon } from "@/components/icon";
 import { cn } from "@/lib/utils";
 
 const ToastProvider = ToastPrimitives.Provider;
@@ -78,7 +78,7 @@ const ToastClose = React.forwardRef<
     toast-close=""
     {...props}
   >
-    <Icon icon="x" className="h-4 w-4" />
+    <XIcon className="h-4 w-4" />
   </ToastPrimitives.Close>
 ));
 ToastClose.displayName = ToastPrimitives.Close.displayName;

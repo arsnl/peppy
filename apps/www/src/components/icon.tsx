@@ -1,62 +1,32 @@
-import { type HTMLAttributes } from "react";
-import { cn } from "@/lib/utils";
+"use client";
 
-export type IconName =
-  | "arrow-up-circle"
-  | "check"
-  | "chevron-right"
-  | "circle-equal"
-  | "circle"
-  | "code"
-  | "columns"
-  | "copy"
-  | "eslint"
-  | "file-x"
-  | "gem"
-  | "github"
-  | "jest"
-  | "js-square"
-  | "js"
-  | "laptop"
-  | "layers"
-  | "minus-circle"
-  | "moon"
-  | "nextjs"
-  | "nodejs"
-  | "peppy"
-  | "plus-circle"
-  | "prettier"
-  | "react"
-  | "search"
-  | "settings"
-  | "shield-alert"
-  | "shield-ban"
-  | "shield-check"
-  | "shield-minus"
-  | "shield-off"
-  | "shield-x"
-  | "shield"
-  | "sparkles"
-  | "sun"
-  | "tailwindcss"
-  | "terminal"
-  | "ts-square"
-  | "ts"
-  | "typescript"
-  | "wand"
-  | "x"
-  | "zap";
-
-export type IconProps = Omit<HTMLAttributes<SVGElement>, "children"> & {
-  icon: IconName;
-};
-export const Icon = ({ icon, className, ...props }: IconProps) => (
-  <svg
-    role="presentation"
-    aria-hidden
-    className={cn("h-[1em] w-[1em]", className)}
-    {...props}
-  >
-    <use xlinkHref={`/assets/icons.svg#${icon}`} />
-  </svg>
-);
+export type { Icon as IconComp, IconProps } from "@phosphor-icons/react";
+export {
+  ArrowCircleUp as ArrowCircleUpIcon,
+  CaretRight as CaretRightIcon,
+  CheckCircle as CheckCircleIcon,
+  Check as CheckIcon,
+  Circle as CircleIcon,
+  Columns as ColumnsIcon,
+  Copy as CopyIcon,
+  FileJs as FileJsIcon,
+  FileTs as FileTsIcon,
+  Laptop as LaptopIcon,
+  Lightning as LightningIcon,
+  MagicWand as MagicWandIcon,
+  MagnifyingGlass as MagnifyingGlassIcon,
+  MinusCircle as MinusCircleIcon,
+  Moon as MoonIcon,
+  PlusCircle as PlusCircleIcon,
+  ShieldCheck as ShieldCheckIcon,
+  Shield as ShieldIcon,
+  ShieldSlash as ShieldSlashIcon,
+  ShieldStar as ShieldStarIcon,
+  ShieldWarning as ShieldWarningIcon,
+  SketchLogo as SketchLogoIcon,
+  Sparkle as SparkleIcon,
+  Stack as StackIcon,
+  Sun as SunIcon,
+  Terminal as TerminalIcon,
+  X as XIcon,
+} from "@phosphor-icons/react";

@@ -4,7 +4,6 @@ import { type MDXComponents } from "mdx/types";
 import Image from "next/image";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import { ESLintConfigCards } from "@/components/eslint-config-cards";
-import { Icon } from "@/components/icon";
 import { A } from "@/components/mdx/a";
 import { Blockquote } from "@/components/mdx/blockquote";
 import { Code } from "@/components/mdx/code";
@@ -88,7 +87,6 @@ export const MdxComponents = {
   ESLintConfigCards: (props) => <ESLintConfigCards {...props} />,
   Todo: (props) => <Todo {...props} />,
   Badge: (props) => <Badge {...props} />,
-  Icon: (props) => <Icon {...props} />,
   RuleInfos: (props) => <RuleInfos {...props} />,
 } satisfies MDXComponents;
 

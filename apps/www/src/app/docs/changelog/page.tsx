@@ -1,7 +1,7 @@
 import "@/styles/mdx.css";
 import { Fragment } from "react";
 import { DocLayout } from "@/components/doc-layout";
-import { Icon } from "@/components/icon";
+import { FileJsIcon, FileTsIcon } from "@/components/icon";
 import { Mdx } from "@/components/mdx";
 import { Code } from "@/components/mdx/code";
 import { H2 } from "@/components/mdx/h2";
@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/table";
 import { getRuleChangesString } from "@/lib/changelog/changelog.util";
 import { siteConfig } from "@/lib/site/site.config";
-import { formatMonth } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import { getVersions } from "@/lib/version/version.content";
 import type { Metadata } from "next";
 
@@ -76,7 +76,7 @@ const ChangelogPage = async () => {
               <Code className="mr-2 text-[1em]">{`${
                 version === "next" ? "Next" : version
               }`}</Code>
-              {`${formatMonth(publishedDate)}`}
+              {`${formatDate(publishedDate)}`}
             </H2>
             <Mdx code={body.code} className="mt-6" />
             {!!ruleChanges?.length && (
@@ -89,10 +89,10 @@ const ChangelogPage = async () => {
                       <TableHead>Rule</TableHead>
                       <TableHead>Changes</TableHead>
                       <TableHead>
-                        <Icon icon="js-square" className="h-6 w-6" />
+                        <FileJsIcon className="h-6 w-6" />
                       </TableHead>
                       <TableHead>
-                        <Icon icon="ts-square" className="h-6 w-6" />
+                        <FileTsIcon className="h-6 w-6" />
                       </TableHead>
                     </TableRow>
                   </TableHeader>

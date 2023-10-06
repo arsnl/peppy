@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { Icon } from "@/components/icon";
+import { CaretRightIcon } from "@/components/icon";
 import { cn } from "@/lib/utils";
 
 const Accordion = AccordionPrimitive.Root;
@@ -33,10 +33,7 @@ const AccordionTrigger = React.forwardRef<
       {...props}
     >
       {children}
-      <Icon
-        icon="chevron-right"
-        className="h-4 w-4 shrink-0 rotate-90 transition-transform duration-200"
-      />
+      <CaretRightIcon className="h-4 w-4 shrink-0 rotate-90 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));

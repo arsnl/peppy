@@ -1,5 +1,13 @@
 import { Heading, HeadingSubtext, HeadingTitle } from "@/components/heading";
-import { Icon, type IconName } from "@/components/icon";
+import {
+  type IconComp,
+  LightningIcon,
+  MagicWandIcon,
+  ShieldCheckIcon,
+  SketchLogoIcon,
+  SparkleIcon,
+  StackIcon,
+} from "@/components/icon";
 import { Section, type SectionProps } from "@/components/section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -7,7 +15,7 @@ type Feature = {
   id: string;
   title: string;
   description: string;
-  icon: IconName;
+  Icon: IconComp;
 };
 
 const features = [
@@ -16,42 +24,42 @@ const features = [
     title: "Modern and improved",
     description:
       "Peppy upgrades Airbnb's config with TypeScript, Prettier and modern ES support.",
-    icon: "sparkles",
+    Icon: SparkleIcon,
   },
   {
     id: "versatile",
     title: "Versatile configurations",
     description:
       "React, Next, Jest, Tailwind CSS and more. Peppy's got your back.",
-    icon: "layers",
+    Icon: StackIcon,
   },
   {
     id: "lean",
     title: "Lean and powerful",
     description:
       "Comprehensive config without the bloated package.json. Small footprint, big impact.",
-    icon: "zap",
+    Icon: LightningIcon,
   },
   {
     id: "cli",
     title: "Instant setup",
     description:
       "Breezy auto-installer gets you coding without delays or frustrations.",
-    icon: "wand",
+    Icon: MagicWandIcon,
   },
   {
     id: "prettier",
     title: "Code quality and beauty",
     description:
       "Peppy + Prettier ensure pristine code formatting and quality without the conflicts.",
-    icon: "gem",
+    Icon: SketchLogoIcon,
   },
   {
     id: "typescript",
     title: "TypeScript made easy",
     description:
       "Seamless TypeScript support without extra plugins or setups needed. Just code.",
-    icon: "shield-check",
+    Icon: ShieldCheckIcon,
   },
 ] satisfies Feature[];
 
@@ -68,11 +76,11 @@ export const SectionFeatures = (props: SectionFeaturesProps) => (
     </Heading>
 
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {features.map(({ id, title, description, icon }) => (
+      {features.map(({ id, title, description, Icon }) => (
         <div key={id} className="flex flex-col">
           <div className="border-gradient relative z-10 -mb-12 h-24 w-24 shrink-0 self-center rounded-4xl p-2">
             <div className="border-glass bg-glass flex h-full w-full items-center justify-center rounded-3xl">
-              <Icon icon={icon} className="h-8 w-8" />
+              <Icon className="h-8 w-8" />
             </div>
           </div>
           <Card className="border-glass bg-glass rounded-2xl p-3 pt-10">

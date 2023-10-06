@@ -44,20 +44,20 @@
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
-    "@types/cross-spawn": "^6.0.2",
-    "@types/eslint": "^8.44.2",
-    "@types/jest": "^29.5.3",
+    "@types/cross-spawn": "^6.0.3",
+    "@types/eslint": "^8.44.3",
+    "@types/jest": "^29.5.5",
     "cross-spawn": "^7.0.3",
     "eslint": "latest",
     "eslint-config-peppy": "workspace:*",
-    "glob": "^10.3.3",
+    "glob": "^10.3.10",
     "jest": "latest",
     "prettier": "latest",
-    "rimraf": "^5.0.1",
+    "rimraf": "^5.0.5",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "tsup": "^7.2.0",
-    "tsx": "^3.12.7",
+    "tsx": "^3.13.0",
     "turbo": "^1.10.14"
   }
 }

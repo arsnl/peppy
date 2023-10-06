@@ -1,9 +1,9 @@
 import { Heading, HeadingSubtext, HeadingTitle } from "@/components/heading";
-import { Icon, type IconName } from "@/components/icon";
+import { IconLogo, type IconLogoName } from "@/components/icon-logo";
 import { Section } from "@/components/section";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-type SupportedTool = { name: string; icon: IconName };
+type SupportedTool = { name: string; icon: IconLogoName };
 
 const SUPPORTED_TOOLS: SupportedTool[] = [
   { name: "Jest", icon: "jest" },
@@ -26,7 +26,7 @@ export const SectionSupports = () => {
               ratio={1 / 1}
               className="flex items-center justify-center"
             >
-              <Icon icon={icon} className="h-16 w-16" />
+              <IconLogo icon={icon} className="h-16 w-16" />
             </AspectRatio>
           </div>
         </div>

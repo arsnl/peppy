@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { Icon } from "@/components/icon";
+import { CircleIcon, LaptopIcon, MoonIcon, SunIcon } from "@/components/icon";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
@@ -74,7 +74,7 @@ export const CommandMenu = ({ navConfig, ...props }: CommandMenuProps) => {
                   }}
                 >
                   <div className="mr-2 flex h-4 w-4 items-center justify-center">
-                    <Icon icon="circle" className="h-3 w-3" />
+                    <CircleIcon className="h-3 w-3" />
                   </div>
                   {navItem.title}
                 </CommandItem>
@@ -84,15 +84,15 @@ export const CommandMenu = ({ navConfig, ...props }: CommandMenuProps) => {
           <CommandSeparator />
           <CommandGroup heading="Theme">
             <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
-              <Icon icon="sun" className="mr-2 h-4 w-4" />
+              <SunIcon className="mr-2 h-4 w-4" />
               Light
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
-              <Icon icon="moon" className="mr-2 h-4 w-4" />
+              <MoonIcon className="mr-2 h-4 w-4" />
               Dark
             </CommandItem>
             <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
-              <Icon icon="laptop" className="mr-2 h-4 w-4" />
+              <LaptopIcon className="mr-2 h-4 w-4" />
               System
             </CommandItem>
           </CommandGroup>

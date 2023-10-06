@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CommandMenu } from "@/components/command-menu";
-import { Icon } from "@/components/icon";
+import { IconLogo } from "@/components/icon-logo";
 import { MainNav } from "@/components/main-nav";
 import { MobileNav } from "@/components/mobile-nav";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -28,7 +28,7 @@ export const SiteHeader = () => (
                 "w-9 px-0",
               )}
             >
-              <Icon icon="github" className="h-4 w-4" />
+              <IconLogo icon="github" className="h-4 w-4" />
               <span className="sr-only">GitHub</span>
             </div>
           </Link>
